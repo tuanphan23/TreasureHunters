@@ -25,7 +25,7 @@
                 <Label x:Name="CurrentDateTime" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
             </StackLayout>
 
-            <!--Database Settings Frame-->,mnu 
+            <!--Database Settings Frame-->
 
             <StackLayout Style="{StaticResource HorizontalStack}">
 
