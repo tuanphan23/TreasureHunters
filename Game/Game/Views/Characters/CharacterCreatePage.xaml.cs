@@ -36,7 +36,6 @@ namespace Game.Views
             this.ViewModel.Title = "Create Character";
 
             //Need to make the SelectedItem a string, so it can select the correct item.
-            //AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
         }
 
         /// <summary>
