@@ -160,6 +160,7 @@ namespace Game.ViewModels
 
         #endregion SortDataSet
 
+        /*
         /// <summary>
         /// Get the First item of the location from the list
         /// </summary>
@@ -177,7 +178,7 @@ namespace Game.ViewModels
 
             return data;
         }
-        
+        */
         /// <summary>
         /// Get all the items for a set location
         /// </summary>
