@@ -23,8 +23,12 @@
 
     <ContentPage.Content>
 
-        <ScrollView>
-            <StackLayout Style="{StaticResource OuterBoxStack}"
+        <ScrollView
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            >
+            <StackLayout 
+                Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
                 <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
