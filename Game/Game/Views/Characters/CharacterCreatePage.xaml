@@ -33,6 +33,12 @@
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
+                <Label 
+                    Text="Name"
+                    Style="{StaticResource LabelStyle}"
+                    HorizontalTextAlignment="Center"
+                />
+
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
