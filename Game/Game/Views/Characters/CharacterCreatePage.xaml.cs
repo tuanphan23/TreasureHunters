@@ -66,15 +66,5 @@ namespace Game.Views
         {
             await Navigation.PopModalAsync();
         }
-
-        /// <summary>
-        /// Catch the change to the stepper for Damage
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            DamageValue.Text = String.Format("{0}", e.NewValue);
-        }
     }
 }
