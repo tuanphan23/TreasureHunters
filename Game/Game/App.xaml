@@ -101,6 +101,11 @@
             </Style>
 
             <Style TargetType="Label"
+                   x:Key="DeleteMessage"
+                   <Setter Property="FontSize" Value="Large"/>
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ListStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro" />
