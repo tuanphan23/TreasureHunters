@@ -46,7 +46,7 @@
                     <Label Grid.Row="0" Grid.Column="0"
                         Text="Name" 
                         Style="{StaticResource LabelStyle}"/>
-                    
+
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"/>
@@ -54,7 +54,7 @@
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Description" 
                         Style="{StaticResource LabelStyle}"/>
-                    
+
                     <Entry Grid.Row="1" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"/>
@@ -93,10 +93,6 @@
 
                     </StackLayout>
                 </Grid>
-
-                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-                    
-                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
