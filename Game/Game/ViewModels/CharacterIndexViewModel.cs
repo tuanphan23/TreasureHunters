@@ -161,29 +161,6 @@ namespace Game.ViewModels
         #endregion SortDataSet
 
         /// <summary>
-        /// Takes an item string ID and looks it up and returns the item
-        /// This is because the Items on a character are stores as strings of the GUID.  That way it can be saved to the DB.
-        /// </summary>
-        /// <param name="ItemID"></param>
-        /// <returns></returns>
-        public ItemModel GetItem(string id)
-        {
-            if (string.IsNullOrEmpty(id))
-            {
-                return null;
-            }
-
-            // Item myData = DataStore.GetAsync_Item(ItemID).GetAwaiter().GetResult();
-            ItemModel myData = Dataset.Where(a => a.Id.Equals(id)).FirstOrDefault();
-            if (myData == null)
-            {
-                return null;
-            }
-
-            return myData;
-        }
-
-        /// <summary>
         /// Get the ID of the Default Item for the Location
         /// The Default item is the first Item in the List
         /// </summary>
