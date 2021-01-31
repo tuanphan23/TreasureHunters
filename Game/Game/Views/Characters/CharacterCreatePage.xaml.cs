@@ -10,13 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace Game.Views
 {
     /// <summary>
-    /// Create Item
+    /// Create Character
     /// </summary>
     [DesignTimeVisible(false)] 
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CharacterCreatePage : ContentPage
     {
-        // The item to create
+        // The character to create
         public GenericViewModel<CharacterModel> ViewModel = new GenericViewModel<CharacterModel>();
 
         // Empty Constructor for UTs
@@ -34,8 +34,6 @@ namespace Game.Views
             BindingContext = this.ViewModel;
 
             this.ViewModel.Title = "Create Character";
-
-            //Need to make the SelectedItem a string, so it can select the correct item.
         }
 
         /// <summary>
