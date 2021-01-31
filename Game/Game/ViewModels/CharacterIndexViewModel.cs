@@ -114,12 +114,7 @@ namespace Game.ViewModels
 
             var myList = Dataset.Where(a =>
                                         a.Name == data.Name &&
-                                        a.Description == data.Description &&
-                                        a.Damage == data.Damage &&
-                                        a.Attribute == data.Attribute &&
-                                        a.Location == data.Location &&
-                                        a.Range == data.Range &&
-                                        a.Value == data.Value
+                                        a.Description == data.Description
                                         )
                                         .FirstOrDefault();
 
