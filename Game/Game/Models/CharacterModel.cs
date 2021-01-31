@@ -1,5 +1,4 @@
 ﻿using Game.GameRules;
-
 namespace Game.Models
 {
     /// <summary>
@@ -9,6 +8,8 @@ namespace Game.Models
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
     {
+
+        private DamgeTypeEnum currentStatusEffect;
         /// <summary>
         /// Default character
         /// 
@@ -24,6 +25,9 @@ namespace Game.Models
             ImageURI = "item.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
+
+            //Default to None which is no status effect
+            currentStatusEffect = DamgeTypeEnum.None;
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown; 

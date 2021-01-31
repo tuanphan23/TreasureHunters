@@ -20,6 +20,9 @@ namespace Game.Models
         Electric = 2,
 
         //Poison damage
-        Poison = 3
+        Poison = 3,
+
+        //Healing rather than damage
+        Heal = 10
     }
 }
