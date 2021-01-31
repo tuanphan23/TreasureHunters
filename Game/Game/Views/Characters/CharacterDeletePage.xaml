@@ -40,6 +40,7 @@
                 <Label Text="Are you sure you want to delete this?" Style="{StaticResource MessageStyle}"/>
 
                 <StackLayout
+                    HorizontalOptions ="CenterAndExpand"
                     Orientation="Horizontal">
                     
                     <Button 
@@ -47,6 +48,9 @@
                         Clicked="Delete_Clicked" 
                         HorizontalOptions="Center"
                         FontSize="Medium"
+                        WidthRequest="75"
+                        HeightRequest="40"
+                        CornerRadius="10"
                         BorderWidth="1" 
                         BorderColor="black">
                     </Button>
@@ -56,6 +60,9 @@
                         Clicked="Cancel_Clicked" 
                         HorizontalOptions="Center"
                         FontSize="Medium"
+                        WidthRequest="75"
+                        HeightRequest="40"
+                        CornerRadius="10"
                         BorderWidth="1" 
                         BorderColor="black">
                     </Button>
