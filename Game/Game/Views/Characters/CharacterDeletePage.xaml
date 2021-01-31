@@ -8,31 +8,10 @@
              Title="{Binding Title}">
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10"
-                HorizontalOptions="CenterAndExpand">
+        <StackLayout Style="{StaticResource VerticalStack}"
+                Spacing="10">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-
+          
             <StackLayout 
             HorizontalOptions="Center" 
             Padding="20">
@@ -69,10 +48,10 @@
                     
                     
                 </StackLayout>
-                
-                
+ 
                 
             </StackLayout>
+                
             
         </StackLayout>
     </ScrollView>
