@@ -101,8 +101,8 @@
             </Style>
 
             <Style TargetType="Label"
-                   x:Key="DeleteMessageStyle"
-                   <Setter Property="FontSize" Value="Large"/>
+                   x:Key="DeleteMessageStyle">
+                <Setter Property="FontSize" Value="Large"/>
             </Style>
 
             <Style TargetType="Label"
