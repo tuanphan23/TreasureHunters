@@ -97,26 +97,6 @@
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
                     <Label 
-                        Text="Value"
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                        
-                        <Label 
-                            Text="{Binding Data.Value}" 
-                            x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper 
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
-
-                    </StackLayout>
-
-                    <Label 
                         Text="Damage" 
                         Style="{StaticResource LabelStyle}"/>
                     
