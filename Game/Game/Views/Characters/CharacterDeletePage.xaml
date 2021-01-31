@@ -7,52 +7,55 @@
              x:Class="Game.Views.CharacterDeletePage"
              Title="{Binding Title}">
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource VerticalStack}"
-                Spacing="10">
 
-          
+    <StackLayout Style="{StaticResource VerticalStack}"
+                Spacing="10"
+                 VerticalOptions="CenterAndExpand">
+
+        <Grid
+            VerticalOptions="CenterAndExpand">
+            
+
             <StackLayout 
-            HorizontalOptions="Center" 
-            Padding="20">
+                HorizontalOptions="Center" 
+                Padding="20">
 
                 <Label Text="Are you sure you want to delete this?" Style="{StaticResource MessageStyle}"/>
 
                 <StackLayout
-                    HorizontalOptions ="CenterAndExpand"
-                    Orientation="Horizontal">
-                    
+                        HorizontalOptions ="CenterAndExpand"
+                        Orientation="Horizontal">
+
                     <Button 
-                        Text="Yes" 
-                        Clicked="Delete_Clicked" 
-                        HorizontalOptions="Center"
-                        FontSize="Medium"
-                        WidthRequest="75"
-                        HeightRequest="40"
-                        CornerRadius="10"
-                        BorderWidth="1" 
-                        BorderColor="black">
+                            Text="Yes" 
+                            Clicked="Delete_Clicked" 
+                            HorizontalOptions="Center"
+                            FontSize="Medium"
+                            WidthRequest="75"
+                            HeightRequest="40"
+                            CornerRadius="10"
+                            BorderWidth="1" 
+                            BorderColor="black">
                     </Button>
-                    
+
                     <Button 
-                        Text="No" 
-                        Clicked="Cancel_Clicked" 
-                        HorizontalOptions="Center"
-                        FontSize="Medium"
-                        WidthRequest="75"
-                        HeightRequest="40"
-                        CornerRadius="10"
-                        BorderWidth="1" 
-                        BorderColor="black">
+                            Text="No" 
+                            Clicked="Cancel_Clicked" 
+                            HorizontalOptions="Center"
+                            FontSize="Medium"
+                            WidthRequest="75"
+                            HeightRequest="40"
+                            CornerRadius="10"
+                            BorderWidth="1" 
+                            BorderColor="black">
                     </Button>
-                    
-                    
+
+
                 </StackLayout>
- 
-                
+
+
             </StackLayout>
-                
-            
-        </StackLayout>
-    </ScrollView>
+
+        </Grid>
+    </StackLayout>
 </ContentPage>
