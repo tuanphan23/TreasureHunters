@@ -83,6 +83,19 @@
                         HorizontalTextAlignment="Start"
                         />
 
+                    <StackLayout
+                        Orientation="Horizontal"
+                        >
+
+                        <Label
+                            x:Name="HealthValue"
+                            Text="0"
+                            FontSize="Medium"
+                            />
+
+                    </StackLayout>
+
+
                     <Label
                         Text="Speed"
                         FontSize="20"
@@ -100,7 +113,6 @@
                         FontSize="20"
                         HorizontalTextAlignment="Start"
                         />
-                    
                 </StackLayout>
                 
                 <Grid
