@@ -54,7 +54,7 @@
                         Text="Status"
                         FontSize="20"
                         HorizontalTextAlignment="Start"
-                    />
+                        />
 
                     <Label
                         Text="Experiece"
@@ -76,6 +76,10 @@
 
                 </StackLayout>
 
+                <StackLayout>
+                    
+                </StackLayout>
+                
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
