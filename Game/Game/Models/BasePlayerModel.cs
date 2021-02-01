@@ -558,7 +558,16 @@ namespace Game.Models
             return myReturn;
         }
 
+        public float GetPercentDefense()
+        {
+            var myCurr = GetDefense();
 
+            var myMax = 100;
+
+            var myReturn = (float)myCurr / myMax;
+
+            return myReturn;
+        }
 
 
 
