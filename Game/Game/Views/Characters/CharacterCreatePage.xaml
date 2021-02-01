@@ -89,7 +89,7 @@
 
                         <Label
                             x:Name="HealthValue"
-                            Text="0"
+                            Text="{Binding Data.MaxHealth}"
                             FontSize="Medium"
                             />
 
