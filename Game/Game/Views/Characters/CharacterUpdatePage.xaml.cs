@@ -69,7 +69,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void MaxHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void CurrentHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             HealthValue.Text = String.Format("{0}", e.NewValue);
         }
