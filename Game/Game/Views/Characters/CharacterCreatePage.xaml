@@ -148,7 +148,7 @@
                                  Minimum="0"
                                  Maximum="10"
                                  Increment="1"
-                                 ValueChanged="Speed_OnStepperValueChanged"
+                                 ValueChanged="Attack_OnStepperValueChanged"
                                  />
 
                     </StackLayout>

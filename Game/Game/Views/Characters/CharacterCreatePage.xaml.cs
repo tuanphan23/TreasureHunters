@@ -72,5 +72,9 @@ namespace Game.Views
         {
             SpeedValue.Text = String.Format("{0}", e.NewValue);
         }
+        void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            AttackValue.Text = String.Format("{0}", e.NewValue);
+        }
     }
 }
