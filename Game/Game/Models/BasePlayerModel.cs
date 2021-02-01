@@ -128,6 +128,18 @@ namespace Game.Models
         // The natural range for this Player, 1 is normal
         public int Range { get; set; } = 1;
 
+        //Current health divided by total for progressbars
+        public float PercentHealth { get; set; } = 0;
+
+        //Current attack divided by total for progressbars
+        public float PercentAttack { get; set; } = 0;
+
+        //Current defense divided by total for progressbars
+        public float PercentDefense { get; set; } = 0;
+
+        //Current speed divided by total for progressbars
+        public float PercentSpeed { get; set; } = 0;
+
         // The Difficulty scale to use when creating examples
         public DifficultyEnum Difficulty { get; set; } = DifficultyEnum.Unknown;
 
@@ -514,6 +526,66 @@ namespace Game.Models
 
             return myReturn;
         }
+
+        /// <summary>
+        /// Returns current percent health of max
+        /// </summary>
+        /// <returns></returns>
+        public float GetPercentHealth()
+        {
+            var myCurr = GetCurrentHealth();
+
+            var myMax = GetMaxHealth();
+
+            var myReturn = (float)myCurr / myMax;
+
+            return myReturn;
+        }
+
+        /// <summary>
+        /// returns percent speed of max
+        /// </summary>
+        /// <returns></returns>
+        public float GetPercentSpeed()
+        {
+            var myCurr = GetSpeed();
+
+            var myReturn = (float)myCurr / 100;
+
+            return myReturn;
+        }
+
+        /// <summary>
+        /// Returns percent Attack of max
+        /// </summary>
+        /// <returns></returns>
+        public float GetPercentAttack()
+        {
+            var myCurr = GetAttack();
+
+            var myMax = 100;
+
+            var myReturn = (float)myCurr / myMax;
+
+            return myReturn;
+        }
+
+        /// <summary>
+        /// Returns percentDefense of max
+        /// </summary>
+        /// <returns></returns>
+        public float GetPercentDefense()
+        {
+            var myCurr = GetDefense();
+
+            var myMax = 100;
+
+            var myReturn = (float)myCurr / myMax;
+
+            return myReturn;
+        }
+
+
 
         #endregion GetAttributeValues
 

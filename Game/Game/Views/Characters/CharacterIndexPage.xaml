@@ -15,9 +15,9 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Characters List Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Character List Page" Style="{StaticResource HeaderStyle}"/>
 
-            <ListView x:Name="ItemsListView" 
+            <ListView x:Name="CharactersListView" 
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                     RefreshCommand="{Binding LoadItemsCommand}"
@@ -25,13 +25,13 @@
                     ItemSelected="OnItemSelected"
                     HasUnevenRows="true"
                     Margin="5,0,5,0"
-                    RowHeight="80"
+                    RowHeight="100"                 
                     >
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnSpacing="5" RowSpacing="1">
+                            <Grid ColumnSpacing="5" RowSpacing="2" Margin="5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
@@ -42,17 +42,38 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
 
-                                <StackLayout>
-                                    <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                                         Source="{Binding ImageURI}"
                                         Style="{StaticResource ImageMediumStyle}"
                                         VerticalOptions="CenterAndExpand"
-                                        HorizontalOptions="Center"/>
+                                        WidthRequest="70" HeightRequest="70"
+                                        />
 
-                                    <Label Grid.Column="1" Grid.Row="0"
-                                       Text="{Binding Name}" 
+                                <Label Grid.Column="1" Grid.Row="0"
+                                       Text="{Binding Name}"
+                                       FontAttributes="Bold"
                                        Style="{StaticResource ListStyle}"
-                                       HorizontalOptions="Center"/>
+                                       FontSize="16"
+                                       />
+
+
+                                <StackLayout Orientation="Horizontal"
+                                             Grid.Column="1" Grid.Row="1">
+
+                                    <Label Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
+                                           Style="{StaticResource ListStyle}"/>
+
+                                    <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
+                                           Style="{StaticResource ListStyle}"/>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal"
+                                             Grid.Column="1" Grid.Row="2">
+
+                                    <Label Text="{Binding Description}"
+                                           Style="{StaticResource ListStyle}"
+                                           MaxLines="2"/>
 
                                 </StackLayout>
                             </Grid>

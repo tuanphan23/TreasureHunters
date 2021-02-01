@@ -17,8 +17,6 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
-
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
@@ -32,67 +30,110 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Description : " 
+                    Text="Status : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Description}" 
+                    Text="{Binding Data.currentStatusEffect}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Location : " 
+                    Text="Type : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Location}" 
+                    Text="{Binding Data.PlayerType}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Attribute : " 
+                    Text="Level : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Attribute}" 
+                    Text="{Binding Data.Level}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
+
+            <Label
+                Text="Items "
+                Style="{StaticResource ValueStyle}"/>
+
+
+
+
+
+            <BoxView 
+                Color = "Black"
+                Margin ="10"
+                HeightRequest ="1"
+                WidthRequest="200"/>
+
+            <Label Text="Attributes"
+                   HorizontalOptions="Center"
+                   Style="{StaticResource HeaderStyle}"/>
+
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Range : " 
+                    Text="Health : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Range}" 
+                    Text="{Binding Data.CurrentHealth}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
+
+            <ProgressBar
+                Progress="{Binding Data.PercentHealth}" 
+                ProgressColor="Green"
+                WidthRequest="200"
+                HeightRequest="20"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Range : " 
+                    Text="Speed : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Range}" 
+                    Text="{Binding Data.Speed}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
+            
+            <ProgressBar
+                Progress="{Binding Data.PercentSpeed}" 
+                ProgressColor="Yellow"
+                WidthRequest="200"
+                HeightRequest="20"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Value : " 
+                    Text="Attack : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Value}" 
+                    Text="{Binding Data.Attack}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
+
+            <ProgressBar
+                Progress="{Binding Data.PercentAttack}" 
+                ProgressColor="Red"
+                WidthRequest="200"
+                HeightRequest="20"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Damage : " 
+            <Label 
+                    Text="Defense : " 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Damage}" 
+            <Label 
+                    Text="{Binding Data.Defense}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
+            <ProgressBar
+                Progress="{Binding Data.PercentDefense}" 
+                ProgressColor="Blue"
+                WidthRequest="200"
+                HeightRequest="20"/>
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -76,6 +76,12 @@ namespace Game.Models
             CurrentHealth = newData.CurrentHealth;
             MaxHealth = newData.MaxHealth;
 
+            //Percentages
+            PercentAttack = newData.PercentAttack;
+            PercentDefense = newData.PercentDefense;
+            PercentHealth = newData.PercentHealth;
+            PercentSpeed = newData.PercentSpeed;
+
             Head = newData.Head;
             Necklass = newData.Necklass;
             PrimaryHand = newData.PrimaryHand;

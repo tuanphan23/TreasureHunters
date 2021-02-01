@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
+using Game.GameRules;
 
 namespace Game.Views
 {
@@ -32,6 +33,8 @@ namespace Game.Views
 
             this.ViewModel.Title = "Character Update ";
 
+            LoadLevelPickerValues();
+
             //Need to make the SelectedItem a string, so it can select the correct item.
             //LocationPicker.SelectedItem = data.Data.Location.ToString();
             //AttributePicker.SelectedItem = data.Data.Attribute.ToString();
@@ -44,6 +47,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
+            // If name is not provived
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                await DisplayAlert("Invalid", "Character must have a name.", "OK");
+                return;
+            }
+
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
             {
@@ -51,7 +61,7 @@ namespace Game.Views
             }
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
-            await Navigation.PopModalAsync();
+            await Navigation.PushAsync(new CharacterIndexPage());
         }
 
         /// <summary>
@@ -65,33 +75,85 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Range
+        /// Load level values into the Picker
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Range_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public bool LoadLevelPickerValues()
         {
-            RangeValue.Text = String.Format("{0}", e.NewValue);
+            for(var i = 1; i <= LevelTableHelper.MaxLevel; i++)
+            {
+                LevelPicker.Items.Add(i.ToString());
+            }
+
+            LevelPicker.SelectedIndex = -1;
+
+            return true;
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Value
+        /// Catch the change to the picker for MaxHealth
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void LevelPicker_ChangedIndex(object sender, EventArgs e)
         {
-            ValueValue.Text = String.Format("{0}", e.NewValue);
+            // if the picker is not set, then set it
+            if(LevelPicker.SelectedIndex == -1)
+            {
+                LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+                return;
+            }
+
+            var result = LevelPicker.SelectedIndex + 1;
+
+            // Only roll again for health if the level changed
+            if(result != ViewModel.Data.Level)
+            {
+                // Change the level
+                ViewModel.Data.Level = result;
+
+                // Roll for new HP
+                ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
+
+                UpdateMaxHealthValue();
+            }
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Damage
+        /// Catch the result to the label for MaxHealth
+        /// </summary>
+        public void UpdateMaxHealthValue()
+        {
+            MaxHealthValue.Text = ViewModel.Data.MaxHealth.ToString();
+        }
+
+        /// <summary>
+        /// Catch the change to the stepper for Speed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DamageValue.Text = String.Format("{0}", e.NewValue);
+            SpeedValue.Text = String.Format("{0}", e.NewValue);
+        }
+
+        /// <summary>
+        /// Catch the change to the stepper for Attack
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            AttackValue.Text = String.Format("{0}", e.NewValue);
+        }
+
+        /// <summary>
+        /// Catch the change to the stepper for Defense
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
     }
 }

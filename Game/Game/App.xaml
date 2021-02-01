@@ -169,7 +169,7 @@
                 BasedOn="{StaticResource CenterMessageStyle}">
                 <Setter Property="FontSize" Value="Large" />
             </Style>
-            
+
             <!--<Style TargetType="Label"
                 x:Key="GridLabelStyle"
                 BasedOn="{StaticResource LabelStyle}">
