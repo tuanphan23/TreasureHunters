@@ -60,10 +60,10 @@
                                 <StackLayout Orientation="Horizontal"
                                              Grid.Column="1" Grid.Row="1">
 
-                                    <Label Text="Level: "
+                                    <Label Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
                                            Style="{StaticResource ListStyle}"/>
 
-                                    <Label Text="{Binding Level}"
+                                    <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
                                            Style="{StaticResource ListStyle}"/>
 
                                 </StackLayout>
