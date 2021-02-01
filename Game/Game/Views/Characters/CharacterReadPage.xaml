@@ -39,16 +39,16 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Attribute : " 
+                    Text="Level : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Attribute}" 
+                    Text="{Binding Data.Level}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
             <ProgressBar
                 x:Name="RangeBar"
-                Progress="0.5" 
+                Progress="0.1" 
                 ProgressColor="Red"
                 WidthRequest="200"
                 HeightRequest="20"/>
