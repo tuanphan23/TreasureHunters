@@ -84,6 +84,12 @@
                         />
 
                     <Label
+                        Text="Speed"
+                        FontSize="20"
+                        HorizontalTextAlignment="Start"
+                        />
+
+                    <Label
                         Text="Defense"
                         FontSize="20"
                         HorizontalTextAlignment="Start"
