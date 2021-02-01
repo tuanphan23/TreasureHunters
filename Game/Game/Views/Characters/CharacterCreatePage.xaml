@@ -164,12 +164,12 @@
                             >
 
                         <Label
-                                x:Name="AttackValue"
-                                Text="{Binding Data.Attack}"
+                                x:Name="DefenseValue"
+                                Text="{Binding Data.Defense}"
                                 FontSize="Medium"
                                 />
 
-                        <Stepper Value="{Binding Data.Attack, Mode = TwoWay}"
+                        <Stepper Value="{Binding Data.Defense, Mode = TwoWay}"
                                      Minimum="0"
                                      Maximum="10"
                                      Increment="1"
