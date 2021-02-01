@@ -58,7 +58,7 @@
             <ProgressBar
                 x:Name="RangeBar"
                 Progress="0.1" 
-                ProgressColor="Red"
+                ProgressColor="Gold"
                 WidthRequest="200"
                 HeightRequest="20"/>
             
