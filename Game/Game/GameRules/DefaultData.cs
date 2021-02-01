@@ -151,6 +151,7 @@ namespace Game.GameRules
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
                     Ability = AbilityEnum.Curse,
+                    Job = CharacterJobEnum.Fighter,
                 },
 
                 new CharacterModel {
@@ -167,6 +168,7 @@ namespace Game.GameRules
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
                     Ability = AbilityEnum.Quick,
+                    Job = CharacterJobEnum.Cleric,
                 },
 
                 new CharacterModel {
@@ -183,6 +185,7 @@ namespace Game.GameRules
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
                     Ability = AbilityEnum.Heal,
+                    Job = CharacterJobEnum.Cleric,
                 },
 
                 new CharacterModel {
@@ -199,6 +202,7 @@ namespace Game.GameRules
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
                     Ability = AbilityEnum.Focus,
+                    Job = CharacterJobEnum.Cleric,
                 },
 
                 new CharacterModel {
@@ -215,6 +219,7 @@ namespace Game.GameRules
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
                     Ability = AbilityEnum.Toughness,
+                    Job = CharacterJobEnum.Fighter,
                 },
 
                 new CharacterModel {
@@ -231,6 +236,7 @@ namespace Game.GameRules
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
                     Ability = AbilityEnum.Barrier,
+                    Job = CharacterJobEnum.Fighter,
                 },
 
                 new CharacterModel {
@@ -247,6 +253,7 @@ namespace Game.GameRules
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
                     Ability = AbilityEnum.Nimble,
+                    Job = CharacterJobEnum.Fighter,
                 },
             };
 

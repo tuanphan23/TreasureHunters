@@ -23,15 +23,13 @@
                     ItemSelected="OnItemSelected"
                     HasUnevenRows="true"
                     Margin="5,0,5,0"
-                    RowHeight="80"
-                    SeparatorVisibility="None"
+                    RowHeight="100"                 
                     >
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <ContentView Padding="5">
-                            <Grid ColumnSpacing="5" RowSpacing="1">
+                            <Grid ColumnSpacing="5" RowSpacing="2" Margin="5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
@@ -46,7 +44,7 @@
                                         Source="{Binding ImageURI}"
                                         Style="{StaticResource ImageMediumStyle}"
                                         VerticalOptions="CenterAndExpand"
-                                        WidthRequest="100" HeightRequest="100"
+                                        WidthRequest="70" HeightRequest="70"
                                         />
 
                                 <Label Grid.Column="1" Grid.Row="0"
@@ -71,9 +69,11 @@
                                 <StackLayout Orientation="Horizontal"
                                              Grid.Column="1" Grid.Row="2">
 
-                                    <Label Text="{Binding Description}"
-                                           Style="{StaticResource ListStyle}"
-                                           MaxLines="2"/>
+                                    <Label Text="Job: "
+                                           Style="{StaticResource ListStyle}"/>
+
+                                    <Label Text="{Binding Job}"
+                                           Style="{StaticResource ListStyle}"/>
 
                                 </StackLayout>
 
@@ -88,7 +88,6 @@
 
                                 </StackLayout>
                             </Grid>
-                    </ContentView>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
