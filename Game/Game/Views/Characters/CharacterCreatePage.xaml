@@ -173,7 +173,7 @@
                                      Minimum="0"
                                      Maximum="10"
                                      Increment="1"
-                                     ValueChanged="Attack_OnStepperValueChanged"
+                                     ValueChanged="Defense_OnStepperValueChanged"
                                      />
 
                     </StackLayout>
