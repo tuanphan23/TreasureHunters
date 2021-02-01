@@ -56,7 +56,6 @@
             </StackLayout>
 
             <ProgressBar
-                x:Name="RangeBar"
                 Progress="0.1" 
                 ProgressColor="Gold"
                 WidthRequest="200"
@@ -72,9 +71,8 @@
             </StackLayout>
 
             <ProgressBar
-                x:Name="RangeBar"
                 Progress="0.1" 
-                ProgressColor="Red"
+                ProgressColor="Green"
                 WidthRequest="200"
                 HeightRequest="20"/>
 
@@ -88,9 +86,8 @@
             </StackLayout>
             
             <ProgressBar
-                x:Name="RangeBar"
                 Progress="0.1" 
-                ProgressColor="Green"
+                ProgressColor="Red"
                 WidthRequest="200"
                 HeightRequest="20"/>
 
@@ -104,9 +101,8 @@
             </StackLayout>
 
             <ProgressBar
-                x:Name="RangeBar"
                 Progress="0.1" 
-                ProgressColor="Blue"
+                ProgressColor="Red"
                 WidthRequest="200"
                 HeightRequest="20"/>
 
@@ -119,6 +115,12 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
+            <ProgressBar
+                Progress="0.1" 
+                ProgressColor="Blue"
+                WidthRequest="200"
+                HeightRequest="20"/>
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>
