@@ -71,8 +71,16 @@
                 <Label 
                     Text="{Binding Data.Range}" 
                     Style="{StaticResource ValueStyle}"/>
+                
             </StackLayout>
 
+            <ProgressBar
+                x:Name="RangeBar"
+                Progress="0.5" 
+                ProgressColor="Red"
+                WidthRequest="200"
+                HeightRequest="20"/>
+            
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                     Text="Value : " 
