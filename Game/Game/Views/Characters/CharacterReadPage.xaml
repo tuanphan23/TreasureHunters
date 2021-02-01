@@ -55,10 +55,11 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
-            <BoxView Color="Black" 
-                     Margin="10"
-                     HeightRequest="1" 
-                     WidthRequest="200"/>
+            <BoxView 
+                Color = "Black"
+                Margin ="10"
+                HeightRequest ="1"
+                WidthRequest="200"/>
 
             <Label Text="Attributes"
                    HorizontalOptions="Center"
