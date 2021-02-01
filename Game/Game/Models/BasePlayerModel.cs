@@ -128,6 +128,7 @@ namespace Game.Models
         // The natural range for this Player, 1 is normal
         public int Range { get; set; } = 1;
 
+
         // The Difficulty scale to use when creating examples
         public DifficultyEnum Difficulty { get; set; } = DifficultyEnum.Unknown;
 

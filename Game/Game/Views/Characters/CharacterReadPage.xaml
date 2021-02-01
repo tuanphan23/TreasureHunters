@@ -67,7 +67,7 @@
                     Text="Health : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="Add Binding for Health" 
+                    Text="{Binding Data.CurrentHealth}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
