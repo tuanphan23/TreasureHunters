@@ -81,7 +81,7 @@
             
             <ProgressBar
                 Progress="0.1" 
-                ProgressColor="Red"
+                ProgressColor="Yellow"
                 WidthRequest="200"
                 HeightRequest="20"/>
 
