@@ -129,16 +129,16 @@ namespace Game.Models
         public int Range { get; set; } = 1;
 
         //Current health divided by total for progressbars
-        public int PercentHealth { get; set; } = 0;
+        public float PercentHealth { get; set; } = 0;
 
         //Current attack divided by total for progressbars
-        public int PercentAttack { get; set; } = 0;
+        public float PercentAttack { get; set; } = 0;
 
         //Current defense divided by total for progressbars
-        public int PercentDefense { get; set; } = 0;
+        public float PercentDefense { get; set; } = 0;
 
         //Current speed divided by total for progressbars
-        public int PercentSpeed { get; set; } = 0;
+        public float PercentSpeed { get; set; } = 0;
 
         // The Difficulty scale to use when creating examples
         public DifficultyEnum Difficulty { get; set; } = DifficultyEnum.Unknown;
@@ -523,6 +523,17 @@ namespace Game.Models
 
             // Get MaxHealth bonus from Items
             myReturn += GetMaxHealthItemBonus;
+
+            return myReturn;
+        }
+
+        public float GetPercentHealth()
+        {
+            var myCurr = GetCurrentHealth();
+
+            var myMax = GetMaxHealth();
+
+            var myReturn = (float)myCurr / myMax;
 
             return myReturn;
         }
