@@ -197,7 +197,15 @@
 
                     </StackLayout>
                 </StackLayout>
-                
+
+                <Image 
+                            Source="{Binding Data.ImageURI}"
+                            Style="{StaticResource ImageSmallStyle}"/>
+
+                <Entry 
+                            Text="{Binding Data.ImageURI}" 
+                            Style="{StaticResource EntryStyle}"/>
+
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
