@@ -115,11 +115,11 @@
 
                         <Label
                             x:Name="SpeedValue"
-                            Text="{Binding Data.MaxHealth}"
+                            Text="{Binding Data.Speed}"
                             FontSize="Medium"
                             />
 
-                        <Stepper Value="{Binding Data.MaxHealth, Mode = TwoWay}"
+                        <Stepper Value="{Binding Data.Speed, Mode = TwoWay}"
                                  Minimum="0"
                                  Maximum="10"
                                  Increment="1"
