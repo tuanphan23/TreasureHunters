@@ -77,42 +77,35 @@
 
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
-                    <Label 
-                        Text="Level" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                    <StackLayout Style="{StaticResource HorizontalStack}" >
 
                         <Label 
-                            Text="{Binding Data.Level}" 
-                            x:Name="LevelValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                            Text="Level: " 
+                            Style="{StaticResource LabelStyle}"/>
+
+                        <Picker x:Name="LevelPicker"
+                            ItemDisplayBinding="{Binding Data.Level}"
+                            SelectedIndexChanged="LevelPicker_ChangedIndex"/>
 
                     </StackLayout>
 
-                    <Label 
-                        Text="Health" 
-                        Style="{StaticResource LabelStyle}"/>
+                    <StackLayout Style="{StaticResource HorizontalStack}" >
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                        <Label 
+                            Text="Max Health: " 
+                            Style="{StaticResource LabelStyle}"/> 
 
                         <Label 
                             Text="{Binding Data.MaxHealth}" 
-                            x:Name="HealthValue"
+                            x:Name="MaxHealthValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
-                            Value="{Binding Data.MaxHealth, Mode=TwoWay}"
-                            Minimum="0"
-                            Maximum="10"
-                            Increment="1"
-                            ValueChanged="MaxHealth_OnStepperValueChanged"/>
+                        <Label 
+                            Text="hp" 
+                            Style="{StaticResource LabelStyle}"/>
 
                     </StackLayout>
 

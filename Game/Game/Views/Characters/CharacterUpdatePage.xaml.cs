@@ -33,6 +33,8 @@ namespace Game.Views
 
             this.ViewModel.Title = "Character Update ";
 
+            LoadLevelPickerValues();
+
             //Need to make the SelectedItem a string, so it can select the correct item.
             //LocationPicker.SelectedItem = data.Data.Location.ToString();
             //AttributePicker.SelectedItem = data.Data.Attribute.ToString();
@@ -73,13 +75,55 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for MaxHealth
+        /// Load level values into the Picker
+        /// </summary>
+        public bool LoadLevelPickerValues()
+        {
+            for(var i = 1; i <= LevelTableHelper.MaxLevel; i++)
+            {
+                LevelPicker.Items.Add(i.ToString());
+            }
+
+            LevelPicker.SelectedIndex = -1;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Catch the change to the picker for MaxHealth
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void MaxHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void LevelPicker_ChangedIndex(object sender, EventArgs e)
         {
-            HealthValue.Text = String.Format("{0}", e.NewValue);
+            // if the picker is not set, then set it
+            if(LevelPicker.SelectedIndex == -1)
+            {
+                LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+                return;
+            }
+
+            var result = LevelPicker.SelectedIndex + 1;
+
+            // Only roll again for health if the level changed
+            if(result != ViewModel.Data.Level)
+            {
+                // Change the level
+                ViewModel.Data.Level = result;
+
+                // Roll for new HP
+                ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
+
+                UpdateMaxHealthValue();
+            }
+        }
+
+        /// <summary>
+        /// Catch the result to the label for MaxHealth
+        /// </summary>
+        public void UpdateMaxHealthValue()
+        {
+            MaxHealthValue.Text = ViewModel.Data.MaxHealth.ToString();
         }
 
         /// <summary>
