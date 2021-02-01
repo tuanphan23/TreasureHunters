@@ -134,30 +134,49 @@
                         HorizontalTextAlignment="Start"
                         />
 
-                    <StackLayout
-                        Orientation="Horizontal"
-                        >
+                        <StackLayout
+                            Orientation="Horizontal"
+                            >
 
-                        <Label
-                            x:Name="AttackValue"
-                            Text="{Binding Data.Attack}"
-                            FontSize="Medium"
-                            />
+                            <Label
+                                x:Name="AttackValue"
+                                Text="{Binding Data.Attack}"
+                                FontSize="Medium"
+                                />
 
-                        <Stepper Value="{Binding Data.Attack, Mode = TwoWay}"
-                                 Minimum="0"
-                                 Maximum="10"
-                                 Increment="1"
-                                 ValueChanged="Attack_OnStepperValueChanged"
-                                 />
+                            <Stepper Value="{Binding Data.Attack, Mode = TwoWay}"
+                                     Minimum="0"
+                                     Maximum="10"
+                                     Increment="1"
+                                     ValueChanged="Attack_OnStepperValueChanged"
+                                     />
 
-                    </StackLayout>
+                        </StackLayout>
 
                     <Label
                         Text="Defense"
                         FontSize="20"
                         HorizontalTextAlignment="Start"
                         />
+
+                    <StackLayout
+                            Orientation="Horizontal"
+                            >
+
+                        <Label
+                                x:Name="AttackValue"
+                                Text="{Binding Data.Attack}"
+                                FontSize="Medium"
+                                />
+
+                        <Stepper Value="{Binding Data.Attack, Mode = TwoWay}"
+                                     Minimum="0"
+                                     Maximum="10"
+                                     Increment="1"
+                                     ValueChanged="Attack_OnStepperValueChanged"
+                                     />
+
+                    </StackLayout>
                 </StackLayout>
                 
                 <Grid
