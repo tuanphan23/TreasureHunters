@@ -79,13 +79,23 @@
                     Text="Add Binding for Speed" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
-            
+
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                     Text="Attack : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.Damage}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
+
+            <StackLayout Style="{StaticResource HorizontalStack}">
+            <Label 
+                    Text="Defense : " 
+                    Style="{StaticResource LabelStyle}"/>
+            <Label 
+                    Text="Add Binding for Defense" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
