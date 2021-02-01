@@ -61,7 +61,7 @@ namespace Game.Views
             }
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
-            await Navigation.PopModalAsync();
+            await Navigation.PushAsync(new CharacterIndexPage());
         }
 
         /// <summary>
