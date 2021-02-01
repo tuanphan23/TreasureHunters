@@ -547,6 +547,19 @@ namespace Game.Models
             return myReturn;
         }
 
+        public float GetPercentAttack()
+        {
+            var myCurr = GetAttack();
+
+            var myMax = 100;
+
+            var myReturn = (float)myCurr / myMax;
+
+            return myReturn;
+        }
+
+
+
 
 
         #endregion GetAttributeValues
