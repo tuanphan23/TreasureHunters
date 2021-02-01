@@ -76,7 +76,7 @@
                     Text="Speed : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="Add Binding for Speed" 
+                    Text="{Binding Data.Speed}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
