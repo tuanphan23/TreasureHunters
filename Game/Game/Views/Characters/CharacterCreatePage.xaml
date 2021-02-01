@@ -93,7 +93,7 @@
                             FontSize="Medium"
                             />
 
-                        <Stepper Value="{Binding Data.MaxHealh, Mode = TwoWay}"
+                        <Stepper Value="{Binding Data.MaxHealth, Mode = TwoWay}"
                                  Minimum="0"
                                  Maximum="10"
                                  Increment="1"
@@ -103,11 +103,24 @@
                     </StackLayout>
 
 
-                    <Label
-                        Text="Speed"
-                        FontSize="20"
-                        HorizontalTextAlignment="Start"
-                        />
+                    <StackLayout
+                        Orientation="Horizontal"
+                        >
+
+                        <Label
+                            x:Name="SpeedValue"
+                            Text="{Binding Data.MaxHealth}"
+                            FontSize="Medium"
+                            />
+
+                        <Stepper Value="{Binding Data.MaxHealth, Mode = TwoWay}"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 ValueChanged="MaxHealth_OnStepperValueChanged"
+                                 />
+
+                    </StackLayout>
 
                     <Label
                         Text="Attack"
