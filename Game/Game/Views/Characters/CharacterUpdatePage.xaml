@@ -63,7 +63,7 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local:AbilityEnumHelper.GetFullList}" 
+                        ItemsSource="{x:Static local:AbilityEnumHelper.GetFullList}"
                         SelectedItem="{Binding Data.Ability, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="AbilityPicker"/>
 
