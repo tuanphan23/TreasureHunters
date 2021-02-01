@@ -102,6 +102,12 @@
 
                     </StackLayout>
 
+                    <Label
+                        Text="Speed"
+                        FontSize="20"
+                        HorizontalTextAlignment="Start"
+                        />
+
 
                     <StackLayout
                         Orientation="Horizontal"
