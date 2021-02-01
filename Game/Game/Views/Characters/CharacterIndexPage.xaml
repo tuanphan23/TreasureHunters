@@ -40,7 +40,7 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
 
-                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="4"
+                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                                         Source="{Binding ImageURI}"
                                         Style="{StaticResource ImageMediumStyle}"
                                         VerticalOptions="CenterAndExpand"
@@ -73,17 +73,6 @@
                                            Style="{StaticResource ListStyle}"/>
 
                                     <Label Text="{Binding Job}"
-                                           Style="{StaticResource ListStyle}"/>
-
-                                </StackLayout>
-
-                                <StackLayout Orientation="Horizontal"
-                                             Grid.Column="1" Grid.Row="3">
-
-                                    <Label Text="Ability: "
-                                           Style="{StaticResource ListStyle}"/>
-
-                                    <Label Text="{Binding Ability}"
                                            Style="{StaticResource ListStyle}"/>
 
                                 </StackLayout>

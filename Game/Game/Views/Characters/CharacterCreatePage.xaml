@@ -199,14 +199,7 @@
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Ability" 
-                        Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local:AbilityEnumHelper.GetFullList}" 
-                        SelectedItem="{Binding Data.Ability, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="AbilityPicker"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
                         Text="Image" 

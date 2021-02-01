@@ -150,7 +150,6 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Ability = AbilityEnum.Curse,
                     Job = CharacterJobEnum.Fighter,
                 },
 
@@ -167,7 +166,6 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Ability = AbilityEnum.Quick,
                     Job = CharacterJobEnum.Cleric,
                 },
 
@@ -184,7 +182,6 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Ability = AbilityEnum.Heal,
                     Job = CharacterJobEnum.Cleric,
                 },
 
@@ -201,7 +198,6 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Ability = AbilityEnum.Focus,
                     Job = CharacterJobEnum.Cleric,
                 },
 
@@ -218,7 +214,6 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Ability = AbilityEnum.Toughness,
                     Job = CharacterJobEnum.Fighter,
                 },
 
@@ -235,7 +230,6 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Ability = AbilityEnum.Barrier,
                     Job = CharacterJobEnum.Fighter,
                 },
 
@@ -252,7 +246,6 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Ability = AbilityEnum.Nimble,
                     Job = CharacterJobEnum.Fighter,
                 },
             };

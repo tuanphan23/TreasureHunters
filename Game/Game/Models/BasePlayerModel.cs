@@ -150,12 +150,6 @@ namespace Game.Models
 
         #endregion Attributes
 
-        #region PlayerAbilities
-
-        public AbilityEnum Ability { get; set; }
-
-        #endregion PlayerAbilities
-
         #region Items
         // ItemModel is a string referencing the database table
         public string Head { get; set; } = null;
