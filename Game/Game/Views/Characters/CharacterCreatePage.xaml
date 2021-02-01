@@ -134,6 +134,25 @@
                         HorizontalTextAlignment="Start"
                         />
 
+                    <StackLayout
+                        Orientation="Horizontal"
+                        >
+
+                        <Label
+                            x:Name="AttackValue"
+                            Text="{Binding Data.Speed}"
+                            FontSize="Medium"
+                            />
+
+                        <Stepper Value="{Binding Data.Speed, Mode = TwoWay}"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 ValueChanged="Speed_OnStepperValueChanged"
+                                 />
+
+                    </StackLayout>
+
                     <Label
                         Text="Defense"
                         FontSize="20"
