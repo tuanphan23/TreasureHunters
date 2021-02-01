@@ -138,8 +138,8 @@ namespace Game.GameRules
         var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
-                    Name = "C1",
-                    Description = "C1",
+                    Name = "Benjamin Franklin Gates",
+                    Description = "An American treasure hunter and cryptologist, famous for finding the Templar Treasure.",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
@@ -150,11 +150,12 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Ability = AbilityEnum.Curse,
                 },
 
                 new CharacterModel {
-                    Name = "C2",
-                    Description = "C2",
+                    Name = "Riley Poole",
+                    Description = "A sarcastic computer expert, resident genius",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
@@ -165,11 +166,12 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Ability = AbilityEnum.Quick,
                 },
 
                 new CharacterModel {
-                    Name = "C3",
-                    Description = "C3",
+                    Name = "Abigail Chase",
+                    Description = "An archivist at the National Archives",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
@@ -180,11 +182,12 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Ability = AbilityEnum.Heal,
                 },
 
                 new CharacterModel {
-                    Name = "C4",
-                    Description = "C4",
+                    Name = "Patrick Henry Gates",
+                    Description = "A former treasure hunter and the father of Benjamin Franklin Gates",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
@@ -195,11 +198,12 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Ability = AbilityEnum.Focus,
                 },
 
                 new CharacterModel {
-                    Name = "C5",
-                    Description = "C5",
+                    Name = "Peter Sadusky",
+                    Description = "An FBI Special Agent in charge of the theft of the Declaration of Independence",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
@@ -210,11 +214,12 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Ability = AbilityEnum.Toughness,
                 },
 
                 new CharacterModel {
-                    Name = "C6",
-                    Description = "C6",
+                    Name = "Ian Howe",
+                    Description = "A currently imprisoned entrepreneur/treasure hunter who attempted to find the Templar Treasure",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
@@ -225,11 +230,12 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Ability = AbilityEnum.Barrier,
                 },
 
                 new CharacterModel {
-                    Name = "C7",
-                    Description = "C6",
+                    Name = "Mitchell Wilkinson",
+                    Description = "An international arms dealer and black-market antiquities dealer ",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
@@ -240,6 +246,7 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Ability = AbilityEnum.Nimble,
                 },
             };
 
