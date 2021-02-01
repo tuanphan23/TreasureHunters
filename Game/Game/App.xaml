@@ -259,7 +259,15 @@
                 BasedOn="{StaticResource ImageBattleSmallStyle}">
             </Style>
 
-            <!-- ImageButton -->
+            <Style TargetType="BoxView"
+                x:Key=" = SeparatorLineStyle">
+                <Setter Property="Color" Value="Black"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="WidthRequest" Value="200"/>
+             </Style>
+
+                <!-- ImageButton -->
             <Style TargetType="ImageButton">
                 <Setter Property="HeightRequest" Value="150" />
                 <Setter Property="WidthRequest" Value="150" />
