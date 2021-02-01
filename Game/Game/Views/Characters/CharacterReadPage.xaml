@@ -55,6 +55,15 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
+
+            <Label
+                Text="Items "
+                Style="{StaticResource ValueStyle}"/>
+
+
+
+
+
             <BoxView 
                 Color = "Black"
                 Margin ="10"
