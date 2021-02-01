@@ -140,11 +140,11 @@
 
                         <Label
                             x:Name="AttackValue"
-                            Text="{Binding Data.Speed}"
+                            Text="{Binding Data.Attack}"
                             FontSize="Medium"
                             />
 
-                        <Stepper Value="{Binding Data.Speed, Mode = TwoWay}"
+                        <Stepper Value="{Binding Data.Attack, Mode = TwoWay}"
                                  Minimum="0"
                                  Maximum="10"
                                  Increment="1"
