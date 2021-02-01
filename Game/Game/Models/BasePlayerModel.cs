@@ -527,6 +527,10 @@ namespace Game.Models
             return myReturn;
         }
 
+        /// <summary>
+        /// Returns current percent health of max
+        /// </summary>
+        /// <returns></returns>
         public float GetPercentHealth()
         {
             var myCurr = GetCurrentHealth();
@@ -538,6 +542,10 @@ namespace Game.Models
             return myReturn;
         }
 
+        /// <summary>
+        /// returns percent speed of max
+        /// </summary>
+        /// <returns></returns>
         public float GetPercentSpeed()
         {
             var myCurr = GetSpeed();
@@ -547,6 +555,10 @@ namespace Game.Models
             return myReturn;
         }
 
+        /// <summary>
+        /// Returns percent Attack of max
+        /// </summary>
+        /// <returns></returns>
         public float GetPercentAttack()
         {
             var myCurr = GetAttack();
@@ -558,6 +570,10 @@ namespace Game.Models
             return myReturn;
         }
 
+        /// <summary>
+        /// Returns percentDefense of max
+        /// </summary>
+        /// <returns></returns>
         public float GetPercentDefense()
         {
             var myCurr = GetDefense();
