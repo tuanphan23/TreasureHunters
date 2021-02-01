@@ -55,12 +55,6 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
-            <ProgressBar
-                Progress="0.1" 
-                ProgressColor="Gold"
-                WidthRequest="200"
-                HeightRequest="20"/>
-            
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                     Text="Health : " 
