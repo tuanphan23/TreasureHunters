@@ -538,6 +538,17 @@ namespace Game.Models
             return myReturn;
         }
 
+        public float GetPercentSpeed()
+        {
+            var myCurr = GetSpeed();
+
+            var myReturn = (float)myCurr / 100;
+
+            return myReturn;
+        }
+
+
+
         #endregion GetAttributeValues
 
         #region BattleMethods
