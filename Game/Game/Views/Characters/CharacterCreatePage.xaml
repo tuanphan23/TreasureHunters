@@ -66,6 +66,12 @@
                     HorizontalTextAlignment="Start"
                     />
 
+                <Label
+                    Text="Level"
+                    FontSize="20"
+                    HorizontalTextAlignment="Start"
+                    />
+
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
