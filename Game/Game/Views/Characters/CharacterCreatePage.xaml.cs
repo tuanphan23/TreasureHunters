@@ -62,5 +62,10 @@ namespace Game.Views
         {
             await Navigation.PopModalAsync();
         }
+
+        void MaxHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            HealthValue.Text = String.Format("{0}", e.NewValue);
+        }
     }
 }
