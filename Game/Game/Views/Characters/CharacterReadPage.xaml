@@ -33,7 +33,16 @@
                     Text="Status : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Description}" 
+                    Text="{Binding Data.currentStatusEffect}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label 
+                    Text="Type : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.PlayerType}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
