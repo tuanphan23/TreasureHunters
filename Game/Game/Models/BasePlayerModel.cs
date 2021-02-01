@@ -137,6 +137,9 @@ namespace Game.Models
         //Current defense divided by total for progressbars
         public int PercentDefense { get; set; } = 0;
 
+        //Current speed divided by total for progressbars
+        public int PercentSpeed { get; set; } = 0;
+
         // The Difficulty scale to use when creating examples
         public DifficultyEnum Difficulty { get; set; } = DifficultyEnum.Unknown;
 
