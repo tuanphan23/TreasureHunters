@@ -73,6 +73,15 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
+                    Text="Speed : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="Add Binding for Speed" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label 
                     Text="Attack : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
