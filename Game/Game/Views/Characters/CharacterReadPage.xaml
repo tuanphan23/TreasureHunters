@@ -55,15 +55,6 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Ability : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Ability}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
             <Label
                 Text="Items "
                 Style="{StaticResource ValueStyle}"/>
