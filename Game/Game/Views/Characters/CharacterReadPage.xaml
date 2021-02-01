@@ -95,7 +95,7 @@
                     Text="Defense : " 
                     Style="{StaticResource LabelStyle}"/>
             <Label 
-                    Text="Add Binding for Defense" 
+                    Text="{Binding Data.Defense}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
