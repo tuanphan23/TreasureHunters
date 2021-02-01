@@ -115,7 +115,7 @@
             </StackLayout>
 
             <ProgressBar
-                Progress="0.1" 
+                Progress="{Binding Data.PercentAttack}" 
                 ProgressColor="Red"
                 WidthRequest="200"
                 HeightRequest="20"/>
