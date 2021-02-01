@@ -71,6 +71,13 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
+            <ProgressBar
+                x:Name="RangeBar"
+                Progress="0.1" 
+                ProgressColor="Red"
+                WidthRequest="200"
+                HeightRequest="20"/>
+
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                     Text="Speed : " 
