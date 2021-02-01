@@ -85,7 +85,7 @@
                     Text="Attack : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Damage}" 
+                    Text="{Binding Data.Attack}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
