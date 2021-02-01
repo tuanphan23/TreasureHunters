@@ -67,5 +67,10 @@ namespace Game.Views
         {
             HealthValue.Text = String.Format("{0}", e.NewValue);
         }
+
+        void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            SpeedValue.Text = String.Format("{0}", e.NewValue);
+        }
     }
 }

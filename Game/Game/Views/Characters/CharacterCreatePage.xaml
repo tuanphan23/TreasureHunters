@@ -123,7 +123,7 @@
                                  Minimum="0"
                                  Maximum="10"
                                  Increment="1"
-                                 ValueChanged="MaxHealth_OnStepperValueChanged"
+                                 ValueChanged="Speed_OnStepperValueChanged"
                                  />
 
                     </StackLayout>
