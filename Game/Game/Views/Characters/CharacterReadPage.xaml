@@ -64,10 +64,10 @@
             
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Value : " 
+                    Text="Health : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Value}" 
+                    Text="Add Binding for Health" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
