@@ -77,6 +77,13 @@
                 </StackLayout>
 
                 <StackLayout>
+
+                    <Label
+                        Text="Attributes"
+                        FontSize="30"
+                        HorizontalTextAlignment="Center"
+                        />
+
                     <Label
                         Text="Health"
                         FontSize="20"
