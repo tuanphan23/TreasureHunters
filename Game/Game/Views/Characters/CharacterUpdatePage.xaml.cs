@@ -89,9 +89,9 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DamageValue.Text = String.Format("{0}", e.NewValue);
+            AttackValue.Text = String.Format("{0}", e.NewValue);
         }
     }
 }
