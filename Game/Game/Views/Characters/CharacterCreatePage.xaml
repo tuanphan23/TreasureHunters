@@ -77,7 +77,11 @@
                 </StackLayout>
 
                 <StackLayout>
-                    
+                    <Label
+                        Text="Health"
+                        FontSize="20"
+                        HorizontalTextAlignment="Start"
+                        />
                 </StackLayout>
                 
                 <Grid
