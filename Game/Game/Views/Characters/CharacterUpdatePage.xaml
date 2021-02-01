@@ -92,12 +92,20 @@
                     <StackLayout Style="{StaticResource HorizontalStack}" >
 
                         <Label 
-                            Text="{Binding Path=Data.MaxHealth, StringFormat='MaxHealth: {0:G} hp'}"
+                            Text="Max Health: " 
+                            Style="{StaticResource LabelStyle}"/> 
+
+                        <Label 
+                            Text="{Binding Data.MaxHealth}" 
                             x:Name="MaxHealthValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
+
+                        <Label 
+                            Text="hp" 
+                            Style="{StaticResource LabelStyle}"/>
 
                     </StackLayout>
 

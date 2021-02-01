@@ -71,11 +71,9 @@
                                 <StackLayout Orientation="Horizontal"
                                              Grid.Column="1" Grid.Row="2">
 
-                                    <Label Text="Job: "
-                                           Style="{StaticResource ListStyle}"/>
-
-                                    <Label Text="{Binding Job}"
-                                           Style="{StaticResource ListStyle}"/>
+                                    <Label Text="{Binding Description}"
+                                           Style="{StaticResource ListStyle}"
+                                           MaxLines="2"/>
 
                                 </StackLayout>
                             </Grid>
