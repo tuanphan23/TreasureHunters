@@ -111,26 +111,13 @@
                         HorizontalTextAlignment="Start"
                         />
 
-                    <StackLayout
-                        Orientation="Horizontal"
-                        >
+                    <Label
+                        x:Name="HealthValue"
+                        Text="{Binding Data.MaxHealth}"
+                        FontSize="Medium"
+                        />
 
                         <Label
-                            x:Name="HealthValue"
-                            Text="{Binding Data.MaxHealth}"
-                            FontSize="Medium"
-                            />
-
-                        <Stepper Value="{Binding Data.MaxHealth, Mode = TwoWay}"
-                                 Minimum="0"
-                                 Maximum="10"
-                                 Increment="1"
-                                 ValueChanged="MaxHealth_OnStepperValueChanged"
-                                 />
-
-                    </StackLayout>
-
-                    <Label
                         Text="Speed"
                         FontSize="20"
                         HorizontalTextAlignment="Start"
@@ -206,14 +193,16 @@
 
                     </StackLayout>
                 </StackLayout>
-
-                <Image 
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Image 
                             Source="{Binding Data.ImageURI}"
                             Style="{StaticResource ImageSmallStyle}"/>
 
-                <Entry 
+                    <Entry 
                             Text="{Binding Data.ImageURI}" 
                             Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
