@@ -29,9 +29,7 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            BindingContext = this.ViewModel = data;
-
-            this.ViewModel.Title = "Character Update ";
+            this.ViewModel = data;
 
             LoadLevelPickerValues();
 
@@ -179,10 +177,14 @@ namespace Game.Views
             // Clear the Binding and reset it
             BindingContext = null;
             this.ViewModel.Data = data;
+            this.ViewModel.Title = data.Name;
+
             BindingContext = this.ViewModel;
 
             // This resets the picker to the Character's level
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+
+            JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
 
             return true;
         }
