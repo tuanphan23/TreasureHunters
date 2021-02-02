@@ -1,4 +1,5 @@
-﻿using Game.Models;
+﻿using Game.GameRules;
+using Game.Models;
 using Game.ViewModels;
 
 using System;
@@ -61,6 +62,9 @@ namespace Game.Views
             {
                 LevelPicker.Items.Add((i + 1).ToString());
             }
+
+            LevelPicker.SelectedIndex = -1;
+
             return true;
         }
 
@@ -95,7 +99,26 @@ namespace Game.Views
 
         void LevelPicker_Changed(object sender, EventArgs e)
         {
+            if(LevelPicker.SelectedIndex == -1)
+            {
+                LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+                return;
+            }
 
+            var result = LevelPicker.SelectedIndex;
+
+            if(result != ViewModel.Data.Level)
+            {
+                ViewModel.Data.Level = result;
+                ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
+                UpdateHealthValue();
+            }
+        }
+
+        public bool UpdateHealthValue()
+        {
+            HealthValue.Text = ViewModel.Data.MaxHealth.ToString();
+            return true;
         }
     }
 }
