@@ -22,7 +22,7 @@
                 <StackLayout HorizontalOptions="Center" Padding="70,5,70,0"> 
                
                     <Label 
-                        Text="Your Game Iformation"
+                        Text="Your Game Information"
                         Style="{StaticResource CenterMessageStyle}"
                         FontSize="Micro"
                         LineBreakMode="WordWrap"
@@ -40,7 +40,13 @@
 
                 <Button
                     Text="Enter"
-                    Clicked="GameButton_Clicked"/>
+                    Clicked="GameButton_Clicked"
+                    FontSize="Medium"
+                    WidthRequest="75"
+                    HeightRequest="40"
+                    CornerRadius="10"
+                    BorderWidth="1" 
+                    BorderColor="black"/>
 
             </StackLayout>
         </ScrollView>
