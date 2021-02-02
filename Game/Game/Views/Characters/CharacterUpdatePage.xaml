@@ -73,21 +73,21 @@
                             Style="{StaticResource EntryStyle}"/>
 
                     </StackLayout>
+
+                    <Label
+                        Grid.Row="3" Grid.Column="0"
+                        Text="Level: " 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Picker
+                        Grid.Row="3" Grid.Column="1"
+                        x:Name="LevelPicker"
+                        ItemDisplayBinding="{Binding Data.Level}"
+                        SelectedIndexChanged="LevelPicker_ChangedIndex"/>
+
                 </Grid>
 
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" >
-
-                        <Label 
-                            Text="Level: " 
-                            Style="{StaticResource LabelStyle}"/>
-
-                        <Picker x:Name="LevelPicker"
-                            ItemDisplayBinding="{Binding Data.Level}"
-                            SelectedIndexChanged="LevelPicker_ChangedIndex"/>
-
-                    </StackLayout>
 
                     <StackLayout Style="{StaticResource HorizontalStack}" >
 
