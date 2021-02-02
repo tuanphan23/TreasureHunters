@@ -105,7 +105,7 @@ namespace Game.Views
                 return;
             }
 
-            var result = LevelPicker.SelectedIndex;
+            var result = LevelPicker.SelectedIndex + 1;
 
             if(result != ViewModel.Data.Level)
             {
