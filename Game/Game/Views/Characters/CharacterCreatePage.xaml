@@ -58,6 +58,7 @@
                     Text="{Binding Data.Description}"
                     FontSize="20"
                     HorizontalTextAlignment="Center"
+                    Style="{StaticResource EntryStyle}"
                     />
 
                 <StackLayout>
@@ -206,35 +207,8 @@
                             Text="{Binding Data.ImageURI}" 
                             Style="{StaticResource EntryStyle}"/>
 
-                <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Image" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="3"
-                                 Grid.Column="1"
-                                 Style="{StaticResource HorizontalStack}"
-                                 HorizontalOptions="FillAndExpand">
-
-                        <Image 
-                            Source="{Binding Data.ImageURI}"
-                            Style="{StaticResource ImageSmallStyle}"/>
-
-                        <Entry 
-                            Text="{Binding Data.ImageURI}" 
-                            Style="{StaticResource EntryStyle}"/>
-
+                <Grid>
+                    <StackLayout>
                     </StackLayout>
                 </Grid>
             </StackLayout>
