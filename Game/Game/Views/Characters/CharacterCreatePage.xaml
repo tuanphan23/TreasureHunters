@@ -76,7 +76,7 @@
                         />
 
                     <Label
-                        Text="Type"
+                        Text="Class"
                         FontSize="20"
                         HorizontalTextAlignment="Start"
                         />
