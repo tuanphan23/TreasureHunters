@@ -77,10 +77,10 @@ namespace Game.Models
             MaxHealth = newData.MaxHealth;
 
             //Percentages
-            PercentAttack = newData.PercentAttack;
-            PercentDefense = newData.PercentDefense;
-            PercentHealth = newData.PercentHealth;
-            PercentSpeed = newData.PercentSpeed;
+            PercentAttack = (float)newData.Attack/500;
+            PercentDefense = (float)newData.Defense/500;
+            PercentHealth = (float)newData.CurrentHealth/newData.MaxHealth;
+            PercentSpeed = (float)newData.Speed/500;
 
             Head = newData.Head;
             Necklass = newData.Necklass;
