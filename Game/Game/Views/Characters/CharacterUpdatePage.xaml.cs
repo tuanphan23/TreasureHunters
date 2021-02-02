@@ -155,5 +155,38 @@ namespace Game.Views
         {
             DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
+
+        /// <summary>
+        /// Catch the change to the button for ViewModel Data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RandomButton_Clicked(object sender, EventArgs e)
+        {
+            this.ViewModel.Data.Update(RandomPlayerHelper.GetRandomCharacter(20));
+
+            UpdatePageBindingContext();
+
+            return;
+        }
+
+        /// <summary>
+        /// Update the page binding context
+        /// </summary>
+        public bool UpdatePageBindingContext()
+        {
+            // Temp store off the Level
+            var data = this.ViewModel.Data;
+
+            // Clear the Binding and reset it
+            BindingContext = null;
+            this.ViewModel.Data = data;
+            BindingContext = this.ViewModel;
+
+            // This resets the picker to the Character's level
+            LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+
+            return true;
+        }
     }
 }

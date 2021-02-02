@@ -178,6 +178,12 @@
 
                     </StackLayout>
                 </StackLayout>
+
+                <Button
+                    Text="Random"
+                    Clicked="RandomButton_Clicked"
+                    HorizontalOptions="CenterAndExpand"/>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
