@@ -24,14 +24,11 @@
     <ContentPage.Content>
 
         <ScrollView
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand"
             >
             <StackLayout 
                 Style="{StaticResource OuterBoxStack}"
                 Spacing="10"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand"
+                HorizontalOptions="FillAndExpand"
                 >
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
@@ -211,11 +208,6 @@
                 <Entry 
                             Text="{Binding Data.ImageURI}" 
                             Style="{StaticResource EntryStyle}"/>
-
-                <Grid>
-                    <StackLayout>
-                    </StackLayout>
-                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
