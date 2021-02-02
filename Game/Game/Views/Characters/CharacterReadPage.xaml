@@ -57,7 +57,7 @@
             </StackLayout>
 
             <Label
-                Text="Items "
+                Text="- Items added later - "
                 Style="{StaticResource ValueStyle}"/>
 
 
