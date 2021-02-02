@@ -29,9 +29,10 @@ namespace Game.Views
         public CharacterCreatePage()
         {
             InitializeComponent();
-            LoadLevelPickerValues();
 
             this.ViewModel.Data = new CharacterModel();
+
+            LoadLevelPickerValues();
 
             BindingContext = this.ViewModel;
 
@@ -63,7 +64,7 @@ namespace Game.Views
                 LevelPicker.Items.Add((i + 1).ToString());
             }
 
-            LevelPicker.SelectedIndex = -1;
+            LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
             return true;
         }
