@@ -140,11 +140,11 @@ namespace Game.Models
         //Current speed divided by total for progressbars
         public float PercentSpeed { get; set; } = 0;
 
-        //Constants for percent calculations
-        public const int TOTALMAXHEALTH = 500;
-        public const int MAXSPEED = 100;
-        public const int MAXATTACK = 100;
-        public const int MAXDEFENSE = 100;
+        //Constants for percent calculations used for progress bars
+        public const int TOTALMAXHEALTH = 300;
+        public const int MAXSPEED = 20;
+        public const int MAXATTACK = 20;
+        public const int MAXDEFENSE = 20;
 
         // The Difficulty scale to use when creating examples
         public DifficultyEnum Difficulty { get; set; } = DifficultyEnum.Unknown;
