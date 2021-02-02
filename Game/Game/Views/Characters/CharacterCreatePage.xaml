@@ -84,25 +84,6 @@
                         HorizontalTextAlignment="Start"
                         />
 
-                    <StackLayout
-                        Orientation="Horizontal"
-                        >
-
-                        <Label
-                            x:Name="LevelValue"
-                            Text="{Binding Data.MaxHealth}"
-                            FontSize="Medium"
-                            />
-
-                        <Stepper Value="{Binding Data.MaxHealth, Mode = TwoWay}"
-                                 Minimum="0"
-                                 Maximum="10"
-                                 Increment="1"
-                                 ValueChanged="MaxHealth_OnStepperValueChanged"
-                                 />
-
-                    </StackLayout>
-
                 </StackLayout>
 
                 <BoxView
