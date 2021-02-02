@@ -28,6 +28,7 @@ namespace Game.Views
         public CharacterCreatePage()
         {
             InitializeComponent();
+            LoadLevelPickerValues();
 
             this.ViewModel.Data = new CharacterModel();
 
@@ -51,6 +52,16 @@ namespace Game.Views
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
+        }
+
+        //TODO: tie the loop to max level
+        public bool LoadLevelPickerValues()
+        {
+            for(int i = 0; i < 20; i++)
+            {
+                LevelPicker.Items.Add((i + 1).ToString());
+            }
+            return true;
         }
 
         /// <summary>
