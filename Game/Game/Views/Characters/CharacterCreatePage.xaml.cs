@@ -12,7 +12,7 @@ namespace Game.Views
     /// <summary>
     /// Create Character
     /// </summary>
-    [DesignTimeVisible(false)] 
+    [DesignTimeVisible(false)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CharacterCreatePage : ContentPage
     {
@@ -20,7 +20,7 @@ namespace Game.Views
         public GenericViewModel<CharacterModel> ViewModel = new GenericViewModel<CharacterModel>();
 
         // Empty Constructor for UTs
-        public CharacterCreatePage(bool UnitTest){}
+        public CharacterCreatePage(bool UnitTest) { }
 
         /// <summary>
         /// Constructor for Create makes a new model
@@ -82,8 +82,9 @@ namespace Game.Views
             DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
 
-        void LevelPicker_Changed(object sender, ValueChangedEventArgs e)
+        void LevelPicker_Changed(object sender, EventArgs e)
         {
-        
+
         }
+    }
 }
