@@ -81,5 +81,9 @@ namespace Game.Views
         {
             DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
-    }
+
+        void LevelPicker_Changed(object sender, ValueChangedEventArgs e)
+        {
+        
+        }
 }

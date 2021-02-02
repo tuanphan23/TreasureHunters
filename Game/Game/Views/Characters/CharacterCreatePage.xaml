@@ -141,6 +141,12 @@
                                  ValueChanged="MaxHealth_OnStepperValueChanged"
                                  />
 
+                        <Picker
+                            x:Name="LevelPicker"
+                            SelectedItem="1"
+                            SelectedIndexChanged="LevelPicker_Changed"
+                            />
+
                     </StackLayout>
 
                     <Label
