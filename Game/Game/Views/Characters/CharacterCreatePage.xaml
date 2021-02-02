@@ -78,6 +78,12 @@
                         HorizontalTextAlignment="Start"
                         />
 
+                    <Picker
+                            x:Name="JobPicker"
+                            ItemsSource="{x:Static local:CharacterJobEnumHelper.GetFullList}"
+                            SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                            />
+
                     <Label
                         Text="Level"
                         FontSize="20"
