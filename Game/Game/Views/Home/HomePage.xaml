@@ -40,7 +40,13 @@
 
                 <Button
                     Text="Enter"
-                    Clicked="GameButton_Clicked"/>
+                    Clicked="GameButton_Clicked"
+                    FontSize="Medium"
+                    WidthRequest="75"
+                    HeightRequest="40"
+                    CornerRadius="10"
+                    BorderWidth="1" 
+                    BorderColor="black"/>
 
             </StackLayout>
         </ScrollView>
