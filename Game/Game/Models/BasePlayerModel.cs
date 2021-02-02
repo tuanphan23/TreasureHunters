@@ -140,6 +140,12 @@ namespace Game.Models
         //Current speed divided by total for progressbars
         public float PercentSpeed { get; set; } = 0;
 
+        //Constants for percent calculations
+        public const int TOTALMAXHEALTH = 500;
+        public const int MAXSPEED = 100;
+        public const int MAXATTACK = 100;
+        public const int MAXDEFENSE = 100;
+
         // The Difficulty scale to use when creating examples
         public DifficultyEnum Difficulty { get; set; } = DifficultyEnum.Unknown;
 
@@ -535,7 +541,7 @@ namespace Game.Models
         {
             var myCurr = GetCurrentHealth();
 
-            var myMax = GetMaxHealth();
+            var myMax = TOTALMAXHEALTH;
 
             var myReturn = (float)myCurr / myMax;
 
@@ -550,7 +556,7 @@ namespace Game.Models
         {
             var myCurr = GetSpeed();
 
-            var myReturn = (float)myCurr / 100;
+            var myReturn = (float)myCurr / MAXSPEED;
 
             return myReturn;
         }
@@ -563,7 +569,7 @@ namespace Game.Models
         {
             var myCurr = GetAttack();
 
-            var myMax = 100;
+            var myMax = MAXATTACK;
 
             var myReturn = (float)myCurr / myMax;
 
@@ -578,7 +584,7 @@ namespace Game.Models
         {
             var myCurr = GetDefense();
 
-            var myMax = 100;
+            var myMax = MAXDEFENSE;
 
             var myReturn = (float)myCurr / myMax;
 
