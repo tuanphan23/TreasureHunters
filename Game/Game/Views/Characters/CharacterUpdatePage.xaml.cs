@@ -155,5 +155,27 @@ namespace Game.Views
         {
             DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
+
+        public void RandomButton_Clicked(object sender, EventArgs e)
+        {
+            this.ViewModel.Data.Update(RandomPlayerHelper.GetRandomCharacter(20));
+
+            UpdatePageBindingContext();
+
+            return;
+        }
+
+        public bool UpdatePageBindingContext()
+        {
+            var data = this.ViewModel.Data;
+
+            BindingContext = null;
+            this.ViewModel.Data = data;
+            BindingContext = this.ViewModel;
+
+            LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+
+            return true;
+        }
     }
 }
