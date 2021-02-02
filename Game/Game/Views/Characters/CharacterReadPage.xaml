@@ -40,7 +40,7 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Job : " 
+                    Text="Class : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.Job}" 

@@ -75,7 +75,7 @@
                     </StackLayout>
 
                     <Label Grid.Row="3" Grid.Column="0"
-                        Text="Job: " 
+                        Text="Class: " 
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="3" Grid.Column="1"
