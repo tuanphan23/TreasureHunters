@@ -1,4 +1,8 @@
-﻿namespace Game.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Game.Models
 {
     /// <summary>
     /// The Types of Jobs a character can have
@@ -7,7 +11,7 @@
     public enum CharacterJobEnum
     {
         // Not specified
-        Unknown = 0,    
+        Unknown = 0,
 
         // Fighters hit hard and have fight abilities
         Fighter = 10,
@@ -48,6 +52,25 @@
             }
 
             return Message;
+        }
+    }
+
+    /// <summary>
+    /// Helper for the Ability Enum Class
+    /// </summary>
+    public static class CharacterJobEnumHelper
+    {
+        /// <summary>
+        /// Returns a list of strings of the enum for Ability
+        /// Removes the Abilitys that are not changable by Items such as Unknown, MaxHealth
+        /// </summary>
+        public static List<string> GetFullList
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
+                return myList;
+            }
         }
     }
 }
