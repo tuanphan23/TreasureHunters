@@ -35,9 +35,7 @@ namespace Game.Views
 
             LoadLevelPickerValues();
 
-            //Need to make the SelectedItem a string, so it can select the correct item.
-            //LocationPicker.SelectedItem = data.Data.Location.ToString();
-            //AttributePicker.SelectedItem = data.Data.Attribute.ToString();
+            UpdatePageBindingContext();
         }
 
         /// <summary>
@@ -61,7 +59,7 @@ namespace Game.Views
             }
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
-            await Navigation.PushAsync(new CharacterIndexPage());
+            await Navigation.PopModalAsync();
         }
 
         /// <summary>
