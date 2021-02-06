@@ -92,6 +92,11 @@ namespace Game.Views
             HealthValue.Text = String.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// Changes the display value for the speed stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             SpeedValue.Text = String.Format("{0}", e.NewValue);
