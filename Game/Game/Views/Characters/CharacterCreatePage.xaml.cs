@@ -82,6 +82,11 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
+        /// <summary>
+        /// Changes the display value for the health stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void MaxHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             HealthValue.Text = String.Format("{0}", e.NewValue);
