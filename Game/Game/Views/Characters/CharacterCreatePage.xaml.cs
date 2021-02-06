@@ -124,7 +124,7 @@ namespace Game.Views
 
 
         /// <summary>
-        /// CHanges the displayed level picked and updates the health value accordingly
+        /// CHanges the displayed level picked and updates the health value displayed accordingly
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -146,6 +146,10 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// Changes the displayed value of the health corresponding to level
+        /// </summary>
+        /// <returns></returns>
         public bool UpdateHealthValue()
         {
             HealthValue.Text = ViewModel.Data.MaxHealth.ToString();
