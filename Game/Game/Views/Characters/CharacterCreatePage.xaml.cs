@@ -52,6 +52,13 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
+            // If name is not provived
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                await DisplayAlert("Invalid", "Character must have a name.", "OK");
+                return;
+            }
+
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
