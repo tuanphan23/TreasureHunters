@@ -112,6 +112,11 @@ namespace Game.Views
             AttackValue.Text = String.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// Changes the display value for the Defense stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             DefenseValue.Text = String.Format("{0}", e.NewValue);
