@@ -122,6 +122,12 @@ namespace Game.Views
             DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
 
+
+        /// <summary>
+        /// CHanges the displayed level picked and updates the health value accordingly
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void LevelPicker_Changed(object sender, EventArgs e)
         {
             if(LevelPicker.SelectedIndex == -1)
