@@ -56,10 +56,13 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
-        //TODO: tie the loop to max level
+        /// <summary>
+        /// Adds values to the level picker in character create page
+        /// </summary>
+        /// <returns>true if values were succesfully loaded</returns>
         public bool LoadLevelPickerValues()
         {
-            for(int i = 0; i < 20; i++)
+            for(int i = 0; i < 20; i++) //TODO: tie the loop to max level
             {
                 LevelPicker.Items.Add((i + 1).ToString());
             }
