@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -36,13 +37,18 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// The row selected from the list
+        /// opens the read page based on the Id of the character that is clicked on
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        /// <param name="e"></param>
+        public async void On_CharacterClicked(object sender, EventArgs e)
         {
-            CharacterModel data = args.SelectedItem as CharacterModel;
+            //get data from database using Id
+            var button = sender as ImageButton;
+            var characterID = button.CommandParameter as String;
+            var data = ViewModel.Dataset.FirstOrDefault(item => item.Id.Equals(characterID));
+
+            //check for a null value
             if (data == null)
             {
                 return;
@@ -50,9 +56,6 @@ namespace Game.Views
 
             // Open the Read Page
             await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
-
-            // Manually deselect item.
-            CharactersListView.SelectedItem = null;
         }
 
         /// <summary>

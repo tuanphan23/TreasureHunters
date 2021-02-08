@@ -17,70 +17,32 @@
 
             <Label Text="Character List Page" Style="{StaticResource HeaderStyle}"/>
 
-            <ListView x:Name="CharactersListView" 
-                    ItemsSource="{Binding Dataset}"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadDatasetCommand}"
-                    CachingStrategy="RecycleElement"
-                    ItemSelected="OnItemSelected"
-                    HasUnevenRows="true"
-                    Margin="5,0,5,0"
-                    RowHeight="100"                 
-                    >
-                
-                <ListView.ItemTemplate>
+            <FlexLayout
+                BindableLayout.ItemsSource="{Binding Dataset}"
+                Wrap="Wrap"
+                Direction="Row"
+                JustifyContent="SpaceEvenly">
+                <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Grid ColumnSpacing="5" RowSpacing="2" Margin="5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-
-                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                        Source="{Binding ImageURI}"
-                                        Style="{StaticResource ImageMediumStyle}"
-                                        VerticalOptions="CenterAndExpand"
-                                        WidthRequest="70" HeightRequest="70"
-                                        />
-
-                                <Label Grid.Column="1" Grid.Row="0"
-                                       Text="{Binding Name}"
-                                       FontAttributes="Bold"
-                                       Style="{StaticResource ListStyle}"
-                                       FontSize="16"
-                                       />
-
-
-                                <StackLayout Orientation="Horizontal"
+                        <StackLayout Padding="20">
+                            <ImageButton
+                                   Source="{Binding ImageURI}"
+                                   Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
+                            <Label Text="{Binding Name}" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                            <StackLayout Orientation="Horizontal"
                                              Grid.Column="1" Grid.Row="1">
 
-                                    <Label Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
+                                <Label Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
                                            Style="{StaticResource ListStyle}"/>
 
-                                    <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
+                                <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
                                            Style="{StaticResource ListStyle}"/>
 
-                                </StackLayout>
-
-                                <StackLayout Orientation="Horizontal"
-                                             Grid.Column="1" Grid.Row="2">
-
-                                    <Label Text="{Binding Description}"
-                                           Style="{StaticResource ListStyle}"
-                                           MaxLines="2"/>
-
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
+                            </StackLayout>
+                        </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
