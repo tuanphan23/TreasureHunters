@@ -166,6 +166,7 @@
                         Clicked="SpeedUpButton_Clicked"/>
                 </Grid>
 
+
                     <FlexLayout 
                         Padding="5"
                         Wrap="Wrap"
