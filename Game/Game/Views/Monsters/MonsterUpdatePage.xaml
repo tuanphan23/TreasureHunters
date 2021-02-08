@@ -22,7 +22,11 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <ScrollView>
+        <AbsoluteLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            >
+            <ScrollView>
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
                 <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
@@ -162,6 +166,7 @@
                         Text="Random"
                         Clicked="RandomButton_Clicked"/>
             </StackLayout>
-        </ScrollView>
+            </ScrollView>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage> 
