@@ -28,7 +28,7 @@
                             <ImageButton
                                    Source="{Binding ImageURI}"
                                    Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
-                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Name}" HorizontalTextAlignment="Center" FontSize="Medium"/>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
