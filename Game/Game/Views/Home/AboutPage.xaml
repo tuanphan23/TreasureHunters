@@ -22,6 +22,7 @@
                 <Label Text="Tuan Phan" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="Nicholas Doubrovsky" Style="{StaticResource MessageStyle}" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                 <Label Text="Benjamin Agrelius" Style="{StaticResource MessageStyle}" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                <Label Text="Kathryn Onofiok" Style="{StaticResource MessageStyle}" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                 <Label x:Name="CurrentDateTime" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
             </StackLayout>
 
