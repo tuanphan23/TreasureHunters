@@ -58,13 +58,13 @@ namespace Game.ViewModels
             #region Messages
 
             // Register the Create Message
-            MessagingCenter.Subscribe<CharacterCreatePage, MonsterModel>(this, "Create", async (obj, data) =>
+            MessagingCenter.Subscribe<MonsterCreatePage, MonsterModel>(this, "Create", async (obj, data) =>
             {
                 await CreateAsync(data as MonsterModel);
             });
 
             // Register the Update Message
-            MessagingCenter.Subscribe<CharacterUpdatePage, MonsterModel>(this, "Update", async (obj, data) =>
+            MessagingCenter.Subscribe<MonsterUpdatePage, MonsterModel>(this, "Update", async (obj, data) =>
             {
                 // Have the item update itself
                 data.Update(data);
@@ -73,7 +73,7 @@ namespace Game.ViewModels
             });
 
             // Register the Delete Message
-            MessagingCenter.Subscribe<CharacterDeletePage, MonsterModel>(this, "Delete", async (obj, data) =>
+            MessagingCenter.Subscribe<MonsterDeletePage, MonsterModel>(this, "Delete", async (obj, data) =>
             {
                 await DeleteAsync(data as MonsterModel);
             });
