@@ -77,24 +77,6 @@
 
                     </StackLayout>
 
-                    <Label Grid.Row="4" Grid.Column="0"
-                                Text="Level" 
-                                Style="{StaticResource LabelStyle}"/>
-
-                    <Picker Grid.Row="4" Grid.Column="1"
-                                x:Name="LevelPicker"
-                                SelectedItem="{Binding SelectedItemProperty}" 
-                                SelectedIndexChanged="LevelPicker_Changed"/>
-
-                    <Label Grid.Row="5" Grid.Column="0"
-                                Text="Max Health" 
-                                Style="{StaticResource LabelStyle}"/>
-
-                    <Label Grid.Row="5" Grid.Column="1"
-                                x:Name="MaxHealthValue"
-                                Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}" 
-                                Style="{StaticResource ValueStyle}"/>
-
                 </Grid>
 
                 <Grid
