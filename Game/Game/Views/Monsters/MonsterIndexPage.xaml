@@ -24,7 +24,7 @@
                 JustifyContent="SpaceEvenly">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
+                        <StackLayout Padding="20">
                             <ImageButton
                                    Source="{Binding ImageURI}"
                                    Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
