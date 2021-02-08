@@ -12,133 +12,198 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
+    <AbsoluteLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        >
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-            Spacing="10"
-            HorizontalOptions="FillAndExpand">
+        <StackLayout Style ="{StaticResource VerticalStack}"
+                     AbsoluteLayout.LayoutBounds="1,1,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <ScrollView>
+                <StackLayout Style="{StaticResource OuterBoxStack}"
+                Spacing="10"
+                HorizontalOptions="FillAndExpand">
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Status : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.currentStatusEffect}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                       Text="Name : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Class : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Job}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Status : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.currentStatusEffect}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Level : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Level}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Class : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Job}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-            <FlexLayout
-                Padding="5"
-                Wrap="Wrap"
-                JustifyContent="SpaceAround"
-                AlignContent="SpaceAround"
-                x:Name="ItemBox">
-            </FlexLayout>
-            
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Level : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Level}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-
-
-
-                <BoxView 
-                Color = "Black"
-                Margin ="10"
-                HeightRequest ="1"
-                WidthRequest="200"/>
-
-            <Label Text="Attributes"
-                   HorizontalOptions="Center"
-                   Style="{StaticResource HeaderStyle}"/>
+                    <FlexLayout
+                    Padding="5"
+                    Wrap="Wrap"
+                    JustifyContent="SpaceAround"
+                    AlignContent="SpaceAround"
+                    x:Name="ItemBox">
+                    </FlexLayout>
 
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Health : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.MaxHealth}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
 
-            <ProgressBar
-                Progress="{Binding Data.PercentHealth}" 
-                ProgressColor="Green"
-                WidthRequest="200"
-                HeightRequest="20"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Speed : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Speed}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            
-            <ProgressBar
-                Progress="{Binding Data.PercentSpeed}" 
-                ProgressColor="Yellow"
-                WidthRequest="200"
-                HeightRequest="20"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Attack : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Attack}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <BoxView 
+                    Color = "Black"
+                    Margin ="10"
+                    HeightRequest ="1"
+                    WidthRequest="200"/>
 
-            <ProgressBar
-                Progress="{Binding Data.PercentAttack}" 
-                ProgressColor="Red"
-                WidthRequest="200"
-                HeightRequest="20"/>
+                    <Label Text="Attributes"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource HeaderStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-            <Label 
-                    Text="Defense : " 
-                    Style="{StaticResource LabelStyle}"/>
-            <Label 
-                    Text="{Binding Data.Defense}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
 
-            <ProgressBar
-                Progress="{Binding Data.PercentDefense}" 
-                ProgressColor="Blue"
-                WidthRequest="200"
-                HeightRequest="20"/>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Health : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.MaxHealth}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <ProgressBar
+                    Progress="{Binding Data.PercentHealth}" 
+                    ProgressColor="Green"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Speed : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Speed}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <ProgressBar
+                    Progress="{Binding Data.PercentSpeed}" 
+                    ProgressColor="Yellow"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Attack : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Attack}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <ProgressBar
+                    Progress="{Binding Data.PercentAttack}" 
+                    ProgressColor="Red"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Defense : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Defense}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <ProgressBar
+                    Progress="{Binding Data.PercentDefense}" 
+                    ProgressColor="Blue"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+
+                </StackLayout>
+            </ScrollView>
             
         </StackLayout>
-    </ScrollView>
+        
+        <!--The Item Popup-->
+        <StackLayout x:Name="PopupLoadingView"
+                     BackgroundColor="{StaticResource PageBackgroundColor}"
+                     IsVisible="false"
+                     AbsoluteLayout.LayoutBounds=".5, .5, .5, .5"
+                     AbsoluteLayout.LayoutFlags="All">
+
+
+            <StackLayout
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="300"
+                HeightRequest="300">
+
+
+                <Frame
+                    BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
+                        
+                        <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}" />
+
+                        <Label  x:Name="PopupItemName" Style="{StaticResource CenterMessageLargeStyle}"/>
+
+                        <Label x:Name="PopupItemDescription" Style="{StaticResource CenterMessageStyle}"/>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Location : " Style="{StaticResource CenterMessageStyle}"/>
+                            <Label x:Name="PopupItemLocation" Style="{StaticResource CenterMessageStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Value : " Style="{StaticResource CenterMessageStyle}"/>
+                            <Label x:Name="PopupItemValue" Style="{StaticResource CenterMessageStyle}"/>
+                        </StackLayout>
+                        
+                        <Button
+                            Text="Close"
+                            Clicked="ClosePopup_Clicked"
+                            FontSize="Medium"
+                            WidthRequest="75"
+                            HeightRequest="40"
+                            CornerRadius="10"
+                            BorderWidth="1" 
+                            BorderColor="black"/>   
+                        
+                    </StackLayout>
+                </Frame>
+                
+            </StackLayout>
+            
+            
+        </StackLayout>
+    </AbsoluteLayout>
+    
 </ContentPage>

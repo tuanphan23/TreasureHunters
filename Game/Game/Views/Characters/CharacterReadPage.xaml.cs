@@ -139,9 +139,33 @@ namespace Game.Views
 
         }
 
-        private void ShowPopup(ItemModel data)
+        /// <summary>
+        /// Sets data on the popup page and makes visible 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns>True if sucessful</returns>
+        private bool ShowPopup(ItemModel data)
         {
-            throw new NotImplementedException();
+            PopupLoadingView.IsVisible = true;
+            PopupItemImage.Source = data.ImageURI;
+
+            PopupItemName.Text = data.Name;
+            PopupItemDescription.Text = data.Description;
+            PopupItemLocation.Text = data.Location.ToMessage();
+            //PopupItemAttribute.Text = data.Attribute.ToMessage();
+            PopupItemValue.Text = " + " + data.Value.ToString();
+
+            return true;
+        }
+
+        /// <summary>
+        /// Sets visibility of popup to false
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ClosePopup_Clicked(Object sender, EventArgs e)
+        {
+            PopupLoadingView.IsVisible = false;
         }
     }
 }
