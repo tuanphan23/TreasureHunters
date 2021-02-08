@@ -99,7 +99,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void RandomButton_Clicked(object sender, EventArgs e)
         {
-            //this.ViewModel.Data.Update(RandomPlayerHelper.GetRandomCharacter(20));
+            this.ViewModel.Data.Update(RandomPlayerHelper.GetRandomMonster(20));
 
             UpdatePageBindingContext();
 
