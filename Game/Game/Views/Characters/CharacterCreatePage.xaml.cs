@@ -56,14 +56,19 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
-        //TODO: tie the loop to max level
+        /// <summary>
+        /// Loads each possible character level into the level picker so it can be selected
+        /// </summary>
+        /// <returns>true</returns>
         public bool LoadLevelPickerValues()
         {
-            for(int i = 0; i < 20; i++)
+            //add each level from 1 to the maxLevel
+            for(int i = 0; i < LevelTableHelper.MaxLevel; i++)
             {
                 LevelPicker.Items.Add((i + 1).ToString());
             }
 
+            //set the default selected value equal to the default character level
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
             return true;
