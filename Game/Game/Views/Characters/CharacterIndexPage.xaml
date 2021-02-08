@@ -20,7 +20,7 @@
             <ListView x:Name="CharactersListView" 
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
+                    RefreshCommand="{Binding LoadDatasetCommand}"
                     CachingStrategy="RecycleElement"
                     ItemSelected="OnItemSelected"
                     HasUnevenRows="true"

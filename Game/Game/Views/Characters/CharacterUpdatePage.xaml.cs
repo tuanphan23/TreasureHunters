@@ -29,15 +29,11 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            BindingContext = this.ViewModel = data;
-
-            this.ViewModel.Title = "Character Update ";
+            this.ViewModel = data;
 
             LoadLevelPickerValues();
 
-            //Need to make the SelectedItem a string, so it can select the correct item.
-            //LocationPicker.SelectedItem = data.Data.Location.ToString();
-            //AttributePicker.SelectedItem = data.Data.Attribute.ToString();
+            UpdatePageBindingContext();
         }
 
         /// <summary>
@@ -61,7 +57,7 @@ namespace Game.Views
             }
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
-            await Navigation.PushAsync(new CharacterIndexPage());
+            await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -181,10 +177,14 @@ namespace Game.Views
             // Clear the Binding and reset it
             BindingContext = null;
             this.ViewModel.Data = data;
+            this.ViewModel.Title = data.Name;
+
             BindingContext = this.ViewModel;
 
             // This resets the picker to the Character's level
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+
+            JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
 
             return true;
         }

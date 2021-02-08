@@ -47,7 +47,7 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Name}" 
+                        Text="{Binding Data.Name, Mode=TwoWay}" 
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
@@ -55,7 +55,7 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
+                        Text="{Binding Data.Description, Mode=TwoWay}" 
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="2" Grid.Column="0"
@@ -65,11 +65,11 @@
                     <StackLayout Grid.Row="2" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
                         <Image 
-                            Source="{Binding Data.ImageURI}"
+                            Source="{Binding Data.ImageURI, Mode=TwoWay}"
                             Style="{StaticResource ImageSmallStyle}"/>
 
                         <Entry 
-                            Text="{Binding Data.ImageURI}" 
+                            Text="{Binding Data.ImageURI, Mode=TwoWay}" 
                             Style="{StaticResource EntryStyle}"/>
 
                     </StackLayout>
@@ -91,7 +91,7 @@
                     <Picker
                         Grid.Row="4" Grid.Column="1"
                         x:Name="LevelPicker"
-                        ItemDisplayBinding="{Binding Data.Level}"
+                        ItemDisplayBinding="{Binding SelectedItemProperty}"
                         SelectedIndexChanged="LevelPicker_ChangedIndex"/>
 
                 </Grid>
@@ -105,16 +105,9 @@
                             Style="{StaticResource LabelStyle}"/> 
 
                         <Label 
-                            Text="{Binding Data.MaxHealth}" 
+                            Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}" 
                             x:Name="MaxHealthValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Label 
-                            Text="hp" 
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource ValueStyle}"/>
 
                     </StackLayout>
 
