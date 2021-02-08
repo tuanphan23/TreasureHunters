@@ -87,7 +87,7 @@ namespace Game.Views
         /// <returns>ItemStack to display</returns>
         private View GetItemToDisplay(ItemLocationEnum location)
         {
-            //Default Image is the plus
+            //Default Image is the X
             var ImageSource = "icon_cancel.png";
             var ClickableButton = true;
 
@@ -111,7 +111,7 @@ namespace Game.Views
             if (ClickableButton)
             {
                 //Add Event so user can click to see more about item
-                //ItemButton.Clicked += (sender, args) => ShowPopup(data);
+                ItemButton.Clicked += (sender, args) => ShowPopup(data);
             }
 
             //Add displayText
@@ -137,6 +137,11 @@ namespace Game.Views
 
             return ItemStack;
 
+        }
+
+        private void ShowPopup(ItemModel data)
+        {
+            throw new NotImplementedException();
         }
     }
 }
