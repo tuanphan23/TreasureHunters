@@ -33,10 +33,8 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            this.ViewModel = data;
-            this.ViewModel.Title = data.Data.Name;
-
-            BindingContext = this.ViewModel;
+            BindingContext = this.ViewModel = data;
+            this.ViewModel.Title = "Read Character";
 
             // Show the Character's Items
             AddItemsToDisplay();
@@ -64,10 +62,8 @@ namespace Game.Views
             await Navigation.PopAsync();
         }
 
-        #region ManageItems
-
         /// <summary>
-        /// Show the Items the Character has
+        /// Adds the items to the flexbox
         /// </summary>
         public void AddItemsToDisplay()
         {
@@ -87,27 +83,27 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Look up the Item to Display
+        /// Creates a stack item to return to the flexbox
         /// </summary>
         /// <param name="location"></param>
-        /// <returns></returns>
-        public StackLayout GetItemToDisplay(ItemLocationEnum location)
+        /// <returns>ItemStack to display</returns>
+        private View GetItemToDisplay(ItemLocationEnum location)
         {
-            // Defualt Image is the Plus
+            //Default Image is the X
             var ImageSource = "icon_cancel.png";
             var ClickableButton = true;
 
             var data = ViewModel.Data.GetItemByLocation(location);
             if (data == null)
             {
-                // Show the Default Icon for the Location
+                //Show default icon
                 data = new ItemModel { Location = location, ImageURI = ImageSource };
 
-                // Turn off click action
+                //Turn off Clickable action
                 ClickableButton = false;
             }
 
-            // Hookup the Image Button to show the Item picture
+            //Hookup image button to show item pic
             var ItemButton = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["ImageMediumStyle"],
@@ -116,11 +112,11 @@ namespace Game.Views
 
             if (ClickableButton)
             {
-                // Add a event to the user can click the item and see more
+                //Add Event so user can click to see more about item
                 ItemButton.Clicked += (sender, args) => ShowPopup(data);
             }
 
-            // Add the Display Text for the item
+            //Add displayText
             var ItemLabel = new Label
             {
                 Text = location.ToMessage(),
@@ -129,7 +125,7 @@ namespace Game.Views
                 HorizontalTextAlignment = TextAlignment.Center
             };
 
-            // Put the Image Button and Text inside a layout
+            //Put Image button and text in layout
             var ItemStack = new StackLayout
             {
                 Padding = 3,
@@ -142,15 +138,15 @@ namespace Game.Views
             };
 
             return ItemStack;
+
         }
 
-        #region PopupManagement
         /// <summary>
-        /// Show the Popup for the Item
+        /// Sets data on the popup page and makes visible 
         /// </summary>
         /// <param name="data"></param>
-        /// <returns></returns>
-        public bool ShowPopup(ItemModel data)
+        /// <returns>True if sucessful</returns>
+        private bool ShowPopup(ItemModel data)
         {
             PopupLoadingView.IsVisible = true;
             PopupItemImage.Source = data.ImageURI;
@@ -158,25 +154,21 @@ namespace Game.Views
             PopupItemName.Text = data.Name;
             PopupItemDescription.Text = data.Description;
             PopupItemLocation.Text = data.Location.ToMessage();
-            PopupItemAttribute.Text = data.Attribute.ToMessage();
+            //PopupItemAttribute.Text = data.Attribute.ToMessage();
             PopupItemValue.Text = " + " + data.Value.ToString();
 
             return true;
         }
 
         /// <summary>
-        /// When the user clicks the close in the Popup
-        /// hide the view
-        /// show the scroll view
+        /// Sets visibility of popup to false
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void ClosePopup_Clicked(object sender, EventArgs e)
+        public void ClosePopup_Clicked(Object sender, EventArgs e)
         {
             PopupLoadingView.IsVisible = false;
         }
 
-        #endregion PopupManagement
-        #endregion ManageItems
     }
 }
