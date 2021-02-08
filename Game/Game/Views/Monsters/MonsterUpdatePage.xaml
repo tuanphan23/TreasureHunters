@@ -61,7 +61,7 @@
 
                     <Picker Grid.Row="2" Grid.Column="1"
                                 x:Name="JobPicker"
-                                ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetJobList}" 
+                                ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetFullList}" 
                                 SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                 />
 
