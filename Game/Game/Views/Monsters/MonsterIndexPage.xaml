@@ -15,8 +15,6 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="List Page" Style="{StaticResource HeaderStyle}"/>
-
             <FlexLayout
                 BindableLayout.ItemsSource="{Binding Dataset}"
                 Wrap="Wrap"
