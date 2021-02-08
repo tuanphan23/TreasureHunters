@@ -56,15 +56,19 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
-            <Label
-                Text="- Items add after more decisions- "
-                Style="{StaticResource ValueStyle}"/>
+            <FlexLayout
+                Padding="5"
+                Wrap="Wrap"
+                JustifyContent="SpaceAround"
+                AlignContent="SpaceAround"
+                x:Name="ItemBox">
+            </FlexLayout>
+            
 
 
 
 
-
-            <BoxView 
+                <BoxView 
                 Color = "Black"
                 Margin ="10"
                 HeightRequest ="1"
