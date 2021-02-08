@@ -65,15 +65,12 @@
                     </StackLayout>
 
                     <FlexLayout
-                    Padding="5"
+                    Padding="15"
                     Wrap="Wrap"
                     JustifyContent="SpaceAround"
                     AlignContent="SpaceAround"
                     x:Name="ItemBox">
                     </FlexLayout>
-
-
-
 
 
                     <BoxView 
@@ -204,6 +201,7 @@
             
             
         </StackLayout>
+        
     </AbsoluteLayout>
     
 </ContentPage>
