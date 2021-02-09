@@ -47,7 +47,8 @@
                     <Button 
                         x:Name="Randomize"
                         Text="Random"
-                        Clicked="RandomButton_Clicked"/>
+                        Clicked="RandomButton_Clicked"
+                        Style="{StaticResource RandomButtonStyle}"/>
 
                     <Label 
                         Text="Description"

@@ -60,7 +60,7 @@
                         x:Name="Randomize"
                         Text="Random"
                         Clicked="RandomButton_Clicked"
-                        Style="{StaticResource RandomButton}"/>
+                        Style="{StaticResource RandomButtonStyle}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
