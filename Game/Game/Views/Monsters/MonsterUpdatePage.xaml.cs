@@ -105,8 +105,6 @@ namespace Game.Views
             return;
         }
 
-        #region AttributeButtons
-        #region SetEnableStateAttributeButtons
         /// <summary>
         /// Walk each button and set the enabled to true or false
         /// </summary>
@@ -152,9 +150,6 @@ namespace Game.Views
             return true;
         }
 
-        #endregion SetEnableStateAttributeButtons
-
-        #region AttackButton
         /// <summary>
         /// Manage the Attack Up Button Event
         /// </summary>
@@ -188,9 +183,7 @@ namespace Game.Views
 
             UpdatePageBindingContext();
         }
-        #endregion AttackButton
 
-        #region DefenseButton
         /// <summary>
         /// Manage the Defense Up Button Event
         /// </summary>
@@ -224,9 +217,7 @@ namespace Game.Views
 
             UpdatePageBindingContext();
         }
-        #endregion DefenseButton
 
-        #region SpeedButton
         /// <summary>
         /// Manage the Speed Up Button Event
         /// </summary>
@@ -260,8 +251,6 @@ namespace Game.Views
 
             UpdatePageBindingContext();
         }
-        #endregion SpeedButton
-        #endregion AttributeButtons
 
         /// <summary>
         /// Show the Items the Monster has
@@ -298,7 +287,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Look up the Item to Display
+        /// Creates a stack item to return to the flexbox
         /// </summary>
         /// <param name="location"></param>
         /// <returns></returns>
@@ -346,7 +335,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Show the Popup for the Item
+        /// Sets data on the popup page and makes visible
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>

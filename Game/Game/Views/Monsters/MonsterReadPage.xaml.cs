@@ -34,7 +34,7 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
-            this.ViewModel.Title = "Read Character";
+            this.ViewModel.Title = data.Data.Name;
 
             // Show the Character's Items
             AddItemsToDisplay();
