@@ -11,7 +11,7 @@ namespace Game.Models
     public class MonsterModel : BasePlayerModel<MonsterModel>
     {
         //special item that the monster may drop, string is referencing the database table
-        private string SpecialDrop { get; set; } = null;
+        public string SpecialDrop { get; set; } = null;
 
         /// <summary>
         /// Set Type to Monster
