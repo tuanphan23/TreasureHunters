@@ -57,7 +57,7 @@
                     </StackLayout>
 
                     <FlexLayout
-                    Padding="15"
+                    Padding="40"
                     Wrap="Wrap"
                     JustifyContent="SpaceAround"
                     AlignContent="SpaceAround"
