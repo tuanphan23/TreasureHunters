@@ -84,25 +84,51 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
+        /// <summary>
+        /// Set the text for maxHealth equal to the new value of the stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void MaxHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             HealthValue.Text = String.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// Set the text for speed equal to the new value of the stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             SpeedValue.Text = String.Format("{0}", e.NewValue);
         }
+
+        /// <summary>
+        /// Set the text for attack equal to the new value of the stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             AttackValue.Text = String.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// Set the text for defense equal to the new value of the stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// When the level picker is changed updated the character's level and recalculate the max health
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void LevelPicker_Changed(object sender, EventArgs e)
         {
             if(LevelPicker.SelectedIndex == -1)
@@ -121,6 +147,10 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// updates the value for the health text to be what the character's max health is
+        /// </summary>
+        /// <returns>true</returns>
         public bool UpdateHealthValue()
         {
             HealthValue.Text = ViewModel.Data.MaxHealth.ToString();
