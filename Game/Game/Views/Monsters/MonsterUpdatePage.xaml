@@ -166,10 +166,17 @@
                         Clicked="SpeedUpButton_Clicked"/>
                 </Grid>
 
-                <StackLayout 
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand">
-                        <Label Text="Unique Item" Style="{StaticResource HeaderStyle}"/>
+                <BoxView 
+                    Color = "Black"
+                    Margin ="10"
+                    HeightRequest ="1"
+                    WidthRequest="200"/>
+
+                <StackLayout  
+                    HorizontalOptions="Center">
+
+                    <Label Text="Unique Item" Style="{StaticResource HeaderStyle}"/>
+
                 </StackLayout>
                 
                     <FlexLayout 
