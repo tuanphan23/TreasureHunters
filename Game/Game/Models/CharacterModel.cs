@@ -9,9 +9,6 @@ namespace Game.Models
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
     {
-        //status effect that the character is currently affected by
-        private DamgeTypeEnum currentStatusEffect;
-
         //List of all abilities available to a character
         private List<int> Abilities;
         /// <summary>
