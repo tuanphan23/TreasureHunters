@@ -293,6 +293,17 @@
                 <Setter Property="HeightRequest" Value="30"/>
             </Style>
 
+            <Style TargetType="Button"
+                   x:Key="DeleteButton">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="WidthRequest" Value="75"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="BorderColor" Value="Black"/>
+            </Style>
+
             <!-- Stack Layouts -->
             <Style TargetType="StackLayout"
                 x:Key="HorizontalStack">
