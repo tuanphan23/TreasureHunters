@@ -62,6 +62,23 @@
                         Style="{StaticResource EntryStyle}"
                         />
 
+                    <Label Grid.Row="2" Grid.Column="0"
+                                Text="Difficulty" 
+                                FontSize="20"
+                                HorizontalTextAlignment="Center"/>
+
+                    <Picker Grid.Row="2" Grid.Column="1"
+                                x:Name="DifficultyPicker"
+                                ItemsSource="{x:Static local_enum:DifficultyEnumHelper.GetListMonster}" 
+                                SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                />
+
+                    <BoxView 
+                    Color = "Black"
+                    Margin ="10"
+                    HeightRequest ="1"
+                    WidthRequest="200"/>
+
                     <Grid
                             RowSpacing="1"
                             ColumnSpacing="2"
@@ -74,17 +91,7 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Row="2" Grid.Column="0"
-                                Text="Difficulty" 
-                                Style="{StaticResource LabelStyle}"/>
-
-                    <Picker Grid.Row="2" Grid.Column="1"
-                                x:Name="DifficultyPicker"
-                                ItemsSource="{x:Static local_enum:DifficultyEnumHelper.GetListMonster}" 
-                                SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                />
-
-                    <StackLayout Grid.Row="3" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                        <StackLayout Grid.Row="3" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
                         <Image 
                                     Source="{Binding Data.ImageURI, Mode=TwoWay}"
@@ -175,12 +182,6 @@
                         Text="+"
                         Clicked="SpeedUpButton_Clicked"/>
                 </Grid>
-
-                <BoxView 
-                    Color = "Black"
-                    Margin ="10"
-                    HeightRequest ="1"
-                    WidthRequest="200"/>
 
                 <StackLayout  
                     HorizontalOptions="Center">
