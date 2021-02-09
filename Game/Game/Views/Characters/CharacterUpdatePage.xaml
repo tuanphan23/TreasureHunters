@@ -111,74 +111,83 @@
 
                     </StackLayout>
 
+                    <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="5"
+                    VerticalOptions="Center"
+                    RowDefinitions="auto,auto,auto,auto"
+                    ColumnDefinitions="auto,auto,auto,auto,auto"
+                    >
+
+                    <!--Attack-->
                     <Label 
-                        Text="Speed"
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                        <Label 
-                            Text="{Binding Data.Speed}" 
-                            x:Name="SpeedValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper 
-                            Value="{Binding Data.Speed, Mode=TwoWay}"
-                            Minimum="0"
-                            Maximum="10"
-                            Increment="1"
-                            ValueChanged="Speed_OnStepperValueChanged"/>
-
-                    </StackLayout>
+                        Grid.Row="0" Grid.Column="0"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Attack"/>
 
                     <Label 
-                        Text="Attack" 
-                        Style="{StaticResource LabelStyle}"/>
+                        Grid.Row="0" Grid.Column="1"
+                        Style="{StaticResource ValueStyle}"
+                        Text="{Binding Data.Attack}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                    <Button
+                        Grid.Row="0" Grid.Column="3"
+                        x:Name="AttackDownButton"
+                        Text="-"
+                        Clicked="AttackDownButton_Clicked"/>
 
-                        <Label 
-                            Text="{Binding Data.Attack}" 
-                            x:Name="AttackValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                    <Button
+                        Grid.Row="0" Grid.Column="4"
+                        x:Name="AttackUpButton"
+                        Text="+"
+                        Clicked="AttackUpButton_Clicked"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Attack, Mode=TwoWay}"
-                            Minimum="0"
-                            Maximum="10"
-                            Increment="1"
-                            ValueChanged="Attack_OnStepperValueChanged"/>
-
-                    </StackLayout>
+                    <!--Defense-->
+                    <Label 
+                        Grid.Row="1" Grid.Column="0"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Defense"/>
 
                     <Label 
-                        Text="Defense" 
-                        Style="{StaticResource LabelStyle}"/>
+                        Grid.Row="1" Grid.Column="1"
+                        Style="{StaticResource ValueStyle}"
+                        Text="{Binding Data.Defense}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                    <Button
+                        Grid.Row="1" Grid.Column="3"
+                        x:Name="DefenseDownButton"
+                        Text="-"
+                        Clicked="DefenseDownButton_Clicked"/>
 
-                        <Label 
-                            Text="{Binding Data.Defense}" 
-                            x:Name="DefenseValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                    <Button
+                        Grid.Row="1" Grid.Column="4"
+                        x:Name="DefenseUpButton"
+                        Text="+"
+                        Clicked="DefenseUpButton_Clicked"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Defense, Mode=TwoWay}"
-                            Minimum="0"
-                            Maximum="10"
-                            Increment="1"
-                            ValueChanged="Defense_OnStepperValueChanged"/>
+                    <!--Speed-->
+                    <Label 
+                        Grid.Row="2" Grid.Column="0"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Speed"/>
 
-                    </StackLayout>
+                    <Label 
+                        Grid.Row="2" Grid.Column="1"
+                        Style="{StaticResource ValueStyle}"
+                        Text="{Binding Data.Speed}"/>
+
+                    <Button
+                        Grid.Row="2" Grid.Column="3"
+                        x:Name="SpeedDownButton"
+                        Text="-"
+                        Clicked="SpeedDownButton_Clicked"/>
+
+                    <Button
+                        Grid.Row="2" Grid.Column="4"
+                        x:Name="SpeedUpButton"
+                        Text="+"
+                        Clicked="SpeedUpButton_Clicked"/>
+                </Grid>
                 </StackLayout>
 
                 <Button
