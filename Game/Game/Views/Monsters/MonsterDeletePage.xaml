@@ -39,10 +39,10 @@
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions = "CenterAndExpand">
                     <Label 
-                        Text="Level : " 
+                        Text="Difficulty : " 
                         Style="{StaticResource CenterMessageStyle}"/>
                     <Label 
-                        Text="{Binding Data.Level}" 
+                        Text="{Binding Data.Difficulty}" 
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
