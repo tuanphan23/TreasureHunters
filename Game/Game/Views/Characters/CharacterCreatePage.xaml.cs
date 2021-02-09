@@ -147,9 +147,42 @@ namespace Game.Views
             return true;
         }
 
-        void RandomButton_Clicked(object sender, EventArgs e)
+        /// <summary>
+        /// randomizes the data stored in the characterModel being created
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RandomButton_Clicked(object sender, EventArgs e)
         {
+            this.ViewModel.Data.Update(RandomPlayerHelper.GetRandomCharacter(20));
 
+            UpdatePageBindingContext();
+
+            return;
+        }
+
+
+        /// <summary>
+        /// Update the page binding context
+        /// </summary>
+        public bool UpdatePageBindingContext()
+        {
+            // Temp store off the Level
+            var data = this.ViewModel.Data;
+
+            // Clear the Binding and reset it
+            BindingContext = null;
+            this.ViewModel.Data = data;
+            this.ViewModel.Title = data.Name;
+
+            BindingContext = this.ViewModel;
+
+            // This resets the picker to the Character's level
+            LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+
+            JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
+
+            return true;
         }
     }
 }
