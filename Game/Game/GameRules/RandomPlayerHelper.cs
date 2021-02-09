@@ -247,6 +247,7 @@ namespace Game.GameRules
                 ImageURI = GetMonsterImage(),
 
                 Difficulty = GetMonsterDifficultyValue(),
+                UniqueItem = GetMonsterUniqueItem()
             };
 
             // Adjust values based on Difficulty
