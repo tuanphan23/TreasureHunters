@@ -10,9 +10,6 @@ namespace Game.Models
     /// </summary>
     public class MonsterModel : BasePlayerModel<MonsterModel>
     {
-        //special item that the monster may drop, string is referencing the database table
-        public string SpecialDrop { get; set; } = null;
-
         /// <summary>
         /// Set Type to Monster
         /// 
@@ -62,7 +59,6 @@ namespace Game.Models
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
-            SpecialDrop = newData.SpecialDrop;
 
             Difficulty = newData.Difficulty;
 
