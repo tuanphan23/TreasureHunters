@@ -307,6 +307,7 @@
             <Style TargetType="Button"
                    x:Key="RandomButton"
                    BasedOn="{StaticResource DeleteButton}">
+                <Setter Property="FontSize" Value="Small"/>
             </Style>
 
             <!-- Stack Layouts -->
