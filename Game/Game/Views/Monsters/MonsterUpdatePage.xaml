@@ -38,8 +38,7 @@
 
                         <Label 
                         Text="Name"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LargeLabelStyle}"
                         />
 
                         <Entry 
@@ -50,8 +49,7 @@
 
                         <Label 
                         Text="Description"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LargeLabelStyle}"
                         />
 
                         <Entry 
@@ -63,8 +61,7 @@
 
                         <Label
                                 Text="Difficulty" 
-                                FontSize="20"
-                                HorizontalTextAlignment="Center"/>
+                                Style="{StaticResource LargeLabelStyle}"/>
 
                         <Picker
                                 x:Name="DifficultyPicker"
