@@ -14,11 +14,39 @@
 
         <Grid
             VerticalOptions="CenterAndExpand">
-            
 
             <StackLayout 
                 HorizontalOptions="Center" 
-                Padding="20">
+                Padding="25">
+
+
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions = "CenterAndExpand">
+                    <Label 
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource CenterMessageStyle}" 
+                        VerticalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions = "CenterAndExpand">
+                    <Label 
+                        Text="{Binding Data.Job}" 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions = "CenterAndExpand">
+                    <Label 
+                        Text="Level : " 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                    <Label 
+                        Text="{Binding Data.Level}" 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+
 
                 <Label Text="Are you sure you want to delete this character?" 
                        Style="{StaticResource DeleteMessageStyle}"/>
