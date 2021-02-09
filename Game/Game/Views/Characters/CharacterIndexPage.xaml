@@ -17,32 +17,34 @@
 
             <Label Text="Character List Page" Style="{StaticResource HeaderStyle}"/>
 
-            <FlexLayout
-                BindableLayout.ItemsSource="{Binding Dataset}"
-                Wrap="Wrap"
-                Direction="Row"
-                JustifyContent="SpaceEvenly">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="20">
-                            <ImageButton
-                                   Source="{Binding ImageURI}"
-                                   Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
-                            <Label Text="{Binding Name}" HorizontalTextAlignment="Center" FontSize="Medium"/>
-                            <StackLayout Orientation="Horizontal"
-                                             Grid.Column="1" Grid.Row="1">
+            <ScrollView>
+                <FlexLayout
+                    BindableLayout.ItemsSource="{Binding Dataset}"
+                    Wrap="Wrap"
+                    Direction="Row"
+                    JustifyContent="SpaceEvenly">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="20">
+                                <ImageButton
+                                       Source="{Binding ImageURI}"
+                                       Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
+                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                                <StackLayout Orientation="Horizontal"
+                                                 Grid.Column="1" Grid.Row="1">
 
-                                <Label Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
-                                           Style="{StaticResource ListStyle}"/>
+                                    <Label Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
+                                               Style="{StaticResource ListStyle}"/>
 
-                                <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
-                                           Style="{StaticResource ListStyle}"/>
+                                    <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
+                                               Style="{StaticResource ListStyle}"/>
 
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
