@@ -14,7 +14,7 @@
 
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
-
+            <ScrollView>
             <FlexLayout
                 BindableLayout.ItemsSource="{Binding Dataset}"
                 Wrap="Wrap"
@@ -31,6 +31,7 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </FlexLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage> 
