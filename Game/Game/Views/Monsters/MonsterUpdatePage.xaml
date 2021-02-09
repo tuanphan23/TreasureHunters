@@ -31,6 +31,19 @@
 
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
+                    <Label 
+                        Text="Name"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        />
+
+                    <Entry 
+                        Text="{Binding Data.Name, Mode=TwoWay}" 
+                            Style="{StaticResource EntryStyle}"
+                        HorizontalTextAlignment="Center"
+                        />
+
+
                     <Button 
                         x:Name="Randomize"
                         Text="Random"
