@@ -49,7 +49,20 @@
                         Text="Random"
                         Clicked="RandomButton_Clicked"/>
 
-                <Grid
+                    <Label 
+                        Text="Description"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        />
+
+                    <Entry 
+                        Text="{Binding Data.Description}"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource EntryStyle}"
+                        />
+
+                    <Grid
                             RowSpacing="1"
                             ColumnSpacing="2"
                             VerticalOptions="Center">
@@ -61,15 +74,7 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Row="1" Grid.Column="0"
-                                Text="Description" 
-                                Style="{StaticResource LabelStyle}"/>
-
-                    <Entry Grid.Row="1" Grid.Column="1"
-                                Text="{Binding Data.Description, Mode=TwoWay}" 
-                                Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="2" Grid.Column="0"
+                        <Label Grid.Row="2" Grid.Column="0"
                                 Text="Difficulty" 
                                 Style="{StaticResource LabelStyle}"/>
 
