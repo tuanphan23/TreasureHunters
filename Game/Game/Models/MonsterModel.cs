@@ -1,4 +1,5 @@
 ﻿using Game.GameRules;
+using Game.ViewModels;
 
 namespace Game.Models
 {
@@ -9,6 +10,12 @@ namespace Game.Models
     /// </summary>
     public class MonsterModel : BasePlayerModel<MonsterModel>
     {
+        //status effect that the monster is currently being affected by
+        private DamgeTypeEnum currentStatusEffect;
+
+        //special item that the monster may drop, string is referencing the database table
+        private string SpecialDrop { get; set; } = null;
+
         /// <summary>
         /// Set Type to Monster
         /// 
