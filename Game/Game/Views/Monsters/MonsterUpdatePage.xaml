@@ -48,13 +48,6 @@
                         HorizontalTextAlignment="Center"
                         />
 
-
-                        <Button 
-                        x:Name="Randomize"
-                        Text="Random"
-                        Clicked="RandomButton_Clicked"
-                        Style="{StaticResource RandomButtonStyle}"/>
-
                         <Label 
                         Text="Description"
                         FontSize="20"
@@ -68,12 +61,12 @@
                         Style="{StaticResource EntryStyle}"
                         />
 
-                        <Label Grid.Row="2" Grid.Column="0"
+                        <Label
                                 Text="Difficulty" 
                                 FontSize="20"
                                 HorizontalTextAlignment="Center"/>
 
-                        <Picker Grid.Row="2" Grid.Column="1"
+                        <Picker
                                 x:Name="DifficultyPicker"
                                 ItemsSource="{x:Static local_enum:DifficultyEnumHelper.GetListMonster}" 
                                 SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
@@ -84,24 +77,6 @@
                     Margin ="10"
                     HeightRequest ="1"
                     WidthRequest="200"/>
-
-                        <Grid
-                            RowSpacing="1"
-                            ColumnSpacing="2"
-                            VerticalOptions="Center">
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-
-                            <StackLayout Grid.Row="3" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
-
-                            </StackLayout>
-
-                        </Grid>
 
                         <Grid
                     RowSpacing="1"
@@ -197,7 +172,7 @@
                         </FlexLayout>
 
                     <StackLayout
-                    Orientation="Horizontal">
+                    Orientation="Horizontal" Margin="0, 50, 0, 0">
                         <Image 
                             Source="{Binding Data.ImageURI}"
                             Style="{StaticResource ImageSmallStyle}"/>
@@ -207,7 +182,13 @@
                             Style="{StaticResource EntryStyle}"/>
                     </StackLayout>
 
-                </StackLayout>
+                        <Button 
+                        x:Name="Randomize"
+                        Text="Random"
+                        Clicked="RandomButton_Clicked"
+                        Style="{StaticResource RandomButtonStyle}"/>
+
+                    </StackLayout>
             </ScrollView>
 
             </StackLayout>
