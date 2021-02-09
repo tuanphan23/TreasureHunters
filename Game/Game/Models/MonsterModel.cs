@@ -62,6 +62,7 @@ namespace Game.Models
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
+            SpecialDrop = newData.SpecialDrop;
 
             Difficulty = newData.Difficulty;
 

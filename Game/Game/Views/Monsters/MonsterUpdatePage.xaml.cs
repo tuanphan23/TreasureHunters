@@ -92,7 +92,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Randomize Character Values and Items
+        /// Randomize Monster Values and Items
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
