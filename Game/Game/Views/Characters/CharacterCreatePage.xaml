@@ -46,15 +46,12 @@
 
                 <Label 
                     Text="Description"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource LargeLabelStyle}"
                     />
 
                 <Entry 
                     Text="{Binding Data.Description}"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center"
-                    Style="{StaticResource EntryStyle}"
+                    Style="{StaticResource LargeLabelStyle}"
                     />
 
                 <StackLayout>
