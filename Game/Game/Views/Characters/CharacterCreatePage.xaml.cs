@@ -146,5 +146,10 @@ namespace Game.Views
             HealthValue.Text = ViewModel.Data.MaxHealth.ToString();
             return true;
         }
+
+        void RandomButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

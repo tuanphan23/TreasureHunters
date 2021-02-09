@@ -209,6 +209,16 @@
                             Text="{Binding Data.ImageURI}" 
                             Style="{StaticResource EntryStyle}"/>
                 </StackLayout>
+                <Button
+                    Text="Random"
+                    Clicked="RandomButton_Clicked"
+                    HorizontalOptions="CenterAndExpand"
+                    FontSize="Small"
+                    WidthRequest="75"
+                    HeightRequest="40"
+                    CornerRadius="10"
+                    BorderWidth="1" 
+                    BorderColor="black"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
