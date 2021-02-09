@@ -28,7 +28,7 @@ namespace Game.Models
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
             //Default to None which is no status effect
-            currentStatusEffect = DamgeTypeEnum.None;
+            //currentStatusEffect = DamgeTypeEnum.None;
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown; 
