@@ -58,13 +58,13 @@
                     <Button 
                             Text="Yes" 
                             Clicked="Delete_Clicked" 
-                            Style="{StaticResource DeleteButton}">
+                            Style="{StaticResource DeleteButtonStyle}">
                     </Button>
 
                     <Button 
                             Text="No" 
                             Clicked="Cancel_Clicked" 
-                            Style="{StaticResource DeleteButton}">
+                            Style="{StaticResource DeleteButtonStyle}">
                     </Button>
 
 

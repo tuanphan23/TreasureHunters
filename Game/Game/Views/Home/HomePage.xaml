@@ -41,7 +41,7 @@
                 <Button
                     Text="Enter"
                     Clicked="GameButton_Clicked"
-                    Style="{StaticResource DeleteButton}"/>
+                    Style="{StaticResource DeleteButtonStyle}"/>
 
             </StackLayout>
         </ScrollView>

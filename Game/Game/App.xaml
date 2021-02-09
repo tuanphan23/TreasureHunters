@@ -294,7 +294,7 @@
             </Style>
 
             <Style TargetType="Button"
-                   x:Key="DeleteButton">
+                   x:Key="DeleteButtonStyle">
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="WidthRequest" Value="75"/>
@@ -306,7 +306,7 @@
 
             <Style TargetType="Button"
                    x:Key="RandomButtonStyle"
-                   BasedOn="{StaticResource DeleteButton}">
+                   BasedOn="{StaticResource DeleteButtonStyle}">
                 <Setter Property="FontSize" Value="Small"/>
             </Style>
 
