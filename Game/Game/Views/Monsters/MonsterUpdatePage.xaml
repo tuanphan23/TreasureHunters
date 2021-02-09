@@ -29,9 +29,9 @@
             <ScrollView>
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-                <Button 
+                    <Button 
                         x:Name="Randomize"
                         Text="Random"
                         Clicked="RandomButton_Clicked"/>
