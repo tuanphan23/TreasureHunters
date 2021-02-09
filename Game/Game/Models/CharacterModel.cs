@@ -9,8 +9,6 @@ namespace Game.Models
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
     {
-        //List of all abilities available to a character
-        private List<int> Abilities;
         /// <summary>
         /// Default character
         /// 
