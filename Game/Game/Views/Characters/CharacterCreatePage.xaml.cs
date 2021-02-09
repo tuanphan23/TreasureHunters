@@ -85,16 +85,6 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Set the text for maxHealth equal to the new value of the stepper
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void MaxHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            HealthValue.Text = String.Format("{0}", e.NewValue);
-        }
-
-        /// <summary>
         /// Set the text for speed equal to the new value of the stepper
         /// </summary>
         /// <param name="sender"></param>
