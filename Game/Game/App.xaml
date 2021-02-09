@@ -109,6 +109,7 @@
             <Style TargetType="Label"
                    x:Key="DeleteMessageStyle">
                 <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
             </Style>
 
             <Style TargetType="Label"
