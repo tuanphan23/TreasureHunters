@@ -199,7 +199,18 @@
                         x:Name="ItemBox">
                     </FlexLayout>
 
-            </StackLayout>
+                    <StackLayout
+                    Orientation="Horizontal">
+                        <Image 
+                            Source="{Binding Data.ImageURI}"
+                            Style="{StaticResource ImageSmallStyle}"/>
+
+                        <Entry 
+                            Text="{Binding Data.ImageURI}" 
+                            Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+
+                </StackLayout>
             </ScrollView>
 
             <StackLayout x:Name="PopupItemSelector"
