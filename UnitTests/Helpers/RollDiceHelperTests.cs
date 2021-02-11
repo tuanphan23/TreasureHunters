@@ -131,7 +131,7 @@ namespace UnitTests.Helpers
         }
 
         [Test]
-        public void RollDiceHelper_SetForcedRollValue_Forced6_Should_Pass()
+        public void RollDiceHelper_SetForcedRollValue_Valid_Forced6_Should_Pass()
         {
             //Arrange
 
@@ -142,6 +142,20 @@ namespace UnitTests.Helpers
 
             //Assert
             Assert.AreEqual(6, result);
+        }
+
+        [Test]
+        public void RollDiceHelper_SetForcedRollValue_InValid_ForcedNeg1_Should_Fail()
+        {
+            //Arrange
+
+            //Act
+            var result = DiceHelper.SetForcedRollValue(-1);
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(0, result);
         }
     }
 }
