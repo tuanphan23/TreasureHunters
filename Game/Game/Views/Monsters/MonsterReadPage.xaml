@@ -78,21 +78,6 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                        Text="Health : " 
-                        Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                        Text="{Binding Data.MaxHealth}" 
-                        Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                    Progress="{Binding Data.PercentHealth}" 
-                    ProgressColor="Green"
-                    WidthRequest="200"
-                    HeightRequest="20"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
                         Text="Speed : " 
                         Style="{StaticResource LabelStyle}"/>
                         <Label 
@@ -143,7 +128,7 @@
         
         <!--The Item Popup-->
         <StackLayout x:Name="PopupLoadingView"
-                     BackgroundColor="{StaticResource PageBackgroundColor}"
+                     BackgroundColor="Transparent"
                      IsVisible="false"
                      AbsoluteLayout.LayoutBounds=".5, .5, .5, .5"
                      AbsoluteLayout.LayoutFlags="All">
