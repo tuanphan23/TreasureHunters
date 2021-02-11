@@ -129,5 +129,19 @@ namespace UnitTests.Helpers
             //Assert
             Assert.AreEqual(0, result);
         }
+
+        [Test]
+        public void RollDiceHelper_SetForcedRollValue_Forced6_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            var result = DiceHelper.SetForcedRollValue(6);
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(6, result);
+        }
     }
 }
