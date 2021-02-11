@@ -95,5 +95,39 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(0, result);
         }
+
+        [Test]
+        public void RollDiceHelper_RollDice_InValid_Neg1Time_6sided_Forced1_Should_Fail()
+        {
+            //Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+
+            //Act
+            var result = DiceHelper.RollDice(-1, 6);
+
+            //Reset
+            DiceHelper.DisableForcedRolls();
+
+            //Assert
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void RollDiceHelper_RollDice_InValid_1Time_6Sided_ForcedNeg1_Should_Fail()
+        {
+            //Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(-1);
+
+            //Act
+            var result = DiceHelper.RollDice(-1, 6);
+
+            //Reset
+            DiceHelper.DisableForcedRolls();
+
+            //Assert
+            Assert.AreEqual(0, result);
+        }
     }
 }
