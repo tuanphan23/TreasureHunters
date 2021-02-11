@@ -157,5 +157,35 @@ namespace UnitTests.Helpers
             //Assert
             Assert.AreEqual(0, result);
         }
+
+        [Test]
+        public void RollDIceHelper_EnableForcedRolls_Valid_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            var result = DiceHelper.EnableForcedRolls();
+
+            //Reset
+            DiceHelper.DisableForcedRolls();
+
+            //Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RollDiceHelper_DisableForcedRolls_Valid_Should_Pass()
+        {
+            //Arrange
+            DiceHelper.EnableForcedRolls();
+
+            //Act
+            var result = DiceHelper.DisableForcedRolls();
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(false, result);
+        }
     }
 }
