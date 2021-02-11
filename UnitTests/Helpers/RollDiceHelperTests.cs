@@ -114,6 +114,23 @@ namespace UnitTests.Helpers
         }
 
         [Test]
+        public void RollDiceHelper_RollDice_Valid_1Time_Neg1Sided_Forced1_Should_Pass()
+        {
+            //Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+
+            //Act
+            var result = DiceHelper.RollDice(1, -1);
+
+            //Reset
+            DiceHelper.DisableForcedRolls();
+
+            //Assert
+            Assert.AreEqual(1, result);
+        }
+
+        [Test]
         public void RollDiceHelper_RollDice_InValid_1Time_6Sided_ForcedNeg1_Should_Fail()
         {
             //Arrange
