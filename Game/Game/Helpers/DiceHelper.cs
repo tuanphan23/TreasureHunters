@@ -21,6 +21,11 @@ namespace Game.Helpers
         // What number should return for random numbers (1 is good choice...)
         public static int SetForcedRollValue(int value)
         {
+            if(value < 0)
+            {
+                _ForcedRandomValue = 0;
+                return 0;
+            }
             _ForcedRandomValue = value;
             return _ForcedRandomValue;
         }
