@@ -47,23 +47,18 @@
                     HeightRequest ="1"
                     WidthRequest="200"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label Text="Attribute : "
-                           HorizontalOptions="Center"
-                           Style="{StaticResource HeaderStyle}"/>
-                        <Label 
-                        Text="{Binding Data.Attribute}" 
-                        Style="{StaticResource HeaderStyle}"/>
-                    </StackLayout>
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                        Text="Attack : +" 
-                        Style="{StaticResource LabelStyle}"/>
+                            Text="{Binding Data.Attribute}" 
+                            Style="{StaticResource HeaderStyle}"/>
                         <Label 
-                        Text="{Binding Data.Attack}" 
-                        Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
+                            Text=" : +" 
+                            Style="{StaticResource HeaderStyle}"/>
+                        <Label 
+                            Text="{Binding Data.Value}" 
+                            Style="{StaticResource HeaderStyle}"/>
+                </StackLayout>
 
                     <ProgressBar
                     Progress="{Binding Data.PercentAttack}" 
