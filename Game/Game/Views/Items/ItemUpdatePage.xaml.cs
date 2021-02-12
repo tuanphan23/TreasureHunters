@@ -34,13 +34,17 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            BindingContext = this.ViewModel = data;
+            this.ViewModel = data;
+            ViewModel.Data.updatePercent();
+
+            BindingContext = this.ViewModel;
 
             this.ViewModel.Title = "Update " + data.Title;
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = data.Data.Location.ToString();
             AttributePicker.SelectedItem = data.Data.Attribute.ToString();
+            TypePicker.SelectedItem = data.Data.DamageType.ToString();
 
             UpdatePageBindingContext();
         }
@@ -89,6 +93,7 @@ namespace Game.Views
 
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
+            TypePicker.SelectedItem = ViewModel.Data.DamageType.ToString();
 
             return true;
         }

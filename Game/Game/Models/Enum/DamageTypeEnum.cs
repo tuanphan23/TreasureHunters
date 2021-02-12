@@ -67,8 +67,6 @@ namespace Game.Models
             }
 
             return Message;
-
-            return Message;
         }
     }
 

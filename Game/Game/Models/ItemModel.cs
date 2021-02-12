@@ -64,6 +64,9 @@ namespace Game.Models
         // Enum of the different attributes that the item modifies, Items can only modify one item
         public AttributeEnum Attribute { get; set; } = AttributeEnum.Unknown;
 
+        // Enum of the different attributes that the item modifies, Items can only modify one item
+        public DamageTypeEnum DamageType { get; set; } = DamageTypeEnum.None;
+
         // Where the Item goes on the character.  Head, Foot etc.
         public ItemLocationEnum Location { get; set; } = ItemLocationEnum.Unknown;
 
