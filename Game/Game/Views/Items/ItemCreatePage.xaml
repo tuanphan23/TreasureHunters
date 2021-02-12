@@ -78,10 +78,19 @@
                         x:Name="AttributePicker"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
+                        Text="Type" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Picker Grid.Row="4" Grid.Column="1"
+                        ItemsSource="{x:Static local:DamageTypeEnumHelper.GetFullList}" 
+                        SelectedItem="{Binding Data.DamageType, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="TypePicker"/>
+
+                    <Label Grid.Row="5" Grid.Column="0"
                         Text="Image" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                    <StackLayout Grid.Row="5" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
                         <Image 
                             Source="{Binding Data.ImageURI}"
@@ -95,26 +104,6 @@
                 </Grid>
 
                     <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-
-                        <Label 
-                            Text="Range" 
-                            Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                        <Label 
-                            Text="{Binding Data.Range}" 
-                            x:Name="RangeValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                    
-                        <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
-                        
-                    </StackLayout>
 
                     <Label 
                         Text="Value"

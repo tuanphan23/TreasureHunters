@@ -18,7 +18,7 @@ namespace Game.Views
         // maximum value for Item's attribute
         public int MaxAttributeValue = 9;
 
-        // maximum value for monster's attribute
+        // maximum value for item's attribute
         public int MinAttributeValue = 0;
 
         // View Model for Item
