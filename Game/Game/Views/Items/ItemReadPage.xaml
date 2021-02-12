@@ -14,84 +14,112 @@
 
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-            Spacing="10">
+        <StackLayout Style ="{StaticResource VerticalStack}"
+                     AbsoluteLayout.LayoutBounds="1,1,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
 
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
+            <ScrollView>
+                <StackLayout Style="{StaticResource OuterBoxStack}"
+                Spacing="10"
+                HorizontalOptions="FillAndExpand">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                       Text="Name : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Location : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Location}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Location : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Location}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <BoxView 
+                    Color = "Black"
+                    Margin ="10"
+                    HeightRequest ="1"
+                    WidthRequest="200"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Attribute : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Attribute}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label Text="Attribute : "
+                           HorizontalOptions="Center"
+                           Style="{StaticResource HeaderStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Attribute}" 
+                        Style="{StaticResource HeaderStyle}"/>
+                    </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Range : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Range}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Health : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.MaxHealth}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Range : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Range}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <ProgressBar
+                    Progress="{Binding Data.PercentHealth}" 
+                    ProgressColor="Green"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Value : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Value}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Speed : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Speed}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Damage : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Damage}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <ProgressBar
+                    Progress="{Binding Data.PercentSpeed}" 
+                    ProgressColor="Yellow"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Attack : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Attack}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <ProgressBar
+                    Progress="{Binding Data.PercentAttack}" 
+                    ProgressColor="Red"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Defense : " 
+                        Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Defense}" 
+                        Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <ProgressBar
+                    Progress="{Binding Data.PercentDefense}" 
+                    ProgressColor="Blue"
+                    WidthRequest="200"
+                    HeightRequest="20"/>
+
+                </StackLayout>
+            </ScrollView>
 
         </StackLayout>
     </ScrollView>
