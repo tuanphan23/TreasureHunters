@@ -118,6 +118,18 @@ namespace Game.Views
                 ValueDownButton.IsEnabled = false;
             }
 
+            DamageUpButton.IsEnabled = true;
+            if (ViewModel.Data.Damage == MaxAttributeValue)
+            {
+                DamageUpButton.IsEnabled = false;
+            }
+
+            DamageDownButton.IsEnabled = true;
+            if (ViewModel.Data.Damage == MinAttributeValue)
+            {
+                DamageDownButton.IsEnabled = false;
+            }
+
             return true;
         }
 
@@ -157,7 +169,43 @@ namespace Game.Views
 
             UpdatePageBindingContext();
         }
-        #endregion AttackButton
+        #endregion ValueButton
+
+        #region DamageButton
+        /// <summary>
+        /// Manage the Value Up Button Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void DamageUpButton_Clicked(object sender, EventArgs e)
+        {
+            ViewModel.Data.Damage++;
+
+            if (ViewModel.Data.Damage > MaxAttributeValue)
+            {
+                ViewModel.Data.Damage = MaxAttributeValue;
+            }
+
+            UpdatePageBindingContext();
+        }
+
+        /// <summary>
+        /// Manage the Value Down Button Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void DamageDownButton_Clicked(object sender, EventArgs e)
+        {
+            ViewModel.Data.Damage--;
+
+            if (ViewModel.Data.Damage < MinAttributeValue)
+            {
+                ViewModel.Data.Damage = MinAttributeValue;
+            }
+
+            UpdatePageBindingContext();
+        }
+        #endregion DamageButton
         #endregion AttributeButtons
     }
 }
