@@ -14,9 +14,7 @@
 
 
     <ScrollView>
-        <StackLayout Style ="{StaticResource VerticalStack}"
-                     AbsoluteLayout.LayoutBounds="1,1,1,1"
-                     AbsoluteLayout.LayoutFlags="All">
+      
 
             <ScrollView>
                 <StackLayout Style="{StaticResource OuterBoxStack}"
@@ -60,7 +58,7 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                        Text="Attack : " 
+                        Text="Attack : +" 
                         Style="{StaticResource LabelStyle}"/>
                         <Label 
                         Text="{Binding Data.Attack}" 
@@ -73,24 +71,9 @@
                     WidthRequest="200"
                     HeightRequest="20"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
-                        Text="Defense : " 
-                        Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                        Text="{Binding Data.Defense}" 
-                        Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                    Progress="{Binding Data.PercentDefense}" 
-                    ProgressColor="Blue"
-                    WidthRequest="200"
-                    HeightRequest="20"/>
-
                 </StackLayout>
             </ScrollView>
 
-        </StackLayout>
+       
     </ScrollView>
 </ContentPage>
