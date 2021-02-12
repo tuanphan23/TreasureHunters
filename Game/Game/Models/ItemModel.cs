@@ -18,6 +18,31 @@ namespace Game.Models
     /// </summary>
     public class ItemModel : BaseModel<ItemModel>
     {
+        //Ability struct to contain the ability assiciated with this item.
+        public struct Ability
+        {
+            //Number of targets hit by the ability, NumTargets should always be >= 0
+            int NumTargets;
+
+            //Multiplier to character damage should always be >= 0
+            float DmgMulti;
+
+            //Flat boost to character damage should always be >= 0
+            int DmgBoost;
+
+            //Element of the ability
+            DamgeTypeEnum AttackType;
+
+            //Chance of giving the defender a status effect
+            DamgeTypeEnum StatusChance;
+
+            //Number of remaining uses on the spell
+            int NumUses;
+        }
+
+        public int test { get; set; } = 0;
+
+        public Ability itemAbility { get; set; } = new Ability();
         // Range of the item, swords are 1, hats/rings are 0, bows are >1
         public int Range { get; set; } = 0;
 
@@ -84,6 +109,9 @@ namespace Game.Models
             ImageURI = newData.ImageURI;
             Range = newData.Range;
             Damage = newData.Damage;
+
+            //possib
+            itemAbility = newData.itemAbility;
 
             //Guid = newData.Guid;
             //Count = newData.Count;
