@@ -112,5 +112,14 @@ namespace Game.Models
 
             return myReturn;
         }
+
+        //updates the percent values to match Stats
+        public void updatePercent()
+        {
+            PercentAttack = (float)Attack / MAXATTACK;
+            PercentDefense = (float)Defense / MAXDEFENSE;
+            PercentHealth = (float)MaxHealth / TOTALMAXHEALTH;
+            PercentSpeed = (float)Speed / MAXSPEED;
+        }
     }
 }
