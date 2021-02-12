@@ -105,46 +105,40 @@
 
                     <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
+                    <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="5"
+                    VerticalOptions="Center"
+                    RowDefinitions="auto,auto,auto,auto"
+                    ColumnDefinitions="auto,auto,auto,auto,auto"
+                    >
+
+                    <!--Value-->
                     <Label 
-                        Text="Value"
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                        
-                        <Label 
-                            Text="{Binding Data.Value}" 
-                            x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper 
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
-
-                    </StackLayout>
+                        Grid.Row="0" Grid.Column="0"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Value"/>
 
                     <Label 
-                        Text="Damage" 
-                        Style="{StaticResource LabelStyle}"/>
-                    
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                        Grid.Row="0" Grid.Column="1"
+                        Style="{StaticResource ValueStyle}"
+                        Text="{Binding Data.Value}"/>
 
-                        <Label 
-                            Text="{Binding Data.Damage}" 
-                            x:Name="DamageValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                    <Button
+                        Grid.Row="0" Grid.Column="3"
+                        x:Name="ValueDownButton"
+                        Text="-"
+                        Clicked="ValueDownButton_Clicked"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Damage, Mode=TwoWay}"
-                            ValueChanged="Damage_OnStepperValueChanged"/>
-                    
-                    </StackLayout>
+                    <Button
+                        Grid.Row="0" Grid.Column="4"
+                        x:Name="ValueUpButton"
+                        Text="+"
+                        Clicked="ValueUpButton_Clicked"/>
+
+                </Grid>
                 </StackLayout>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
