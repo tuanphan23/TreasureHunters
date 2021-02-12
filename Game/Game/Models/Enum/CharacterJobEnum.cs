@@ -72,5 +72,15 @@ namespace Game.Models
                 return myList;
             }
         }
+
+        /// <summary>
+        /// Given the String for an enum, return its value.  That allows for the enums to be numbered 2,4,6 rather than 1,2,3
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CharacterJobEnum ConvertStringToEnum(string value)
+        {
+            return (CharacterJobEnum)Enum.Parse(typeof(CharacterJobEnum), value);
+        }
     }
 }

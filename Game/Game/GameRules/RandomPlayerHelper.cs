@@ -140,6 +140,21 @@ namespace Game.GameRules
         }
 
         /// <summary>
+        /// Get A Random Job
+        /// </summary>
+        /// <returns></returns>
+        public static CharacterJobEnum GetCharacterJob()
+        {
+            var JobList = CharacterJobEnumHelper.GetFullList;
+
+            var RandomJob = JobList.ElementAt(DiceHelper.RollDice(1, JobList.Count()) - 1);
+
+            var result = CharacterJobEnumHelper.ConvertStringToEnum(RandomJob);
+
+            return result;
+        }
+
+        /// <summary>
         /// Get Random Ability Number
         /// </summary>
         /// <returns></returns>
@@ -210,6 +225,7 @@ namespace Game.GameRules
                 LeftFinger = GetItem(ItemLocationEnum.Finger),
                 Feet = GetItem(ItemLocationEnum.Feet),
 
+                Job = GetCharacterJob(),
                 ImageURI = GetCharacterImage()
             };
 
