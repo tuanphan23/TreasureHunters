@@ -26,7 +26,7 @@
                                 <ImageButton
                                     Source="{Binding ImageURI}"
                                     Clicked="On_ItemClicked"
-                                    CommandParameter="{Binding, Id}"/>
+                                    CommandParameter="{Binding Id}"/>
                                 <Label Text="{Binding Name}" Style="{StaticResource LargeLabelStyle}"/>
                             </StackLayout>
                         </DataTemplate>
