@@ -32,7 +32,17 @@
                         Style="{StaticResource ValueStyle}"/>
                     </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}">
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions = "CenterAndExpand">
+                    <Label 
+                        Text="Description : " 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                    <Label 
+                        Text="{Binding Data.Description}" 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
                         Text="Location : " 
                         Style="{StaticResource LabelStyle}"/>
