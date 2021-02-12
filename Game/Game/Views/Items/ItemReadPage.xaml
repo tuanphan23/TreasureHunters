@@ -60,36 +60,6 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                        Text="Health : " 
-                        Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                        Text="{Binding Data.MaxHealth}" 
-                        Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                    Progress="{Binding Data.PercentHealth}" 
-                    ProgressColor="Green"
-                    WidthRequest="200"
-                    HeightRequest="20"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
-                        Text="Speed : " 
-                        Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                        Text="{Binding Data.Speed}" 
-                        Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                    Progress="{Binding Data.PercentSpeed}" 
-                    ProgressColor="Yellow"
-                    WidthRequest="200"
-                    HeightRequest="20"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
                         Text="Attack : " 
                         Style="{StaticResource LabelStyle}"/>
                         <Label 
