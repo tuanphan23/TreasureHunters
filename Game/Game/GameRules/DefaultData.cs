@@ -16,83 +16,93 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "I1",
-                    Description = "I1",
+                    Name = "Ocular Device",
+                    Description = "A glass to help the wearer see the hidden symbols ",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack
-                },
-                new ItemModel {
-                    Name = "I2",
-                    Description = "I2",
-                    ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Damage = 5,
+                    Value = 7,
                     Location = ItemLocationEnum.Head,
-                    Attribute = AttributeEnum.Attack
+                    Attribute = AttributeEnum.Defense,
+                    DamageType = DamageTypeEnum.Electric
                 },
                 new ItemModel {
-                    Name = "I3",
-                    Description = "I3",
+                    Name = "Meerschaum Pipe",
+                    Description = "A million-dollar pipe ",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Necklass,
-                    Attribute = AttributeEnum.Attack
+                    Damage = 8,
+                    Value = 6,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.Attack,
+                    DamageType = DamageTypeEnum.None
                 },
                 new ItemModel {
-                    Name = "I4",
-                    Description = "I4",
+                    Name = "President’s book",
+                    Description = "A book holds all the secrets to the history of the World ",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
+                    Damage = 5,
                     Value = 9,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack
+                    Attribute = AttributeEnum.CurrentHealth,
+                    DamageType = DamageTypeEnum.Heal
                 },
                 new ItemModel {
-                    Name = "I5",
-                    Description = "I5",
+                    Name = "Flaming gun",
+                    Description = "A magical gun that can cause enemies to explode with solar energy ",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Finger,
-                    Attribute = AttributeEnum.Attack
+                    Damage = 9,
+                    Value = 7,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.Attack,
+                    DamageType = DamageTypeEnum.Fire
                 },
                 new ItemModel {
-                    Name = "I6",
-                    Description = "I6",
+                    Name = "Blink boots",
+                    Description = "Speedy boots that increase your running speed ",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Damage = 3,
+                    Value = 6,
                     Location = ItemLocationEnum.Feet,
-                    Attribute = AttributeEnum.Attack
+                    Attribute = AttributeEnum.Speed,
+                    DamageType = DamageTypeEnum.Electric
+                },
+                new ItemModel {
+                    Name = "Cape",
+                    Description = "A marvelous cape with the ability to reduce the damage of the enemies. ",
+                    ImageURI = "item.png",
+                    Damage = 5,
+                    Value = 8,
+                    Location = ItemLocationEnum.Unknown,
+                    Attribute = AttributeEnum.Defense,
+                    DamageType = DamageTypeEnum.Poison
+                },
+                new ItemModel {
+                    Name = "Map",
+                    Description = "Map to your next clue, increases confidence making you feel stronger. ",
+                    ImageURI = "item.png",
+                    Damage = 4,
+                    Value = 8,
+                    Location = ItemLocationEnum.OffHand,
+                    Attribute = AttributeEnum.MaxHealth,
+                    DamageType = DamageTypeEnum.Heal
                 },
             };
 
-            for (int i = 0; i < 20; i++)
-            {
-                var item = new ItemModel
-                {
-                    ImageURI = "item.png",
-                    Range = 2,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack
-                };
-                item.Name = "I" + (datalist.Count+1).ToString();
-                item.Description = item.Name;
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    var item = new ItemModel
+            //    {
+            //        ImageURI = "item.png",
+            //        Range = 2,
+            //        Damage = 10,
+            //        Value = 9,
+            //        Location = ItemLocationEnum.PrimaryHand,
+            //        Attribute = AttributeEnum.Attack
+            //    };
+            //    item.Name = "I" + (datalist.Count+1).ToString();
+            //    item.Description = item.Name;
 
-                datalist.Add(item);
-            }
+            //    datalist.Add(item);
+            //}
 
             return datalist;
         }
