@@ -45,11 +45,25 @@
 
                 <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
 
-                <Button 
-                Text="Yes" 
-                Clicked="Delete_Clicked" 
-                Style="{StaticResource DeleteButtonStyle}">
-                </Button>
+                <StackLayout
+                        HorizontalOptions ="CenterAndExpand"
+                        Orientation="Horizontal">
+
+                    <Button 
+                            Text="Yes" 
+                            Clicked="Delete_Clicked" 
+                            Style="{StaticResource DeleteButtonStyle}">
+                    </Button>
+
+                    <Button 
+                            Text="No" 
+                            Clicked="Cancel_Clicked" 
+                            Style="{StaticResource DeleteButtonStyle}">
+                    </Button>
+
+
+                </StackLayout>
+                
             </StackLayout>
             
         </StackLayout>
