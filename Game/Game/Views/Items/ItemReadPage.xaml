@@ -35,12 +35,22 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions = "CenterAndExpand">
-                    <Label 
+                    <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="5"
+                    VerticalOptions="Center"
+                    RowDefinitions="auto,auto,auto,auto"
+                    ColumnDefinitions="auto,auto,auto,auto,auto"
+                    >
+                    <Label
+                        Grid.Row="0" Grid.Column="0"
                         Text="Description : " 
                         Style="{StaticResource CenterMessageStyle}"/>
-                    <Label 
+                    <Label
+                        Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource CenterMessageStyle}"/>
+                    </Grid>
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
@@ -50,6 +60,16 @@
                         Style="{StaticResource CenterMessageStyle}"/>
                         <Label 
                         Text="{Binding Data.Location}" 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                    </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                             HorizontalOptions = "CenterAndExpand">
+                        <Label 
+                        Text="Type : " 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                        <Label 
+                        Text="{Binding Data.DamageType}" 
                         Style="{StaticResource CenterMessageStyle}"/>
                     </StackLayout>
 
@@ -71,7 +91,7 @@
                         <Label 
                             Text="{Binding Data.Value}" 
                             Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
+                    </StackLayout>
 
                     <ProgressBar
                     Progress="{Binding Data.PercentValue}" 
