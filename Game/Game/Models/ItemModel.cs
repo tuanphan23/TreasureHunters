@@ -68,7 +68,11 @@ namespace Game.Models
 
         // The Value item modifies.  So a ring of Health +3, has a Value of 3
         public int Value { get; set; } = 0;
-        
+
+        //Value as a percentage of the max value
+        public float PercentValue { get; set; } = 0;
+
+        public const int MAXVALUE = 10;
         //// Count of how many
         //public int Count { get; set; } = 1;
         
@@ -113,6 +117,7 @@ namespace Game.Models
             Name = newData.Name;
             Description = newData.Description;
             Value = newData.Value;
+            PercentValue = (float)newData.Value / MAXVALUE;
             Attribute = newData.Attribute;
             Location = newData.Location;
             Name = newData.Name;
