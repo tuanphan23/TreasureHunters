@@ -12,7 +12,7 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
+    
         <StackLayout Style="{StaticResource VerticalStack}"
                 Spacing="10"
                  VerticalOptions="CenterAndExpand">
@@ -76,5 +76,5 @@
                 </StackLayout>
             </Grid>
         </StackLayout>
-    </ScrollView>
+    
 </ContentPage>
