@@ -48,10 +48,7 @@
                 <Button 
                 Text="Yes" 
                 Clicked="Delete_Clicked" 
-                HorizontalOptions="Center"
-                FontSize="Medium"
-                BorderWidth="1" 
-                BorderColor="black">
+                Style="{StaticResource DeleteButtonStyle}">
                 </Button>
             </StackLayout>
             
