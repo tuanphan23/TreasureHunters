@@ -33,22 +33,25 @@
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions = "CenterAndExpand">
                     <Label 
-                        Text="Buff : " 
+                        Text="Description : " 
                         Style="{StaticResource CenterMessageStyle}"/>
                     <Label 
-                        Text="{Binding Data.Attribute}" 
+                        Text="{Binding Data.Description}" 
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions = "CenterAndExpand">
                         <Label 
-                        Text="Description : " 
+                        Text="{Binding Data.Attribute}" 
                         Style="{StaticResource CenterMessageStyle}"/>
                         <Label 
-                        Text="{Binding Data.Description}" 
+                        Text=" : +" 
                         Style="{StaticResource CenterMessageStyle}"/>
-                    </StackLayout>
+                        <Label 
+                            Text="{Binding Data.Value}" 
+                            Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
 
                     <StackLayout 
                         HorizontalOptions="Center" 
