@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -87,6 +88,28 @@ namespace Game.Views
             }
 
             BindingContext = ViewModel;
+        }
+
+        /// <summary>
+        /// opens the read page based on the Id of the monster that is clicked on
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void On_ItemClicked(object sender, EventArgs e)
+        {
+            //get data from database using Id
+            var button = sender as ImageButton;
+            var ItemID = button.CommandParameter as String;
+            var data = ViewModel.Dataset.FirstOrDefault(item => item.Id.Equals(ItemID));
+
+            //check for a null value
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new ItemReadPage(new GenericViewModel<ItemModel>(data)));
         }
     }
 }
