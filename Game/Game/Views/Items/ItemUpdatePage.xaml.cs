@@ -173,7 +173,7 @@ namespace Game.Views
 
         #region DamageButton
         /// <summary>
-        /// Manage the Value Up Button Event
+        /// Manage the Damage Up Button Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -190,7 +190,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Manage the Value Down Button Event
+        /// Manage the Damage Down Button Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
