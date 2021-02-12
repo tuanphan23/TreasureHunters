@@ -39,6 +39,7 @@ namespace Game.Models
             //Number of remaining uses on the spell
             int NumUses;
 
+            //allows for deep copying of Abilities
             public Ability copy(Ability other)
             {
                 NumTargets = other.NumTargets;
