@@ -16,7 +16,10 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CharacterUpdatePage : ContentPage
     {
+        // maximum value for monster's attribute
         public int MaxAttributeValue = 9;
+
+        // maximum value for monster's attribute
         public int MinAttributeValue = 0;
 
         // View Model for Item
