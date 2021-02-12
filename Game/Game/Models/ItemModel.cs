@@ -127,7 +127,6 @@ namespace Game.Models
             Range = newData.Range;
             Damage = newData.Damage;
 
-            //possib
             itemAbility.copy(newData.itemAbility);
 
             //Guid = newData.Guid;
@@ -171,6 +170,13 @@ namespace Game.Models
             Value = DiceHelper.RollDice(1, level);
 
             return Value;
+        }
+
+        //updates the percent value to match Value
+        public float updatePercent()
+        {
+            PercentValue = (float) Value / MAXVALUE;
+            return PercentValue;
         }
     }
 }
