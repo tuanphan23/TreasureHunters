@@ -13,60 +13,68 @@
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+        <StackLayout Style="{StaticResource VerticalStack}"
+                Spacing="10"
+                 VerticalOptions="CenterAndExpand">
 
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
+            <Grid
+            VerticalOptions="CenterAndExpand">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                <StackLayout 
+                HorizontalOptions="Center" 
+                Padding="25">
 
 
-            <StackLayout 
-            HorizontalOptions="Center" 
-            Padding="20">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-                <Label Text="Are you sure you want to delete this item?" 
+                    <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions = "CenterAndExpand">
+                        <Label 
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource CenterMessageStyle}" 
+                        VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions = "CenterAndExpand">
+                        <Label 
+                        Text="Description : " 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                        <Label 
+                        Text="{Binding Data.Description}" 
+                        Style="{StaticResource CenterMessageStyle}"/>
+                    </StackLayout>
+
+                    <StackLayout 
+                        HorizontalOptions="Center" 
+                        Padding="20">
+
+                        <Label Text="Are you sure you want to delete this item?" 
                        Style="{StaticResource DeleteMessageStyle}"/>
 
-                <StackLayout
+                        <StackLayout
                         HorizontalOptions ="CenterAndExpand"
                         Orientation="Horizontal">
 
-                    <Button 
+                            <Button 
                             Text="Yes" 
                             Clicked="Delete_Clicked" 
                             Style="{StaticResource DeleteButtonStyle}">
-                    </Button>
+                            </Button>
 
-                    <Button 
+                            <Button 
                             Text="No" 
                             Clicked="Cancel_Clicked" 
                             Style="{StaticResource DeleteButtonStyle}">
-                    </Button>
+                            </Button>
 
+
+                        </StackLayout>
+
+                    </StackLayout>
 
                 </StackLayout>
-                
-            </StackLayout>
-            
+            </Grid>
         </StackLayout>
     </ScrollView>
 </ContentPage>
