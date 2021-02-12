@@ -62,7 +62,7 @@
 
                     <ProgressBar
                     Progress="{Binding Data.PercentValue}" 
-                    ProgressColor="Red"
+                    ProgressColor="Navy"
                     WidthRequest="200"
                     HeightRequest="20"/>
 
