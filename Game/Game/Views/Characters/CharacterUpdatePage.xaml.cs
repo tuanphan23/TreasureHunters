@@ -180,7 +180,14 @@ namespace Game.Views
                 ItemBox.Children.Remove(data);
             }
 
-            ItemBox.Children.Add(GetItemToDisplay());
+            //Add space for each of the places that can hold item
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Head));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Necklass));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.PrimaryHand));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.OffHand));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
         }
 
         /// <summary>
@@ -208,9 +215,9 @@ namespace Game.Views
         /// </summary>
         /// <param name="location"></param>
         /// <returns></returns>
-        public StackLayout GetItemToDisplay()
+        public StackLayout GetItemToDisplay(ItemLocationEnum location)
         {
-            var data = ViewModel.Data.GetItem(ViewModel.Data.UniqueItem);
+            var data = ViewModel.Data.GetItemByLocation(location);
             if (data == null)
             {
                 // Show the Default Icon for the Location
