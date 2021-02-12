@@ -15,6 +15,12 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemUpdatePage : ContentPage
     {
+        // maximum value for Item's attribute
+        public int MaxAttributeValue = 9;
+
+        // maximum value for monster's attribute
+        public int MinAttributeValue = 0;
+
         // View Model for Item
         public readonly GenericViewModel<ItemModel> ViewModel;
 
@@ -35,6 +41,8 @@ namespace Game.Views
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = data.Data.Location.ToString();
             AttributePicker.SelectedItem = data.Data.Attribute.ToString();
+
+            UpdatePageBindingContext();
         }
 
         /// <summary>
@@ -65,13 +73,86 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Value
+        /// Update the page binding context
+        /// </summary>
+        public bool UpdatePageBindingContext()
+        {
+            // Temp store off the Level
+            var data = this.ViewModel.Data;
+
+            // Clear the Binding and reset it
+            BindingContext = null;
+            this.ViewModel.Data = data;
+            this.ViewModel.Title = data.Name;
+
+            BindingContext = this.ViewModel;
+
+            LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
+            AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
+
+            return true;
+        }
+
+        #region AttributeButtons
+        #region SetEnableStateAttributeButtons
+        /// <summary>
+        /// Walk each button and set the enabled to true or false
+        /// </summary>
+        /// <returns></returns>
+        public bool SetEnableStateAttributeButtons()
+        {
+            ValueUpButton.IsEnabled = true;
+            if (ViewModel.Data.Value == MaxAttributeValue)
+            {
+                ValueUpButton.IsEnabled = false;
+            }
+
+            ValueDownButton.IsEnabled = true;
+            if (ViewModel.Data.Value == MinAttributeValue)
+            {
+                ValueDownButton.IsEnabled = false;
+            }
+
+            return true;
+        }
+
+        #endregion SetEnableStateAttributeButtons
+
+        #region ValueButton
+        /// <summary>
+        /// Manage the Value Up Button Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void ValueUpButton_Clicked(object sender, EventArgs e)
         {
-            ValueValue.Text = String.Format("{0}", e.NewValue);
+            ViewModel.Data.Value++;
+
+            if (ViewModel.Data.Value > MaxAttributeValue)
+            {
+                ViewModel.Data.Value = MaxAttributeValue;
+            }
+
+            UpdatePageBindingContext();
         }
+
+        /// <summary>
+        /// Manage the Value Down Button Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ValueDownButton_Clicked(object sender, EventArgs e)
+        {
+            ViewModel.Data.Value--;
+
+            if (ViewModel.Data.Value < MinAttributeValue)
+            {
+                ViewModel.Data.Value = MinAttributeValue;
+            }
+
+            UpdatePageBindingContext();
+        }
+        #endregion AttackButton
+        #endregion AttributeButtons
     }
 }
