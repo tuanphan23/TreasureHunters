@@ -8,7 +8,7 @@ namespace Game.Models
     /// The elemental types of damage
     /// Used by DamageInfo to specify what element of damage is being dealt
     /// </summary>
-    public enum DamgeTypeEnum
+    public enum DamageTypeEnum
     {
         //No element
         None = 0,

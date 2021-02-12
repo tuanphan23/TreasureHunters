@@ -18,7 +18,7 @@ namespace Game.Models
         #region Attributes
 
         //status effect that the player is currently affected by
-        private DamgeTypeEnum currentStatusEffect;
+        private DamageTypeEnum currentStatusEffect;
 
         #region GameEngineAttributes
         // alive status, !alive will be removed from the list

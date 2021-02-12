@@ -31,10 +31,10 @@ namespace Game.Models
             int DmgBoost;
 
             //Element of the ability
-            DamgeTypeEnum AttackType;
+            DamageTypeEnum AttackType;
 
             //Chance of giving the defender a status effect
-            DamgeTypeEnum StatusChance;
+            DamageTypeEnum StatusChance;
 
             //Number of remaining uses on the spell
             int NumUses;
