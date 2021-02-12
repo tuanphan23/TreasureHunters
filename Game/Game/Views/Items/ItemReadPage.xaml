@@ -23,13 +23,14 @@
 
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}">
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                 HorizontalOptions = "CenterAndExpand">
                         <Label 
                        Text="Name : " 
-                        Style="{StaticResource LabelStyle}"/>
+                        Style="{StaticResource CenterMessageStyle}"/>
                         <Label 
                         Text="{Binding Data.Name}" 
-                        Style="{StaticResource ValueStyle}"/>
+                        Style="{StaticResource CenterMessageStyle}"/>
                     </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" 
@@ -42,13 +43,14 @@
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}">
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                             HorizontalOptions = "CenterAndExpand">
                         <Label 
                         Text="Location : " 
-                        Style="{StaticResource LabelStyle}"/>
+                        Style="{StaticResource CenterMessageStyle}"/>
                         <Label 
                         Text="{Binding Data.Location}" 
-                        Style="{StaticResource ValueStyle}"/>
+                        Style="{StaticResource CenterMessageStyle}"/>
                     </StackLayout>
 
                     <BoxView 
@@ -58,16 +60,17 @@
                     WidthRequest="200"/>
 
 
-                    <StackLayout Style="{StaticResource HorizontalStack}">
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                 HorizontalOptions = "CenterAndExpand">
                         <Label 
                             Text="{Binding Data.Attribute}" 
-                            Style="{StaticResource HeaderStyle}"/>
+                            Style="{StaticResource CenterMessageStyle}"/>
                         <Label 
                             Text=" : +" 
-                            Style="{StaticResource HeaderStyle}"/>
+                            Style="{StaticResource CenterMessageStyle}"/>
                         <Label 
                             Text="{Binding Data.Value}" 
-                            Style="{StaticResource HeaderStyle}"/>
+                            Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
                     <ProgressBar
