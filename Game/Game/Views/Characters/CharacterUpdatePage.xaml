@@ -22,180 +22,274 @@
 
     <ContentPage.Content>
 
-        <ScrollView>
-            <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+        <AbsoluteLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            >
 
-                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
+            <StackLayout Style ="{StaticResource VerticalStack}"
+                     AbsoluteLayout.LayoutBounds="1,1,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                <ScrollView>
+                    <StackLayout Style="{StaticResource OuterBoxStack}"
+                    Spacing="10">
 
-                <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
+                        <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>
+                        <Grid
+                        RowSpacing="1"
+                        ColumnSpacing="2"
+                        VerticalOptions="Center">
 
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Name, Mode=TwoWay}" 
-                        Style="{StaticResource EntryStyle}"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Description" 
-                        Style="{StaticResource LabelStyle}"/>
+                            <Label Grid.Row="0" Grid.Column="0"
+                            Text="Name" 
+                            Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.Description, Mode=TwoWay}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Image" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="2" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
-
-                        <Image 
-                            Source="{Binding Data.ImageURI, Mode=TwoWay}"
-                            Style="{StaticResource ImageSmallStyle}"/>
-
-                        <Entry 
-                            Text="{Binding Data.ImageURI, Mode=TwoWay}" 
+                            <Entry Grid.Row="0" Grid.Column="1"
+                            Text="{Binding Data.Name, Mode=TwoWay}" 
                             Style="{StaticResource EntryStyle}"/>
 
+                            <Label Grid.Row="1" Grid.Column="0"
+                            Text="Description" 
+                            Style="{StaticResource LabelStyle}"/>
+
+                            <Entry Grid.Row="1" Grid.Column="1"
+                            Text="{Binding Data.Description, Mode=TwoWay}" 
+                            Style="{StaticResource EntryStyle}"/>
+
+                            <Label Grid.Row="2" Grid.Column="0"
+                            Text="Image" 
+                            Style="{StaticResource LabelStyle}"/>
+
+                            <StackLayout Grid.Row="2" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+
+                                <Image 
+                                Source="{Binding Data.ImageURI, Mode=TwoWay}"
+                                Style="{StaticResource ImageSmallStyle}"/>
+
+                                <Entry 
+                                Text="{Binding Data.ImageURI, Mode=TwoWay}" 
+                                Style="{StaticResource EntryStyle}"/>
+
+                            </StackLayout>
+
+                            <Label Grid.Row="3" Grid.Column="0"
+                            Text="Class: " 
+                            Style="{StaticResource LabelStyle}"/>
+
+                            <Picker Grid.Row="3" Grid.Column="1"
+                            ItemsSource="{x:Static local:CharacterJobEnumHelper.GetFullList}" 
+                            SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                            x:Name="JobPicker"/>
+
+                            <Label
+                            Grid.Row="4" Grid.Column="0"
+                            Text="Level: " 
+                            Style="{StaticResource LabelStyle}"/>
+
+                            <Picker
+                            Grid.Row="4" Grid.Column="1"
+                            x:Name="LevelPicker"
+                            ItemDisplayBinding="{Binding SelectedItemProperty}"
+                            SelectedIndexChanged="LevelPicker_ChangedIndex"/>
+
+                        </Grid>
+
+                        <FlexLayout 
+                        Padding="5"
+                        Wrap="Wrap"
+                        JustifyContent="SpaceAround"
+                        AlignContent="SpaceAround"
+                        x:Name="ItemBox">
+                        </FlexLayout>
+
+                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+
+                            <StackLayout Style="{StaticResource HorizontalStack}" >
+
+                                <Label 
+                                Text="Max Health: " 
+                                Style="{StaticResource LabelStyle}"/>
+
+                                <Label 
+                                Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}" 
+                                x:Name="MaxHealthValue"
+                                Style="{StaticResource ValueStyle}"/>
+
+                            </StackLayout>
+
+                            <Grid
+                        RowSpacing="1"
+                        ColumnSpacing="5"
+                        VerticalOptions="Center"
+                        RowDefinitions="auto,auto,auto,auto"
+                        ColumnDefinitions="auto,auto,auto,auto,auto"
+                        >
+
+                                <!--Attack-->
+                                <Label 
+                            Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Attack"/>
+
+                                <Label 
+                            Grid.Row="0" Grid.Column="1"
+                            Style="{StaticResource ValueStyle}"
+                            Text="{Binding Data.Attack}"/>
+
+                                <Button
+                            Grid.Row="0" Grid.Column="3"
+                            x:Name="AttackDownButton"
+                            Text="-"
+                            Clicked="AttackDownButton_Clicked"/>
+
+                                <Button
+                            Grid.Row="0" Grid.Column="4"
+                            x:Name="AttackUpButton"
+                            Text="+"
+                            Clicked="AttackUpButton_Clicked"/>
+
+                                <!--Defense-->
+                                <Label 
+                            Grid.Row="1" Grid.Column="0"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Defense"/>
+
+                                <Label 
+                            Grid.Row="1" Grid.Column="1"
+                            Style="{StaticResource ValueStyle}"
+                            Text="{Binding Data.Defense}"/>
+
+                                <Button
+                            Grid.Row="1" Grid.Column="3"
+                            x:Name="DefenseDownButton"
+                            Text="-"
+                            Clicked="DefenseDownButton_Clicked"/>
+
+                                <Button
+                            Grid.Row="1" Grid.Column="4"
+                            x:Name="DefenseUpButton"
+                            Text="+"
+                            Clicked="DefenseUpButton_Clicked"/>
+
+                                <!--Speed-->
+                                <Label 
+                            Grid.Row="2" Grid.Column="0"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Speed"/>
+
+                                <Label 
+                            Grid.Row="2" Grid.Column="1"
+                            Style="{StaticResource ValueStyle}"
+                            Text="{Binding Data.Speed}"/>
+
+                                <Button
+                            Grid.Row="2" Grid.Column="3"
+                            x:Name="SpeedDownButton"
+                            Text="-"
+                            Clicked="SpeedDownButton_Clicked"/>
+
+                                <Button
+                            Grid.Row="2" Grid.Column="4"
+                            x:Name="SpeedUpButton"
+                            Text="+"
+                            Clicked="SpeedUpButton_Clicked"/>
+                            </Grid>
+                        </StackLayout>
+
+                        <Button
+                        Text="Random"
+                        Clicked="RandomButton_Clicked"
+                        Style="{StaticResource RandomButtonStyle}"/>
+
                     </StackLayout>
+                </ScrollView>
+                
+            </StackLayout>
+           
+            <StackLayout x:Name="PopupItemSelector"
+                 BackgroundColor="Transparent" 
+                 IsVisible="false" 
+                 AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
+                 AbsoluteLayout.LayoutFlags="All">
 
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Class: " 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Picker Grid.Row="3" Grid.Column="1"
-                        ItemsSource="{x:Static local:CharacterJobEnumHelper.GetFullList}" 
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="JobPicker"/>
-
-                    <Label
-                        Grid.Row="4" Grid.Column="0"
-                        Text="Level: " 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Picker
-                        Grid.Row="4" Grid.Column="1"
-                        x:Name="LevelPicker"
-                        ItemDisplayBinding="{Binding SelectedItemProperty}"
-                        SelectedIndexChanged="LevelPicker_ChangedIndex"/>
-
-                </Grid>
-
-                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" >
-
-                        <Label 
-                            Text="Max Health: " 
-                            Style="{StaticResource LabelStyle}"/> 
-
-                        <Label 
-                            Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}" 
-                            x:Name="MaxHealthValue"
-                            Style="{StaticResource ValueStyle}"/>
-
-                    </StackLayout>
-
-                    <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="5"
-                    VerticalOptions="Center"
-                    RowDefinitions="auto,auto,auto,auto"
-                    ColumnDefinitions="auto,auto,auto,auto,auto"
+                <StackLayout 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300"
+                    HeightRequest="300"
                     >
 
-                    <!--Attack-->
-                    <Label 
-                        Grid.Row="0" Grid.Column="0"
-                        Style="{StaticResource LabelStyle}"
-                        Text="Attack"/>
+                    <Frame  BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
+                            <Label x:Name="PopupLocationLabel" Style="{StaticResource PopupItemTextStyle}" />
+                            <Label x:Name="PopupLocationValue" Style="{StaticResource PopupItemTextStyle}" />
 
-                    <Label 
-                        Grid.Row="0" Grid.Column="1"
-                        Style="{StaticResource ValueStyle}"
-                        Text="{Binding Data.Attack}"/>
+                            <ListView x:Name="PopupLocationItemListView" 
+                                CachingStrategy="RecycleElement"
+                                ItemSelected="OnPopupItemSelected"
+                                HasUnevenRows="true"
+                                Margin="5,0,5,0"
+                                RowHeight="80"
+                                >
 
-                    <Button
-                        Grid.Row="0" Grid.Column="3"
-                        x:Name="AttackDownButton"
-                        Text="-"
-                        Clicked="AttackDownButton_Clicked"/>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid ColumnSpacing="5" RowSpacing="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                </Grid.RowDefinitions>
 
-                    <Button
-                        Grid.Row="0" Grid.Column="4"
-                        x:Name="AttackUpButton"
-                        Text="+"
-                        Clicked="AttackUpButton_Clicked"/>
+                                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                                            Source="{Binding ImageURI}"
+                                            Style="{StaticResource ImageSmallStyle}"
+                                            VerticalOptions="CenterAndExpand"/>
 
-                    <!--Defense-->
-                    <Label 
-                        Grid.Row="1" Grid.Column="0"
-                        Style="{StaticResource LabelStyle}"
-                        Text="Defense"/>
+                                                <Label Grid.Column="1" Grid.Row="0"
+                                            Text="{Binding Name}" 
+                                            Style="{StaticResource ListStyle}"/>
 
-                    <Label 
-                        Grid.Row="1" Grid.Column="1"
-                        Style="{StaticResource ValueStyle}"
-                        Text="{Binding Data.Defense}"/>
+                                                <StackLayout Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                                                    <Label Text="{Binding Attribute}" Style="{StaticResource ListStyle}"/>
+                                                    <Label Text="{Binding Value}" Style="{StaticResource ListStyle}"/>
+                                                </StackLayout>
 
-                    <Button
-                        Grid.Row="1" Grid.Column="3"
-                        x:Name="DefenseDownButton"
-                        Text="-"
-                        Clicked="DefenseDownButton_Clicked"/>
+                                                <Label Grid.Column="1" Grid.Row="2"
+                                                Text="{Binding Description}" 
+                                                Style="{StaticResource ListStyle}"
+                                                FontSize="Micro"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
 
-                    <Button
-                        Grid.Row="1" Grid.Column="4"
-                        x:Name="DefenseUpButton"
-                        Text="+"
-                        Clicked="DefenseUpButton_Clicked"/>
-
-                    <!--Speed-->
-                    <Label 
-                        Grid.Row="2" Grid.Column="0"
-                        Style="{StaticResource LabelStyle}"
-                        Text="Speed"/>
-
-                    <Label 
-                        Grid.Row="2" Grid.Column="1"
-                        Style="{StaticResource ValueStyle}"
-                        Text="{Binding Data.Speed}"/>
-
-                    <Button
-                        Grid.Row="2" Grid.Column="3"
-                        x:Name="SpeedDownButton"
-                        Text="-"
-                        Clicked="SpeedDownButton_Clicked"/>
-
-                    <Button
-                        Grid.Row="2" Grid.Column="4"
-                        x:Name="SpeedUpButton"
-                        Text="+"
-                        Clicked="SpeedUpButton_Clicked"/>
-                </Grid>
+                            <Button x:Name="PopupCloseButton" 
+                                Clicked="ClosePopup_Clicked" 
+                                Text="Close"/>
+                        </StackLayout>
+                    </Frame>
                 </StackLayout>
-
-                <Button
-                    Text="Random"
-                    Clicked="RandomButton_Clicked"
-                    Style="{StaticResource RandomButtonStyle}"/>
-
             </StackLayout>
-        </ScrollView>
+
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 </ContentPage>
