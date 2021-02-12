@@ -38,6 +38,17 @@ namespace Game.Models
 
             //Number of remaining uses on the spell
             int NumUses;
+
+            public Ability copy(Ability other)
+            {
+                NumTargets = other.NumTargets;
+                DmgMulti = other.DmgMulti;
+                DmgBoost = other.DmgBoost;
+                AttackType = other.AttackType;
+                StatusChance = other.StatusChance;
+                NumUses = other.NumUses;
+                return this;
+            }
         }
 
         public int test { get; set; } = 0;
@@ -111,7 +122,7 @@ namespace Game.Models
             Damage = newData.Damage;
 
             //possib
-            itemAbility = newData.itemAbility;
+            itemAbility.copy(newData.itemAbility);
 
             //Guid = newData.Guid;
             //Count = newData.Count;
