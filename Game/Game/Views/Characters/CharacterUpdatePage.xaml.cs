@@ -198,12 +198,14 @@ namespace Game.Views
         public void OnPopupItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             ItemModel data = args.SelectedItem as ItemModel;
+            
             if (data == null)
             {
                 return;
             }
 
-            ViewModel.Data.UniqueItem = data.Id;
+            //Add the item to the slot item is supposed to go
+            ViewModel.Data.AddItem(ItemLocationEnum.Head,data.Id);      //TODO LOCATION OF ADD ITEM NEEDS TO BE WHERE YOU CLICK
 
             AddItemsToDisplay();
 
@@ -283,7 +285,7 @@ namespace Game.Views
             };
 
             // Add the rest of the items to the list
-            itemList.AddRange(ItemIndexViewModel.Instance.Dataset);
+            itemList.AddRange(ItemIndexViewModel.Instance.Dataset);                      //TODO MAKE SURE YOU CANT ADD ITEMS ALREADY EQUIPPED
 
             // Populate the list with the items
             PopupLocationItemListView.ItemsSource = itemList;
