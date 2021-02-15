@@ -220,37 +220,6 @@ namespace Game.GameRules
                     Job = CharacterJobEnum.Fighter,
                 },
 
-                new CharacterModel {
-                    Name = "Ian Howe",
-                    Description = "A currently imprisoned entrepreneur/treasure hunter who attempted to find the Templar Treasure",
-                    Level = 1,
-                    MaxHealth = 5,
-                    ImageURI = "item.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                    Job = CharacterJobEnum.Fighter,
-                },
-
-                new CharacterModel {
-                    Name = "Mitchell Wilkinson",
-                    Description = "An international arms dealer and black-market antiquities dealer ",
-                    Level = 1,
-                    MaxHealth = 5,
-                    ImageURI = "item.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                    Job = CharacterJobEnum.Fighter,
-                },
             };
 
         return datalist;
@@ -266,44 +235,32 @@ namespace Game.GameRules
         var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "M1",
-                    Description = "M1",
+                    Name = "Mitchell Wilkinson",
+                    Description = "An international arms dealer and black-market antiquities dealer ",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M2",
-                    Description = "M2",
+                    Name = "Ian Howe",
+                    Description = "A currently imprisoned entrepreneur/treasure hunter who attempted to find the Templar Treasure",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M3",
-                    Description = "M3",
+                    Name = "Shaw",
+                    Description = "Ian Howe's right-hand man and best friend",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M4",
-                    Description = "M4",
+                    Name = "Man In Black 1",
+                    Description = "FBI Special Agent ",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M5",
-                    Description = "M5",
-                    ImageURI = "item.png",
-                },
-
-                new MonsterModel {
-                    Name = "M6",
-                    Description = "M6",
-                    ImageURI = "item.png",
-                },
-
-                new MonsterModel {
-                    Name = "M7",
-                    Description = "M7",
+                    Name = "Man In Black 2",
+                    Description = "FBI Special Agent ",
                     ImageURI = "item.png",
                 },
             };
