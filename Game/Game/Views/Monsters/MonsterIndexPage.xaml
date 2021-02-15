@@ -19,14 +19,14 @@
                     BindableLayout.ItemsSource="{Binding Dataset}"
                     Wrap="Wrap"
                     Direction="Row"
-                    JustifyContent="SpaceEvenly">
+                    JustifyContent="SpaceAround">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="20">
                                 <ImageButton
                                        Source="{Binding ImageURI}"
                                        Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
-                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource CenterMessageStyle}"/>
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>

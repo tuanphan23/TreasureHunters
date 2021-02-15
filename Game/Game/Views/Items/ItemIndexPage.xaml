@@ -19,7 +19,7 @@
                     BindableLayout.ItemsSource="{Binding Dataset}"
                     Wrap="Wrap"
                     Direction="Row"
-                    JustifyContent="SpaceEvenly">
+                    JustifyContent="SpaceAround">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="20">
@@ -27,7 +27,7 @@
                                     Source="{Binding ImageURI}"
                                     Clicked="On_ItemClicked"
                                     CommandParameter="{Binding Id}"/>
-                                <Label Text="{Binding Name}" Style="{StaticResource LargeLabelStyle}"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource CenterMessageStyle}"/>
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
