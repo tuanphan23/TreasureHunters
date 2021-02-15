@@ -18,8 +18,8 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Character;
             Guid = Id;
-            Name = "Elf";
-            Description = "Happy Elf";
+            Name = "Ben";
+            Description = "I'm going to steal the Declaration of Independence";
             Level = 1;
             ImageURI = "item.png";
             ExperienceTotal = 0;
