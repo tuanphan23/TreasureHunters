@@ -54,15 +54,6 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                        Text="Class : " 
-                        Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                        Text="{Binding Data.Job}" 
-                        Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
                         Text="Level : " 
                         Style="{StaticResource LabelStyle}"/>
                         <Label 
