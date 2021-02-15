@@ -35,22 +35,9 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions = "CenterAndExpand">
-                    <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="5"
-                    VerticalOptions="Center"
-                    RowDefinitions="auto,auto,auto,auto"
-                    ColumnDefinitions="auto,auto,auto,auto,auto"
-                    >
-                    <Label
-                        Grid.Row="0" Grid.Column="0"
-                        Text="Description : " 
-                        Style="{StaticResource CenterMessageStyle}"/>
-                    <Label
-                        Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
-                        Style="{StaticResource CenterMessageStyle}"/>
-                    </Grid>
+                    <Label Text="{Binding Path=Data.Description, StringFormat='Description: {0:G}'}"
+                               Style="{StaticResource CenterMessageStyle}"
+                               LineBreakMode="WordWrap"/>
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
