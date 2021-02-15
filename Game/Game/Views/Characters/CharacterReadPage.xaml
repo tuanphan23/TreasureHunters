@@ -38,6 +38,12 @@
                     </StackLayout>
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label Text="{Binding Path=Data.Description, StringFormat='Description: {0:G}'}"
+                               Style="{StaticResource ValueStyle}"
+                               LineBreakMode="WordWrap"/>
+                    </StackLayout>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
                         Text="Status : " 
                         Style="{StaticResource LabelStyle}"/>
