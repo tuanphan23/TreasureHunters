@@ -172,7 +172,7 @@
 
                         <Label  x:Name="PopupItemName" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                        <Label x:Name="PopupItemDescription" Style="{StaticResource CenterMessageStyle}"/>
+                        <Label x:Name="PopupItemDescription" Style="{StaticResource CenterMessageStyle}" LineBreakMode="WordWrap"/>
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
                             <Label Text="Location : " Style="{StaticResource CenterMessageStyle}"/>
