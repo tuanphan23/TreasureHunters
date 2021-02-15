@@ -141,7 +141,7 @@ namespace Game.GameRules
         var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
-                    Name = "Benjamin Franklin Gates",
+                    Name = "Benjamin Gates",
                     Description = "An American treasure hunter and cryptologist, famous for finding the Templar Treasure.",
                     Level = 1,
                     MaxHealth = 5,
@@ -189,7 +189,7 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "Patrick Henry Gates",
+                    Name = "Patrick Gates",
                     Description = "A former treasure hunter and the father of Benjamin Franklin Gates",
                     Level = 1,
                     MaxHealth = 5,

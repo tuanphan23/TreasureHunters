@@ -176,7 +176,7 @@ namespace Game.Models
         }
 
         //updates the percent value to match Value
-        public float updatePercent()
+        public float UpdatePercent()
         {
             PercentValue = (float) Value / MAXVALUE;
             return PercentValue;

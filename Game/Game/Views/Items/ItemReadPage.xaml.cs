@@ -32,7 +32,7 @@ namespace Game.Views
             InitializeComponent();
 
             this.ViewModel = data;
-            ViewModel.Data.updatePercent();
+            ViewModel.Data.UpdatePercent();
 
             BindingContext = this.ViewModel;
         }

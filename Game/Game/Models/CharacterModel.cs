@@ -114,7 +114,7 @@ namespace Game.Models
         }
 
         //updates the percent values to match Stats
-        public void updatePercent()
+        public void UpdatePercent()
         {
             PercentAttack = (float)Attack / MAXATTACK;
             PercentDefense = (float)Defense / MAXDEFENSE;

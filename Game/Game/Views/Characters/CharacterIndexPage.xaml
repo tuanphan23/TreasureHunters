@@ -22,22 +22,23 @@
                     BindableLayout.ItemsSource="{Binding Dataset}"
                     Wrap="Wrap"
                     Direction="Row"
-                    JustifyContent="SpaceEvenly">
+                    JustifyContent="SpaceAround">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="20">
                                 <ImageButton
                                        Source="{Binding ImageURI}"
                                        Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
-                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource CenterMessageStyle}"/>
                                 <StackLayout Orientation="Horizontal"
-                                                 Grid.Column="1" Grid.Row="1">
+                                             Grid.Column="1" Grid.Row="1"
+                                             Style="{StaticResource HorizontalStack}">
 
-                                    <Label Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
-                                               Style="{StaticResource ListStyle}"/>
+                                    <Label Text="{Binding Path=Level, StringFormat='Level {0:G} - '}"
+                                               Style="{StaticResource CenterMessageStyle}"/>
 
                                     <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
-                                               Style="{StaticResource ListStyle}"/>
+                                               Style="{StaticResource CenterMessageStyle}"/>
 
                                 </StackLayout>
                             </StackLayout>
