@@ -83,22 +83,13 @@
 
                             </StackLayout>
 
-                            <Label Grid.Row="3" Grid.Column="0"
-                            Text="Class: " 
-                            Style="{StaticResource LabelStyle}"/>
-
-                            <Picker Grid.Row="3" Grid.Column="1"
-                            ItemsSource="{x:Static local:CharacterJobEnumHelper.GetFullList}" 
-                            SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                            x:Name="JobPicker"/>
-
                             <Label
-                            Grid.Row="4" Grid.Column="0"
+                            Grid.Row="3" Grid.Column="0"
                             Text="Level: " 
                             Style="{StaticResource LabelStyle}"/>
 
                             <Picker
-                            Grid.Row="4" Grid.Column="1"
+                            Grid.Row="3" Grid.Column="1"
                             x:Name="LevelPicker"
                             ItemDisplayBinding="{Binding SelectedItemProperty}"
                             SelectedIndexChanged="LevelPicker_ChangedIndex"/>
