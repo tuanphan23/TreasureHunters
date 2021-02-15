@@ -45,15 +45,6 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                        Text="Status : " 
-                        Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                        Text="{Binding Data.currentStatusEffect}" 
-                        Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
                         Text="Level : " 
                         Style="{StaticResource LabelStyle}"/>
                         <Label 
