@@ -113,7 +113,9 @@ namespace Game.Models
             return myReturn;
         }
 
-        //updates the percent values to match Stats
+        /// <summary>
+        /// Updates the percent values to match Stats
+        /// </summary>
         public void UpdatePercent()
         {
             PercentAttack = (float)Attack / MAXATTACK;
