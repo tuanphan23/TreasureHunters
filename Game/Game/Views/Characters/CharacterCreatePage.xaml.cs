@@ -3,6 +3,7 @@ using Game.Models;
 using Game.ViewModels;
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 using Xamarin.Forms;
@@ -218,6 +219,43 @@ namespace Game.Views
         public void ClosePopup()
         {
             PopupItemSelector.IsVisible = false;
+        }
+
+
+        /// <summary>
+        /// Sets data on the popup page and makes visible
+        /// </summary>
+        /// <param name="data">the item that was clicked on</param>
+        /// <param name="location">the location that 'data' was equipped in</param>
+        /// <returns></returns>
+        public bool ShowPopup(ItemModel data, ItemLocationEnum location)
+        {
+            PopupItemSelector.IsVisible = true;
+
+            // Make a fake item for None
+            var NoneItem = new ItemModel
+            {
+                Id = null, // will use null to clear the item
+                Guid = "None", // how to find this item amoung all of them
+                ImageURI = "icon_cancel.png",
+                Name = "None",
+                Description = "None",
+                //the location that the NoneItem will be equipped into
+                //this needs to be set for the popup to know where to equip the none item if selected
+                Location = location
+            };
+
+            List<ItemModel> itemList = new List<ItemModel>
+            {
+                NoneItem
+            };
+
+            // Add the rest of the items to the list
+            itemList.AddRange(ItemIndexViewModel.Instance.GetLocationItems(location));                      //TODO MAKE SURE YOU CANT ADD ITEMS ALREADY EQUIPPED
+
+            // Populate the list with the items
+            PopupLocationItemListView.ItemsSource = itemList;
+            return true;
         }
     }
 }
