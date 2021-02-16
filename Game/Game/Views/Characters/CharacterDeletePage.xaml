@@ -33,13 +33,6 @@
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions = "CenterAndExpand">
                     <Label 
-                        Text="{Binding Data.Job}" 
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" 
-                             HorizontalOptions = "CenterAndExpand">
-                    <Label 
                         Text="Level : " 
                         Style="{StaticResource CenterMessageStyle}"/>
                     <Label 
