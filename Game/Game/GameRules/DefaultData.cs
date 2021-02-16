@@ -145,7 +145,7 @@ namespace Game.GameRules
                     Description = "An American treasure hunter and cryptologist, famous for finding the Templar Treasure.",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "BenPic.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -161,7 +161,7 @@ namespace Game.GameRules
                     Description = "A sarcastic computer expert, resident genius",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "RileyPic.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -177,7 +177,7 @@ namespace Game.GameRules
                     Description = "An archivist at the National Archives",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "Abigail.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -193,7 +193,7 @@ namespace Game.GameRules
                     Description = "A former treasure hunter and the father of Benjamin Franklin Gates",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "OldBen.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -209,7 +209,7 @@ namespace Game.GameRules
                     Description = "An FBI Special Agent in charge of the theft of the Declaration of Independence",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "Agent1.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -237,31 +237,31 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Mitchell Wilkinson",
                     Description = "An international arms dealer and black-market antiquities dealer ",
-                    ImageURI = "item.png",
+                    ImageURI = "Agent1.png",
                 },
 
                 new MonsterModel {
                     Name = "Ian Howe",
                     Description = "A currently imprisoned entrepreneur/treasure hunter who attempted to find the Templar Treasure",
-                    ImageURI = "item.png",
+                    ImageURI = "Agent2.png",
                 },
 
                 new MonsterModel {
                     Name = "Shaw",
                     Description = "Ian Howe's right-hand man and best friend",
-                    ImageURI = "item.png",
+                    ImageURI = "Agent3.png",
                 },
 
                 new MonsterModel {
                     Name = "Man In Black 1",
                     Description = "FBI Special Agent ",
-                    ImageURI = "item.png",
+                    ImageURI = "Agent2.png",
                 },
 
                 new MonsterModel {
                     Name = "Man In Black 2",
                     Description = "FBI Special Agent ",
-                    ImageURI = "item.png",
+                    ImageURI = "Agent4.png",
                 },
             };
 
