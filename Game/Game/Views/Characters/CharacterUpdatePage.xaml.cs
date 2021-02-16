@@ -262,7 +262,7 @@ namespace Game.Views
             };
 
             // Add a event to the user can click the item and see more
-            ItemButton.Clicked += (sender, args) => ShowPopup(data);
+            ItemButton.Clicked += (sender, args) => ShowPopup(data, location);
 
             // Add the Display Text for the item
             var ItemLabel = new Label
@@ -291,9 +291,10 @@ namespace Game.Views
         /// <summary>
         /// Sets data on the popup page and makes visible
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="data">the item that was clicked on</param>
+        /// <param name="location">the location that 'data' was equipped in</param>
         /// <returns></returns>
-        public bool ShowPopup(ItemModel data)
+        public bool ShowPopup(ItemModel data, ItemLocationEnum location)
         {
             PopupItemSelector.IsVisible = true;
 
