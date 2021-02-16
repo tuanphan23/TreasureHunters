@@ -19,6 +19,18 @@ namespace Game.Models
         // Clerics defend well and have buff abilities
         Cleric = 12,
 
+        //Finder is adept at is quick to initaiate attack
+        Finder = 18,
+
+        //Adventurers have an extra sense of agression while they search for treasure
+        Adventurer = 26,
+
+        //Treasure Hunters have a solid defense and attack 
+        TreasureHunter = 34,
+
+        //A seeker covers themselves and defends while searching for treasure
+        Seeker = 40,
+
     }
 
     /// <summary>
@@ -39,11 +51,23 @@ namespace Game.Models
             switch (value)
             {
                 case CharacterJobEnum.Fighter:
-                    Message = "Fighter";
+                    Message = "";
                     break;
 
-                case CharacterJobEnum.Cleric:
-                    Message = "Cleric";
+                case CharacterJobEnum.Finder:
+                    Message = "Finder";
+                    break;
+
+                case CharacterJobEnum.Adventurer:
+                    Message = "Adventurer";
+                    break;
+
+                case CharacterJobEnum.TreasureHunter:
+                    Message = "Treasure Hunter";
+                    break;
+
+                case CharacterJobEnum.Seeker:
+                    Message = "Seeker";
                     break;
 
                 case CharacterJobEnum.Unknown:
