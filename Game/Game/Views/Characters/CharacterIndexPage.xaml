@@ -31,8 +31,8 @@
                                        Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
                                 <Label Text="{Binding Name}" Style="{StaticResource CenterMessageStyle}"/>
                                 <StackLayout Orientation="Horizontal"
-                                             Grid.Column="1" Grid.Row="1"
-                                             Style="{StaticResource HorizontalStack}">
+                                             Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="CenterAndExpand">
 
                                     <Label Text="{Binding Path=Level, StringFormat='Level {0:G} - '}"
                                                Style="{StaticResource CenterMessageStyle}"/>
