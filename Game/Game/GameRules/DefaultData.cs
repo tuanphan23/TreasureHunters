@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 using Game.Models;
 using Game.ViewModels;
@@ -112,11 +113,23 @@ namespace Game.GameRules
                 new ScoreModel {
                     Name = "First Score",
                     Description = "Test Data",
-                },
+                    TurnCount = 5,
+                    RoundCount = 3,
+                    ExperienceGainedTotal = 350,
+                    MonsterSlainNumber = 5,
+                    ScoreTotal = 19,
+                    GameDate = DateTime.Now,
+        },
 
                 new ScoreModel {
                     Name = "Second Score",
                     Description = "Test Data",
+                    TurnCount = 4,
+                    RoundCount = 2,
+                    ExperienceGainedTotal = 250,
+                    MonsterSlainNumber = 4,
+                    ScoreTotal = 19,
+                    GameDate = DateTime.Now,
                 }
             };
 
