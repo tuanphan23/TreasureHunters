@@ -257,5 +257,54 @@ namespace Game.Views
             PopupLocationItemListView.ItemsSource = itemList;
             return true;
         }
+
+
+        /// <summary>
+        /// Creates a stack item to return to the flexbox
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public StackLayout GetItemToDisplay(ItemLocationEnum location)
+        {
+            var data = ViewModel.Data.GetItemByLocation(location);
+            if (data == null)
+            {
+                // Show the Default Icon for the Location
+                data = new ItemModel { Location = ItemLocationEnum.Unknown, ImageURI = "icon_cancel.png", Name = "Click to Add" };
+            }
+
+            // Hookup the Image Button to show the Item picture
+            var ItemButton = new ImageButton
+            {
+                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
+                Source = data.ImageURI
+            };
+
+            // Add a event to the user can click the item and see more
+            ItemButton.Clicked += (sender, args) => ShowPopup(data, location);
+
+            // Add the Display Text for the item
+            var ItemLabel = new Label
+            {
+                Text = data.Name,
+                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center
+            };
+
+            // Put the Image Button and Text inside a layout
+            var ItemStack = new StackLayout
+            {
+                Padding = 3,
+                Style = (Style)Application.Current.Resources["ItemImageBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Children = {
+                    ItemButton,
+                    ItemLabel
+                },
+            };
+
+            return ItemStack;
+        }
     }
 }
