@@ -109,6 +109,7 @@
     <Content Include="Agent2.png" />
     <Content Include="Agent3.png" />
     <Content Include="Agent4.png" />
+    <Content Include="auto.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-125.png" />
     <Content Include="Assets\BadgeLogo.scale-150.png" />
