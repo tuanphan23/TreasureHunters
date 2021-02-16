@@ -5,7 +5,7 @@ using Game.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -35,7 +35,7 @@ namespace Game.Views
 
             LoadLevelPickerValues();
 
-            BindingContext = this.ViewModel;
+            UpdatePageBindingContext();
 
             this.ViewModel.Title = "Create Character";
         }
@@ -188,6 +188,8 @@ namespace Game.Views
             // This resets the picker to the Character's level
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
+            AddItemsToDisplay();
+
             return true;
         }
 
@@ -305,6 +307,29 @@ namespace Game.Views
             };
 
             return ItemStack;
+        }
+
+
+        /// <summary>
+        /// Show the Items the Charcter has
+        /// </summary>
+        public void AddItemsToDisplay()
+        {
+            var FlexList = ItemBox.Children.ToList();
+            foreach (var data in FlexList)
+            {
+                ItemBox.Children.Remove(data);
+            }
+
+            //Add space for each of the places that can hold item
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Head));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Necklass));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.PrimaryHand));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.OffHand));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Unknown));
         }
     }
 }
