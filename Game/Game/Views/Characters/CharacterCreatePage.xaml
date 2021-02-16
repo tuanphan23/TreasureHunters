@@ -76,6 +76,14 @@
 
                 </StackLayout>
 
+                <FlexLayout 
+                        Padding="5"
+                        Wrap="Wrap"
+                        JustifyContent="SpaceAround"
+                        AlignContent="SpaceAround"
+                        x:Name="ItemBox">
+                </FlexLayout>
+
                 <BoxView
                     HeightRequest="1"
                     Color="Black"
