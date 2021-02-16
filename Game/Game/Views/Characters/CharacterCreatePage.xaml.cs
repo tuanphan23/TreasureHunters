@@ -70,7 +70,7 @@ namespace Game.Views
         public bool LoadLevelPickerValues()
         {
             //add each level from 1 to the maxLevel
-            for(int i = 0; i < LevelTableHelper.MaxLevel; i++)
+            for (int i = 0; i < LevelTableHelper.MaxLevel; i++)
             {
                 LevelPicker.Items.Add((i + 1).ToString());
             }
@@ -128,7 +128,7 @@ namespace Game.Views
         /// <param name="e"></param>
         void LevelPicker_Changed(object sender, EventArgs e)
         {
-            if(LevelPicker.SelectedIndex == -1)
+            if (LevelPicker.SelectedIndex == -1)
             {
                 LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
                 return;
@@ -136,7 +136,7 @@ namespace Game.Views
 
             var result = LevelPicker.SelectedIndex + 1;
 
-            if(result != ViewModel.Data.Level)
+            if (result != ViewModel.Data.Level)
             {
                 ViewModel.Data.Level = result;
                 ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
@@ -188,6 +188,36 @@ namespace Game.Views
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
             return true;
+        }
+
+
+        /// <summary>
+        /// Select item from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnPopupItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+
+        }
+
+
+        /// <summary>
+        /// When user click on close, close the popup view and show the scrollview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ClosePopup_Clicked(object sender, EventArgs e)
+        {
+            ClosePopup();
+        }
+
+        /// <summary>
+        /// Close the popup
+        /// </summary>
+        public void ClosePopup()
+        {
+            PopupItemSelector.IsVisible = false;
         }
     }
 }
