@@ -27,185 +27,189 @@
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             >
-        
-        <ScrollView
-            >
-            <StackLayout 
-                Style="{StaticResource OuterBoxStack}"
-                Spacing="10"
-                HorizontalOptions="FillAndExpand"
-                >
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+            <StackLayout Style ="{StaticResource VerticalStack}"
+                     AbsoluteLayout.LayoutBounds="1,1,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
 
-                <Label 
-                    Text="Name"
-                    Style="{StaticResource LargeLabelStyle}"
-                    />
-
-                <Entry 
-                    Text="{Binding Data.Name}"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center"
-                    />
-
-                <Label 
-                    Text="Description"
-                    Style="{StaticResource LargeLabelStyle}"
-                    />
-
-                <Entry 
-                    Text="{Binding Data.Description}"
-                    Style="{StaticResource LargeLabelStyle}"
-                    />
-
-                <StackLayout>
-
-                    <Label
-                        Text="Experiece"
-                        FontSize="20"
-                        HorizontalTextAlignment="Start"
-                        />
-
-                    <Label
-                        Text="Level"
-                        FontSize="20"
-                        HorizontalTextAlignment="Start"
-                        />
-
-                    <Picker
-                            x:Name="LevelPicker"
-                            SelectedItem="1"
-                            SelectedIndexChanged="LevelPicker_Changed"
-                            />
-
-                </StackLayout>
-
-                <FlexLayout 
-                        Padding="5"
-                        Wrap="Wrap"
-                        JustifyContent="SpaceAround"
-                        AlignContent="SpaceAround"
-                        x:Name="ItemBox">
-                </FlexLayout>
-
-                <BoxView
-                    HeightRequest="1"
-                    Color="Black"
-                    />
-
-                <StackLayout>
-
-                    <Label
-                        Text="Attributes"
-                        FontSize="30"
-                        HorizontalTextAlignment="Center"
-                        />
-
-                    <Label
-                        Text="Health"
-                        FontSize="20"
-                        HorizontalTextAlignment="Start"
-                        />
-
-                    <Label
-                        x:Name="HealthValue"
-                        Text="{Binding Data.MaxHealth}"
-                        FontSize="Medium"
-                        />
-
-                        <Label
-                        Text="Speed"
-                        FontSize="20"
-                        HorizontalTextAlignment="Start"
-                        />
-
-
-                    <StackLayout
-                        Orientation="Horizontal"
+                <ScrollView>
+                    <StackLayout 
+                        Style="{StaticResource OuterBoxStack}"
+                        Spacing="10"
+                        HorizontalOptions="FillAndExpand"
                         >
 
-                        <Label
-                            x:Name="SpeedValue"
-                            Text="{Binding Data.Speed}"
-                            FontSize="Medium"
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+
+                        <Label 
+                            Text="Name"
+                            Style="{StaticResource LargeLabelStyle}"
                             />
 
-                        <Stepper Value="{Binding Data.Speed, Mode = TwoWay}"
-                                 Minimum="0"
-                                 Maximum="10"
-                                 Increment="1"
-                                 ValueChanged="Speed_OnStepperValueChanged"
-                                 />
+                        <Entry 
+                            Text="{Binding Data.Name}"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            />
 
-                    </StackLayout>
+                        <Label 
+                            Text="Description"
+                            Style="{StaticResource LargeLabelStyle}"
+                            />
 
-                    <Label
-                        Text="Attack"
-                        FontSize="20"
-                        HorizontalTextAlignment="Start"
-                        />
+                        <Entry 
+                            Text="{Binding Data.Description}"
+                            Style="{StaticResource LargeLabelStyle}"
+                            />
 
-                        <StackLayout
-                            Orientation="Horizontal"
-                            >
+                        <StackLayout>
 
                             <Label
-                                x:Name="AttackValue"
-                                Text="{Binding Data.Attack}"
-                                FontSize="Medium"
+                                Text="Experiece"
+                                FontSize="20"
+                                HorizontalTextAlignment="Start"
                                 />
 
-                            <Stepper Value="{Binding Data.Attack, Mode = TwoWay}"
-                                     Minimum="0"
-                                     Maximum="10"
-                                     Increment="1"
-                                     ValueChanged="Attack_OnStepperValueChanged"
-                                     />
+                            <Label
+                                Text="Level"
+                                FontSize="20"
+                                HorizontalTextAlignment="Start"
+                                />
+
+                            <Picker
+                                    x:Name="LevelPicker"
+                                    SelectedItem="1"
+                                    SelectedIndexChanged="LevelPicker_Changed"
+                                    />
 
                         </StackLayout>
 
-                    <Label
-                        Text="Defense"
-                        FontSize="20"
-                        HorizontalTextAlignment="Start"
-                        />
+                        <FlexLayout 
+                                Padding="5"
+                                Wrap="Wrap"
+                                JustifyContent="SpaceAround"
+                                AlignContent="SpaceAround"
+                                x:Name="ItemBox">
+                        </FlexLayout>
 
-                    <StackLayout
-                            Orientation="Horizontal"
-                            >
+                        <BoxView
+                            HeightRequest="1"
+                            Color="Black"
+                            />
 
-                        <Label
-                                x:Name="DefenseValue"
-                                Text="{Binding Data.Defense}"
+                        <StackLayout>
+
+                            <Label
+                                Text="Attributes"
+                                FontSize="30"
+                                HorizontalTextAlignment="Center"
+                                />
+
+                            <Label
+                                Text="Health"
+                                FontSize="20"
+                                HorizontalTextAlignment="Start"
+                                />
+
+                            <Label
+                                x:Name="HealthValue"
+                                Text="{Binding Data.MaxHealth}"
                                 FontSize="Medium"
                                 />
 
-                        <Stepper Value="{Binding Data.Defense, Mode = TwoWay}"
-                                     Minimum="0"
-                                     Maximum="10"
-                                     Increment="1"
-                                     ValueChanged="Defense_OnStepperValueChanged"
-                                     />
+                            <Label
+                                Text="Speed"
+                                FontSize="20"
+                                HorizontalTextAlignment="Start"
+                                />
 
+
+                            <StackLayout
+                                Orientation="Horizontal"
+                                >
+
+                                <Label
+                                    x:Name="SpeedValue"
+                                    Text="{Binding Data.Speed}"
+                                    FontSize="Medium"
+                                    />
+
+                                <Stepper Value="{Binding Data.Speed, Mode = TwoWay}"
+                                         Minimum="0"
+                                         Maximum="10"
+                                         Increment="1"
+                                         ValueChanged="Speed_OnStepperValueChanged"
+                                         />
+
+                            </StackLayout>
+
+                            <Label
+                                Text="Attack"
+                                FontSize="20"
+                                HorizontalTextAlignment="Start"
+                                />
+
+                            <StackLayout
+                                    Orientation="Horizontal"
+                                    >
+
+                                <Label
+                                        x:Name="AttackValue"
+                                        Text="{Binding Data.Attack}"
+                                        FontSize="Medium"
+                                        />
+
+                                <Stepper Value="{Binding Data.Attack, Mode = TwoWay}"
+                                             Minimum="0"
+                                             Maximum="10"
+                                             Increment="1"
+                                             ValueChanged="Attack_OnStepperValueChanged"
+                                             />
+
+                            </StackLayout>
+
+                            <Label
+                                Text="Defense"
+                                FontSize="20"
+                                HorizontalTextAlignment="Start"
+                                />
+
+                            <StackLayout
+                                    Orientation="Horizontal"
+                                    >
+
+                                <Label
+                                        x:Name="DefenseValue"
+                                        Text="{Binding Data.Defense}"
+                                        FontSize="Medium"
+                                        />
+
+                                <Stepper Value="{Binding Data.Defense, Mode = TwoWay}"
+                                             Minimum="0"
+                                             Maximum="10"
+                                             Increment="1"
+                                             ValueChanged="Defense_OnStepperValueChanged"
+                                             />
+
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout
+                            Orientation="Horizontal">
+                            <Image 
+                                    Source="{Binding Data.ImageURI}"
+                                    Style="{StaticResource ImageSmallStyle}"/>
+
+                            <Entry 
+                                    Text="{Binding Data.ImageURI}" 
+                                    Style="{StaticResource EntryStyle}"/>
+                        </StackLayout>
+                        <Button
+                            Text="Random"
+                            Clicked="RandomButton_Clicked"
+                            Style="{StaticResource RandomButtonStyle}"/>
                     </StackLayout>
-                </StackLayout>
-                <StackLayout
-                    Orientation="Horizontal">
-                    <Image 
-                            Source="{Binding Data.ImageURI}"
-                            Style="{StaticResource ImageSmallStyle}"/>
-
-                    <Entry 
-                            Text="{Binding Data.ImageURI}" 
-                            Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
-                <Button
-                    Text="Random"
-                    Clicked="RandomButton_Clicked"
-                    Style="{StaticResource RandomButtonStyle}"/>
+                </ScrollView>
             </StackLayout>
-        </ScrollView>
 
         </AbsoluteLayout>
 
