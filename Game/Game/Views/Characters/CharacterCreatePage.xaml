@@ -23,6 +23,11 @@
 
     <ContentPage.Content>
 
+        <AbsoluteLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            >
+        
         <ScrollView
             >
             <StackLayout 
@@ -201,5 +206,8 @@
                     Style="{StaticResource RandomButtonStyle}"/>
             </StackLayout>
         </ScrollView>
+
+        </AbsoluteLayout>
+
     </ContentPage.Content>
 </ContentPage>
