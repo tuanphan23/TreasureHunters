@@ -101,7 +101,8 @@
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
                         AlignContent="SpaceAround"
-                        x:Name="ItemBox">
+                        x:Name="ItemBox"
+                        HeightRequest="160">
                         </FlexLayout>
 
                         <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
