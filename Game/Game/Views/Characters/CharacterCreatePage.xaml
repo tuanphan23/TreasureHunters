@@ -89,6 +89,7 @@
                                 Wrap="Wrap"
                                 JustifyContent="SpaceAround"
                                 AlignContent="SpaceAround"
+                                HeightRequest="160"
                                 x:Name="ItemBox">
                         </FlexLayout>
 
