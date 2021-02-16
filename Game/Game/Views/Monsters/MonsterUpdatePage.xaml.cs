@@ -19,7 +19,7 @@ namespace Game.Views
     public partial class MonsterUpdatePage : ContentPage
     {
         // maximum value for monster's attribute
-        public int MaxAttributeValue = 9;
+        public int MaxAttributeValue = 10;
 
         // maximum value for monster's attribute
         public int MinAttributeValue = 0;
