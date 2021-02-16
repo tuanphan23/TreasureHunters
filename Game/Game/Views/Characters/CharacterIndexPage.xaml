@@ -29,7 +29,9 @@
                                 <ImageButton
                                        Source="{Binding ImageURI}"
                                        Clicked="On_CharacterClicked" CommandParameter="{Binding Id}"/>
-                                <Label Text="{Binding Name}" Style="{StaticResource CenterMessageStyle}"/>
+                                <Label Text="{Binding Name}"
+                                       Style="{StaticResource CenterMessageStyle}"
+                                       LineBreakMode="TailTruncation"/>
                                 <StackLayout Orientation="Horizontal"
                                              Style="{StaticResource HorizontalStack}"
                                              HorizontalOptions="CenterAndExpand">
