@@ -186,6 +186,7 @@ namespace Game.Views
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Unknown));
         }
 
         /// <summary>
@@ -202,8 +203,37 @@ namespace Game.Views
                 return;
             }
 
-            //Add the item to the slot item is supposed to go
-            ViewModel.Data.AddItem(ItemLocationEnum.Head,data.Id);      //TODO LOCATION OF ADD ITEM NEEDS TO BE WHERE YOU CLICK
+            //Add the item to the slot item is supposed to go            
+            switch(data.Location)
+            {
+                case ItemLocationEnum.Head:
+                    ViewModel.Data.AddItem(ItemLocationEnum.Head, data.Id);
+                    break;
+                case ItemLocationEnum.Feet:
+                    ViewModel.Data.AddItem(ItemLocationEnum.Feet, data.Id);
+                    break;
+                case ItemLocationEnum.Finger:
+                    ViewModel.Data.AddItem(ItemLocationEnum.Finger, data.Id);
+                    break;
+                case ItemLocationEnum.LeftFinger:
+                    ViewModel.Data.AddItem(ItemLocationEnum.LeftFinger, data.Id);
+                    break;
+                case ItemLocationEnum.Necklass:
+                    ViewModel.Data.AddItem(ItemLocationEnum.Necklass, data.Id);
+                    break;
+                case ItemLocationEnum.OffHand:
+                    ViewModel.Data.AddItem(ItemLocationEnum.OffHand, data.Id);
+                    break;
+                case ItemLocationEnum.PrimaryHand:
+                    ViewModel.Data.AddItem(ItemLocationEnum.PrimaryHand, data.Id);
+                    break;
+                case ItemLocationEnum.RightFinger:
+                    ViewModel.Data.AddItem(ItemLocationEnum.RightFinger, data.Id);
+                    break;
+                case ItemLocationEnum.Unknown:
+                    ViewModel.Data.AddItem(ItemLocationEnum.Unknown, data.Id);
+                    break;
+            }
 
             AddItemsToDisplay();
 
