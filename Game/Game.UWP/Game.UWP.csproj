@@ -148,6 +148,7 @@
     <Content Include="logo.png" />
     <Content Include="mapcell.png" />
     <Content Include="OldBen.png" />
+    <Content Include="pic.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
@@ -177,6 +178,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="RileyPic.png" />
+    <Content Include="score.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
