@@ -305,7 +305,10 @@ namespace Game.Views
                 Guid = "None", // how to find this item amoung all of them
                 ImageURI = "icon_cancel.png",
                 Name = "None",
-                Description = "None"
+                Description = "None",
+                //the location that the NoneItem will be equipped into
+                //this needs to be set for the popup to know where to equip the none item if selected
+                Location = location
             };
 
             List<ItemModel> itemList = new List<ItemModel>
