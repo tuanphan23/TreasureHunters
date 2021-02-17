@@ -139,7 +139,12 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="BenPic.png" />
+    <Content Include="book.png" />
+    <Content Include="boot.png" />
+    <Content Include="cape.png" />
     <Content Include="chest.png" />
+    <Content Include="flaregun.png" />
+    <Content Include="glasses.png" />
     <Content Include="icon_add.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="icon_delete.png" />
@@ -148,9 +153,12 @@
     <Content Include="icon_save.png" />
     <Content Include="item.png" />
     <Content Include="logo.png" />
+    <Content Include="map.png" />
+    <Content Include="map2.png" />
     <Content Include="mapcell.png" />
     <Content Include="OldBen.png" />
     <Content Include="pic.png" />
+    <Content Include="pipe.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
