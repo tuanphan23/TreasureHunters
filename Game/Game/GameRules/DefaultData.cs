@@ -111,24 +111,24 @@ namespace Game.GameRules
         var datalist = new List<ScoreModel>()
             {
                 new ScoreModel {
-                    Name = "First Score",
-                    Description = "Test Data",
-                    TurnCount = 5,
-                    RoundCount = 3,
-                    ExperienceGainedTotal = 350,
-                    MonsterSlainNumber = 5,
-                    ScoreTotal = 19,
+                    Name = "No Item Run",
+                    Description = "Charcters did not use items",
+                    TurnCount = 13,
+                    RoundCount = 2,
+                    ExperienceGainedTotal = 499,
+                    MonsterSlainNumber = 7,
+                    ScoreTotal = 55,
                     GameDate = DateTime.Now,
         },
 
                 new ScoreModel {
-                    Name = "Second Score",
-                    Description = "Test Data",
-                    TurnCount = 4,
-                    RoundCount = 2,
-                    ExperienceGainedTotal = 250,
-                    MonsterSlainNumber = 4,
-                    ScoreTotal = 19,
+                    Name = "Single Character Run",
+                    Description = " Solo Character Fully Equipped with items",
+                    TurnCount = 20,
+                    RoundCount = 8,
+                    ExperienceGainedTotal = 666,
+                    MonsterSlainNumber = 23,
+                    ScoreTotal = 87,
                     GameDate = DateTime.Now,
                 }
             };
