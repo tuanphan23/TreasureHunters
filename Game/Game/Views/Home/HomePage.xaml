@@ -14,7 +14,7 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     <Image
-                         Source="logo.png"
+                         Source="triangle.png"
                          Style="{StaticResource ImageLargeStyle}"/>
                 
                 </StackLayout>
@@ -22,7 +22,7 @@
                 <StackLayout HorizontalOptions="Center" Padding="70,5,70,0"> 
                
                     <Label 
-                        Text="Your Game Information"
+                        Text="The adventurers are on the hunt for treasure"
                         Style="{StaticResource CenterMessageStyle}"
                         FontSize="Micro"
                         LineBreakMode="WordWrap"
