@@ -26,7 +26,7 @@ namespace Game.GameRules
                     DamageType = DamageTypeEnum.Electric
                 },
                 new ItemModel {
-                    Name = "Meerschaum Pipe",
+                    Name = "Ornate Pipe",
                     Description = "A million-dollar pipe ",
                     ImageURI = "pipe.png",
                     Value = 6,
