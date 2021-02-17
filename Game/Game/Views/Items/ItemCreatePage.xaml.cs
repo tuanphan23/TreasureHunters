@@ -63,6 +63,20 @@ namespace Game.Views
                 return;
             }
 
+            // If location is not provived
+            if (ViewModel.Data.Location.ToString() == "Unknown")
+            {
+                await DisplayAlert("Invalid", "Item must have a location.", "OK");
+                return;
+            }
+
+            // If attribute is not provived
+            if (ViewModel.Data.Attribute.ToString() == "Unknown")
+            {
+                await DisplayAlert("Invalid", "Item must have a attribute.", "OK");
+                return;
+            }
+
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
             {

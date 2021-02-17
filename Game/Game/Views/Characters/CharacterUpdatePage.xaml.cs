@@ -186,7 +186,6 @@ namespace Game.Views
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
-            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Unknown));
         }
 
         /// <summary>
@@ -229,9 +228,6 @@ namespace Game.Views
                     break;
                 case ItemLocationEnum.RightFinger:
                     ViewModel.Data.AddItem(ItemLocationEnum.RightFinger, data.Id);
-                    break;
-                case ItemLocationEnum.Unknown:
-                    ViewModel.Data.AddItem(ItemLocationEnum.Unknown, data.Id);
                     break;
             }
 
