@@ -19,7 +19,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Ocular Device",
                     Description = "A glass to help the wearer see the hidden symbols ",
-                    ImageURI = "item.png",
+                    ImageURI = "glasses.png",
                     Value = 7,
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Defense,
@@ -28,7 +28,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Meerschaum Pipe",
                     Description = "A million-dollar pipe ",
-                    ImageURI = "item.png",
+                    ImageURI = "pipe.png",
                     Value = 6,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
@@ -37,7 +37,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "President’s book",
                     Description = "A book holds all the secrets to the history of the World ",
-                    ImageURI = "item.png",
+                    ImageURI = "book.png",
                     Value = 9,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.CurrentHealth,
@@ -46,7 +46,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Flaming gun",
                     Description = "A magical gun that can cause enemies to explode with solar energy ",
-                    ImageURI = "item.png",
+                    ImageURI = "flaregun.png",
                     Value = 7,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
@@ -55,7 +55,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Blink boots",
                     Description = "Speedy boots that increase your running speed ",
-                    ImageURI = "item.png",
+                    ImageURI = "boot.png",
                     Value = 6,
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Speed,
@@ -64,7 +64,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Cape",
                     Description = "A marvelous cape with the ability to reduce the damage of the enemies. ",
-                    ImageURI = "item.png",
+                    ImageURI = "cape.png",
                     Value = 8,
                     Location = ItemLocationEnum.Unknown,
                     Attribute = AttributeEnum.Defense,
@@ -73,7 +73,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Map",
                     Description = "Map to your next clue, increases confidence making you feel stronger. ",
-                    ImageURI = "item.png",
+                    ImageURI = "map2.png",
                     Value = 8,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.MaxHealth,
