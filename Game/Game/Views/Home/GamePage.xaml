@@ -21,7 +21,7 @@
                         Clicked="VillageButton_Clicked"/>
 
                     <Label 
-                        Text="Village"
+                        Text="Washington DC"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
@@ -33,7 +33,7 @@
                         Clicked="DungeonButton_Clicked"/>
 
                     <Label 
-                        Text="Dungeon"
+                        Text="Treasure Hunt"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
@@ -45,7 +45,7 @@
                         Clicked="AutobattleButton_Clicked"/>
 
                     <Label 
-                        Text="Auto Battle"
+                        Text="Auto Hunt"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
             </FlexLayout>
