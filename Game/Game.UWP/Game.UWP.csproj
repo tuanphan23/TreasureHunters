@@ -189,6 +189,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="RileyPic.png" />
     <Content Include="score.png" />
+    <Content Include="triangle.png" />
     <Content Include="WhiteHouse.png" />
   </ItemGroup>
   <ItemGroup>
