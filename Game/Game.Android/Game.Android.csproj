@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Game\Game.csproj">
-      <Project>{07B3B89D-0E3E-4B7A-B244-CFB0B829340D}</Project>
+      <Project>{5EB41E8C-34A6-4477-8634-40130CF3FB9B}</Project>
       <Name>Game</Name>
     </ProjectReference>
   </ItemGroup>
