@@ -33,34 +33,34 @@ namespace UnitTests.Engine.EngineKoenig
         #endregion TestSetup
 
         #region Constructor
-        //[Test]
-        //public void RoundEngine_Constructor_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void RoundEngine_Constructor_Valid_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = Engine;
+            // Act
+            var result = Engine;
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
+            // Assert
+            Assert.IsNotNull(result);
+        }
 
-        //[Test]
-        //public void RoundEngine_Valid_Turn_Set_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void RoundEngine_Valid_Turn_Set_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = new RoundEngine();
-        //    result.Turn = new TurnEngine();
+            // Act
+            var result = new RoundEngine();
+            result.Turn = new TurnEngine();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsNotNull(result.Turn);
-        //}
+            // Assert
+            Assert.IsNotNull(result.Turn);
+        }
         #endregion Constructor
 
         #region OrderPlayListByTurnOrder
@@ -1065,7 +1065,7 @@ namespace UnitTests.Engine.EngineKoenig
 
         //    // Make the List
         //    Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
-            
+
         //    // Clear the List to cause the error
         //    Engine.EngineSettings.PlayerList.Clear();
 

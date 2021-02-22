@@ -36,101 +36,101 @@ namespace UnitTests.Engine.EngineKoenig
         #endregion TestSetup
 
         #region Constructor
-        //[Test]
-        //public void AutoBattleEngine_Constructor_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void AutoBattleEngine_Constructor_Valid_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = AutoBattleEngine;
+            // Act
+            var result = AutoBattleEngine;
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
+            // Assert
+            Assert.IsNotNull(result);
+        }
 
 
-        //[Test]
-        //public void AutoBattleEngine_Constructor_Valid_Battle_Round_Turn_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void AutoBattleEngine_Constructor_Valid_Battle_Round_Turn_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = AutoBattleEngine;
-        //    result.Battle = new BattleEngine();
-        //    result.Battle.Round = new RoundEngine();
-        //    result.Battle.Round.Turn = new TurnEngine();
+            // Act
+            var result = AutoBattleEngine;
+            result.Battle = new BattleEngine();
+            result.Battle.Round = new RoundEngine();
+            result.Battle.Round.Turn = new TurnEngine();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
+            // Assert
+            Assert.IsNotNull(result);
+        }
 
         #endregion Constructor
 
         #region RunAutoBattle
-        //[Test]
-        //public async Task AutoBattleEngine_RunAutoBattle_Valid_Default_Should_Pass()
-        //{
-        //    //Arrange
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_Valid_Default_Should_Pass()
+        {
+            //Arrange
 
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(3);
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(3);
 
-        //    var data = new CharacterModel { Level = 1, MaxHealth = 10 };
+            var data = new CharacterModel { Level = 1, MaxHealth = 10 };
 
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
 
-        //    //Act
-        //    var result = await AutoBattleEngine.RunAutoBattle();
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattle();
 
-        //    //Reset
-        //    DiceHelper.DisableForcedRolls();
-        //    CharacterIndexViewModel.Instance.ForceDataRefresh();
+            //Reset
+            DiceHelper.DisableForcedRolls();
+            CharacterIndexViewModel.Instance.ForceDataRefresh();
 
-        //    //Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            //Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
-        //{
-        //    //Arrange
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
+        {
+            //Arrange
 
-        //    // Need to set the Monster count to 1, so the battle goes to Next Round Faster
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
 
-        //    var CharacterPlayerMike = new PlayerInfoModel(
-        //                    new CharacterModel
-        //                    {
-        //                        Speed = -1,
-        //                        Level = 10,
-        //                        CurrentHealth = 11,
-        //                        ExperienceTotal = 1,
-        //                        ExperienceRemaining = 1,
-        //                        Name = "Mike",
-        //                        ListOrder = 1,
-        //                    });
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = -1,
+                                Level = 10,
+                                CurrentHealth = 11,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                                ListOrder = 1,
+                            });
 
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
 
-        //    //Act
-        //    var result = await AutoBattleEngine.RunAutoBattle();
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattle();
 
-        //    //Reset
-        //    CharacterIndexViewModel.Instance.ForceDataRefresh();
+            //Reset
+            CharacterIndexViewModel.Instance.ForceDataRefresh();
 
-        //    //Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            //Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion RunAutoBattle
 
         #region CreateCharacterParty
@@ -163,24 +163,24 @@ namespace UnitTests.Engine.EngineKoenig
         //    Assert.AreEqual("6", name);
         //}
 
-        //[Test]
-        //public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_CharacterIndex_None_Should_Create_6()
-        //{
-        //    //Arrange
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
+        [Test]
+        public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_CharacterIndex_None_Should_Create_6()
+        {
+            //Arrange
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
 
-        //    CharacterIndexViewModel.Instance.Dataset.Clear();
+            CharacterIndexViewModel.Instance.Dataset.Clear();
 
-        //    //Act
-        //    var result = AutoBattleEngine.CreateCharacterParty();
-        //    var count = AutoBattleEngine.Battle.EngineSettings.CharacterList.Count();
+            //Act
+            var result = AutoBattleEngine.CreateCharacterParty();
+            var count = AutoBattleEngine.Battle.EngineSettings.CharacterList.Count();
 
-        //    //Reset
-        //    CharacterIndexViewModel.Instance.ForceDataRefresh();
+            //Reset
+            CharacterIndexViewModel.Instance.ForceDataRefresh();
 
-        //    //Assert
-        //    Assert.AreEqual(6, count);
-        //}
+            //Assert
+            Assert.AreEqual(6, count);
+        }
         #endregion CreateCharacterParty   
     }
 }
