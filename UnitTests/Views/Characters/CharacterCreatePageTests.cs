@@ -115,197 +115,197 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
+        {
+            // Arrange
+            //var data = new CharacterModel();
+            //var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    double oldAttack = 0.0;
-        //    double newAttack = 1.0;
+            page = new CharacterCreatePage();
+            double oldAttack = 0.0;
+            double newAttack = 1.0;
 
-        //    var args = new ValueChangedEventArgs(oldAttack, newAttack);
+            var args = new ValueChangedEventArgs(oldAttack, newAttack);
 
-        //    // Act
-        //    page.Attack_OnStepperValueChanged(null, args);
+            // Act
+            page.Attack_OnStepperValueChanged(null, args);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
-        //{
-        //    // ArSpeed
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
+        {
+            // ArSpeed
+            //var data = new CharacterModel();
+            //var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    double oldSpeed = 0.0;
-        //    double newSpeed = 1.0;
+            page = new CharacterCreatePage();
+            double oldSpeed = 0.0;
+            double newSpeed = 1.0;
 
-        //    var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
+            var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
 
-        //    // Act
-        //    page.Speed_OnStepperValueChanged(null, args);
+            // Act
+            page.Speed_OnStepperValueChanged(null, args);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
+        {
+            // Arrange
+            //var data = new CharacterModel();
+            //var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    double oldDefense = 0.0;
-        //    double newDefense = 1.0;
+            page = new CharacterCreatePage();
+            double oldDefense = 0.0;
+            double newDefense = 1.0;
 
-        //    var args = new ValueChangedEventArgs(oldDefense, newDefense);
+            var args = new ValueChangedEventArgs(oldDefense, newDefense);
 
-        //    // Act
-        //    page.Defense_OnStepperValueChanged(null, args);
+            // Act
+            page.Defense_OnStepperValueChanged(null, args);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    page.ViewModel.Data = new CharacterModel();
+        [Test]
+        public void CharacterCreatePage_RandomButton_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data = new CharacterModel();
 
-        //    // Act
-        //    page.RollDice_Clicked(null, null);
+            // Act
+            page.RandomButton_Clicked(null, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_ClosePopup_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void CharacterCreatePage_ClosePopup_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    page.ClosePopup();
+            // Act
+            page.ClosePopup();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_ClosePopup_Clicked_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void CharacterCreatePage_ClosePopup_Clicked_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    page.ClosePopup_Clicked(null, null);
+            // Act
+            page.ClosePopup_Clicked(null, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_ShowPopup_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    page.ViewModel.Data = new CharacterModel();
+        [Test]
+        public void CharacterCreatePage_ShowPopup_Default_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data = new CharacterModel();
 
-        //    // Act
-        //    page.ShowPopup(ItemLocationEnum.PrimaryHand);
+            // Act
+            page.ShowPopup(ItemLocationEnum.PrimaryHand);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_OnPopupItemSelected_Clicked_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void CharacterCreatePage_OnPopupItemSelected_Clicked_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    var data = new ItemModel();
+            var data = new ItemModel();
 
-        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(data, 0);
+            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(data, 0);
 
-        //    // Act
-        //    page.OnPopupItemSelected(null, selectedCharacterChangedEventArgs);
+            // Act
+            page.OnPopupItemSelected(null, selectedCharacterChangedEventArgs);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_OnPopupItemSelected_Clicked_Null_Should_Fail()
-        //{
-        //    // Arrange
+        [Test]
+        public void CharacterCreatePage_OnPopupItemSelected_Clicked_Null_Should_Fail()
+        {
+            // Arrange
 
-        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
 
-        //    // Act
-        //    page.OnPopupItemSelected(null, selectedCharacterChangedEventArgs);
+            // Act
+            page.OnPopupItemSelected(null, selectedCharacterChangedEventArgs);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCreatePage_Item_ShowPopup_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void CharacterCreatePage_Item_ShowPopup_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    var item = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
+            var item = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
 
-        //    // Act
-        //    var itemButton = item.Children.FirstOrDefault(m => m.GetType().Name.Equals("Button"));
+            // Act
+            var itemButton = item.Children.FirstOrDefault(m => m.GetType().Name.Equals("Button"));
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void CharacterCratePage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
-        //{
-        //    // Arrange
-        //    var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.PrimaryHand);
-        //    page.ViewModel.Data.Head = item.Id;
-        //    var StackItem = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
-        //    var dataImage = StackItem.Children[0];
+        [Test]
+        public void CharacterCratePage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
+        {
+            // Arrange
+            var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.PrimaryHand);
+            page.ViewModel.Data.Head = item.Id;
+            var StackItem = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
+            var dataImage = StackItem.Children[0];
 
-        //    // Act
-        //    ((ImageButton)dataImage).PropagateUpClicked();
+            // Act
+            ((ImageButton)dataImage).PropagateUpClicked();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void CharacterCreatePage_RandomButton_Clicked_Vaid_Should_Pass()

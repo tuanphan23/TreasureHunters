@@ -97,7 +97,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             SpeedValue.Text = String.Format("{0}", e.NewValue);
         }
@@ -107,7 +107,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             AttackValue.Text = String.Format("{0}", e.NewValue);
         }
@@ -117,7 +117,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             DefenseValue.Text = String.Format("{0}", e.NewValue);
         }
@@ -127,7 +127,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void LevelPicker_Changed(object sender, EventArgs e)
+        public void LevelPicker_Changed(object sender, EventArgs e)
         {
             if (LevelPicker.SelectedIndex == -1)
             {
@@ -268,7 +268,7 @@ namespace Game.Views
         /// <param name="data">the item that was clicked on</param>
         /// <param name="location">the location that 'data' was equipped in</param>
         /// <returns></returns>
-        public bool ShowPopup(ItemModel data, ItemLocationEnum location)
+        public bool ShowPopup(ItemLocationEnum location)
         {
             PopupItemSelector.IsVisible = true;
 
@@ -321,7 +321,7 @@ namespace Game.Views
             };
 
             // Add a event to the user can click the item and see more
-            ItemButton.Clicked += (sender, args) => ShowPopup(data, location);
+            ItemButton.Clicked += (sender, args) => ShowPopup(location);
 
             // Add the Display Text for the item
             var ItemLabel = new Label
