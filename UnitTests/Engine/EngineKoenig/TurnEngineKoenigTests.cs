@@ -30,7 +30,7 @@ namespace UnitTests.Engine.EngineKoenig
         }
         #endregion TestSetup
 
-        //#region Constructor
+        #region Constructor
         //[Test]
         //public void TurnEngine_Constructor_Valid_Default_Should_Pass()
         //{
@@ -44,9 +44,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.IsNotNull(result);
         //}
-        //#endregion Constructor
+        #endregion Constructor
 
-        //#region Attack
+        #region Attack
         //[Test]
         //public void TurnEngine_Attack_Valid_Empty_Monster_List_Should_Fail()
         //{
@@ -102,9 +102,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(true, result);
         //}
-        //#endregion Attack
+        #endregion Attack
 
-        //#region SelectMonsterToAttack
+        #region SelectMonsterToAttack
         //[Test]
         //public void TurnEngine_SelectMonsterToAttack_InValid_Null_List_Should_Fail()
         //{
@@ -259,9 +259,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreNotEqual(null, result);
         //}
-        //#endregion SelectMonsterToAttack
+        #endregion SelectMonsterToAttack
 
-        //#region SelectCharacterToAttack
+        #region SelectCharacterToAttack
         //[Test]
         //public void TurnEngine_SelectCharacterToAttack_InValid_Null_List_Should_Fail()
         //{
@@ -416,9 +416,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreNotEqual(null, result);
         //}
-        //#endregion SelectCharacterToAttack
+        #endregion SelectCharacterToAttack
 
-        //#region RollToHitTarget
+        #region RollToHitTarget
 
         //[Test]
         //public void TurnEngine_RolltoHitTarget_Hit_Should_Pass()
@@ -547,9 +547,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(HitStatusEnum.CriticalHit, result);
         //}
-        //#endregion RollToHitTarget
+        #endregion RollToHitTarget
 
-        //#region TakeTurn
+        #region TakeTurn
         //[Test]
         //public void TurnEngine_TakeTurn_Default_Should_Pass()
         //{
@@ -638,9 +638,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(true, result);
         //}
-        //#endregion TakeTurn
+        #endregion TakeTurn
 
-        //#region DropItems
+        #region DropItems
         //[Test]
         //public void TurnEngine_DropItems_Valid_No_Items_Should_Return_0()
         //{
@@ -709,9 +709,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(1, result);
         //}
-        //#endregion DropItems
+        #endregion DropItems
 
-        //#region TargetDied
+        #region TargetDied
         //[Test]
         //public void TurnEngine_TargedDied_Valid_Character_Should_Pass()
         //{
@@ -747,9 +747,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(true, result);
         //}
-        //#endregion TargetDied
+        #endregion TargetDied
 
-        //#region TurnAsAttack
+        #region TurnAsAttack
         //[Test]
         //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Null_Should_Fail()
         //{
@@ -982,9 +982,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(true, result);
         //}
-        //#endregion TurnAsAttack
+        #endregion TurnAsAttack
 
-        //#region RemoveIfDead
+        #region RemoveIfDead
         //[Test]
         //public void TurnEngine_RemoveIfDead_Valid_Dead_True_Should_Return_False()
         //{
@@ -1036,9 +1036,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(false, result);
         //}
-        //#endregion RemoveIfDead
+        #endregion RemoveIfDead
 
-        //#region TurnAsAttack
+        #region TurnAsAttack
         //[Test]
         //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Levels_Up_Should_Pass()
         //{
@@ -1069,9 +1069,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    Assert.AreEqual(true, result);
         //    Assert.AreEqual(2, CharacterPlayer.Level);
         //}
-        //#endregion TurnAsAttack
+        #endregion TurnAsAttack
 
-        //#region UseAbility
+        #region UseAbility
         //[Test]
         //public void TurnEngine_UseAbility_InValid_Ability_Null_Should_Fail()
         //{
@@ -1191,9 +1191,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(true, result);
         //}
-        //#endregion UseAbility
+        #endregion UseAbility
 
-        //#region BattleSettings
+        #region BattleSettings
         //[Test]
         //public void TurnEngine_BattleSettingsOverrideHitStatusEnum_Valid_Hit_Should_Pass()
         //{
@@ -1282,9 +1282,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(true, result);
         //}
-        //#endregion BattleSettings
+        #endregion BattleSettings
 
-        //#region DetermineActionChoice
+        #region DetermineActionChoice
         //[Test]
         //public void TurnEngine_DetermineActionChoice_Valid_Monster_Should_Return_CurrentAction()
         //{
@@ -1355,9 +1355,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(ActionEnum.Attack, result);
         //}
-        //#endregion DetermineActionChoice
+        #endregion DetermineActionChoice
 
-        //#region ChooseToUseAbility
+        #region ChooseToUseAbility
         //[Test]
         //public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
         //{
@@ -1477,9 +1477,9 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(true, result);
         //}
-        //#endregion ChooseToUseAbility
+        #endregion ChooseToUseAbility
 
-        //#region MoveAsTurn
+        #region MoveAsTurn
         //[Test]
         //public void TurnEngine_MoveAsTurn_Valid_Character_Should_Pass()
         //{
@@ -1605,6 +1605,6 @@ namespace UnitTests.Engine.EngineKoenig
         //    // Assert
         //    Assert.AreEqual(false, result);
         //}
-        //#endregion MoveAsTurn
+        #endregion MoveAsTurn
     }
 }
