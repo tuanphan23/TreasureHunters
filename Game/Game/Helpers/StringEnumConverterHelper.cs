@@ -23,7 +23,7 @@ namespace Game.Helpers
         {
             if (value is Enum)
             {
-                return (int)value;
+                return ((Enum)value).ToString();
             }
 
             if (value is string)

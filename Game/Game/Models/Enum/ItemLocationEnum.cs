@@ -148,6 +148,9 @@ namespace Game.Models
         /// <returns></returns>
         public static ItemLocationEnum ConvertStringToEnum(string value)
         {
+            var myList = Enum.GetNames(typeof(ItemLocationEnum)).ToList();
+            if (!myList.Contains(value))
+                return ItemLocationEnum.Unknown;
             return (ItemLocationEnum)Enum.Parse(typeof(ItemLocationEnum), value);
         }
 
