@@ -10,47 +10,47 @@ namespace UnitTests.GameRules
     [TestFixture]
     public class DefaultDataTests
     {
-        [Test]
-        public void DefaultData_Valid_LoadData_Item_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void DefaultData_Valid_LoadData_Item_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            var result = DefaultData.LoadData(new ItemModel());
+        //    // Act
+        //    var result = DefaultData.LoadData(new ItemModel());
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(26, result.Count());
-        }
+        //    // Assert
+        //    Assert.AreEqual(26, result.Count());
+        //}
 
-        [Test]
-        public void DefaultData_Valid_LoadData_Character_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void DefaultData_Valid_LoadData_Character_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            var result = DefaultData.LoadData(new CharacterModel());
+        //    // Act
+        //    var result = DefaultData.LoadData(new CharacterModel());
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(7, result.Count());
-        }
+        //    // Assert
+        //    Assert.AreEqual(7, result.Count());
+        //}
 
-        [Test]
-        public void DefaultData_Valid_LoadData_Monster_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void DefaultData_Valid_LoadData_Monster_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            var result = DefaultData.LoadData(new MonsterModel());
+        //    // Act
+        //    var result = DefaultData.LoadData(new MonsterModel());
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(7, result.Count());
-        }
+        //    // Assert
+        //    Assert.AreEqual(7, result.Count());
+        //}
 
 
         [Test]
