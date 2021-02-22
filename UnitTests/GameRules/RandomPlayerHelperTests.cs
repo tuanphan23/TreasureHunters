@@ -131,19 +131,19 @@ namespace UnitTests.Helpers
         //    Assert.AreEqual("Doug", result);
         //}
 
-        [Test]
-        public void RandomPlayerHelper_GetItem_Unknown_Should_Return_0()
-        {
-            // Arrange
+        //[Test]
+        //public void RandomPlayerHelper_GetItem_Unknown_Should_Return_0()
+        //{
+        //    // Arrange
 
-            // Act
-            var result = RandomPlayerHelper.GetItem(Game.Models.ItemLocationEnum.Unknown);
+        //    // Act
+        //    var result = RandomPlayerHelper.GetItem(Game.Models.ItemLocationEnum.Unknown);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(null, result);
-        }
+        //    // Assert
+        //    Assert.AreEqual(null, result);
+        //}
 
         [Test]
         public void RandomPlayerHelper_GetItem_2_Should_Return_2()
