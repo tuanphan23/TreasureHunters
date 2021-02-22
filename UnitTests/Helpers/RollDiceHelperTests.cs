@@ -7,6 +7,56 @@ namespace UnitTests.Helpers
     [TestFixture]
     public class RollDiceHelperTests
     {
+
+        [Test]
+        public void RollDiceHelper_EnableForcedRolls_Valid_Should_Return_True()
+        {
+            // Arrange
+
+            // Act
+            DiceHelper.EnableForcedRolls();
+            var result = DiceHelper.ForceRollsToNotRandom;
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RollDiceHelper_SetForcedRollValue_Valid_1_Should_Return_1()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+
+            // Act
+            var result = DiceHelper.SetForcedRollValue(1);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
+
+        [Test]
+        public void RollDiceHelper_SetForcedRollValue_InValid_Dice_neg1_Should_Return_0()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+
+            // Act
+            var result = DiceHelper.RollDice(-1,6);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
+
         [Test]
         public void RollDiceHelper_RollDice_Valid_1Time_6sided_Should_Between_1_and_6()
         {
@@ -94,115 +144,6 @@ namespace UnitTests.Helpers
 
             // Assert
             Assert.AreEqual(0, result);
-        }
-
-        [Test]
-        public void RollDiceHelper_RollDice_InValid_Neg1Time_6sided_Forced1_Should_Fail()
-        {
-            //Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
-
-            //Act
-            var result = DiceHelper.RollDice(-1, 6);
-
-            //Reset
-            DiceHelper.DisableForcedRolls();
-
-            //Assert
-            Assert.AreEqual(0, result);
-        }
-
-        [Test]
-        public void RollDiceHelper_RollDice_Valid_1Time_Neg1Sided_Forced1_Should_Pass()
-        {
-            //Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
-
-            //Act
-            var result = DiceHelper.RollDice(1, -1);
-
-            //Reset
-            DiceHelper.DisableForcedRolls();
-
-            //Assert
-            Assert.AreEqual(1, result);
-        }
-
-        [Test]
-        public void RollDiceHelper_RollDice_InValid_1Time_6Sided_ForcedNeg1_Should_Fail()
-        {
-            //Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(-1);
-
-            //Act
-            var result = DiceHelper.RollDice(-1, 6);
-
-            //Reset
-            DiceHelper.DisableForcedRolls();
-
-            //Assert
-            Assert.AreEqual(0, result);
-        }
-
-        [Test]
-        public void RollDiceHelper_SetForcedRollValue_Valid_Forced6_Should_Pass()
-        {
-            //Arrange
-
-            //Act
-            var result = DiceHelper.SetForcedRollValue(6);
-
-            //Reset
-
-            //Assert
-            Assert.AreEqual(6, result);
-        }
-
-        [Test]
-        public void RollDiceHelper_SetForcedRollValue_InValid_ForcedNeg1_Should_Fail()
-        {
-            //Arrange
-
-            //Act
-            var result = DiceHelper.SetForcedRollValue(-1);
-
-            //Reset
-
-            //Assert
-            Assert.AreEqual(0, result);
-        }
-
-        [Test]
-        public void RollDIceHelper_EnableForcedRolls_Valid_Should_Pass()
-        {
-            //Arrange
-
-            //Act
-            var result = DiceHelper.EnableForcedRolls();
-
-            //Reset
-            DiceHelper.DisableForcedRolls();
-
-            //Assert
-            Assert.AreEqual(true, result);
-        }
-
-        [Test]
-        public void RollDiceHelper_DisableForcedRolls_Valid_Should_Pass()
-        {
-            //Arrange
-            DiceHelper.EnableForcedRolls();
-
-            //Act
-            var result = DiceHelper.DisableForcedRolls();
-
-            //Reset
-
-            //Assert
-            Assert.AreEqual(false, result);
         }
     }
 }
