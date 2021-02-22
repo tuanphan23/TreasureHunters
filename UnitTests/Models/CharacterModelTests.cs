@@ -149,20 +149,20 @@ namespace UnitTests.Models
             Assert.AreEqual(2, dataOriginal.Attack);
         }
 
-        [Test]
-        public void CharacterModel_FormatOuput_Default_Should_Pass()
-        {
-            // ArDefense
-            var data = new CharacterModel();
+        //[Test]
+        //public void CharacterModel_FormatOuput_Default_Should_Pass()
+        //{
+        //    // ArDefense
+        //    var data = new CharacterModel();
 
-            // Act
-            var result = data.FormatOutput();
+        //    // Act
+        //    var result = data.FormatOutput();
 
-            // Reset
+        //    // Reset
 
-            // Assert 
-            Assert.AreEqual(true, result.Contains("Elf"));
-        }
+        //    // Assert 
+        //    Assert.AreEqual(true, result.Contains("Elf"));
+        //}
 
         [Test]
         public void CharacterModel_Set_Get_Default_Should_Pass()
@@ -402,20 +402,20 @@ namespace UnitTests.Models
             Assert.AreEqual(false, result);
         }
 
-        [Test]
-        public void CharacterModel_FormatOutput_Default_Should_Pass()
-        {
-            // ArDefense
-            var data = new CharacterModel();
+        //[Test]
+        //public void CharacterModel_FormatOutput_Default_Should_Pass()
+        //{
+        //    // ArDefense
+        //    var data = new CharacterModel();
 
-            // Act
-            var result = data.FormatOutput();
+        //    // Act
+        //    var result = data.FormatOutput();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(true, result.Contains("Elf"));
-        }
+        //    // Assert
+        //    Assert.AreEqual(true, result.Contains("Elf"));
+        //}
 
         [Test]
         public void CharacterModel_AddExperience_Default_Should_Pass()
