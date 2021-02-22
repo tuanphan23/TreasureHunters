@@ -493,18 +493,18 @@ namespace UnitTests.Views
         #endregion ButtonUpDown
 
         #region UpdateHealth
-        [Test]
-        public void CharacterUpdatePage_UpdateHealthValue_Valid_Default_Should_Pass()
-        {
-            // Arrange
-            // Act
-            page.UpdateHealthValue();
+        //[Test]
+        //public void CharacterUpdatePage_UpdateHealthValue_Valid_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    // Act
+        //    page.UpdateHealthValue();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         #endregion UpdateHealth
 
@@ -525,81 +525,81 @@ namespace UnitTests.Views
         #endregion RandomButton_Clicked
 
         #region LevelPicker_Changed
-        [Test]
-        public void CharacterUpdatePage_LevelPicker_SelectedIndex_Neg1_Should_Return_Level()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_LevelPicker_SelectedIndex_Neg1_Should_Return_Level()
+        //{
+        //    // Arrange
 
-            // Make a new Character to use for the Picker Tests
-            page.ViewModel.Data = new CharacterModel()
-            {
-                Id = "test",
-                Level = 10
-            };
+        //    // Make a new Character to use for the Picker Tests
+        //    page.ViewModel.Data = new CharacterModel()
+        //    {
+        //        Id = "test",
+        //        Level = 10
+        //    };
             
-            var control = (Picker)page.FindByName("LevelPicker");
-            control.SelectedIndex = -1;
+        //    var control = (Picker)page.FindByName("LevelPicker");
+        //    control.SelectedIndex = -1;
 
-            // Act
-            page.LevelPicker_Changed(null, null);
-            var result = control.SelectedIndex;
+        //    // Act
+        //    page.LevelPicker_Changed(null, null);
+        //    var result = control.SelectedIndex;
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(10, result+1); 
-        }
+        //    // Assert
+        //    Assert.AreEqual(10, result+1); 
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_LevelPicker_SelectedIndex_No_Change_Should_Skip()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_LevelPicker_SelectedIndex_No_Change_Should_Skip()
+        //{
+        //    // Arrange
 
-            // Make a new Character to use for the Picker Tests
-            page.ViewModel.Data = new CharacterModel()
-            {
-                Id = "test",
-                Level = 10
-            };
+        //    // Make a new Character to use for the Picker Tests
+        //    page.ViewModel.Data = new CharacterModel()
+        //    {
+        //        Id = "test",
+        //        Level = 10
+        //    };
 
-            var control = (Picker)page.FindByName("LevelPicker");
-            control.SelectedIndex = 10-1;
+        //    var control = (Picker)page.FindByName("LevelPicker");
+        //    control.SelectedIndex = 10-1;
 
-            // Act
-            page.LevelPicker_Changed(null, null);
-            var result = control.SelectedIndex;
+        //    // Act
+        //    page.LevelPicker_Changed(null, null);
+        //    var result = control.SelectedIndex;
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(10, result + 1);
-        }
+        //    // Assert
+        //    Assert.AreEqual(10, result + 1);
+        //}
 
 
-        [Test]
-        public void CharacterUpdatePage_LevelPicker_SelectedIndex_Change_Should_Update_Picker_To_Level()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_LevelPicker_SelectedIndex_Change_Should_Update_Picker_To_Level()
+        //{
+        //    // Arrange
 
-            // Make a new Character to use for the Picker Tests
-            page.ViewModel.Data = new CharacterModel()
-            {
-                Id = "test",
-                Level = 1
-            };
+        //    // Make a new Character to use for the Picker Tests
+        //    page.ViewModel.Data = new CharacterModel()
+        //    {
+        //        Id = "test",
+        //        Level = 1
+        //    };
 
-            var control = (Picker)page.FindByName("LevelPicker");
-            control.SelectedIndex = 15;
+        //    var control = (Picker)page.FindByName("LevelPicker");
+        //    control.SelectedIndex = 15;
 
-            // Act
-            page.LevelPicker_Changed(null, null);
-            var result = control.SelectedIndex;
+        //    // Act
+        //    page.LevelPicker_Changed(null, null);
+        //    var result = control.SelectedIndex;
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(16, result + 1);
-        }
+        //    // Assert
+        //    Assert.AreEqual(16, result + 1);
+        //}
         #endregion LevelPicker_Changed
     }
 }
