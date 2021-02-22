@@ -270,11 +270,11 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvert_String_Should_Pass()
         {
-            var myConverter = new StringEnumConverter();
+            var myConverter = new ItemLocationEnumConverter();
 
             var myObject = "Feet";
             var Result = myConverter.Convert(myObject, typeof(ItemLocationEnum), null, null);
-            var Expected = ItemLocationEnum.Feet;
+            var Expected = ItemLocationEnum.Feet.ToMessage();
 
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
@@ -282,7 +282,7 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvert_Enum_Should_Pass()
         {
-            var myConverter = new StringEnumConverter();
+            var myConverter = new ItemLocationEnumConverter();
 
             var myObject = ItemLocationEnum.Feet;
             var Result = myConverter.Convert(myObject, null, null, null);
@@ -294,7 +294,7 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvert_Other_Should_Skip()
         {
-            var myConverter = new StringEnumConverter();
+            var myConverter = new ItemLocationEnumConverter();
 
             var myObject = new ItemModel();
             var Result = myConverter.Convert(myObject, null, null, null);

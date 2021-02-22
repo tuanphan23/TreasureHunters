@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Models;
+using System;
 using System.Globalization;
 using Xamarin.Forms;
 
@@ -9,7 +10,7 @@ namespace Game.Helpers
     // The picker requires this because the picker must be a string, but the enum is a value...
 
     // Converts from a String to the enum value.  Head = 5, would return 5 for the string "Head", and for "Head" will return 5
-    public class StringEnumConverter : IValueConverter
+    public class ItemLocationEnumConverter : IValueConverter
     {
         /// <summary>
         /// Converts a value to the String
@@ -23,13 +24,16 @@ namespace Game.Helpers
         {
             if (value is Enum)
             {
-                return (int)value;
+                //return (int)value;
+                return ((ItemLocationEnum)value).ToMessage();
             }
 
             if (value is string)
             {
-                var aa = targetType.GetType();
-                var myReturn = Enum.Parse((targetType), value.ToString());
+                // Convert String Enum and then Enum to Message
+                var myEnum = ItemLocationEnumHelper.ConvertStringToEnum((string)value);
+                var myReturn = myEnum.ToMessage();
+
                 return myReturn;
             }
 
@@ -49,13 +53,14 @@ namespace Game.Helpers
             if (value is int)
             {
                 var myReturn = Enum.ToObject(targetType, value);
-                return myReturn.ToString();
+                return ((ItemLocationEnum)myReturn).ToMessage();
             }
 
             if (value is string)
             {
-                var aa = targetType.GetType();
-                var myReturn = Enum.Parse((targetType), value.ToString());
+                // Convert the Message String to the Enum
+                var myReturn = ItemLocationEnumHelper.ConvertStringToEnum((string)value);
+
                 return myReturn;
             }
             return 0;
