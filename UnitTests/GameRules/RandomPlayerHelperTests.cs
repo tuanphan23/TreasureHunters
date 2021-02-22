@@ -63,39 +63,39 @@ namespace UnitTests.Helpers
             Assert.AreEqual(2, result);
         }
 
-        //[Test]
-        //public void RandomPlayerHelper_GetMonsterName_2_Should_Return_2()
-        //{
-        //    // Arrange
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
+        [Test]
+        public void RandomPlayerHelper_GetMonsterName_2_Should_Return_2()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
 
-        //    // Act
-        //    var result = RandomPlayerHelper.GetMonsterName();
+            // Act
+            var result = RandomPlayerHelper.GetMonsterName();
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual("Deg", result);
-        //}
+            // Assert
+            Assert.AreEqual("Ian", result);
+        }
 
-        //[Test]
-        //public void RandomPlayerHelper_GetMonsterDescription_2_Should_Return_2()
-        //{
-        //    // Arrange
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
+        [Test]
+        public void RandomPlayerHelper_GetMonsterDescription_2_Should_Return_2()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
 
-        //    // Act
-        //    var result = RandomPlayerHelper.GetMonsterDescription();
+            // Act
+            var result = RandomPlayerHelper.GetMonsterDescription();
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual("the Elf hater", result);
-        //}
+            // Assert
+            Assert.AreEqual("Serious Agent", result);
+        }
 
         [Test]
         public void RandomPlayerHelper_GetCharacterDescription_2_Should_Return_2()
@@ -114,43 +114,43 @@ namespace UnitTests.Helpers
             Assert.AreEqual("the awesome", result);
         }
 
-        //[Test]
-        //public void RandomPlayerHelper_GetCharacterName_2_Should_Return_2()
-        //{
-        //    // Arrange
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
-
-        //    // Act
-        //    var result = RandomPlayerHelper.GetCharacterName();
-
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
-
-        //    // Assert
-        //    Assert.AreEqual("Doug", result);
-        //}
-
-        //[Test]
-        //public void RandomPlayerHelper_GetItem_Unknown_Should_Return_0()
-        //{
-        //    // Arrange
-
-        //    // Act
-        //    var result = RandomPlayerHelper.GetItem(Game.Models.ItemLocationEnum.Unknown);
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.AreEqual(null, result);
-        //}
-
         [Test]
-        public void RandomPlayerHelper_GetItem_2_Should_Return_2()
+        public void RandomPlayerHelper_GetCharacterName_2_Should_Return_2()
         {
             // Arrange
             DiceHelper.EnableForcedRolls();
             DiceHelper.SetForcedRollValue(2);
+
+            // Act
+            var result = RandomPlayerHelper.GetCharacterName();
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual("Riley", result);
+        }
+
+        [Test]
+        public void RandomPlayerHelper_GetItem_Unknown_Should_Return_0()
+        {
+            // Arrange
+
+            // Act
+            var result = RandomPlayerHelper.GetItem(Game.Models.ItemLocationEnum.Unknown);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void RandomPlayerHelper_GetItem_1_Should_Return_1()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = RandomPlayerHelper.GetItem(Game.Models.ItemLocationEnum.Feet);
@@ -179,39 +179,39 @@ namespace UnitTests.Helpers
             Assert.AreEqual(DifficultyEnum.Average, result);
         }
 
-        //[Test]
-        //public void RandomPlayerHelper_GetMonsterImage_2_Should_Return_2()
-        //{
-        //    // Arrange
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
+        [Test]
+        public void RandomPlayerHelper_GetMonsterImage_2_Should_Return_2()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
 
-        //    // Act
-        //    var result = RandomPlayerHelper.GetMonsterImage();
+            // Act
+            var result = RandomPlayerHelper.GetMonsterImage();
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual("item.png", result);
-        //}
+            // Assert
+            Assert.AreEqual("Agent2.png", result);
+        }
 
-        //[Test]
-        //public void RandomPlayerHelper_GetCharacterImage_2_Should_Return_2()
-        //{
-        //    // Arrange
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
+        [Test]
+        public void RandomPlayerHelper_GetCharacterImage_2_Should_Return_2()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
 
-        //    // Act
-        //    var result = RandomPlayerHelper.GetCharacterImage();
+            // Act
+            var result = RandomPlayerHelper.GetCharacterImage();
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual("item.png", result);
-        //}
+            // Assert
+            Assert.AreEqual("BenPic.png", result);
+        }
 
         [Test]
         public void RandomPlayerHelper_GetMonsterUniqueItem_2_Should_Return_2()
@@ -244,7 +244,7 @@ namespace UnitTests.Helpers
         //    // Reset
 
         //    // Assert
-        //    Assert.AreEqual(true, result.Name.Contains("Elf"));
+        //    Assert.AreEqual(true, result.Name.Contains("Riley"));
         //}
 
         //[Test]
@@ -290,44 +290,44 @@ namespace UnitTests.Helpers
         //    Assert.AreEqual(true, result.UniqueItem.Equals("2"));
         //}
 
-        //[Test]
-        //public async Task RandomPlayerHelper_GetRandomCharacter_Valid_Health_Should_Be_Correct()
-        //{
-        //    // Arrange
-        //    CharacterIndexViewModel.Instance.Dataset.Clear();
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
+        [Test]
+        public async Task RandomPlayerHelper_GetRandomCharacter_Valid_Health_Should_Be_Correct()
+        {
+            // Arrange
+            CharacterIndexViewModel.Instance.Dataset.Clear();
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
 
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
 
-        //    // Act
-        //    var result = RandomPlayerHelper.GetRandomCharacter(1);
+            // Act
+            var result = RandomPlayerHelper.GetRandomCharacter(1);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(result.MaxHealth, result.CurrentHealth);
-        //}
+            // Assert
+            Assert.AreEqual(result.MaxHealth, result.CurrentHealth);
+        }
 
-        //[Test]
-        //public void RandomPlayerHelper_GetRandomMonster_InValid_Empty_List_Should_Return_New_Monster()
-        //{
-        //    // Arrange
-        //    var save = MonsterIndexViewModel.Instance.Dataset;
-        //    MonsterIndexViewModel.Instance.Dataset.Clear();
+        [Test]
+        public void RandomPlayerHelper_GetRandomMonster_InValid_Empty_List_Should_Return_New_Monster()
+        {
+            // Arrange
+            var save = MonsterIndexViewModel.Instance.Dataset;
+            MonsterIndexViewModel.Instance.Dataset.Clear();
 
-        //    // Act
-        //    var result = RandomPlayerHelper.GetRandomMonster(1);
+            // Act
+            var result = RandomPlayerHelper.GetRandomMonster(1);
 
-        //    // Reset
-        //    MonsterIndexViewModel.Instance.Dataset = save;
+            // Reset
+            MonsterIndexViewModel.Instance.Dataset = save;
 
-        //    // Assert
-        //    Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
-        //}
+            // Assert
+            Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
+        }
 
         [Test]
         public void RandomPlayerHelper_GetRandomMonster_Valid_Should_Return_New_Monster()
@@ -343,23 +343,23 @@ namespace UnitTests.Helpers
             Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
         }
 
-        //[Test]
-        //public async Task RandomPlayerHelper_GetRandomMonster_Valid_Items_True_Should_Return_New_Monster()
-        //{
-        //    // Arrange
-        //    MonsterIndexViewModel.Instance.Dataset.Clear();
-        //    await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "1" });
-        //    await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "2" });
-        //    await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "3" });
+        [Test]
+        public async Task RandomPlayerHelper_GetRandomMonster_Valid_Items_True_Should_Return_New_Monster()
+        {
+            // Arrange
+            MonsterIndexViewModel.Instance.Dataset.Clear();
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "1" });
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "2" });
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "3" });
 
-        //    // Act
-        //    var result = RandomPlayerHelper.GetRandomMonster(1,true);
+            // Act
+            var result = RandomPlayerHelper.GetRandomMonster(1, true);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
-        //}
+            // Assert
+            Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
+        }
 
         [Test]
         public void RandomPlayerHelper_GetRandomMonster_Valid_Items_False_Should_Return_New_Monster()

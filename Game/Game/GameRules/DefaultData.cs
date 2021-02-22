@@ -66,7 +66,7 @@ namespace Game.GameRules
                     Description = "A marvelous cape with the ability to reduce the damage of the enemies. ",
                     ImageURI = "cape.png",
                     Value = 8,
-                    Location = ItemLocationEnum.Unknown,
+                    Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Defense,
                     DamageType = DamageTypeEnum.Poison
                 },
