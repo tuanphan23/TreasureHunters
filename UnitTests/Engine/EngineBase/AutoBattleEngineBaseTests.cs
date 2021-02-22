@@ -204,32 +204,32 @@ namespace UnitTests.Engine.EngineBase
         #endregion RunAutoBattle
 
         #region CreateCharacterParty
-        //[Test]
-        //public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
-        //{
-        //    //Arrange
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
+        [Test]
+        public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
+        {
+            //Arrange
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
 
-        //    CharacterIndexViewModel.Instance.Dataset.Clear();
+            CharacterIndexViewModel.Instance.Dataset.Clear();
 
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "1" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "2" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "3" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "4" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "5" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "6" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "7" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "1" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "2" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "3" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "4" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "5" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "6" });
+            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "7" });
 
-        //    //Act
-        //    var result = AutoBattleEngine.CreateCharacterParty();
-        //    var name = AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name;
+            //Act
+            var result = AutoBattleEngine.CreateCharacterParty();
+            var name = AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name;
 
-        //    //Reset
+            //Reset
 
-        //    //Assert
-        //    Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
-        //    Assert.AreEqual("6", name);
-        //}
+            //Assert
+            Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
+            Assert.AreEqual("6", name);
+        }
 
         [Test]
         public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_CharacterIndex_None_Should_Create_6()
