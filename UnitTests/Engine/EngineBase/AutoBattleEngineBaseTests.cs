@@ -222,12 +222,13 @@ namespace UnitTests.Engine.EngineBase
 
         //    //Act
         //    var result = AutoBattleEngine.CreateCharacterParty();
+        //    var name = AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name;
 
         //    //Reset
 
         //    //Assert
         //    Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
-        //    Assert.AreEqual("6", AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name);
+        //    Assert.AreEqual("6", name);
         //}
 
         [Test]
