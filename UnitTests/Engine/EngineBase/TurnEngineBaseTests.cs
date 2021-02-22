@@ -820,170 +820,170 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(true, result);
         }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Hit_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Hit_Should_Pass()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(20);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Hit_Death_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Character = new CharacterModel();
-        //    Character.CurrentHealth = 1;
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Hit_Death_Should_Pass()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            Character.CurrentHealth = 1;
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(20);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Monster_Attacks_Character_Miss_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Monster_Attacks_Character_Miss_Should_Pass()
+        {
+            // Arrange
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(1);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Monster_Attacks_Character_Hit_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Monster_Attacks_Character_Hit_Should_Pass()
+        {
+            // Arrange
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(20);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Force_Critical_Hit_Monster_Attacks_Character_Hit_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Force_Critical_Hit_Monster_Attacks_Character_Hit_Should_Pass()
+        {
+            // Arrange
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(20);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
 
-        //    var oldSetting = Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit;
-        //    Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
+            var oldSetting = Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit;
+            Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
-        //    Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = oldSetting;
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = oldSetting;
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Force_Critical_Miss_Monster_Attacks_Character_Hit_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Force_Critical_Miss_Monster_Attacks_Character_Hit_Should_Pass()
+        {
+            // Arrange
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(1);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
 
-        //    var oldSetting = Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss;
-        //    Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = true;
+            var oldSetting = Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss;
+            Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = true;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
-        //    Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = oldSetting;
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = oldSetting;
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion TurnAsAttack
 
         #region RemoveIfDead
@@ -1041,158 +1041,158 @@ namespace UnitTests.Engine.EngineBase
         #endregion RemoveIfDead
 
         #region TurnAsAttack
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Levels_Up_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Levels_Up_Should_Pass()
+        {
+            // Arrange
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    var Character = new CharacterModel();
+            var Character = new CharacterModel();
 
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
+            var CharacterPlayer = new PlayerInfoModel(Character);
 
-        //    CharacterPlayer.ExperienceTotal = 300;    // Enough for next level
+            CharacterPlayer.ExperienceTotal = 300;    // Enough for next level
 
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(20);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //    Assert.AreEqual(2, CharacterPlayer.Level);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(2, CharacterPlayer.Level);
+        }
         #endregion TurnAsAttack
 
         #region UseAbility
-        //[Test]
-        //public void TurnEngine_UseAbility_InValid_Ability_Null_Should_Fail()
-        //{
-        //    // Arrange
-        //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
+        [Test]
+        public void TurnEngine_UseAbility_InValid_Ability_Null_Should_Fail()
+        {
+            // Arrange
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
 
-        //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job=CharacterJobEnum.Unknown});
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
 
-        //    // remove it so it is not found
-        //    characterPlayer.AbilityTracker.Remove(AbilityEnum.Unknown);
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Remove(AbilityEnum.Unknown);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.UseAbility(characterPlayer);
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_UseAbility_InValid_Ability_Count_0_Should_Fail()
-        //{
-        //    // Arrange
-        //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
+        [Test]
+        public void TurnEngine_UseAbility_InValid_Ability_Count_0_Should_Fail()
+        {
+            // Arrange
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
 
-        //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
 
-        //    // remove it so it is not found
-        //    characterPlayer.AbilityTracker[AbilityEnum.Unknown] = 0;
+            // remove it so it is not found
+            characterPlayer.AbilityTracker[AbilityEnum.Unknown] = 0;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.UseAbility(characterPlayer);
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_UseAbility_Valid_Ability_Heal_1_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Heal_1_Should_Pass()
+        {
+            // Arrange
 
-        //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
 
-        //    // remove it so it is not found
-        //    characterPlayer.AbilityTracker.Add(AbilityEnum.Heal, 1);
-        //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Heal;
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Heal, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Heal;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.UseAbility(characterPlayer);
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_UseAbility_Valid_Ability_Toughness_1_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Toughness_1_Should_Pass()
+        {
+            // Arrange
 
-        //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
 
-        //    // remove it so it is not found
-        //    characterPlayer.AbilityTracker.Add(AbilityEnum.Toughness,1);
-        //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Toughness;
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Toughness, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Toughness;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.UseAbility(characterPlayer);
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_UseAbility_Valid_Ability_Quick_1_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Quick_1_Should_Pass()
+        {
+            // Arrange
 
-        //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
 
-        //    // remove it so it is not found
-        //    characterPlayer.AbilityTracker.Add(AbilityEnum.Quick, 1);
-        //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Quick;
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Quick, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Quick;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.UseAbility(characterPlayer);
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_UseAbility_Valid_Ability_Curse_1_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Curse_1_Should_Pass()
+        {
+            // Arrange
 
-        //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
 
-        //    // remove it so it is not found
-        //    characterPlayer.AbilityTracker.Add(AbilityEnum.Curse, 1);
-        //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Curse;
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Curse, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Curse;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.UseAbility(characterPlayer);
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion UseAbility
 
         #region BattleSettings
@@ -1328,158 +1328,158 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(ActionEnum.Ability, result);
         }
 
-        //[Test]
-        //public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
+        {
+            // Arrange
 
-        //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
-        //    // Get the longest range weapon in stock.
-        //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-        //    CharacterPlayer.PrimaryHand = weapon.Id;
-        //    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-        //    var Monster = new MonsterModel();
-        //    Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
-        //    Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
+            var Monster = new MonsterModel();
+            Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
+            Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
 
-        //    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-        //    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-        //    Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
+            // Act
+            var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(ActionEnum.Attack, result);
-        //}
+            // Assert
+            Assert.AreEqual(ActionEnum.Attack, result);
+        }
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
-        //[Test]
-        //public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
+        {
+            // Arrange
 
-        //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
-        //    // Get the longest range weapon in stock.
-        //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-        //    CharacterPlayer.PrimaryHand = weapon.Id;
-        //    CharacterPlayer.CurrentHealth = 1;
-        //    CharacterPlayer.MaxHealth = 100;
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+            CharacterPlayer.CurrentHealth = 1;
+            CharacterPlayer.MaxHealth = 100;
 
-        //    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-        //    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-        //    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-        //    Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
+        {
+            // Arrange
 
-        //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
-        //    // Get the longest range weapon in stock.
-        //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-        //    CharacterPlayer.PrimaryHand = weapon.Id;
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
 
-        //    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-        //    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-        //    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-        //    Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(9);
-        //    // Act
-        //    var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(9);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_ChooseToUseAbility_InValid_Roll_2_No_Ability_Should_Return_False()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_InValid_Roll_2_No_Ability_Should_Return_False()
+        {
+            // Arrange
 
-        //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
-        //    // Get the longest range weapon in stock.
-        //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-        //    CharacterPlayer.PrimaryHand = weapon.Id;
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
 
-        //    CharacterPlayer.AbilityTracker.Clear();
+            CharacterPlayer.AbilityTracker.Clear();
 
-        //    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-        //    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-        //    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-        //    Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
-        //    // Act
-        //    var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
+        {
+            // Arrange
 
-        //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric});
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
 
-        //    // Get the longest range weapon in stock.
-        //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-        //    CharacterPlayer.PrimaryHand = weapon.Id;
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
 
-        //    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-        //    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-        //    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-        //    Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
-        //    // Act
-        //    var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion ChooseToUseAbility
 
         #region MoveAsTurn
