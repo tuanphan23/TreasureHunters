@@ -38,3 +38,4 @@ namespace Game.Engine.EngineInterfaces
         /// <returns></returns>
         bool EndBattle();
     }
+}
