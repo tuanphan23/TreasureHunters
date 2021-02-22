@@ -109,85 +109,85 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void MonsterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new MonsterModel();
-        //    var ViewModel = new GenericViewModel<MonsterModel>(data);
+        [Test]
+        public void MonsterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new MonsterModel();
+            var ViewModel = new GenericViewModel<MonsterModel>(data);
 
-        //    page = new MonsterUpdatePage(ViewModel);
-        //    double oldValue = 0.0;
-        //    double newValue = 1.0;
+            //page = new MonsterUpdatePage(ViewModel);
+            double oldValue = 0.0;
+            double newValue = 1.0;
 
-        //    var args = new ValueChangedEventArgs(oldValue, newValue);
+            var args = new ValueChangedEventArgs(oldValue, newValue);
 
-        //    // Act
-        //    page.Attack_OnStepperValueChanged(null, args);
+            // Act
+            //page.Attack_OnStepperValueChanged(null, args);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
-        
-        //[Test]
-        //public void MonsterUpdatePage_Defense_OnStepperValueChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new MonsterModel();
-        //    var ViewModel = new GenericViewModel<MonsterModel>(data);
+            // Assert
+            Assert.IsTrue(false); // Got to here, so it happened...
+        }
 
-        //    page = new MonsterUpdatePage(ViewModel);
-        //    double oldRange = 0.0;
-        //    double newRange = 1.0;
+        [Test]
+        public void MonsterUpdatePage_Defense_OnStepperValueChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new MonsterModel();
+            var ViewModel = new GenericViewModel<MonsterModel>(data);
 
-        //    var args = new ValueChangedEventArgs(oldRange, newRange);
+            page = new MonsterUpdatePage(ViewModel);
+            double oldRange = 0.0;
+            double newRange = 1.0;
 
-        //    // Act
-        //    page.Defense_OnStepperValueChanged(null, args);
+            var args = new ValueChangedEventArgs(oldRange, newRange);
 
-        //    // Reset
+            // Act
+            //page.Defense_OnStepperValueChanged(null, args);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Reset
 
-        //[Test]
-        //public void MonsterUpdatePage_Speed_OnStepperDamageChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new MonsterModel();
-        //    var ViewModel = new GenericViewModel<MonsterModel>(data);
+            // Assert
+            Assert.IsTrue(false); // Got to here, so it happened...
+        }
 
-        //    page = new MonsterUpdatePage(ViewModel);
-        //    double oldDamage = 0.0;
-        //    double newDamage = 1.0;
+        [Test]
+        public void MonsterUpdatePage_Speed_OnStepperDamageChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new MonsterModel();
+            var ViewModel = new GenericViewModel<MonsterModel>(data);
 
-        //    var args = new ValueChangedEventArgs(oldDamage, newDamage);
+            page = new MonsterUpdatePage(ViewModel);
+            double oldDamage = 0.0;
+            double newDamage = 1.0;
 
-        //    // Act
-        //    page.Speed_OnStepperValueChanged(null, args);
+            var args = new ValueChangedEventArgs(oldDamage, newDamage);
 
-        //    // Reset
+            // Act
+            //page.Speed_OnStepperValueChanged(null, args);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Reset
 
-        //[Test]
-        //public void MonsterUpdatePage_RollDice_Clicked_Default_Should_Pass()
-        //{
-        //    // Arrange
+            // Assert
+            Assert.IsTrue(false); // Got to here, so it happened...
+        }
 
-        //    // Act
-        //    page.RollDice_Clicked(null, null);
+        [Test]
+        public void MonsterUpdatePage_RollDice_Clicked_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Reset
+            // Act
+            //page.RollDice_Clicked(null, null);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Reset
+
+            // Assert
+            Assert.IsTrue(false); // Got to here, so it happened...
+        }
 
         [Test]
         public void MonsterUpdatePage_ClosePopup_Default_Should_Pass()
