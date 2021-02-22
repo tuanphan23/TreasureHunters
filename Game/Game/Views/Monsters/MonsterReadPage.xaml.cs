@@ -81,7 +81,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="location"></param>
         /// <returns>ItemStack to display</returns>
-        private View GetItemToDisplay()
+        public StackLayout GetItemToDisplay()
         {
             //Default Image is the X
             var ImageSource = "icon_cancel.png";
@@ -140,7 +140,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="data"></param>
         /// <returns>True if sucessful</returns>
-        private bool ShowPopup(ItemModel data)
+        public bool ShowPopup(ItemModel data)
         {
             PopupLoadingView.IsVisible = true;
             PopupItemImage.Source = data.ImageURI;
