@@ -146,18 +146,18 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterIndexPage_AddItemClicked_Valid_Should_Pass()
-        //{
-        //    // Arrange
-        //    // Act
-        //    page.AddItem_Clicked(null, null);
+        [Test]
+        public void CharacterIndexPage_AddCharacterClicked_Valid_Should_Pass()
+        {
+            // Arrange
+            // Act
+            page.AddCharacter_Clicked(null, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
-        
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
     }
 }
