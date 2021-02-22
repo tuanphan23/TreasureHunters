@@ -752,73 +752,73 @@ namespace UnitTests.Engine.EngineBase
         #endregion TargetDied
 
         #region TurnAsAttack
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Null_Should_Fail()
-        //{
-        //    // Arrange
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Null_Should_Fail()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, null);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Null_Attacks_Character_Should_Fail()
-        //{
-        //    // Arrange
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Null_Attacks_Character_Should_Fail()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(null, CharacterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(null, CharacterPlayer);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
-        //[Test]
-        //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Miss_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Character = new CharacterModel();
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Miss_Should_Pass()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-        //    var Monster = new MonsterModel();
-        //    var MonsterPlayer = new PlayerInfoModel(Monster);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    // Forece a Miss
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(1);
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Reset
+            DiceHelper.DisableForcedRolls();
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
         //[Test]
         //public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Hit_Should_Pass()
@@ -1062,7 +1062,7 @@ namespace UnitTests.Engine.EngineBase
         //    DiceHelper.SetForcedRollValue(20);
 
         //    // Act
-        //    var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer,MonsterPlayer);
+        //    var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
         //    // Reset
         //    DiceHelper.DisableForcedRolls();
@@ -1079,7 +1079,7 @@ namespace UnitTests.Engine.EngineBase
         //{
         //    // Arrange
         //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
-            
+
         //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job=CharacterJobEnum.Unknown});
 
         //    // remove it so it is not found
@@ -1334,7 +1334,7 @@ namespace UnitTests.Engine.EngineBase
         //    // Arrange
 
         //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-            
+
         //    // Get the longest range weapon in stock.
         //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
         //    CharacterPlayer.PrimaryHand = weapon.Id;
