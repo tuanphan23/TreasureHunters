@@ -286,50 +286,50 @@ namespace UnitTests.ViewModels
             Assert.AreEqual(0, result); // Count of 0 for the load was skipped
         }
 
-        //[Test]
-        //public async Task ItemIndexViewModel_Message_WipeDataList_Valid_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public async Task ItemIndexViewModel_Message_WipeDataList_Valid_Should_Pass()
+        {
+            // Arrange
 
-        //    // Make the page Page
-        //    var myPage = new Game.Views.AboutPage(true);
+            // Make the page Page
+            var myPage = new Game.Views.AboutPage(true);
 
-        //    var data = new ItemModel();
-        //    await ViewModel.CreateAsync(data);
+            var data = new ItemModel();
+            await ViewModel.CreateAsync(data);
 
-        //    // Act
-        //    MessagingCenter.Send(myPage, "WipeDataList", true);
-        //    var countAfter = ViewModel.Dataset.Count();
+            // Act
+            MessagingCenter.Send(myPage, "WipeDataList", true);
+            var countAfter = ViewModel.Dataset.Count();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(26, countAfter); // Count of 0 for the load was skipped
-        //}
+            // Assert
+            Assert.AreEqual(26, countAfter); // Count of 0 for the load was skipped
+        }
 
-        //[Test]
-        //public async Task ItemIndexViewModel_Update_Valid_Should_Pass()
-        //{
-        //    // Arrange
-        //    await ViewModel.CreateAsync(new ItemModel());
+        [Test]
+        public async Task ItemIndexViewModel_Update_Valid_Should_Pass()
+        {
+            // Arrange
+            await ViewModel.CreateAsync(new ItemModel());
 
-        //    // Find the First ID
-        //    var first = ViewModel.Dataset.FirstOrDefault();
+            // Find the First ID
+            var first = ViewModel.Dataset.FirstOrDefault();
 
-        //    // Make a new item
-        //    first.Name = "New Item";
-        //    first.Value = 1000;
+            // Make a new item
+            first.Name = "New Item";
+            first.Value = 1000;
 
-        //    // Act
-        //    var result = await ViewModel.UpdateAsync(first);
+            // Act
+            var result = await ViewModel.UpdateAsync(first);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);  // Update returned Pas
-        //    Assert.AreEqual("New Item", first.Name);  // The Name was updated
-        //    Assert.AreEqual(1000, first.Value);  // The Value was updated
-        //}
+            // Assert
+            Assert.AreEqual(true, result);  // Update returned Pas
+            Assert.AreEqual("New Item", first.Name);  // The Name was updated
+            Assert.AreEqual(1000, first.Value);  // The Value was updated
+        }
 
         [Test]
         public async Task ItemIndexViewModel_Update_Invalid_Bogus_Should_Fail()
@@ -456,19 +456,19 @@ namespace UnitTests.ViewModels
             Assert.AreEqual(0, count); // Count of 0 for the load was skipped
         }
 
-        //[Test]
-        //public async Task ItemIndexViewModel_SetDataSource_SQL_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public async Task ItemIndexViewModel_SetDataSource_SQL_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = await ViewModel.SetDataSource(1);
+            // Act
+            var result = await ViewModel.SetDataSource(1);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result); // Count of 0 for the load was skipped
-        //}
+            // Assert
+            Assert.AreEqual(true, result); // Count of 0 for the load was skipped
+        }
 
         [Test]
         public async Task ItemIndexViewModel_SetDataSource_Mock_Should_Pass()
