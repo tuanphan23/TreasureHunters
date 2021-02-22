@@ -135,7 +135,7 @@ namespace UnitTests.Views
         //    // Assert
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
-        
+
         //[Test]
         //public void ItemUpdatePage_Range_OnStepperValueChanged_Default_Should_Pass()
         //{
@@ -179,5 +179,35 @@ namespace UnitTests.Views
         //    // Assert
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
+
+        [Test]
+        public void ItemUpdatePage_ValueDownButton_Clicked_Valid_1_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Value = 1;
+
+            // Act
+            page.ValueDownButton_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ItemUpdatePage_ValueUpButton_Clicked_Valid_1_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Value = 1;
+
+            // Act
+            page.ValueUpButton_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
