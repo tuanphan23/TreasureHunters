@@ -80,39 +80,39 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void CharacterIndexPage_OnCharacterSelected_Clicked_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterIndexPage_OnCharacterSelected_Clicked_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            var selectedCharacter = new CharacterModel();
+        //    var selectedCharacter = new CharacterModel();
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
 
-            // Act
-            page.OnItemSelected(null, selectedCharacterChangedEventArgs);
+        //    // Act
+        //    page.OnItemSelected(null, selectedCharacterChangedEventArgs);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterIndexPage_OnCharacterSelected_Clicked_Invalid_Null_Should_Fail()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterIndexPage_OnCharacterSelected_Clicked_Invalid_Null_Should_Fail()
+        //{
+        //    // Arrange
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
 
-            // Act
-            page.OnItemSelected(null, selectedCharacterChangedEventArgs);
+        //    // Act
+        //    page.OnItemSelected(null, selectedCharacterChangedEventArgs);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         [Test]
         public void CharacterIndexPage_OnAppearing_Valid_Should_Pass()
@@ -146,18 +146,18 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void CharacterIndexPage_AddItemClicked_Valid_Should_Pass()
-        {
-            // Arrange
-            // Act
-            page.AddItem_Clicked(null, null);
+        //[Test]
+        //public void CharacterIndexPage_AddItemClicked_Valid_Should_Pass()
+        //{
+        //    // Arrange
+        //    // Act
+        //    page.AddItem_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
         
     }
 }
