@@ -1,5 +1,6 @@
 ﻿using Game.Services;
 using Game.Helpers;
+using SQLite;
 
 namespace Game.Models
 {
@@ -54,7 +55,9 @@ namespace Game.Models
 
         public int test { get; set; } = 0;
 
+        [Ignore]
         public Ability itemAbility { get; set; } = new Ability();
+
         // Range of the item, swords are 1, hats/rings are 0, bows are >1
         public int Range { get; set; } = 0;
 
