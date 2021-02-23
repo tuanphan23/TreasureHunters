@@ -78,6 +78,10 @@ namespace Game.Views
         public async void On_ItemClicked(object sender, EventArgs e)
         {
             //get data from database using Id
+            if(sender == null)
+            {
+                return;
+            }
             var button = sender as ImageButton;
             var ItemID = button.CommandParameter as String;
             var data = ViewModel.Dataset.FirstOrDefault(item => item.Id.Equals(ItemID));
