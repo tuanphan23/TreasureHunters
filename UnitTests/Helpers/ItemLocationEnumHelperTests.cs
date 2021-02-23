@@ -404,6 +404,71 @@ namespace UnitTests.Helpers
             Assert.AreEqual(ItemLocationEnum.Unknown, result);
         }
 
+        [Test]
+        public void ConvertBack_IsValid_Integer_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+            //Reset
+
+        }
+
+        [Test]
+        public void ConvertBack_Invalid_Integer_BadNum_Should_Return_Unknown()
+        {
+            //Arrange
+
+            //Act
+            //ItemLocationEnumConverter.ConvertBack(10, );
+            //Assert
+
+            //Reset
+
+        }
+
+        [Test]
+        public void ConvertBack_IsValid_String_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+            //Reset
+
+        }
+
+        [Test]
+        public void ConvertBack_Invalid_String_BadNum_Should_Return_Unknown()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+            //Reset
+
+        }
+
+        [Test]
+        public void ConvertBack_Invalid_ObjectType_Should_Fail()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+            //Reset
+
+        }
+
         #endregion ConvertMessageToEnum
 
         #region GetListMessageCharacter
