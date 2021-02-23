@@ -92,9 +92,9 @@ namespace Game.Models
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static CharacterJobEnum ConvertStringToEnum(string value)
+        public static DamageTypeEnum ConvertStringToEnum(string value)
         {
-            return (CharacterJobEnum)Enum.Parse(typeof(CharacterJobEnum), value);
+            return (DamageTypeEnum)Enum.Parse(typeof(DamageTypeEnum), value);
         }
     }
 }

@@ -77,5 +77,19 @@ namespace UnitTests.Models
             Assert.AreEqual("Healing", result);
         }
 
+        [Test]
+        public void DamageTypeEnumExtensionsTests_ConvertStringToEnum_None_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = DamageTypeEnumHelper.ConvertStringToEnum("None");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(DamageTypeEnum.None, result);
+        }
+
     }
 }
