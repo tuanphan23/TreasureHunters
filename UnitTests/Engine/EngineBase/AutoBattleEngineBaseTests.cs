@@ -208,6 +208,7 @@ namespace UnitTests.Engine.EngineBase
         public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
         {
             //Arrange
+            string[] names = { "Ben", "Riley", "Patrick", "Abigail", "Peter", "Daren", "Dani", "Mami", "Mari", "Ryu", "Hucky", "Peanut", "Sumi", "Apple", "Ami", "Honami", "Sonomi", "Pat", "Sakue", "Isamu" };
             AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
 
             CharacterIndexViewModel.Instance.Dataset.Clear();
@@ -228,7 +229,7 @@ namespace UnitTests.Engine.EngineBase
 
             //Assert
             Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
-            Assert.AreEqual("6", name);
+            Assert.AreEqual(true, names.Contains(name));
         }
 
         [Test]
