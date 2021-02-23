@@ -408,11 +408,11 @@ namespace UnitTests.Helpers
         public void ConvertBack_IsValid_Integer_Should_Pass()
         {
             //Arrange
-
+            ItemLocationEnumConverter converter = new ItemLocationEnumConverter();
             //Act
-
+            var result = converter.ConvertBack(10, typeof(ItemLocationEnum), null, null);
             //Assert
-
+            Assert.AreEqual(result, "Head");
             //Reset
 
         }
@@ -421,11 +421,11 @@ namespace UnitTests.Helpers
         public void ConvertBack_Invalid_Integer_BadNum_Should_Return_Unknown()
         {
             //Arrange
-
+            ItemLocationEnumConverter converter = new ItemLocationEnumConverter();
             //Act
-            //ItemLocationEnumConverter.ConvertBack(10, );
+            var result = converter.ConvertBack(-100, typeof(ItemLocationEnum), null, null);
             //Assert
-
+            Assert.AreEqual(result, "Unknown");
             //Reset
 
         }
@@ -434,11 +434,11 @@ namespace UnitTests.Helpers
         public void ConvertBack_IsValid_String_Should_Pass()
         {
             //Arrange
-
+            ItemLocationEnumConverter converter = new ItemLocationEnumConverter();
             //Act
-
+            var result = converter.ConvertBack("Head", typeof(ItemLocationEnum), null, null);
             //Assert
-
+            Assert.AreEqual(result, ItemLocationEnum.Head);
             //Reset
 
         }
@@ -447,11 +447,11 @@ namespace UnitTests.Helpers
         public void ConvertBack_Invalid_String_BadNum_Should_Return_Unknown()
         {
             //Arrange
-
+            ItemLocationEnumConverter converter = new ItemLocationEnumConverter();
             //Act
-
+            var result = converter.ConvertBack("BadEnum", typeof(ItemLocationEnum), null, null);
             //Assert
-
+            Assert.AreEqual(result, ItemLocationEnum.Unknown);
             //Reset
 
         }
@@ -460,11 +460,11 @@ namespace UnitTests.Helpers
         public void ConvertBack_Invalid_ObjectType_Should_Fail()
         {
             //Arrange
-
+            ItemLocationEnumConverter converter = new ItemLocationEnumConverter();
             //Act
-
+            var result = converter.ConvertBack(true, typeof(ItemLocationEnum), null, null);
             //Assert
-
+            Assert.AreEqual(result, 0);
             //Reset
 
         }
