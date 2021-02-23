@@ -43,6 +43,10 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void On_CharacterClicked(object sender, EventArgs e)
         {
+            if(sender == null)
+            {
+                return;
+            }
             //get data from database using Id
             var button = sender as ImageButton;
             var monsterID = button.CommandParameter as String;
