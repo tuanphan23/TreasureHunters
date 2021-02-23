@@ -239,6 +239,21 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void BasePlayerModel_GetPercentSpeed_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            var comp = (float)data.GetSpeed() / 20;
+            // Act
+            float result = data.GetPercentSpeed();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(comp, result);
+        }
+
+        [Test]
         public void BasePlayerModel_GetDamageRollValue_Default_Should_Pass()
         {
             // Arrange
