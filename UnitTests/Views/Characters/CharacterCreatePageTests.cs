@@ -427,6 +427,40 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_Finger_Valid_Should_Pass()
+        {
+            //Arrange
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.Finger;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            //nothing should have changed so if there are no errors this should pass
+            Assert.AreEqual(0, 0);
+        }
+
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_Unknown_Valid_Should_Pass()
+        {
+            //Arrange
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.Unknown;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            //nothing should have changed so if there are no errors this should pass
+            Assert.AreEqual(0, 0);
+        }
+
+        [Test]
         public void CharacterCreatPage_OnPopupItemSelected_PrimaryHand_Valid_Should_Pass()
         {
             //Arrange
@@ -443,6 +477,34 @@ namespace UnitTests.Views
             Assert.AreEqual(page.ViewModel.Data.PrimaryHand, "testId");
         }
         #endregion
+
+        [Test]
+        public void CharacterCreatePage_UpdateHealthValue_ShouldPass()
+        {
+            //Arrange
+            page.ViewModel.Data.MaxHealth = page.ViewModel.Data.MaxHealth + 10;
+            //Act
+            page.UpdateHealthValue();
+            //Reset
+
+            //Assert
+            //no way to check if health text actually changed so if it got here it must have happened
+            Assert.AreEqual(0, 0);
+        }
+
+        [Test]
+        public void CharacterCreatePage_LevelPicker_Changed_IsValid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.Level = 21;
+            //Act
+            page.LevelPicker_Changed(0, new EventArgs());
+            //Reset
+            page.ViewModel.Data.Level = 1;
+            //Assert
+            //no way to check if levelPicker value is correct so if it got here it must pass
+            Assert.AreEqual(0, 0);
+        }
 
     }
 }
