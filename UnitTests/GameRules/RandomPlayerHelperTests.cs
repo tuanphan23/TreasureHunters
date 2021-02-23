@@ -255,8 +255,8 @@ namespace UnitTests.Helpers
         public async Task RandomPlayerHelper_GetRandomCharacter_Valid_CharacterList_1_Should_Return_1()
         {
             // Arrange
-            CharacterIndexViewModel.Instance.Dataset.Clear();
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
+            ItemIndexViewModel.Instance.Dataset.Clear();
+            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Name = "1" });
 
             // Arrange
             DiceHelper.EnableForcedRolls();
@@ -276,10 +276,10 @@ namespace UnitTests.Helpers
         public async Task RandomPlayerHelper_GetRandomCharacter_Valid_CharacterList_3_Should_Return_2()
         {
             // Arrange
-            CharacterIndexViewModel.Instance.Dataset.Clear();
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
+            ItemIndexViewModel.Instance.Dataset.Clear();
+            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Name = "1" });
+            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Name = "2" });
+            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Name = "3" });
 
             DiceHelper.EnableForcedRolls();
             DiceHelper.SetForcedRollValue(2);

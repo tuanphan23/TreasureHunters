@@ -41,6 +41,25 @@ namespace Game.GameRules
         }
 
         /// <summary>
+        /// Get A Random Unique Item for Characters
+        /// Only use for Unit Testing
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCharacterUniqueItem()
+        {
+            var itemIndex = DiceHelper.RollDice(1, ItemIndexViewModel.Instance.Dataset.Count()) - 1;
+            // Check to see if there are enough items, if not, then just use the first one...
+            var result = ItemIndexViewModel.Instance.Dataset.First().Name;
+
+            if (itemIndex < ItemIndexViewModel.Instance.Dataset.Count)
+            {
+                result = ItemIndexViewModel.Instance.Dataset.ElementAt(itemIndex).Name;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Get A Random Difficulty
         /// </summary>
         /// <returns></returns>
@@ -279,6 +298,9 @@ namespace Game.GameRules
                 RightFinger = GetItem(ItemLocationEnum.Finger),
                 LeftFinger = GetItem(ItemLocationEnum.Finger),
                 Feet = GetItem(ItemLocationEnum.Feet),
+
+                // Only use for Unit Testing
+                UniqueItem = GetCharacterUniqueItem(),
 
                 Job = GetCharacterJob(),
                 ImageURI = GetCharacterImage()
