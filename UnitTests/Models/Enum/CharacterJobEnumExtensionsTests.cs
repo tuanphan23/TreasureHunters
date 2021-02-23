@@ -48,5 +48,63 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Finder_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Finder.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Finder", result);
+        }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Adventurer_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Adventurer.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Adventurer", result);
+        }
+
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_TreasureHunter_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.TreasureHunter.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Treasure Hunter", result);
+        }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Seeker_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Seeker.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Seeker", result);
+        }
+
     }
 }
