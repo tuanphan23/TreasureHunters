@@ -48,6 +48,7 @@ namespace Game.GameRules
                     Description = "A magical gun that can cause enemies to explode with solar energy ",
                     ImageURI = "flaregun.png",
                     Value = 7,
+                    Range = 10,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
                     DamageType = DamageTypeEnum.Fire
