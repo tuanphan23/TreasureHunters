@@ -238,13 +238,17 @@ namespace UnitTests.Helpers
             // Arrange
             CharacterIndexViewModel.Instance.Dataset.Clear();
 
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+
             // Act
             var result = RandomPlayerHelper.GetRandomCharacter(1);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result.Name.Contains("Riley"));
+            Assert.AreEqual(true, result.Name.Contains("Ben"));
         }
 
         [Test]
