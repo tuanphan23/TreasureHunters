@@ -81,6 +81,19 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModel_itemAbility_Set_Valid_Default_Should_Pass()
+        {
+            //Arrange
+            var data = new ItemModel();
+            var comp = new ItemModel.Ability();
+            //Act
+            data.itemAbility = new ItemModel.Ability();
+
+            //Assert
+            Assert.AreEqual(comp, data.itemAbility);
+        }
+
+        [Test]
         public void ItemModel_Update_Default_Should_Pass()
         {
             // Arrange
