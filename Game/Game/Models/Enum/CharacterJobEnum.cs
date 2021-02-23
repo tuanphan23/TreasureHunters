@@ -54,6 +54,10 @@ namespace Game.Models
                     Message = "";
                     break;
 
+                case CharacterJobEnum.Cleric:
+                    Message = "";
+                    break;
+
                 case CharacterJobEnum.Finder:
                     Message = "Finder";
                     break;
