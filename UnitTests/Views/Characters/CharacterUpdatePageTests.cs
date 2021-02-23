@@ -759,7 +759,20 @@ namespace UnitTests.Views
             //Assert
             Assert.AreEqual(page.ViewModel.Data.PrimaryHand, "testId");
         }
-    # endregion
+        #endregion
+
+        [Test]
+        public void CharacterUpdatePage_SetEnableStateAttributeButtons_IsValid()
+        {
+            //Arrange
+
+            //Act
+            var result = page.SetEnableStateAttributeButtons();
+            //Reset
+
+            //Assert side effects can't be tested due to protection level of xamrin object
+            Assert.AreEqual(result, true);
+        }
 
     }
 }
