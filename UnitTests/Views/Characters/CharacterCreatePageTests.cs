@@ -13,6 +13,7 @@ using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
+using Game.GameRules;
 
 namespace UnitTests.Views
 {
@@ -321,6 +322,127 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        #region popupDataSwitch
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_Head_Valid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.Head = "";
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.Head;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            Assert.AreEqual(page.ViewModel.Data.Head, "testId");
+        }
+
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_Feet_Valid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.Feet = "";
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.Feet;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            Assert.AreEqual(page.ViewModel.Data.Feet, "testId");
+        }
+
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_LeftFinger_Valid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.LeftFinger = "";
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.LeftFinger;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            Assert.AreEqual(page.ViewModel.Data.LeftFinger, "testId");
+        }
+
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_RightFinger_Valid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.RightFinger = "";
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.RightFinger;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            Assert.AreEqual(page.ViewModel.Data.RightFinger, "testId");
+        }
+
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_Necklass_Valid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.Necklass = "";
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.Necklass;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            Assert.AreEqual(page.ViewModel.Data.Necklass, "testId");
+        }
+
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_OffHand_Valid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.OffHand = "";
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.OffHand;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            Assert.AreEqual(page.ViewModel.Data.OffHand, "testId");
+        }
+
+        [Test]
+        public void CharacterCreatPage_OnPopupItemSelected_PrimaryHand_Valid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.PrimaryHand = "";
+            ItemModel item = new ItemModel();
+            item.Location = ItemLocationEnum.PrimaryHand;
+            item.Id = "testId";
+            SelectedItemChangedEventArgs args = new SelectedItemChangedEventArgs(item, 0);
+            //Act
+            page.OnPopupItemSelected(null, args);
+            //Reset
+
+            //Assert
+            Assert.AreEqual(page.ViewModel.Data.PrimaryHand, "testId");
+        }
+        #endregion
 
     }
 }
