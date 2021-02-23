@@ -269,6 +269,22 @@ namespace UnitTests.Models
             Assert.AreEqual(comp, result);
         }
 
+
+        [Test]
+        public void BasePlayerModel_GetPercentDefense_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            var comp = (float)data.GetDefense() / 20;
+            // Act
+            float result = data.GetPercentDefense();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(comp, result);
+        }
+
         [Test]
         public void BasePlayerModel_GetDamageRollValue_Default_Should_Pass()
         {
