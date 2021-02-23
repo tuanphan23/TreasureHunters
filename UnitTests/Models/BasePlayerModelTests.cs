@@ -101,7 +101,7 @@ namespace UnitTests.Models
             result.Necklass = "necklass";
             result.PrimaryHand = "primaryhand";
             result.OffHand = "offhand";
-            result.RightFinger ="rightfinger";
+            result.RightFinger = "rightfinger";
             result.LeftFinger = "leftfinger";
 
             // Reset
@@ -220,6 +220,22 @@ namespace UnitTests.Models
 
             // Assert
             Assert.AreEqual(0, result);
+        }
+
+
+        [Test]
+        public void BasePlayerModel_GetPercentHealth_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            var comp = data.GetMaxHealthTotal / 300;
+            // Act
+            float result = data.GetPercentHealth();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(comp, result);
         }
 
         [Test]
