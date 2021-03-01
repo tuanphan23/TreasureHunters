@@ -964,6 +964,7 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
+                    StopButton.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
@@ -995,6 +996,27 @@ namespace Game.Views
                     BattleMapDisplay.IsVisible = false;
                     break;
             }
+        }
+
+        /// <summary>
+        /// Show the Game Over Screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void StopButton_Clicked(object sender, EventArgs args)
+        {
+            ShowBattleMode();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            // Wrap up
+            BattleEngineViewModel.Instance.Engine.EndBattle();
+
+            // Pause
+            Task.Delay(WaitTime);
+
+            Debug.WriteLine("Game Over");
+
+            GameOver();
         }
     }
 }

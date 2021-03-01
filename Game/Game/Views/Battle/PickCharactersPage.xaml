@@ -74,7 +74,7 @@
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
-                            <Label Text="In Party: " Style="{StaticResource CenterMessageStyle}" Margin="0, 5, 0, 5" Padding="0"/>
+                            <Label Text="Your Teams: " Style="{StaticResource CenterMessageStyle}" Margin="0, 5, 0, 5" Padding="0"/>
                         
                             <Label Style="{StaticResource CenterMessageStyle}" Margin="0, 5, 0, 5" Padding="0" 
                                      x:Name="PartyCountLabel"
