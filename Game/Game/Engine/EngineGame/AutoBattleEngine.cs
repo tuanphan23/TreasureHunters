@@ -32,17 +32,22 @@ namespace Game.Engine.EngineGame
         /// <summary>
         /// Define the Battle variable 
         /// </summary>
-        public new IBattleEngineInterface Battle
+        //public new IBattleEngineInterface Battle
+        //{
+        //    get
+        //    {
+        //        if (base.Battle == null)
+        //        {
+        //            base.Battle = new BattleEngine();
+        //        }
+        //        return base.Battle;
+        //    }
+        //    set { base.Battle = Battle; }
+        //}
+
+        public AutoBattleEngine()
         {
-            get
-            {
-                if (base.Battle == null)
-                {
-                    base.Battle = new BattleEngine();
-                }
-                return base.Battle;
-            }
-            set { base.Battle = Battle; }
+            Battle = new BattleEngine();
         }
 
         /// <summary>
@@ -51,7 +56,8 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override bool CreateCharacterParty()
         {
-            throw new System.NotImplementedException();
+            return base.CreateCharacterParty();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -60,7 +66,8 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override bool DetectInfinateLoop()
         {
-            throw new System.NotImplementedException();
+            return base.DetectInfinateLoop();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -69,7 +76,8 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override Task<bool> RunAutoBattle()
         {
-            throw new System.NotImplementedException();
+            return base.RunAutoBattle();
+            //throw new System.NotImplementedException();
         }
     }
 }
