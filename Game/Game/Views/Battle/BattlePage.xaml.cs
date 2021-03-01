@@ -965,6 +965,7 @@ namespace Game.Views
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
                     StopButton.IsVisible = true;
+                    RoundInfoButton.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
@@ -996,6 +997,17 @@ namespace Game.Views
                     BattleMapDisplay.IsVisible = false;
                     break;
             }
+        }
+
+        /// <summary>
+        /// Show the Game Over Screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void RoundInfoButton_Clicked(object sender, EventArgs args)
+        {
+            ShowBattleMode();
+            await Navigation.PushModalAsync(new RoundOverPage(true));
         }
 
         /// <summary>

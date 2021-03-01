@@ -13,12 +13,33 @@ namespace Game.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RoundOverPage: ContentPage
 	{
+        bool checkRoundInfo = false;
+
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		public RoundOverPage()
         {
             InitializeComponent();
+
+            // Update the Round Count
+            TotalRound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
+
+            // Update the Found Number
+            TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
+
+            // Update the Selected Number, this gets updated later when selected refresh happens
+            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
+
+            DrawCharacterList();
+
+            DrawItemLists();
+        }
+
+        public RoundOverPage(bool checkRoundInfo)
+        {
+            InitializeComponent();
+            this.checkRoundInfo = checkRoundInfo;
 
             // Update the Round Count
             TotalRound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
@@ -320,8 +341,15 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void CloseButton_Clicked(object sender, EventArgs e)
+        public async void CloseButton_Clicked(object sender, EventArgs e)
 		{
+            if(checkRoundInfo)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+                await Navigation.PopModalAsync();
+                return;
+            }
+
             // Reset to a new Round
             BattleEngineViewModel.Instance.Engine.Round.NewRound();
 
