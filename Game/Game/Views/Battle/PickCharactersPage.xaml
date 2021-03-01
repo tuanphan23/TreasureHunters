@@ -9,114 +9,134 @@
              Title="{Binding Title}">
 
     <ContentPage.Content>
-        <ScrollView VerticalScrollBarVisibility="Never">
-            <StackLayout Style="{StaticResource OuterBoxStack}">
+        <ScrollView VerticalScrollBarVisibility="Always" Margin="0">
+            <StackLayout Orientation="Vertical">
 
-                <Label Text="Battle Time" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <StackLayout  Orientation="Vertical" Margin="0">
 
-                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Vertical">
 
-                    <StackLayout HorizontalOptions="Start">
+                        <Label Text="Characters" Style="{StaticResource CenterMessageStyle}" Margin="0, 0, 0, 5" Padding="0"/>                                              
 
-                        <Label Text="Characters" Style="{StaticResource CenterMessageStyle}"/>
-
-                        <ListView 
+                        <RefreshView IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                                     Command = "{Binding LoadItemsCommand}">
+                            <CollectionView ItemsSource="{Binding DatabaseCharacterList}"
+                                HorizontalScrollBarVisibility="Always"
+                                SelectionMode="Single"
+                                SelectionChanged="OnDatabaseCharacterItemSelected"
+                                HeightRequest="200"
                                 x:Name="CharactersListView" 
-                                ItemsSource="{Binding DatabaseCharacterList}"
-                                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                                RefreshCommand="{Binding LoadItemsCommand}"
-                                CachingStrategy="RecycleElement"
-                                ItemSelected="OnDatabaseCharacterItemSelected"
-                                HasUnevenRows="true"
-                                Margin="5,0,5,0"
-                                RowHeight="80">
+                                >
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal" />
+                                </CollectionView.ItemsLayout>
 
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <Grid>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame HeightRequest="150" WidthRequest="150" Padding="0" CornerRadius="10" BackgroundColor="White">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="125" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
 
-                                            <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                                    Source="{Binding ImageURI}"
-                                                    Style="{StaticResource ImageMediumStyle}"/>
+                                                <Image Source="{Binding ImageURI}"/>
 
-                                            <Label Grid.Column="1" Grid.Row="0"
-                                                   Text="{Binding Name}" 
-                                                   Style="{StaticResource ListStyle}"
-                                                   FontAttributes="Bold"/>
+                                                <StackLayout
+                                                    Grid.Row="1"
+                                                    VerticalOptions="CenterAndExpand">
 
-                                            <Label Grid.Column="1" Grid.Row="1"
-                                                   Text="{Binding Path=Level, StringFormat='Level {0:G}'}" 
-                                                   Style="{StaticResource ListStyle}"/>
+                                                    <Label Text="{Binding Name}" Style="{StaticResource CenterMessageStyle}"/>
 
-                                            <Label Grid.Column="1" Grid.Row="2"
-                                                    Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
-                                                    Style="{StaticResource ListStyle}"/>
+                                                    <StackLayout Orientation="Horizontal"
+                                                                Style="{StaticResource HorizontalStack}"
+                                                                HorizontalOptions="CenterAndExpand">
 
-                                        </Grid>
-                                    </ViewCell>
+                                                        <Label Text="{Binding Path=Level, StringFormat='Level {0:G} - '}"
+                                                                Style="{StaticResource CenterMessageStyle}"/>
+
+                                                        <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
+                                                                Style="{StaticResource CenterMessageStyle}"/>
+
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Grid>
+
+                                        </Frame>                         
                                 </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackLayout>
-
-                    <StackLayout HorizontalOptions="CenterAndExpand">
-
-                        <Label Text="Count" Style="{StaticResource CenterMessageStyle}"/>
-
-                        <Label Style="{StaticResource CenterMessageStyle}" 
-                            x:Name="PartyCountLabel"
-                            Text="0"/>
-
-                        <Button 
-                            x:Name="BeginBattleButton"
-                            Clicked="BattleButton_Clicked" 
-                            Text="Begin"
-                            IsEnabled="False"/>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </RefreshView>
 
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="End">
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
 
-                        <Label Text="Party" Style="{StaticResource CenterMessageStyle}"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
-                        <ListView 
-                                x:Name="PartyListView" 
+                            <Label Text="In Party: " Style="{StaticResource CenterMessageStyle}" Margin="0, 5, 0, 5" Padding="0"/>
+                        
+                            <Label Style="{StaticResource CenterMessageStyle}" Margin="0, 5, 0, 5" Padding="0" 
+                                     x:Name="PartyCountLabel"
+                                    Text="0"/>
+
+                        </StackLayout>
+
+                        <RefreshView IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                                    Command = "{Binding LoadItemsCommand}">
+                         <CollectionView x:Name="PartyListView" 
                                 ItemsSource="{Binding PartyCharacterList}"
-                                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                                RefreshCommand="{Binding LoadItemsCommand}"
-                                CachingStrategy="RecycleElement"
-                                ItemSelected="OnPartyCharacterItemSelected"
-                                HasUnevenRows="true"
-                                Margin="5,0,5,0"
-                                RowHeight="80">
+                                HorizontalScrollBarVisibility="Always"
+                                SelectionChanged="OnPartyCharacterItemSelected"
+                                HeightRequest="200"
+                                SelectionMode="Single"
+                                >
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame HeightRequest="200" WidthRequest="150" Padding="0" CornerRadius="10" BackgroundColor="White">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="125" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Image Source="{Binding ImageURI}"/>
+                                        <StackLayout
+                                            Grid.Row="1"
+                                            VerticalOptions="CenterAndExpand">
+                                            <Label Text="{Binding Name}" Style="{StaticResource CenterMessageStyle}"/>
 
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <Grid>
-                                            <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                                    Source="{Binding ImageURI}"
-                                                    Style="{StaticResource ImageMediumStyle}"/>
+                                            <StackLayout Orientation="Horizontal"
+                                             Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="CenterAndExpand">
 
-                                            <Label Grid.Column="1" Grid.Row="0"
-                                                   Text="{Binding Name}" 
-                                                   Style="{StaticResource ListStyle}"
-                                                   FontAttributes="Bold"/>
+                                            <Label Text="{Binding Path=Level, StringFormat='Level {0:G} - '}"
+                                               Style="{StaticResource CenterMessageStyle}"/>
 
-                                            <Label Grid.Column="1" Grid.Row="1"
-                                                   Text="{Binding Path=Level, StringFormat='Level {0:G}'}" 
-                                                   Style="{StaticResource ListStyle}"/>
+                                            <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
+                                               Style="{StaticResource CenterMessageStyle}"/>
 
-                                            <Label Grid.Column="1" Grid.Row="2"
-                                                    Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
-                                                    Style="{StaticResource ListStyle}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>                      
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    </RefreshView>
+                </StackLayout>
 
-                                        </Grid>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
+
+                        <Button
+                            Text="Begin"
+                            x:Name="BeginBattleButton"
+                            Clicked="BattleButton_Clicked"
+                            IsEnabled="False"
+                            Style="{StaticResource RandomButtonStyle}"/>
+
                     </StackLayout>
                 </StackLayout>
 
