@@ -1003,20 +1003,25 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        public void StopButton_Clicked(object sender, EventArgs args)
+        public async void StopButton_Clicked(object sender, EventArgs args)
         {
-            ShowBattleMode();
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+            bool answer = await DisplayAlert("Stop Game", "Do you want to stop the battle?", "Yes", "No");
 
-            // Wrap up
-            BattleEngineViewModel.Instance.Engine.EndBattle();
+            if(answer)
+            {
+                ShowBattleMode();
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
-            // Pause
-            Task.Delay(WaitTime);
+                // Wrap up
+                BattleEngineViewModel.Instance.Engine.EndBattle();
 
-            Debug.WriteLine("Game Over");
+                // Pause
+                //Task.Delay(WaitTime);
 
-            GameOver();
+                Debug.WriteLine("Game Over");
+
+                GameOver();
+            }           
         }
     }
 }
