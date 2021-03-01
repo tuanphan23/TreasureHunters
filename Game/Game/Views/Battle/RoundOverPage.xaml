@@ -103,6 +103,68 @@
                 </StackLayout>
             </StackLayout>
 
+            <!--The Character Popup-->
+            <StackLayout 
+                    x:Name="CharacterPopupLoadingView" 
+                    BackgroundColor="{StaticResource PageBackgroundColor}" 
+                    IsVisible="false" 
+                    AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
+                    AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300"
+                        HeightRequest="300"
+                        >
+
+                    <Frame 
+                             BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+
+                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
+                            <Image x:Name="PopupCharacterImage" Style="{StaticResource ImageLargeStyle}"/>
+
+                            <Label x:Name="PopupCharacterName" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+                            <Label x:Name="PopupCharacterDescription" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Level : " Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupCharacterLevel" Style="{StaticResource ValueStyle}" />
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Health : " Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupCharacterHealth" Style="{StaticResource LabelStyle}" />
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Experience : " Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupCharacterExperience" Style="{StaticResource LabelStyle}" />
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Attack : " Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupCharacterAttack" Style="{StaticResource LabelStyle}" />
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Speed : " Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupCharacterSpeed" Style="{StaticResource LabelStyle}" />
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Defense : " Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupCharacterDefense" Style="{StaticResource LabelStyle}" />
+                            </StackLayout>
+
+                            <Button x:Name="CharacterPopupCloseButton" 
+                                Clicked="ClosePopup_Clicked" 
+                                Text="Close"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

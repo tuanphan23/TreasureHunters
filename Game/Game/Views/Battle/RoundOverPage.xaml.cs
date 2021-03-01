@@ -170,45 +170,50 @@ namespace Game.Views
         /// <returns></returns>
         public StackLayout CreatePlayerDisplayBox(PlayerInfoModel data)
         {
+            var ClickableButton = true;
+
             if (data == null)
             {
                 data = new PlayerInfoModel();
+
+                // Turn off click action
+                ClickableButton = false;
             }
 
             // Hookup the image
-            var PlayerImage = new Image
+            var PlayerImage = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
                 Source = data.ImageURI
             };
 
             // Add the Level
-            var PlayerLevelLabel = new Label
-            {
-                Text = "Level : " + data.Level,
-                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
-                HorizontalOptions = LayoutOptions.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 1,
-                LineHeight = 1,
-                MaxLines = 1,
-            };
+            //var PlayerLevelLabel = new Label
+            //{
+            //    Text = "Level : " + data.Level,
+            //    Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    HorizontalTextAlignment = TextAlignment.Center,
+            //    Padding = 0,
+            //    LineBreakMode = LineBreakMode.TailTruncation,
+            //    CharacterSpacing = 1,
+            //    LineHeight = 1,
+            //    MaxLines = 1,
+            //};
 
-            // Add the HP
-            var PlayerHPLabel = new Label
-            {
-                Text = "HP : " + data.GetCurrentHealthTotal,
-                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
-                HorizontalOptions = LayoutOptions.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 1,
-                LineHeight = 1,
-                MaxLines = 1,
-            };
+            //// Add the HP
+            //var PlayerHPLabel = new Label
+            //{
+            //    Text = "HP : " + data.GetCurrentHealthTotal,
+            //    Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    HorizontalTextAlignment = TextAlignment.Center,
+            //    Padding = 0,
+            //    LineBreakMode = LineBreakMode.TailTruncation,
+            //    CharacterSpacing = 1,
+            //    LineHeight = 1,
+            //    MaxLines = 1,
+            //};
 
             var PlayerNameLabel = new Label()
             {
@@ -223,6 +228,11 @@ namespace Game.Views
                 MaxLines = 1,
             };
 
+            if (ClickableButton)
+            {
+                PlayerImage.Clicked += (sender, args) => ShowCharacterPopup(data);
+            }
+
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
             {
@@ -233,8 +243,6 @@ namespace Game.Views
                 Children = {
                     PlayerImage,
                     PlayerNameLabel,
-                    PlayerLevelLabel,
-                    PlayerHPLabel,
                 },
             };
 
@@ -260,6 +268,27 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Show the Popup for the Character
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public bool ShowCharacterPopup(PlayerInfoModel data)
+        {
+            CharacterPopupLoadingView.IsVisible = true;
+            PopupCharacterImage.Source = data.ImageURI;
+
+            PopupCharacterName.Text = data.Name;
+            PopupCharacterDescription.Text = data.Description;
+            PopupCharacterLevel.Text = data.Level.ToString();
+            PopupCharacterHealth.Text = data.GetCurrentHealthTotal.ToString();
+            PopupCharacterExperience.Text = data.ExperienceTotal.ToString();
+            PopupCharacterAttack.Text = data.GetAttackTotal.ToString();
+            PopupCharacterSpeed.Text = data.GetSpeedTotal.ToString();
+            PopupCharacterDefense.Text = data.GetDefenseTotal.ToString();
+            return true;
+        }
+
+        /// <summary>
         /// Close the popup
         /// </summary>
         /// <param name="sender"></param>
@@ -267,7 +296,9 @@ namespace Game.Views
         public void ClosePopup_Clicked(object sender, EventArgs e)
 		{
 			PopupLoadingView.IsVisible = false;
-		}
+            CharacterPopupLoadingView.IsVisible = false;
+
+        }
 		
 		/// <summary>
 		/// Closes the Round Over Popup
