@@ -38,7 +38,13 @@ namespace Game.Engine.EngineGame
         //    {
         //        if (base.Battle == null)
         //        {
-        //            base.Battle = new BattleEngine();
+        //            base.Battle = new BattleEngine
+        //            {
+        //                Round = new RoundEngine()
+        //                {
+        //                    Turn = new TurnEngine()
+        //                }
+        //            };
         //        }
         //        return base.Battle;
         //    }
@@ -50,6 +56,7 @@ namespace Game.Engine.EngineGame
             Battle = new BattleEngine();
         }
 
+
         /// <summary>
         /// Create character list and monster list
         /// </summary>
@@ -57,7 +64,7 @@ namespace Game.Engine.EngineGame
         public override bool CreateCharacterParty()
         {
             return base.CreateCharacterParty();
-            //throw new System.NotImplementedException();
+            ////throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -67,7 +74,7 @@ namespace Game.Engine.EngineGame
         public override bool DetectInfinateLoop()
         {
             return base.DetectInfinateLoop();
-            //throw new System.NotImplementedException();
+            ////throw new System.NotImplementedException();
         }
 
         /// <summary>

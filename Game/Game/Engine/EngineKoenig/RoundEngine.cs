@@ -80,7 +80,6 @@ namespace Game.Engine.EngineKoenig
             * Hint: 
             * I don't have crudi monsters yet so will add 6 new ones...
             * If you have crudi monsters, then pick from the list
-
             * Consdier how you will scale the monsters up to be appropriate for the characters to fight
             * 
             */
@@ -134,7 +133,7 @@ namespace Game.Engine.EngineKoenig
         /// <summary>
         /// For each character pickup the items
         /// </summary>
-        public override void PickupItemsForAllCharacters()
+        public override bool PickupItemsForAllCharacters()
         {
             // In Auto Battle this happens and the characters get their items
             // When called manualy, make sure to do the character pickup before calling EndRound
@@ -144,6 +143,8 @@ namespace Game.Engine.EngineKoenig
             {
                 PickupItemsFromPool(character);
             }
+
+            return true;
         }
 
         /// <summary>
