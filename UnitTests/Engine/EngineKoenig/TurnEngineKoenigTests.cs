@@ -1326,35 +1326,38 @@ namespace UnitTests.Engine.EngineKoenig
             Assert.AreEqual(ActionEnum.Ability, result);
         }
 
-        //[Test]
-        //public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
-        //{
-        //    // Arrange
+        [Test]
+        public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
+        {
+            // Arrange
 
-        //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
-        //    // Get the longest range weapon in stock.
-        //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-        //    CharacterPlayer.PrimaryHand = weapon.Id;
-        //    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            // Clear the abilities, so the attack is the choice.
+            CharacterPlayer.AbilityTracker.Clear();
 
-        //    var Monster = new MonsterModel();
-        //    Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
-        //    Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-        //    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            var Monster = new MonsterModel();
+            Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
+            Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
 
-        //    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-        //    Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-        //    // Act
-        //    var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-        //    // Reset
+            // Act
+            var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
-        //    // Assert
-        //    Assert.AreEqual(ActionEnum.Attack, result);
-        //}
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ActionEnum.Attack, result);
+        }
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
