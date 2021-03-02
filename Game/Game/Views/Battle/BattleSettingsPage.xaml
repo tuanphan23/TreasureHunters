@@ -86,6 +86,17 @@
                     VerticalOptions="Center"
                     x:Name="AllowMonsterItemsSwitch"
                     Toggled="AllowMonsterItems_Toggled"/>
+
+                <Label
+                    Text="Immune Players"
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Switch
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    x:Name="ImmunePlayersSwitch"
+                    Toggled="ImmunePlayers_Toggled"
+                    />
             </StackLayout>
 
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>

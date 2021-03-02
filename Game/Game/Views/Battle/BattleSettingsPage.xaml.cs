@@ -132,9 +132,9 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void ImmunePlayers_Toggled(object sender, EventArgs e)
+        public void ImmunePlayers_Toggled(object sender, EventArgs e)
         {
-            if(/*ImmunePlayersSwitch.IsToggled == */true)
+            if(ImmunePlayersSwitch.IsToggled == true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers = true;
                 return;
@@ -143,7 +143,7 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers = false;
         }
 
-        public async void ImmuneMonsters_Toggled(object sender, EventArgs e)
+        public void ImmuneMonsters_Toggled(object sender, EventArgs e)
         {
             if(/*ImmuneMonstersSwitch.IsToggled == */ true)
             {
