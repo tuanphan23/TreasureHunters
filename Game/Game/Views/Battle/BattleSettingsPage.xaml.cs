@@ -124,6 +124,22 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Toggle ImmunePlayers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void ImmunePlayers_Toggled(object sender, EventArgs e)
+        {
+            if(/*ImmunePlayersSwitch.IsToggled == */true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers = true;
+                return;
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers = false;
+        }
+
+        /// <summary>
         /// Toggle Critical Miss
         /// </summary>
         /// <param name="sender"></param>
