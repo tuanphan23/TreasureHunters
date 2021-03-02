@@ -11,6 +11,7 @@ using Game.Views;
 using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
 using Game.ViewModels;
+using Game.Models;
 
 namespace UnitTests.Views
 {
@@ -67,6 +68,67 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_Invalid_Null_Should_Fail()
+        {
+            //Arrange
+
+            //Act
+            StackLayout result = page.GetItemToDisplay(null);
+            //Reset
+
+            //Assert
+            //if this is a new StackLayout then it should have no children
+            Assert.AreEqual(0, result.Children.Count);
+        }
+
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_Invalid_EmptyItemId_Should_Fail()
+        {
+            //Arrange
+            ItemModel item = new ItemModel();
+            item.Id = "";
+            //Act
+            StackLayout result = page.GetItemToDisplay(item);
+            //Reset
+
+            //Assert
+            //if this is a new StackLayout then it should have no children
+            Assert.AreEqual(0, result.Children.Count);
+        }
+
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_Invalid_NullItemId_Should_Fail()
+        {
+            //Arrange
+            ItemModel item = new ItemModel();
+            item.Id = null;
+            //Act
+            StackLayout result = page.GetItemToDisplay(item);
+            //Reset
+
+            //Assert
+            //if this is a new StackLayout then it should have no children
+            Assert.AreEqual(0, result.Children.Count);
+        }
+
+
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_IsValid_DefaultItem_Should_Pass()
+        {
+            //Arrange
+            ItemModel item = new ItemModel();
+            //Act
+            StackLayout result = page.GetItemToDisplay(item);
+            //Reset
+
+            //Assert
+            //Should have one child
+            Assert.AreEqual(1, result.Children.Count);
+            //check for the right image
+            Assert.AreEqual(item.ImageURI, (result.Children[0] as ImageButton).Source);
         }
     }
 }
