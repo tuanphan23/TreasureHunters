@@ -26,5 +26,17 @@ namespace Game.Models
 
         // Can monsters have Items and weapons?
         public bool AllowMonsterItems = false;
+
+        // Are players impervious to damage?
+        public bool ImmunePlayers = false;
+        
+        // Are monsters impervious to damage?
+        public bool ImmuneMonsters = false;
+
+        // Are abilities allowed?
+        public bool AllowAbilities = true;
+
+        // Are abilities required to be used if possible
+        public bool ForceAbilities = false;
     }
 }
