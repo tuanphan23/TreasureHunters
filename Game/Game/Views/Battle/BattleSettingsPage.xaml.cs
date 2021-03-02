@@ -145,7 +145,7 @@ namespace Game.Views
 
         public void ImmuneMonsters_Toggled(object sender, EventArgs e)
         {
-            if(/*ImmuneMonstersSwitch.IsToggled == */ true)
+            if(ImmuneMonstersSwitch.IsToggled == true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmuneMonsters = true;
                 return;

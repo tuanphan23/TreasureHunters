@@ -97,6 +97,18 @@
                     x:Name="ImmunePlayersSwitch"
                     Toggled="ImmunePlayers_Toggled"
                     />
+
+                <Label
+                    Text="Immune Monsters"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+
+                <Switch
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    x:Name="ImmuneMonstersSwitch"
+                    Toggled="ImmuneMonsters_Toggled"
+                    />
             </StackLayout>
 
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
