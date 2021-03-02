@@ -506,5 +506,19 @@ namespace UnitTests.Views
             Assert.AreEqual(0, 0);
         }
 
+        [Test]
+        public void CharacterCreatePage_LevelPicker_Changed_Invalid_Should_Pass()
+        {
+            //Arrange
+            page.ViewModel.Data.Level = 21;
+            //Act
+            page.LevelPicker_Changed(0, new EventArgs());
+            //Reset
+            page.ViewModel.Data.Level = -1;
+            //Assert
+            //no way to check if levelPicker value is correct so if it got here it must pass
+            Assert.AreEqual(0, 0);
+        }
+
     }
 }
