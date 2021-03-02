@@ -56,6 +56,9 @@ namespace Game.Views
             TotalKilled.Text = EngineViewModel.Engine.EngineSettings.BattleScore.MonsterModelDeathList.Count().ToString();
             TotalCollected.Text = EngineViewModel.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
             TotalScore.Text = EngineViewModel.Engine.EngineSettings.BattleScore.ExperienceGainedTotal.ToString();
+            TotalRounds.Text = EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount.ToString();
+            TotalTurns.Text = EngineViewModel.Engine.EngineSettings.BattleScore.TurnCount.ToString();
+            TotalExp.Text = EngineViewModel.Engine.EngineSettings.BattleScore.ExperienceGainedTotal.ToString();
         }
 
         /// <summary>
