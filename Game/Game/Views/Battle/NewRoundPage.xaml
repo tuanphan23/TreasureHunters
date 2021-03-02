@@ -13,8 +13,9 @@
                         />
 
                 <Button Clicked="BeginButton_Clicked" 
-                        Text="Start Round"
-                        Style="{StaticResource DeleteButtonStyle}"/>
+                        Text="Begin"
+                        Style="{StaticResource DeleteButtonStyle}"
+                        FontSize="Small"/>
 
                 <Label Text="Characters Selected" 
                        Style="{StaticResource MessageLargeStyle}"
@@ -37,8 +38,9 @@
                 <StackLayout Padding="1"></StackLayout>
 
                 <Button Clicked="BeginButton_Clicked" 
-                        Text="Start Round"
-                        Style="{StaticResource DeleteButtonStyle}"/>
+                        Text="Begin"
+                        Style="{StaticResource DeleteButtonStyle}"
+                        FontSize="Small"/>
                 
             </StackLayout>
         </ScrollView>
