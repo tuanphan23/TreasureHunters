@@ -952,6 +952,8 @@ namespace Game.Views
                 case BattleStateEnum.GameOver:
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
+                    RoundInfoButton.IsVisible = false;
+                    DroppedItemsButton.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
 
                     // Show the Game Over Display
@@ -966,6 +968,7 @@ namespace Game.Views
                     AttackButton.IsVisible = true;
                     StopButton.IsVisible = true;
                     RoundInfoButton.IsVisible = true;
+                    DroppedItemsButton.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
@@ -1034,6 +1037,17 @@ namespace Game.Views
 
                 GameOver();
             }           
+        }
+
+        /// <summary>
+        /// Show the Game Over Screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void DroppedItemsButton_Clicked(object sender, EventArgs args)
+        {
+            ShowBattleMode();
+            await Navigation.PushModalAsync(new PickItemsPage());
         }
     }
 }
