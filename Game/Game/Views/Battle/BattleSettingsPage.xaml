@@ -34,10 +34,11 @@
 
                 <Label
                     Text="Monster Hit Control" 
+                    HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"/>
                 
                 <Picker 
-                    HorizontalOptions="Start" 
+                    HorizontalOptions="Center" 
                     VerticalOptions="Center"
                     FontSize="Micro"
                     x:Name="MonsterHitPicker"
@@ -46,62 +47,80 @@
 
                 
                 <Label 
-                    Text="Character Hit Control" 
+                    Text="Character Hit Control"
+                    HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Picker 
-                    HorizontalOptions="Start" 
+                    HorizontalOptions="Center" 
                     VerticalOptions="Center"
                     FontSize="Micro"
                     x:Name="CharacterHitPicker"
                     SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                     SelectedIndexChanged="CharacterHitPicker_Changed"/>
 
+                <Label
+                    Text="Players"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource LargeLabelStyle}"
+                    />
+
                 <Label 
                     Text="Allow Monster Items" 
+                    HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Switch 
-                    HorizontalOptions="Start" 
+                    HorizontalOptions="Center" 
                     VerticalOptions="Center"
                     x:Name="AllowMonsterItemsSwitch"
                     Toggled="AllowMonsterItems_Toggled"/>
 
                 <Label
-                    Text="Immune Players"
-                    Style="{DynamicResource LabelStyle}"/>
-
-                <Switch
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    x:Name="ImmunePlayersSwitch"
-                    Toggled="ImmunePlayers_Toggled"
+                    Text="Monsters"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource LargeLabelStyle}"
                     />
 
                 <Label
                     Text="Immune Monsters"
+                    HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"
                     />
 
                 <Switch
-                    HorizontalOptions="Start"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="ImmuneMonstersSwitch"
                     Toggled="ImmuneMonsters_Toggled"
                     />
 
                 <Label
+                    Text="Immune Players"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Switch
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    x:Name="ImmunePlayersSwitch"
+                    Toggled="ImmunePlayers_Toggled"
+                    />
+
+                <Label
                     Text="Abilities"
+                    HorizontalOptions="Center"
                     Style="{DynamicResource LargeLabelStyle}"
                     />
 
                 <Label
                     Text="AllowAbilities"
+                    HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"
                     />
 
                 <Switch
-                    HorizontalOptions="Start"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="AllowAbilitiesSwitch"
                     Toggled="AllowAbilities_Toggled"
@@ -109,11 +128,12 @@
 
                 <Label
                     Text="ForceAbilities"
+                    HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"
                     />
 
                 <Switch
-                    HorizontalOptions="Start"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="ForceAbilitiesSwitch"
                     Toggled="ForceAbilities_Toggled"
