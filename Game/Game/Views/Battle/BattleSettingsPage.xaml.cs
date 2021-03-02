@@ -69,6 +69,11 @@ namespace Game.Views
             AllowMonsterItemsSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems;
             ImmuneMonstersSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmuneMonsters;
             #endregion
+
+            #region Abilities
+            AllowAbilitiesSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowAbilities;
+            ForceAbilitiesSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ForceAbilities;
+            #endregion
         }
 
         /// <summary>
@@ -193,40 +198,6 @@ namespace Game.Views
                 return;
             }
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ForceAbilities = false;
-        }
-
-        /// <summary>
-        /// Toggle Critical Miss
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void AllowCriticalMiss_Toggled(object sender, EventArgs e)
-        {
-            // Flip the settings
-            if (/*AllowCriticalMissSwitch.IsToggled ==*/ true)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = true;
-                return;
-            }
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = false;
-        }
-
-        /// <summary>
-        /// Toggle Critical Hit
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void AllowCriticalHit_Toggled(object sender, EventArgs e)
-        {
-            // Flip the settings
-            if (/*AllowCriticalHitSwitch.IsToggled ==*/ true)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
-                return;
-            }
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = false;
         }
 
         /// <summary>
