@@ -16,7 +16,22 @@
                 <Label Text="0" x:Name="TotalScore" Style="{StaticResource MessageStyle}"/>
             </StackLayout>
 
-            <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
+                <StackLayout Style="{StaticResource HorizontalStack}">
+                    <Label Text="Number of Rounds : " Style="{StaticResource MessageStyle}"/>
+                    <Label Text="0" x:Name="TotalRounds" Style="{StaticResource MessageStyle}"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}">
+                    <Label Text="Number of Turns : " Style="{StaticResource MessageStyle}"/>
+                    <Label Text="0" x:Name="TotalTurns" Style="{StaticResource MessageStyle}"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}">
+                    <Label Text="Total Experience Gained : " Style="{StaticResource MessageStyle}"/>
+                    <Label Text="0" x:Name="TotalExp" Style="{StaticResource MessageStyle}"/>
+                </StackLayout>
+
+                <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
             <FlexLayout x:Name="CharacterListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
