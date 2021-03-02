@@ -176,5 +176,33 @@ namespace UnitTests.Views
             //if it got here then it closed the popup
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void PickItemsPage_DrawDroppedItems_Test_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            page.DrawDroppedItems();
+            //Reset
+
+            //Assert
+            //if it got here it has to pass
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void PickItemsPage_DrawSelectedItems_Test_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            page.DrawSelectedItems();
+            //Reset
+
+            //Assert
+            //if it got here it has to pass
+            Assert.IsTrue(true);
+        }
     }
 }
