@@ -99,6 +99,26 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void CharacterIndexPage_OnCharacterSelected_Clicked_Empty_Should_Pass()
+        {
+            // Arrange
+
+            var sender = new ImageButton();
+
+            var selectedCharacter = new CharacterModel();
+
+            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+
+            // Act
+            page.On_CharacterClicked(sender, selectedCharacterChangedEventArgs);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void CharacterIndexPage_OnCharacterSelected_Clicked_Invalid_Null_Should_Fail()
         {
             // Arrange
