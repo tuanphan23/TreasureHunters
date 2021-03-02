@@ -20,7 +20,8 @@
 
                         <Label Text="Round Cleared" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                        <Button Clicked="CloseButton_Clicked" Text="Close"/>
+                        <Button Clicked="CloseButton_Clicked" Text="Close"
+                                Style="{StaticResource DeleteButtonStyle}"/>
 
                         <StackLayout Style="{StaticResource HorizontalStack}">
                             <Label Text="Round : " Style="{StaticResource MessageStyle}"/>
