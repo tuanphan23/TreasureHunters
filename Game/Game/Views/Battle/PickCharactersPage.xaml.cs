@@ -44,6 +44,9 @@ namespace Game.Views
             // Clear the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
 
+            //populate the UnusedCharacterList
+            BattleEngineViewModel.Instance.UnusedCharacterList = BattleEngineViewModel.Instance.DatabaseCharacterList;
+
             UpdateNextButtonState();
         }
 
@@ -63,6 +66,7 @@ namespace Game.Views
 
             // Manually deselect Character.
             CharactersListView.SelectedItem = null;
+            BattleEngineViewModel.Instance.UnusedCharacterList.Remove(data);
 
             //check to see if the user is trying to add the same character twice
             //COMMENTED OUT AS WE ARE UNSURE IF THIS IS IN OUR GAME RULES OR NOT
