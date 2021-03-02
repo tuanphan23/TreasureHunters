@@ -109,6 +109,35 @@
                     x:Name="ImmuneMonstersSwitch"
                     Toggled="ImmuneMonsters_Toggled"
                     />
+
+                <Label
+                    Text="Abilities"
+                    Style="{DynamicResource LargeLabelStyle}"
+                    />
+
+                <Label
+                    Text="AllowAbilities"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+
+                <Switch
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    x:Name="AllowAbilitiesSwitch"
+                    Toggled="AllowAbilities_Toggled"
+                    />
+
+                <Label
+                    Text="ForceAbilities"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+
+                <Switch
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    x:Name="ForceAbilitiesSwitch"
+                    Toggled="ForceAbilities_Toggled"
+                    />
             </StackLayout>
 
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
