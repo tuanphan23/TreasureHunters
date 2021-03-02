@@ -159,7 +159,22 @@ namespace UnitTests.Views
 
             //Assert
             //method succeeded so it got here
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void PickItemsPage_CloseItemPopup_Clicked_Should_Pass()
+        {
+            //Arrange
+            ItemModel item = new ItemModel();
+            page.ShowPopup(item);
+            //Act
+            page.CloseItemPopup_Clicked(null, null);
+            //Reset
+
+            //Assert
+            //if it got here then it closed the popup
+            Assert.IsTrue(true);
         }
     }
 }

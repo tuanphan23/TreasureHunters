@@ -146,6 +146,10 @@ namespace Game.Views
         /// <returns></returns>
         public bool ShowPopup(ItemModel data)
         {
+            if(data == null)
+            {
+                return false;
+            }
             PopupLoadingView.IsVisible = true;
             PopupItemImage.Source = data.ImageURI;
 
