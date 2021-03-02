@@ -55,12 +55,12 @@ namespace Game.Views
             CharacterHitPicker.SelectedItem = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum.ToString();
             CharacterHitPicker.SelectedIndex = CharacterHitPicker.Items.IndexOf(CharacterHitPicker.SelectedItem.ToString());
             #endregion HitPickers
-
+            /*
             #region HitToggles
             AllowCriticalHitSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit;
             AllowCriticalMissSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss;
             #endregion HitToggles
-
+            */
             #region PlayerToggles
             ImmunePlayersSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers;
             #endregion
@@ -203,7 +203,7 @@ namespace Game.Views
         public void AllowCriticalMiss_Toggled(object sender, EventArgs e)
         {
             // Flip the settings
-            if (AllowCriticalMissSwitch.IsToggled == true)
+            if (/*AllowCriticalMissSwitch.IsToggled ==*/ true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = true;
                 return;
@@ -220,7 +220,7 @@ namespace Game.Views
         public void AllowCriticalHit_Toggled(object sender, EventArgs e)
         {
             // Flip the settings
-            if (AllowCriticalHitSwitch.IsToggled == true)
+            if (/*AllowCriticalHitSwitch.IsToggled ==*/ true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
                 return;
