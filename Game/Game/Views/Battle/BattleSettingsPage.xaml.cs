@@ -61,8 +61,13 @@ namespace Game.Views
             AllowCriticalMissSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss;
             #endregion HitToggles
 
+            #region PlayerToggles
+            ImmunePlayersSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers;
+            #endregion
+
             #region MonsterToggles
             AllowMonsterItemsSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems;
+            ImmuneMonstersSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmuneMonsters;
             #endregion
         }
 
@@ -143,6 +148,11 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers = false;
         }
 
+        /// <summary>
+        /// Toggle ImmuneMonsters
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ImmuneMonsters_Toggled(object sender, EventArgs e)
         {
             if(ImmuneMonstersSwitch.IsToggled == true)
@@ -152,6 +162,37 @@ namespace Game.Views
             }
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmuneMonsters = false;
+        }
+
+        /// <summary>
+        /// Toggle AllowAbilities
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void AllowAbilities_Toggled(object sender, EventArgs e)
+        {
+            if(/*AllowAbilitiesSwitch.IsToggled == */true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowAbilities = true;
+                return;
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowAbilities = false;
+        }
+
+        /// <summary>
+        /// Toggle ForceAbilities
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ForceAbilities_Toggled(object sender, EventArgs e)
+        {
+            if(/*ForceAbilities.IsToggled == */true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ForceAbilities = true;
+                return;
+            }
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ForceAbilities = false;
         }
 
         /// <summary>
