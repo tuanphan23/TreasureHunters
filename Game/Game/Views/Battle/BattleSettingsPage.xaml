@@ -11,35 +11,23 @@
 
             <Label Text ="Battle Mode" Style="{StaticResource HeaderStyle}" />
 
-            <Grid 
-                HorizontalOptions="StartAndExpand" 
+            <StackLayout
+                HorizontalOptions="CenterAndExpand" 
                 Padding="10"
-                RowSpacing="1"
-                ColumnSpacing="2"
                 VerticalOptions="Center">
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
                 <Label 
-                    Grid.Row="0" Grid.Column="0"
                     Text="Battle Mode" 
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Picker 
-                    Grid.Row="0" Grid.Column="1"
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
                     FontSize="Micro"
                     x:Name="BattleModePicker"
                     SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                     SelectedIndexChanged="BattleModePicker_Changed"/>
-            </Grid>
+            </StackLayout>
 
             <Label Text ="Control Hit Actions" Style="{StaticResource HeaderStyle}" />
 
