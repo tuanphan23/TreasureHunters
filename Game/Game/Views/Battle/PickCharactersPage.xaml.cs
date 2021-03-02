@@ -40,15 +40,13 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = BattleEngineViewModel.Instance;
-            //BindingContext = BattleEngineViewModel.Instance;
 
-            // Clear the Database List and the Party List to start
+            // Clear the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
 
             UpdateNextButtonState();
         }
 
-        //TODO: fix double selecting of items
         //TODO: fix not deselecting
         /// <summary>
         /// The row selected from the list
@@ -65,6 +63,15 @@ namespace Game.Views
 
             // Manually deselect Character.
             CharactersListView.SelectedItem = null;
+
+            //check to see if the user is trying to add the same character twice
+            foreach (var partyMember in BattleEngineViewModel.Instance.PartyCharacterList)
+            {
+                if(data.Id == partyMember.Id)
+                {
+                    return;
+                }
+            }
 
             // Don't add more than the party max
             if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
@@ -139,7 +146,7 @@ namespace Game.Views
         /// </summary>
         public void CreateEngineCharacterList()
         {
-            // Clear the currett list
+            // Clear the current list
             BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
 
             // Load the Characters into the Engine
