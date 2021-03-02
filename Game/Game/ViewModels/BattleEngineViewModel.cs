@@ -69,6 +69,9 @@ namespace Game.ViewModels
         //// Hold the View Model to the CharacterIndexViewModel
         public CharacterIndexViewModel DatabaseCharacterViewModel = CharacterIndexViewModel.Instance;
 
+        //// Hold the Characters not being used in the party
+        public ObservableCollection<CharacterModel> UnusedCharacterList { get; set; } = new ObservableCollection<CharacterModel>();
+
         //// Have the Database Character List point to the Character View Model List
         public ObservableCollection<CharacterModel> DatabaseCharacterList { get; set; } = CharacterIndexViewModel.Instance.Dataset;
 
