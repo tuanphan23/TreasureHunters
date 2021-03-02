@@ -116,6 +116,26 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void MonsterIndexPage_OnMonsterSelected_Clicked_Valid_Should_Pass()
+        {
+            // Arrange
+
+            object sender = new ImageButton();
+
+            var selectedMonster = new MonsterModel();
+
+            var selectedMonsterChangedEventArgs = new SelectedItemChangedEventArgs(selectedMonster, 0);
+
+            // Act
+            page.On_CharacterClicked(sender, selectedMonsterChangedEventArgs);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void MonsterIndexPage_OnAppearing_Valid_Should_Pass()
         {
             // Arrange
