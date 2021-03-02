@@ -6,6 +6,10 @@ using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+//TODO: remove crit settings (no crits)
+//TODO: remove miss settings (no missing)
+//TODO: new settings in constructor
+
 namespace Game.Views
 {
     /// <summary>
