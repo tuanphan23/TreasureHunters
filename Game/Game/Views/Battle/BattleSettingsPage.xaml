@@ -120,7 +120,8 @@
                     />
             </StackLayout>
 
-            <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
+            <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"
+                    Style="{StaticResource DeleteButtonStyle}"/>
 
         </StackLayout>
     </ContentPage.Content>
