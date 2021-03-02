@@ -265,5 +265,49 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void RoundOverPage_CloseCharacterPopup_Default_Should_Pass()
+        {
+            // Arrange
+
+            //Act
+            page.CloseCharacterPopup_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_CloseItemPopup_Default_Should_Pass()
+        {
+            // Arrange
+
+            //Act
+            page.CloseItemPopup_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_ShowCharacterPopup_Default_Should_Pass()
+        {
+            // Arrange
+            PlayerInfoModel testPlayer = new PlayerInfoModel();
+
+            //Act
+            page.ShowCharacterPopup(testPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
     }
 }
