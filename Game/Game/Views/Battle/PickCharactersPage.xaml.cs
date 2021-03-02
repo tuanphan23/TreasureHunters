@@ -65,13 +65,14 @@ namespace Game.Views
             CharactersListView.SelectedItem = null;
 
             //check to see if the user is trying to add the same character twice
-            foreach (var partyMember in BattleEngineViewModel.Instance.PartyCharacterList)
+            //COMMENTED OUT AS WE ARE UNSURE IF THIS IS IN OUR GAME RULES OR NOT
+            /*foreach (var partyMember in BattleEngineViewModel.Instance.PartyCharacterList)
             {
                 if(data.Id == partyMember.Id)
                 {
                     return;
                 }
-            }
+            }*/
 
             // Don't add more than the party max
             if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
