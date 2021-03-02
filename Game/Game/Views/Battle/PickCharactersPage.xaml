@@ -20,7 +20,7 @@
 
                         <RefreshView IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                                      Command = "{Binding LoadItemsCommand}">
-                            <CollectionView ItemsSource="{Binding DatabaseCharacterList}"
+                            <CollectionView ItemsSource="{Binding UnusedCharacterList}"
                                 HorizontalScrollBarVisibility="Always"
                                 SelectionMode="Single"
                                 SelectionChanged="OnDatabaseCharacterItemSelected"
