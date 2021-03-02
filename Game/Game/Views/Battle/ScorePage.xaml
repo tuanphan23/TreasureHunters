@@ -29,7 +29,7 @@
                     <Label Text="0" x:Name="TotalExp" Style="{StaticResource MessageStyle}"/>
                 </StackLayout>
 
-                <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
+                <Label Text="Characters Killed" Style="{StaticResource MessageStyle}"/>
             <FlexLayout x:Name="CharacterListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
