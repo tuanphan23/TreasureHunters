@@ -16,10 +16,6 @@
                 Padding="10"
                 VerticalOptions="Center">
 
-                <Label 
-                    Text="Battle Mode" 
-                    Style="{DynamicResource LabelStyle}"/>
-
                 <Picker 
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
