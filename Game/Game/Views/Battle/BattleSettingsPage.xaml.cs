@@ -139,7 +139,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ImmunePlayers_Toggled(object sender, EventArgs e)
         {
-            if(ImmunePlayersSwitch.IsToggled == true)
+            // Flip the settings
+            if (ImmunePlayersSwitch.IsToggled == true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers = true;
                 return;
@@ -155,7 +156,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ImmuneMonsters_Toggled(object sender, EventArgs e)
         {
-            if(ImmuneMonstersSwitch.IsToggled == true)
+            // Flip the settings
+            if (ImmuneMonstersSwitch.IsToggled == true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmuneMonsters = true;
                 return;
@@ -171,7 +173,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AllowAbilities_Toggled(object sender, EventArgs e)
         {
-            if(AllowAbilitiesSwitch.IsToggled == true)
+            // Flip the settings
+            if (AllowAbilitiesSwitch.IsToggled == true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowAbilities = true;
                 return;
@@ -187,7 +190,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ForceAbilities_Toggled(object sender, EventArgs e)
         {
-            if(ForceAbilitiesSwitch.IsToggled == true)
+            // Flip the settings
+            if (ForceAbilitiesSwitch.IsToggled == true)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ForceAbilities = true;
                 return;
