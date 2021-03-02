@@ -159,9 +159,52 @@ namespace UnitTests.Views
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
         */
-/*
+        /*
+                [Test]
+                public void BattleSettingsPage_AllowCriticalHit_Toggled_Default_Should_Pass()
+                {
+                    // Arrange
+
+                    var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+                    var current = control.IsToggled;
+
+                    ToggledEventArgs args = new ToggledEventArgs(current);
+
+                    // Act
+                    page.AllowCriticalHit_Toggled(null, args);
+
+                    // Reset
+
+                    // Assert
+                    Assert.IsTrue(!current); // Got to here, so it happened...
+                }
+        */
+        /*
+                [Test]
+                public void BattleSettingsPage_AllowCriticalHit_Toggled_True_Default_Should_Pass()
+                {
+                    // Arrange
+
+                    var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+                    var current = control.IsToggled;
+
+                    ToggledEventArgs args = new ToggledEventArgs(current);
+                    page.AllowCriticalHit_Toggled(null, args);
+
+                    control.IsToggled = true;
+
+                    // Act
+                    page.AllowCriticalHit_Toggled(null, args);
+
+                    // Reset
+
+                    // Assert
+                    Assert.IsTrue(!current); // Got to here, so it happened...
+                }
+                */
+
         [Test]
-        public void BattleSettingsPage_AllowCriticalHit_Toggled_Default_Should_Pass()
+        public void BattleSettingsPage_ForceAbilities_Toggled_True_Default_Should_Pass()
         {
             // Arrange
 
@@ -169,39 +212,120 @@ namespace UnitTests.Views
             var current = control.IsToggled;
 
             ToggledEventArgs args = new ToggledEventArgs(current);
-
-            // Act
-            page.AllowCriticalHit_Toggled(null, args);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(!current); // Got to here, so it happened...
-        }
-*/
-/*
-        [Test]
-        public void BattleSettingsPage_AllowCriticalHit_Toggled_True_Default_Should_Pass()
-        {
-            // Arrange
-
-            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
-            var current = control.IsToggled;
-
-            ToggledEventArgs args = new ToggledEventArgs(current);
-            page.AllowCriticalHit_Toggled(null, args);
+            page.ForceAbilities_Toggled(null, args);
 
             control.IsToggled = true;
 
             // Act
-            page.AllowCriticalHit_Toggled(null, args);
+            page.ForceAbilities_Toggled(null, args);
 
             // Reset
 
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-        */
+
+        [Test]
+        public void BattleSettingsPage_ImmuneMonsters_Toggled_True_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+            page.ImmuneMonsters_Toggled(null, args);
+
+            control.IsToggled = true;
+
+            // Act
+            page.ImmuneMonsters_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattleSettingsPage_ImmunePlayers_Toggled_True_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+            page.ImmunePlayers_Toggled(null, args);
+
+            control.IsToggled = true;
+
+            // Act
+            page.ImmunePlayers_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+
+        [Test]
+        public void BattleSettingsPage_ForceAbilities_Toggled_False_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.ForceAbilities_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattleSettingsPage_ImmuneMonsters_Toggled_False_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.ImmuneMonsters_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattleSettingsPage_ImmunePlayers_Toggled_False_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.ImmunePlayers_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
 
         [Test]
         public void BattleSettingsPage_BattleModePicker_Default_Should_Pass()

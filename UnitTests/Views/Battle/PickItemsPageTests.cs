@@ -204,5 +204,19 @@ namespace UnitTests.Views
             //if it got here it has to pass
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void PickItemsPage_AutoAssignButton_Clicked_Test_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            page.AutoAssignButton_Clicked(null, null);
+            //Reset
+
+            //Assert
+            //if it got here it has to pass
+            Assert.IsTrue(true);
+        }
     }
 }
