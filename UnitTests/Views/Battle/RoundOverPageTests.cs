@@ -86,6 +86,20 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void RoundOverPage_NextButton_Clicked_BoolTrue_Should_Pass()
+        {
+            // Arrange
+            var result = new RoundOverPage(true);
+            // Act
+            result.CloseButton_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void RoundOverPage_AutoAssignButton_Clicked_Default_Should_Pass()
         {
             // Arrange
