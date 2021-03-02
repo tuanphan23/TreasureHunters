@@ -139,6 +139,17 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmunePlayers = false;
         }
 
+        public async void ImmuneMonsters_Toggled(object sender, EventArgs e)
+        {
+            if(/*ImmuneMonstersSwitch.IsToggled == */ true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmuneMonsters = true;
+                return;
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ImmuneMonsters = false;
+        }
+
         /// <summary>
         /// Toggle Critical Miss
         /// </summary>
