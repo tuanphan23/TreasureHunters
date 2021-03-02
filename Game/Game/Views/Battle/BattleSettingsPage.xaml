@@ -9,7 +9,7 @@
 
             <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Battle Settings" HorizontalTextAlignment="Center"/>
 
-            <Label Text ="Battle Mode" Style="{StaticResource HeaderStyle}" />
+            <Label Text ="Battle Mode" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"/>
 
             <StackLayout
                 HorizontalOptions="CenterAndExpand" 
@@ -29,31 +29,18 @@
                     SelectedIndexChanged="BattleModePicker_Changed"/>
             </StackLayout>
 
-            <Label Text ="Control Hit Actions" Style="{StaticResource HeaderStyle}" />
+            <Label Text ="Control Hit Actions" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"/>
 
-            <Grid
-                HorizontalOptions="StartAndExpand" 
+            <StackLayout
+                HorizontalOptions="CenterAndExpand" 
                 Padding="10"
-                RowSpacing="1"
-                ColumnSpacing="2"
                 VerticalOptions="Center">
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Label 
-                    Grid.Row="0" Grid.Column="0"
+                <Label
                     Text="Monster Hit Control" 
                     Style="{DynamicResource LabelStyle}"/>
                 
                 <Picker 
-                    Grid.Row="0" Grid.Column="1"
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
                     FontSize="Micro"
@@ -63,12 +50,10 @@
 
                 
                 <Label 
-                    Grid.Row="1" Grid.Column="0"
                     Text="Character Hit Control" 
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Picker 
-                    Grid.Row="1" Grid.Column="1"
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
                     FontSize="Micro"
@@ -77,41 +62,35 @@
                     SelectedIndexChanged="CharacterHitPicker_Changed"/>
 
                 <Label 
-                    Grid.Row="2" Grid.Column="0"
                     Text="Allow Critical Hit" 
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Switch 
-                    Grid.Row="2" Grid.Column="1"
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
                     x:Name="AllowCriticalHitSwitch"
                     Toggled="AllowCriticalHit_Toggled"/>
 
                 <Label 
-                    Grid.Row="3" Grid.Column="0"
                     Text="Allow Critical Miss" 
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Switch 
-                    Grid.Row="3" Grid.Column="1"
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
                     x:Name="AllowCriticalMissSwitch"
                     Toggled="AllowCriticalMiss_Toggled"/>
 
                 <Label 
-                    Grid.Row="4" Grid.Column="0"
                     Text="Allow Monster Items" 
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Switch 
-                    Grid.Row="4" Grid.Column="1"
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
                     x:Name="AllowMonsterItemsSwitch"
                     Toggled="AllowMonsterItems_Toggled"/>
-            </Grid>
+            </StackLayout>
 
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
 
