@@ -1019,5 +1019,107 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got Here
         }
+
+        [Test]
+        public void BattlePage_DragOverTarget_IsValid_Any_Input_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            var result = page.DragOverTarget(null, null);
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+        /*
+         * This can't work because we cant make a drop event args
+        [Test]
+        public void BattlePage_DropTarget_IsValid_Any_Input_Should_Pass()
+        {
+            //Arrange
+            DropEventArgs e = new DropEventArgs("test");
+            //Act
+            var result = page.DropTarget(null, e);
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+        */
+        [Test]
+        public void BattlePage_DropCompleted_IsValid_Any_Input_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            var result = page.DropCompleted(null, null);
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+        /* this one as well creating events is hard..
+        [Test]
+        public void BattlePage_DragStarted_IsValid_Good_Data_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            var result = page.DragStarted(null, new DragStartingEventArgs());
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+        */
+        [Test]
+        public void BattlePage_RoundInfoButton_Clicked_IsValid_Any_Input_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            page.RoundInfoButton_Clicked(null, null);
+
+            //Reset
+
+            //Assert
+            //if it got here it happened
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void AutoBattlePage_StopButton_Clicked_IsValid_Any_Input_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            page.StopButton_Clicked(null, null);
+
+            //Reset
+
+            //Assert
+            //if it got here it happened
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void AutoBattlePage_DroppedItemsButton_Clicked_IsValid_Any_Input_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            page.DroppedItemsButton_Clicked(null, null);
+
+            //Reset
+
+            //Assert
+            //if it got here it happened
+            Assert.IsTrue(true);
+        }
     }
 }
