@@ -72,14 +72,14 @@ namespace Game.Views
             BattleEngineViewModel.Instance.UnusedCharacterList.Remove(data);
 
             //check to see if the user is trying to add the same character twice
-            //COMMENTED OUT AS WE ARE UNSURE IF THIS IS IN OUR GAME RULES OR NOT
-            /*foreach (var partyMember in BattleEngineViewModel.Instance.PartyCharacterList)
+            //this issue should never arise, however this is a safety measure
+            foreach (var partyMember in BattleEngineViewModel.Instance.PartyCharacterList)
             {
                 if(data.Id == partyMember.Id)
                 {
                     return;
                 }
-            }*/
+            }
 
             // Don't add more than the party max
             if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
@@ -108,6 +108,9 @@ namespace Game.Views
 
             // Remove the character from the list
             BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
+
+            // Add it back to the unused characters
+            BattleEngineViewModel.Instance.UnusedCharacterList.Add(data);
 
             UpdateNextButtonState();
         }
