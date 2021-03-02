@@ -13,7 +13,7 @@
                         />
 
                 <Button Clicked="BeginButton_Clicked" 
-                        Text="Begin"
+                        Text="Start Button"
                         Style="{StaticResource DeleteButtonStyle}"/>
 
                 <Label Text="Characters Selected" 
@@ -37,7 +37,7 @@
                 <StackLayout Padding="1"></StackLayout>
 
                 <Button Clicked="BeginButton_Clicked" 
-                        Text="Begin"
+                        Text="Start Button"
                         Style="{StaticResource DeleteButtonStyle}"/>
                 
             </StackLayout>
