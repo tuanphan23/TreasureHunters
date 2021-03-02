@@ -162,7 +162,7 @@ namespace UnitTests.Views
             var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
 
             // Act
-            page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            //page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
             // Reset
 
@@ -178,7 +178,7 @@ namespace UnitTests.Views
             var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
 
             // Act
-            page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            //page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
             // Reset
 
@@ -196,7 +196,7 @@ namespace UnitTests.Views
             var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
 
             // Act
-            page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            //page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
             // Reset
 
@@ -212,7 +212,7 @@ namespace UnitTests.Views
             var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
 
             // Act
-            page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            //page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
             // Reset
 

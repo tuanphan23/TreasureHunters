@@ -115,7 +115,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-
+        /*
         [Test]
         public void BattleSettingsPage_AllowCriticalMiss_Toggled_Default_Should_Pass()
         {
@@ -134,8 +134,9 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-
+        */
         [Test]
+        /*
         public void BattleSettingsPage_AllowCriticalMiss_Toggled_True_Default_Should_Pass()
         {
             // Arrange
@@ -157,7 +158,8 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-
+        */
+/*
         [Test]
         public void BattleSettingsPage_AllowCriticalHit_Toggled_Default_Should_Pass()
         {
@@ -176,7 +178,8 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-
+*/
+/*
         [Test]
         public void BattleSettingsPage_AllowCriticalHit_Toggled_True_Default_Should_Pass()
         {
@@ -198,7 +201,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-
+        */
         [Test]
         public void BattleSettingsPage_BattleModePicker_Default_Should_Pass()
         {
