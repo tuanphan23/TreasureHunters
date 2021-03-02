@@ -19,8 +19,8 @@
                        HorizontalOptions="CenterAndExpand"/>
 
                 <FlexLayout x:Name="PartyListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
+                                    JustifyContent="Center"
+                                    AlignContent="Center"
                                     Wrap="Wrap"/>
 
                 <Label Text="Monsters Selected" 
@@ -28,8 +28,8 @@
                        HorizontalOptions="CenterAndExpand"/>
 
                 <FlexLayout x:Name="MonsterListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
+                                    JustifyContent="Center"
+                                    AlignContent="Center"
                                     Wrap="Wrap"/>
 
                 <StackLayout Padding="1"></StackLayout>
