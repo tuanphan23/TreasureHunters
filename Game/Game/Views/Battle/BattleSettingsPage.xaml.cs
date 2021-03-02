@@ -216,43 +216,5 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems = false;
         }
 
-        /// <summary>
-        /// Toggle Critical Misses
-        /// This is not used by the page, however is neccessary to get unit tests to compile
-        /// This method just inverts the value of AllowCriticalHit
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void AllowCriticalMiss_Toggled(object sender, EventArgs e)
-        {
-            // Flip the settings
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss == false)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = true;
-                return;
-            }
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = false;
-        }
-
-        /// <summary>
-        /// Toggle Critical Hits
-        /// This is not used by the page, however is neccessary to get unit tests to compile
-        /// This method just inverts the value of AllowCriticalHit
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void AllowCriticalHit_Toggled(object sender, EventArgs e)
-        {
-            // Flip the settings
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit == false)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
-                return;
-            }
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = false;
-        }
-
     }
 }
