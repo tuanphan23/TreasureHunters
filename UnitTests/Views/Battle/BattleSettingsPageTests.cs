@@ -204,11 +204,33 @@ namespace UnitTests.Views
                 */
 
         [Test]
+        public void BattleSettingsPage_AllowAbilities_Toggled_True_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("AllowAbilitiesSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+            page.AllowAbilities_Toggled(null, args);
+
+            control.IsToggled = true;
+
+            // Act
+            page.AllowAbilities_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(current); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattleSettingsPage_ForceAbilities_Toggled_True_Default_Should_Pass()
         {
             // Arrange
 
-            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var control = (Switch)page.FindByName("ForceAbilitiesSwitch");
             var current = control.IsToggled;
 
             ToggledEventArgs args = new ToggledEventArgs(current);
@@ -230,7 +252,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var control = (Switch)page.FindByName("ImmuneMonstersSwitch");
             var current = control.IsToggled;
 
             ToggledEventArgs args = new ToggledEventArgs(current);
@@ -252,7 +274,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var control = (Switch)page.FindByName("ImmunePlayersSwitch");
             var current = control.IsToggled;
 
             ToggledEventArgs args = new ToggledEventArgs(current);
@@ -271,11 +293,30 @@ namespace UnitTests.Views
 
 
         [Test]
+        public void BattleSettingsPage_AllowAbilities_Toggled_False_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("AllowAbilitiesSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.AllowAbilities_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(current); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattleSettingsPage_ForceAbilities_Toggled_False_Default_Should_Pass()
         {
             // Arrange
 
-            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var control = (Switch)page.FindByName("ForceAbilitiesSwitch");
             var current = control.IsToggled;
 
             ToggledEventArgs args = new ToggledEventArgs(current);
@@ -294,7 +335,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var control = (Switch)page.FindByName("ImmuneMonstersSwitch");
             var current = control.IsToggled;
 
             ToggledEventArgs args = new ToggledEventArgs(current);
@@ -313,7 +354,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            var control = (Switch)page.FindByName("AllowCriticalHitSwitch");
+            var control = (Switch)page.FindByName("ImmunePlayersSwitch");
             var current = control.IsToggled;
 
             ToggledEventArgs args = new ToggledEventArgs(current);

@@ -205,5 +205,19 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ItemCreatePage_SetEnableStateAttributeButtons_Test_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            var result = page.SetEnableStateAttributeButtons();
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(result);
+        }
     }
 }
