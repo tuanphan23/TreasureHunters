@@ -125,10 +125,41 @@ namespace UnitTests.Views
             //Reset
 
             //Assert
-            //Should have one child
+            //Should have one child, the image button added
             Assert.AreEqual(1, result.Children.Count);
-            //check for the right image
-            Assert.AreEqual(item.ImageURI, (result.Children[0] as ImageButton).Source);
+        }
+
+        [Test]
+        public void PickItemsPage_ShowPopup_IsValid_DefaultItem_Should_Pass()
+        {
+            //Arrange
+            ItemModel item = new ItemModel();
+
+            //Act
+            var result = page.ShowPopup(item);
+
+            //Reset
+            page.CloseItemPopup_Clicked(null, null);
+
+            //Assert
+            //method succeeded so it got here
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void PickItemsPage_ShowPopup_Invalid_Null_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            var result = page.ShowPopup(null);
+
+            //Reset
+            page.CloseItemPopup_Clicked(null, null);
+
+            //Assert
+            //method succeeded so it got here
+            Assert.IsTrue(result);
         }
     }
 }
