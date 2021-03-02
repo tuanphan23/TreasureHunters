@@ -48,6 +48,8 @@ namespace Game.Views
             UpdateNextButtonState();
         }
 
+        //TODO: fix double selecting of items
+        //TODO: fix not deselecting
         /// <summary>
         /// The row selected from the list
         /// </summary>
