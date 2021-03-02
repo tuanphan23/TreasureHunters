@@ -59,6 +59,20 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void RoundOverPage_Constructor_bool_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new RoundOverPage(true);
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [Test]
         public void RoundOverPage_NextButton_Clicked_Default_Should_Pass()
         {
             // Arrange
