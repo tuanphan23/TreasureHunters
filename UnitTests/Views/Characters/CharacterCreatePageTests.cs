@@ -520,5 +520,20 @@ namespace UnitTests.Views
             Assert.AreEqual(0, 0);
         }
 
+        [Test]
+        public void CharacterCreatePage_LevelPicker_SelectedIndex_Invalid_Neg1_Should_Pass()
+        {
+            //Arrange
+            var control = (Picker)page.FindByName("LevelPicker");
+
+            // Act
+            control.SelectedIndex = -1;
+            var result = control.SelectedIndex;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
     }
 }
