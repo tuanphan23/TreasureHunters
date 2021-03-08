@@ -218,8 +218,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
-            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.Level)
-                .ThenByDescending(a => a.GetSpeed())
+            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.GetSpeed())
+                .ThenByDescending(a => a.Level)
                 .ThenByDescending(a => a.ExperienceTotal)
                 .ThenBy(a => a.Name)
                 .ThenBy(a => a.ListOrder)

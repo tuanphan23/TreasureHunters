@@ -169,7 +169,7 @@ namespace UnitTests.Engine.EngineGame
                 Speed = 20,
                 Level = 1,
                 CurrentHealth = 100,
-                ExperienceTotal = 1,
+                ExperienceTotal = 2,
                 Name = "Z",
                 ListOrder = 1,
             };
@@ -252,7 +252,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result[0].ListOrder);
+            Assert.AreEqual(1, result[1].ListOrder);
         }
 
         [Test]
@@ -1342,7 +1342,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.IsNull(result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]

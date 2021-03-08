@@ -408,6 +408,9 @@ namespace Game.Engine.EngineKoenig
         /// <returns></returns>
         public override ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
+            if (character == null || PoolItem == null)
+                return null;
+
             // Put on the new ItemModel, which drops the one back to the pool
             var droppedItem = character.AddItem(setLocation, PoolItem.Id);
 

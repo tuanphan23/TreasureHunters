@@ -62,6 +62,9 @@ namespace Game.Models
             Job = data.Job;
 
             AbilityTracker = data.AbilityTracker;
+
+            // update ListOrder for UT
+            ListOrder = data.ListOrder;
         }
 
         /// <summary>
@@ -102,6 +105,9 @@ namespace Game.Models
             Difficulty = data.Difficulty;
 
             Job = data.Job;
+
+            // update ListOrder for UT
+            ListOrder = data.ListOrder;
 
             // Give the copy a differet quid, so it can be used in the battles as a copy
             Guid = System.Guid.NewGuid().ToString();

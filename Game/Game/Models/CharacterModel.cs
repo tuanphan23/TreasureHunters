@@ -89,6 +89,8 @@ namespace Game.Models
             // Update the Job
             Job = newData.Job;
 
+            //update ListOrder for UT
+            ListOrder = newData.ListOrder;
             return true;
         }
 
