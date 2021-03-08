@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
+using Game.GameRules;
 using Game.Models;
 
 namespace Game.Engine.EngineGame
@@ -24,7 +27,9 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ClearLists()
         {
-            return base.ClearLists();
+            EngineSettings.ItemPool.Clear();
+            EngineSettings.MonsterList.Clear();
+            return true;
         }
 
         /// <summary>
@@ -32,7 +37,28 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool NewRound()
         {
-            return base.NewRound();
+            // End the existing round
+            EndRound();
+
+            // Remove Character Buffs
+            RemoveCharacterBuffs();
+
+            // Populate New Monsters...
+            AddMonstersToRound();
+
+            // Make the BaseEngine.PlayerList
+            MakePlayerList();
+
+            // Set Order for the Round
+            OrderPlayerListByTurnOrder();
+
+            // Populate BaseEngine.MapModel with Characters and Monsters
+            EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
+
+            // Update Score for the RoundCount
+            EngineSettings.BattleScore.RoundCount++;
+
+            return true;
         }
 
         /// <summary>
@@ -51,8 +77,36 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
-            // INFO: Teams, work out your logic
-            return base.AddMonstersToRound();
+            int TargetLevel = 1;
+
+            if (EngineSettings.CharacterList.Count() > 0)
+            {
+                // Get the Avg Character Level (linq is soo cool....)
+                TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Average(m => m.Level));
+            }
+
+            // get the same amount of monster as characters in game
+            for (var i = 0; i < EngineSettings.CharacterList.Count() - 1; i++)
+            {
+                var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+
+                // Help identify which Monster it is
+                data.Name += " " + EngineSettings.MonsterList.Count() + 1;
+
+                EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+            }
+
+            // last monster of each round will be boss monster with higher level
+            int bossLevel = (TargetLevel + 2 <= 20) ? TargetLevel + 2 : 20;
+
+            var bossMonsterData = RandomPlayerHelper.GetRandomBossMonster(bossLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+
+            // Help identify which Monster it is
+            bossMonsterData.Name += " " + EngineSettings.MonsterList.Count() + 1;
+
+            EngineSettings.MonsterList.Add(new PlayerInfoModel(bossMonsterData));
+
+            return EngineSettings.MonsterList.Count();
         }
 
         /// <summary>
@@ -62,7 +116,16 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool EndRound()
         {
-            return base.EndRound();
+            // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                PickupItemsForAllCharacters();
+            }
+
+            // Reset Monster and Item Lists
+            ClearLists();
+
+            return true;
         }
 
         /// <summary>
@@ -70,8 +133,16 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool PickupItemsForAllCharacters()
         {
-            // INFO: Teams, work out your turn logic
-            return base.PickupItemsForAllCharacters();
+            // In Auto Battle this happens and the characters get their items
+            // When called manualy, make sure to do the character pickup before calling EndRound
+
+            // Have each character pickup items...
+            foreach (var character in EngineSettings.CharacterList)
+            {
+                PickupItemsFromPool(character);
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -85,7 +156,38 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override RoundEnum RoundNextTurn()
         {
-            return base.RoundNextTurn();
+            // No characters, game is over...
+            if (EngineSettings.CharacterList.Count < 1)
+            {
+                // Game Over
+                EngineSettings.RoundStateEnum = RoundEnum.GameOver;
+                return EngineSettings.RoundStateEnum;
+            }
+
+            // Check if round is over
+            if (EngineSettings.MonsterList.Count < 1)
+            {
+                // If over, New Round
+                EngineSettings.RoundStateEnum = RoundEnum.NewRound;
+                return RoundEnum.NewRound;
+            }
+
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // Decide Who gets next turn
+                // Remember who just went...
+                EngineSettings.CurrentAttacker = GetNextPlayerTurn();
+
+                // Only Attack for now
+                EngineSettings.CurrentAction = ActionEnum.Attack;
+            }
+
+            // Do the turn....
+            Turn.TakeTurn(EngineSettings.CurrentAttacker);
+
+            EngineSettings.RoundStateEnum = RoundEnum.NextTurn;
+
+            return EngineSettings.RoundStateEnum;
         }
 
         /// <summary>
@@ -93,7 +195,13 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel GetNextPlayerTurn()
         {
-            return base.GetNextPlayerInList();
+            // Remove the Dead
+            RemoveDeadPlayersFromList();
+
+            // Get Next Player
+            var PlayerCurrent = GetNextPlayerInList();
+
+            return PlayerCurrent;
         }
 
         /// <summary>
@@ -101,7 +209,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
-            return base.RemoveDeadPlayersFromList();
+            EngineSettings.PlayerList = EngineSettings.PlayerList.Where(m => m.Alive == true).ToList();
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
@@ -109,7 +218,14 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
-            return base.OrderPlayerListByTurnOrder();
+            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.Level)
+                .ThenByDescending(a => a.GetSpeed())
+                .ThenByDescending(a => a.ExperienceTotal)
+                .ThenBy(a => a.Name)
+                .ThenBy(a => a.ListOrder)
+                .ToList();
+
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>

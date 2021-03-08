@@ -382,5 +382,71 @@ namespace Game.GameRules
 
             return result;
         }
+
+        /// <summary>
+        /// Create Random Character for the battle
+        /// </summary>
+        /// <param name="MaxLevel"></param>
+        /// <returns></returns>
+        public static MonsterModel GetRandomBossMonster(int MaxLevel, bool Items = false)
+        {
+            var result = new MonsterModel()
+            {
+                Level =  MaxLevel,
+
+                // Randomize Name
+                Name = GetMonsterName(),
+                Description = GetMonsterDescription(),
+
+                // Randomize the Attributes
+                Attack = GetAbilityValue(),
+                Speed = GetAbilityValue(),
+                Defense = GetAbilityValue(),
+
+                ImageURI = GetMonsterImage(),
+
+                Difficulty = GetMonsterDifficultyValue(),
+                UniqueItem = GetMonsterUniqueItem()
+            };
+
+            // Adjust values based on Difficulty
+            result.Attack = result.Difficulty.ToModifier(result.Attack);
+            result.Defense = result.Difficulty.ToModifier(result.Defense);
+            result.Speed = result.Difficulty.ToModifier(result.Speed);
+            result.Level = result.Difficulty.ToModifier(result.Level);
+
+            // Get the new Max Health
+            result.MaxHealth = DiceHelper.RollDice(result.Level, 10);
+
+            // Adjust the health, If the new Max Health is above the rule for the level, use the original
+            var MaxHealthAdjusted = result.Difficulty.ToModifier(result.MaxHealth);
+            if (MaxHealthAdjusted < result.Level * 10)
+            {
+                result.MaxHealth = MaxHealthAdjusted;
+            }
+
+            // Level up to the new level
+            result.LevelUpToValue(result.Level);
+
+            // Set ExperienceRemaining so Monsters can both use this method
+            result.ExperienceRemaining = LevelTableHelper.LevelDetailsList[result.Level + 1].Experience;
+
+            // Enter Battle at full health
+            result.CurrentHealth = result.MaxHealth;
+
+            // Monsters can have weapons too....
+            if (Items)
+            {
+                result.Head = GetItem(ItemLocationEnum.Head);
+                result.Necklass = GetItem(ItemLocationEnum.Necklass);
+                result.PrimaryHand = GetItem(ItemLocationEnum.PrimaryHand);
+                result.OffHand = GetItem(ItemLocationEnum.OffHand);
+                result.RightFinger = GetItem(ItemLocationEnum.Finger);
+                result.LeftFinger = GetItem(ItemLocationEnum.Finger);
+                result.Feet = GetItem(ItemLocationEnum.Feet);
+            }
+
+            return result;
+        }
     }
 }
