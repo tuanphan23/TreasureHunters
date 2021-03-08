@@ -642,12 +642,33 @@ namespace Game.Models
         public DamageInfo GetDamageRollValue()
         {
             var damageAmt = 0;
+            var DamageElement = DamageTypeEnum.None;
 
             var myItem = ItemIndexViewModel.Instance.GetItem(PrimaryHand);
             if (myItem != null)
             {
                 // Dice of the weapon.  So sword of Damage 10 is d10
                 damageAmt += DiceHelper.RollDice(1, myItem.Damage);
+                DamageElement = myItem.DamageType;
+            }
+            bool IsStatusAttack = false;
+            float StatusPercent = 0;
+
+            switch (DamageElement) {
+                case DamageTypeEnum.Fire:
+                case DamageTypeEnum.Electric:
+                case DamageTypeEnum.Poison:
+                    IsStatusAttack = true;
+                    StatusPercent = .05f;
+                    break;
+                case DamageTypeEnum.None:
+                case DamageTypeEnum.Heal:
+                default:
+                    IsStatusAttack = false;
+                    StatusPercent = .05f;
+                    break;
+
+            
             }
 
             // Add in the Level as extra damage per game rules
@@ -655,9 +676,9 @@ namespace Game.Models
 
             DamageInfo myReturn = new DamageInfo {
                 DamageAmount = damageAmt,
-                element = DamageTypeEnum.None,
-                StatusAttack = false,
-                StatusChance = 0
+                element = DamageElement,
+                StatusAttack = IsStatusAttack,
+                StatusChance = StatusPercent
             };
 
             return myReturn;
