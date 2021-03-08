@@ -634,7 +634,7 @@ namespace Game.Models
             return true;
         }
 
-        //TODO finish w/ element + correct damage calculations
+        //TODO correct damage calculations
         /// <summary>
         /// Roll the Damage Dice, and add to the Damage
         /// </summary>
@@ -654,6 +654,7 @@ namespace Game.Models
             bool IsStatusAttack = false;
             float StatusPercent = 0;
 
+            //if the attack is elemental set the status chance to .05
             switch (DamageElement) {
                 case DamageTypeEnum.Fire:
                 case DamageTypeEnum.Electric:
@@ -674,6 +675,7 @@ namespace Game.Models
             // Add in the Level as extra damage per game rules
             damageAmt += GetDamageLevelBonus;
 
+            //create the DamageInfo
             DamageInfo myReturn = new DamageInfo {
                 DamageAmount = damageAmt,
                 element = DamageElement,
@@ -687,6 +689,12 @@ namespace Game.Models
         //TODO: comments+element resistances/weakness + status effects
         public int CalculateDamage(DamageInfo dmg) {
             int damageDone = dmg.DamageAmount;
+
+            //roll a dice to see if status effect is applied
+            if(dmg.StatusChance * 100 <= DiceHelper.RollDice(1, 100))
+            {
+                currentStatusEffect = dmg.element;
+            }
             return damageDone;
         }
 
