@@ -24,7 +24,7 @@
                                 HorizontalScrollBarVisibility="Always"
                                 SelectionMode="Single"
                                 SelectionChanged="OnDatabaseCharacterItemSelected"
-                                HeightRequest="200"
+                                HeightRequest="250"
                                 x:Name="CharactersListView" 
                                 >
                                 <CollectionView.ItemsLayout>
@@ -88,7 +88,7 @@
                                 ItemsSource="{Binding PartyCharacterList}"
                                 HorizontalScrollBarVisibility="Always"
                                 SelectionChanged="OnPartyCharacterItemSelected"
-                                HeightRequest="200"
+                                HeightRequest="250"
                                 SelectionMode="Single"
                                 >
                         <CollectionView.ItemsLayout>
