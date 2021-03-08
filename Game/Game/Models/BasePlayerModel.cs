@@ -20,6 +20,14 @@ namespace Game.Models
         //status effect that the player is currently affected by
         private DamageTypeEnum currentStatusEffect;
 
+        public struct DamageInfo
+        {
+            public int DamageAmount;
+            public DamageTypeEnum element;
+            public bool StatusAttack;
+            public float StatusChance;
+        }
+
         #region GameEngineAttributes
         // alive status, !alive will be removed from the list
         [Ignore]
@@ -646,6 +654,12 @@ namespace Game.Models
 
             return myReturn;
         }
+
+        public int CalculateDamage(DamageInfo dmg) {
+            int damageDone = dmg.DamageAmount;
+            return damageDone;
+        }
+
 
         // Death
         // Alive turns to False
