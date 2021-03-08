@@ -774,5 +774,36 @@ namespace UnitTests.Views
             Assert.AreEqual(result, true);
         }
 
+        [Test]
+        public void CharacterCreatePage_LevelPicker_SelectedIndex_Invalid_Neg1_Should_Pass()
+        {
+            //Arrange
+            var control = (Picker)page.FindByName("LevelPicker");
+
+            // Act
+            control.SelectedIndex = -1;
+            var result = control.SelectedIndex;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void CharacterCreatePage_LevelPicker_SelectedIndex_Valid_Info_Should_Pass()
+        {
+            //Arrange
+            var control = (Picker)page.FindByName("LevelPicker");
+
+            // Act
+            control.SelectedIndex = 2;
+            var result = control.SelectedIndex;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(2, result);
+        }
     }
 }
