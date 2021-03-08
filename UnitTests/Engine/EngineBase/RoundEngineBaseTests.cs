@@ -1172,8 +1172,39 @@ namespace UnitTests.Engine.EngineBase
             // Reset
 
             // Assert
-            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(7, result.Count);
         }
         #endregion PlayerList
+
+        #region SwapCharacterItem
+
+        [Test]
+        public void RoundEngine_SwapCharacterItem_Base_InValid_Chracter_Null_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Unknown, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public void RoundEngine_SwapCharacterItem_Base_InValid_Item_Null_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.SwapCharacterItem(new PlayerInfoModel(new CharacterModel()), ItemLocationEnum.Unknown, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsNull(result);
+        }
+        #endregion SwapCharacterItem
     }
 }
