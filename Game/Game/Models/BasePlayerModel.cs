@@ -686,7 +686,12 @@ namespace Game.Models
             return myReturn;
         }
 
-        //TODO: comments+element resistances/weakness + status effects
+        //TODO: element resistances/weakness
+        /// <summary>
+        /// Calculates the damage done to the player and status effect
+        /// </summary>
+        /// <param name="dmg"></param>
+        /// <returns></returns>
         public int CalculateDamage(DamageInfo dmg) {
             int damageDone = dmg.DamageAmount;
 
