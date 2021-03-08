@@ -402,8 +402,9 @@ namespace Game.Engine.EngineBase
                 case HitStatusEnum.Hit:
                     // It's a Hit
 
-                    //Calculate Damage
-                    EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
+                    //Calculate Damage by getting the DamageInfo of the attack and having the Target calculate the damage that it takes
+                    //this line also applies status effects
+                    EngineSettings.BattleMessagesModel.DamageAmount = Target.CalculateDamage(Attacker.GetDamageRollValue());
 
                     // If critical Hit, double the damage
                     if (EngineSettings.BattleMessagesModel.HitStatus == HitStatusEnum.CriticalHit)

@@ -634,27 +634,36 @@ namespace Game.Models
             return true;
         }
 
+        //TODO finish w/ element + correct damage calculations
         /// <summary>
         /// Roll the Damage Dice, and add to the Damage
         /// </summary>
         /// <returns></returns>
-        public int GetDamageRollValue()
+        public DamageInfo GetDamageRollValue()
         {
-            var myReturn = 0;
+            var damageAmt = 0;
 
             var myItem = ItemIndexViewModel.Instance.GetItem(PrimaryHand);
             if (myItem != null)
             {
                 // Dice of the weapon.  So sword of Damage 10 is d10
-                myReturn += DiceHelper.RollDice(1, myItem.Damage);
+                damageAmt += DiceHelper.RollDice(1, myItem.Damage);
             }
 
             // Add in the Level as extra damage per game rules
-            myReturn += GetDamageLevelBonus;
+            damageAmt += GetDamageLevelBonus;
+
+            DamageInfo myReturn = new DamageInfo {
+                DamageAmount = damageAmt,
+                element = DamageTypeEnum.None,
+                StatusAttack = false,
+                StatusChance = 0
+            };
 
             return myReturn;
         }
 
+        //TODO: comments+element resistances/weakness + status effects
         public int CalculateDamage(DamageInfo dmg) {
             int damageDone = dmg.DamageAmount;
             return damageDone;
