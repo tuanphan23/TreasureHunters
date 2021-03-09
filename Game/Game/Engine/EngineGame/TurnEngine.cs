@@ -132,8 +132,23 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectCharacterToAttack()
         {
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-            return base.SelectCharacterToAttack();
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select the character with the lowest max health to bully first
+
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                .OrderBy(m => m.MaxHealth).FirstOrDefault();
+
+            return Defender;
         }
 
         /// <summary>
@@ -152,7 +167,7 @@ namespace Game.Engine.EngineGame
             }
 
             // Select first one to hit in the list for now...
-            // Attack the Weakness (lowest HP) MonsterModel first 
+            // Attack the newest (lowest Level) MonsterModel first 
 
             var Defender = EngineSettings.PlayerList
                 .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
