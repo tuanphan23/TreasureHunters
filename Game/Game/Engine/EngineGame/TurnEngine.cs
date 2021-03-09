@@ -46,7 +46,12 @@ namespace Game.Engine.EngineGame
         public override bool TakeTurn(PlayerInfoModel Attacker)
         {
             // INFO: Teams, work out your turn logic
-            return base.TakeTurn(Attacker);
+            var myReturn =  base.TakeTurn(Attacker);
+
+            //character takes status effect damage at the end of their turn
+            Attacker.TriggerStatusEffect();
+
+            return myReturn;
         }
 
         /// <summary>
