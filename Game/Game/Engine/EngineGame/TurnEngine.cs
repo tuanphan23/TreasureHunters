@@ -283,12 +283,12 @@ namespace Game.Engine.EngineGame
                         //sort characters by health
                          sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
                         .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-                        .OrderBy(m => m.MaxHealth);
+                        .OrderBy(m => m.MaxHealth).ToList();
                     } else {
                         //sort monsters by health
                         sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
                         .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-                        .OrderBy(m => m.MaxHealth);
+                        .OrderBy(m => m.MaxHealth).ToList();
                     }        
                 } else
                 {
@@ -298,14 +298,14 @@ namespace Game.Engine.EngineGame
                         //sort monsters by health
                         sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
                        .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-                       .OrderBy(m => m.Level);
+                       .OrderBy(m => m.Level).ToList();
                     }
                     else
                     {
                         //sort characters by health
                         sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
                         .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-                        .OrderBy(m => m.MaxHealth);
+                        .OrderBy(m => m.MaxHealth).ToList();
                     }
                 }
             //copy over the first numTarget characters
