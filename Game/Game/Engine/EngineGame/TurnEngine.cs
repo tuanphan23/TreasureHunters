@@ -4,6 +4,7 @@ using Game.Models;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
+using System.Linq;
 
 namespace Game.Engine.EngineGame
 {
@@ -140,8 +141,24 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectMonsterToAttack()
         {
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-            return base.SelectMonsterToAttack();
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select first one to hit in the list for now...
+            // Attack the Weakness (lowest HP) MonsterModel first 
+
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                .OrderBy(m => m.).FirstOrDefault();
+
+            return Defender;
         }
 
         /// <summary>
