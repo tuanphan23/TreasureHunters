@@ -1366,5 +1366,19 @@ namespace UnitTests.Models
 
             Assert.AreEqual(health, Result);
         }
+
+        [Test]
+        public void BasePlayerModel_TriggerStatusEffect_Valid_Heal_Should_Pass()
+        {
+
+            var data = new BasePlayerModel<CharacterModel>();
+            data.currentStatusEffect = DamageTypeEnum.Heal;
+
+            var Result = data.TriggerStatusEffect();
+            var health = data.MaxHealth * -.05;
+
+            Assert.AreEqual(health, Result);
+        }
+
     }
 }
