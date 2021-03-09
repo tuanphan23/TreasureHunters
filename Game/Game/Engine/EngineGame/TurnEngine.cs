@@ -167,6 +167,7 @@ namespace Game.Engine.EngineGame
             return base.MoveAsTurn(Attacker);
         }
 
+        //TODO ability uses
         /// <summary>
         /// Decide to use an Ability or not
         /// 
@@ -197,7 +198,7 @@ namespace Game.Engine.EngineGame
                 }
 
                 // No ability available
-                return false;
+                return true;
             }
 
             // Don't try
@@ -256,8 +257,63 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
+            //EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability ";
+            ChooseAbilityTarget(Attacker);
             return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
+        }
+
+        /// <summary>
+        /// Choose the targets of an ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public List<PlayerInfoModel> ChooseAbilityTarget(PlayerInfoModel Attacker)
+        {
+            //list of targets to return
+            List<PlayerInfoModel> myReturn = new List<PlayerInfoModel>();
+            //list that will containt the list of targets by priority
+            List<PlayerInfoModel> sortedList = null;
+            //if healing choose the same playerType as a target
+                if (AbilityToUse.AttackType == DamageTypeEnum.Heal)
+                {
+                    //find the lowest health targets first
+                    if(Attacker.PlayerType == PlayerTypeEnum.Character)
+                    {
+                        //sort characters by health
+                         sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
+                        .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                        .OrderBy(m => m.MaxHealth);
+                    } else {
+                        //sort monsters by health
+                        sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
+                        .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                        .OrderBy(m => m.MaxHealth);
+                    }        
+                } else
+                {
+                    //find the targets that would have been targeted by regular attacks
+                    if (Attacker.PlayerType == PlayerTypeEnum.Character)
+                    {
+                        //sort monsters by health
+                        sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
+                       .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                       .OrderBy(m => m.Level);
+                    }
+                    else
+                    {
+                        //sort characters by health
+                        sortedList = (List<PlayerInfoModel>)EngineSettings.PlayerList
+                        .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                        .OrderBy(m => m.MaxHealth);
+                    }
+                }
+            //copy over the first numTarget characters
+            for (int i = 0; i < AbilityToUse.NumTargets && i < sortedList.Count; i++)
+            {
+                myReturn.Add(sortedList[i]);
+            }
+            return myReturn;
         }
 
         /// <summary>
