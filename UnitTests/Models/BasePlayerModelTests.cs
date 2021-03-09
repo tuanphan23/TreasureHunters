@@ -1379,6 +1379,5 @@ namespace UnitTests.Models
 
             Assert.AreEqual(health, Result);
         }
-
     }
 }
