@@ -96,9 +96,6 @@ namespace Game.Engine.EngineBase
             // Reset the Action to unknown for next time
             EngineSettings.CurrentAction = ActionEnum.Unknown;
 
-            //Trigger the status effect of the Player
-            Attacker.TriggerStatusEffect();
-
             return result;
         }
 
