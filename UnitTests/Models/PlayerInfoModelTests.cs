@@ -268,5 +268,20 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual(AbilityEnum.Unknown, result);
         }
+
+        [Test]
+        public void PlayerInfoModel_GetallItems_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel());
+       
+            // Act
+            var result = data.GetAllItems();
+
+            // Reset
+
+            // Assert
+            Assert.NotNull(result);
+        }
     }
 }
