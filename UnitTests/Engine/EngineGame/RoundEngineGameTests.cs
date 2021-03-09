@@ -1346,6 +1346,21 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
+        public void RoundEngine_SwapCharacterItem_Base_Valid_Null_Should_Pass()
+        {
+            // Arrange
+            ItemModel test = new ItemModel();
+
+            // Act
+            var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Unknown, test);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
         public void RoundEngine_RemoveCharacterBuffs_Base_Valid_Default_Should_Pass()
         {
             // Arrange
