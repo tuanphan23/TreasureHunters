@@ -23,22 +23,22 @@ namespace Game.Models
         public struct Ability
         {
             //Number of targets hit by the ability, NumTargets should always be >= 0
-            int NumTargets;
+            public int NumTargets;
 
             //Multiplier to character damage should always be >= 0
-            float DmgMulti;
+            public float DmgMulti;
 
             //Flat boost to character damage should always be >= 0
-            int DmgBoost;
+            public int DmgBoost;
 
             //Element of the ability
-            DamageTypeEnum AttackType;
+            public DamageTypeEnum AttackType;
 
             //Chance of giving the defender a status effect
-            DamageTypeEnum StatusChance;
+            public DamageTypeEnum StatusChance;
 
             //Number of remaining uses on the spell
-            int NumUses;
+            public int NumUses;
 
             //allows for deep copying of Abilities
             public Ability copy(Ability other)

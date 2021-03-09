@@ -5,6 +5,8 @@ using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
 using System.Linq;
+using Game.ViewModels;
+using Game.Helpers;
 
 namespace Game.Engine.EngineGame
 {
@@ -87,7 +89,6 @@ namespace Game.Engine.EngineGame
                 EngineSettings.CurrentAction = ActionEnum.Ability;
                 return EngineSettings.CurrentAction;
             }
-
             // See if Desired Target is within Range, and if so attack away
             if (EngineSettings.MapModel.IsTargetInRange(Attacker, AttackChoice(Attacker)))
             {
@@ -127,8 +128,47 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
         {
-            // INFO: Teams, consider if you have abilities
-            return base.ChooseToUseAbility(Attacker);
+            // See if healing is needed.
+            EngineSettings.CurrentActionAbility = Attacker.SelectHealingAbility();
+            if (HasHealingAbility(Attacker))
+            {
+                EngineSettings.CurrentAction = ActionEnum.Ability;
+                return true;
+            }
+
+            // If not needed, then role dice to see if other ability should be used
+            // <30% chance
+            if (DiceHelper.RollDice(1, 10) < 3)
+            {
+                EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
+
+                if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+                {
+                    // Ability can , switch to unknown to exit
+                    EngineSettings.CurrentAction = ActionEnum.Ability;
+                    return true;
+                }
+
+                // No ability available
+                return false;
+            }
+
+            // Don't try
+            return false;
+        }
+
+        public bool HasHealingAbility(PlayerInfoModel player)
+        {
+            //check every item to see if it has a healing ability
+            List<string> items = player.GetAllItems();
+            foreach(string id in items)
+            {
+                if (ItemIndexViewModel.Instance.GetItem(id).itemAbility.AttackType == DamageTypeEnum.Heal)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>

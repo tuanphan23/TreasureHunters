@@ -198,6 +198,11 @@ namespace Game.Models
 
         }
 
+        public List<string> GetAllItems()
+        {
+            return new List<string>{ Head, Necklass, PrimaryHand, OffHand, RightFinger, LeftFinger, Feet};
+        }
+
         public override string FormatOutput()
         {
             var myReturn = string.Empty;
