@@ -617,11 +617,6 @@ namespace Game.Models
         /// <returns></returns>
         public bool TakeDamage(int damage)
         {
-            if (damage <= 0)
-            {
-                return false;
-            }
-
             CurrentHealth -= damage;
             if (CurrentHealth <= 0)
             {
@@ -718,6 +713,11 @@ namespace Game.Models
                     break;
                 case DamageTypeEnum.Poison:
                     damage = (int)(MaxHealth * .15);
+                    break;
+                case DamageTypeEnum.Heal:
+                    damage = (int)(MaxHealth * -.05);
+                    break;
+                default:
                     break;
             }
             CurrentHealth = CurrentHealth - damage;
