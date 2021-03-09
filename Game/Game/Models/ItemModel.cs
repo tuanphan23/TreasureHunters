@@ -40,6 +40,9 @@ namespace Game.Models
             //Number of remaining uses on the spell
             public int NumUses;
 
+            //Max uses on the spell
+            public int MaxUses;
+
             //allows for deep copying of Abilities
             public Ability copy(Ability other)
             {

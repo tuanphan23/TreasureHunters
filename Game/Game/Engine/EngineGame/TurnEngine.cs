@@ -7,6 +7,7 @@ using Game.Engine.EngineBase;
 using System.Linq;
 using Game.ViewModels;
 using Game.Helpers;
+using static Game.Models.ItemModel;
 
 namespace Game.Engine.EngineGame
 {
@@ -27,6 +28,7 @@ namespace Game.Engine.EngineGame
     /// </summary>
     public class TurnEngine : TurnEngineBase, ITurnEngineInterface
     {
+        private Ability AbilityToUse;
         #region Algrorithm
         // Attack or Move
         // Roll To Hit
@@ -185,6 +187,7 @@ namespace Game.Engine.EngineGame
             if (DiceHelper.RollDice(1, 10) < 3)
             {
                 EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
+                AbilityToUse = SelectAbilityToUse(Attacker);
 
                 if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
                 {
@@ -201,14 +204,47 @@ namespace Game.Engine.EngineGame
             return false;
         }
 
+        //TODO null abilities?
+        //TODO ability count
+        /// <summary>
+        /// Selects an ability to be used by the player
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public Ability SelectAbilityToUse(PlayerInfoModel Attacker)
+        {
+            List<string> items = Attacker.GetAllItems();
+            int count = 0;
+            foreach (string id in items)
+            {
+                var item = ItemIndexViewModel.Instance.GetItem(id);
+                //if the item has an ability and if its not healing
+                if (item.itemAbility.AttackType == DamageTypeEnum.Heal)
+                {
+                    count++;
+                }
+            }
+            var randomItem = items[DiceHelper.RollDice(1, count) - 1];
+            var myReturn = ItemIndexViewModel.Instance.GetItem(randomItem).itemAbility;
+            return myReturn;
+        }
+
+        //TODO ability count
+        /// <summary>
+        /// returns true if the player has a healing ability it can use
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns>true if there is a healing ability that can be used, false if not</returns>
         public bool HasHealingAbility(PlayerInfoModel player)
         {
             //check every item to see if it has a healing ability
             List<string> items = player.GetAllItems();
             foreach(string id in items)
             {
-                if (ItemIndexViewModel.Instance.GetItem(id).itemAbility.AttackType == DamageTypeEnum.Heal)
+                var item = ItemIndexViewModel.Instance.GetItem(id);
+                if (item.itemAbility.AttackType == DamageTypeEnum.Heal)
                 {
+                    AbilityToUse = item.itemAbility;
                     return true;
                 }
             }
