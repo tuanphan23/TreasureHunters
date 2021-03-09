@@ -238,7 +238,22 @@ namespace Game.Engine.EngineGame
         public override bool Attack(PlayerInfoModel Attacker)
         {
             // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
-            return base.Attack(Attacker);
+            // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+            }
+
+            // Do Attack
+            TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+
+            return true;
         }
 
         /// <summary>
