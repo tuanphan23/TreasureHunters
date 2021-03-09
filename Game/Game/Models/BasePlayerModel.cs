@@ -18,7 +18,7 @@ namespace Game.Models
         #region Attributes
 
         //status effect that the player is currently affected by
-        private DamageTypeEnum currentStatusEffect;
+        public DamageTypeEnum currentStatusEffect;
 
         public struct DamageInfo
         {
