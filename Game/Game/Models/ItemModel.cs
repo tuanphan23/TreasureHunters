@@ -35,7 +35,7 @@ namespace Game.Models
             public DamageTypeEnum AttackType;
 
             //Chance of giving the defender a status effect
-            public DamageTypeEnum StatusChance;
+            public float StatusChance;
 
             //Number of remaining uses on the spell
             public int NumUses;

@@ -8,6 +8,7 @@ using System.Linq;
 using Game.ViewModels;
 using Game.Helpers;
 using static Game.Models.ItemModel;
+using System.Diagnostics;
 
 namespace Game.Engine.EngineGame
 {
@@ -252,6 +253,7 @@ namespace Game.Engine.EngineGame
             return false;
         }
 
+        //TODO calculate damage
         /// <summary>
         /// Use the Ability
         /// </summary>
@@ -259,8 +261,85 @@ namespace Game.Engine.EngineGame
         {
             //EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability ";
-            ChooseAbilityTarget(Attacker);
+            //get the targets
+            List<PlayerInfoModel> targets = ChooseAbilityTarget(Attacker);
+            //do the turn
+            TurnAsAbility(Attacker, targets);
             return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
+        }
+
+
+        //TODO current health communication?
+        /// <summary>
+        /// Takes the turn as an ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <param name="Target"></param>
+        /// <returns></returns>
+        public bool TurnAsAbility(PlayerInfoModel Attacker, List<PlayerInfoModel> Target)
+        {
+            if (Attacker == null)
+            {
+                return false;
+            }
+
+            if (Target == null || Target.Count  <= 0)
+            {
+                return false;
+            }
+
+            // Set Messages to empty
+            EngineSettings.BattleMessagesModel.ClearMessages();
+
+            // Do the Attack
+
+            // Remember Current Player
+            EngineSettings.BattleMessagesModel.PlayerType = PlayerTypeEnum.Monster;
+            EngineSettings.BattleMessagesModel.AttackerName = Attacker.Name;
+            EngineSettings.BattleMessagesModel.TargetName = "";
+            EngineSettings.BattleMessagesModel.CurrentHealth = 0;
+
+            var damageInf = Attacker.GetDamageRollValue();
+            damageInf.DamageAmount = (int)(damageInf.DamageAmount * AbilityToUse.DmgMulti + AbilityToUse.DmgBoost);
+            damageInf.element = AbilityToUse.AttackType;
+            damageInf.StatusChance = AbilityToUse.StatusChance;
+            damageInf.StatusAttack = true;
+            
+            foreach (var target in Target)
+            {
+                // Choose who to attack
+                EngineSettings.BattleMessagesModel.TargetName += (target.Name + " ");
+
+
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Hit;
+
+                // Apply the Damage
+                EngineSettings.BattleMessagesModel.CurrentHealth += target.GetCurrentHealthTotal;
+                EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
+
+                EngineSettings.BattleMessagesModel.DamageAmount = 0;
+                //if healing adjust the health manually
+                if (AbilityToUse.AttackType == DamageTypeEnum.Heal) {
+                    target.CalculateDamage(damageInf);
+                    target.TakeDamage(damageInf.DamageAmount);
+                } else
+                {
+                    //if damage ask the player for how much damage they take and deal it to them
+                    var damage = target.CalculateDamage(damageInf);
+                    EngineSettings.BattleMessagesModel.DamageAmount = damage;
+                    target.TakeDamage(damage);
+                }
+
+                // Check if Dead and Remove
+                RemoveIfDead(target);
+
+                // If it is a character apply the experience earned
+                CalculateExperience(Attacker, target);
+            }
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + EngineSettings.BattleMessagesModel.TargetName + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
+            Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
+
+            return true;
         }
 
         /// <summary>
