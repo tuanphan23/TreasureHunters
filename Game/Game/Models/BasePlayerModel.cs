@@ -634,9 +634,8 @@ namespace Game.Models
             return true;
         }
 
-        //TODO correct damage calculations
         /// <summary>
-        /// Roll the Damage Dice, and add to the Damage
+        /// Roll the Damage Dice, and add to the Damage, package with other item info into a DamageInfo object
         /// </summary>
         /// <returns></returns>
         public DamageInfo GetDamageRollValue()
