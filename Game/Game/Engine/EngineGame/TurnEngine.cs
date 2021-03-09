@@ -220,8 +220,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            // INFO: Teams, consider if you have abilities
-            return base.UseAbility(Attacker);
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
+            return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
         }
 
         /// <summary>
@@ -237,7 +237,6 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool Attack(PlayerInfoModel Attacker)
         {
-            // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
             // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
             if (EngineSettings.BattleScore.AutoBattle)
             {
