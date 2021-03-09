@@ -317,7 +317,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void BasePlayerModel_TakeDamage_InValid_Should_Fail()
+        public void BasePlayerModel_TakeDamage_Zero_Should_Pass()
         {
             // Arrange
             var data = new BasePlayerModel<CharacterModel>();
@@ -328,7 +328,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
