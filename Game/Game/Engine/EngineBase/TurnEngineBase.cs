@@ -393,8 +393,8 @@ namespace Game.Engine.EngineBase
                     break;
 
                 case HitStatusEnum.CriticalMiss:
-                    // No critical misses in our game
-                    //DetermineCriticalMissProblem(Attacker);
+                    // It's a Critical Miss, so Bad things may happen
+                    DetermineCriticalMissProblem(Attacker);
 
                     break;
 
@@ -406,11 +406,11 @@ namespace Game.Engine.EngineBase
                     //this line also applies status effects
                     EngineSettings.BattleMessagesModel.DamageAmount = Target.CalculateDamage(Attacker.GetDamageRollValue());
 
-                    // no critical hits in our game, damage is not doubled
-                    //if (EngineSettings.BattleMessagesModel.HitStatus == HitStatusEnum.CriticalHit)
-                    //{
-                    //    EngineSettings.BattleMessagesModel.DamageAmount *= 2;
-                    //}
+                    // If critical Hit, double the damage
+                    if (EngineSettings.BattleMessagesModel.HitStatus == HitStatusEnum.CriticalHit)
+                    {
+                        EngineSettings.BattleMessagesModel.DamageAmount *= 2;
+                    }
 
                     // Apply the Damage
                     ApplyDamage(Target);
@@ -461,7 +461,7 @@ namespace Game.Engine.EngineBase
                     return HitStatusEnum.Hit;
 
                 case HitStatusEnum.CriticalHit:
-                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Hit ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Critical Hit ";
                     return HitStatusEnum.CriticalHit;
 
                 case HitStatusEnum.Miss:
@@ -469,7 +469,7 @@ namespace Game.Engine.EngineBase
                     return HitStatusEnum.Miss;
 
                 case HitStatusEnum.CriticalMiss:
-                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Missed ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Critical Missed ";
                     return HitStatusEnum.CriticalMiss;
 
                 case HitStatusEnum.Unknown:
