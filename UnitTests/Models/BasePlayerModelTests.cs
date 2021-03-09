@@ -1346,7 +1346,7 @@ namespace UnitTests.Models
         {
 
             var data = new BasePlayerModel<CharacterModel>();
-            data.currentStatusEffect = DamageTypeEnum.Electric;
+            data.currentStatusEffect = DamageTypeEnum.Fire;
 
             var Result = data.TriggerStatusEffect();
             var health = data.MaxHealth * .1;
@@ -1359,7 +1359,7 @@ namespace UnitTests.Models
         {
 
             var data = new BasePlayerModel<CharacterModel>();
-            data.currentStatusEffect = DamageTypeEnum.Electric;
+            data.currentStatusEffect = DamageTypeEnum.Poison;
 
             var Result = data.TriggerStatusEffect();
             var health = data.MaxHealth * .15;
