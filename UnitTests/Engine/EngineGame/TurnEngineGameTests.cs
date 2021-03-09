@@ -262,5 +262,162 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreNotEqual(null, result);
         }
         #endregion SelectMonsterToAttack
+
+        #region SelectCharacterToAttack
+        [Test]
+        public void TurnEngine_SelectCharacterToAttack_InValid_Null_List_Should_Fail()
+        {
+            // Arrange
+
+            // remember the list
+            var saveList = Engine.EngineSettings.PlayerList;
+
+            Engine.EngineSettings.PlayerList = null;
+
+            // Act
+            var result = Engine.Round.Turn.SelectCharacterToAttack();
+
+            // Reset
+
+            // Restore the List
+            Engine.EngineSettings.PlayerList = saveList;
+            Engine.StartBattle(false);   // Clear the Engine
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void TurnEngine_SelectCharacterToAttack_InValid_Empty_List_Should_Fail()
+        {
+            // Arrange
+
+            // remember the list
+            var saveList = Engine.EngineSettings.PlayerList;
+
+            Engine.EngineSettings.PlayerList = new List<PlayerInfoModel>();
+
+            // Act
+            var result = Engine.Round.Turn.SelectCharacterToAttack();
+
+            // Reset
+
+            // Restore the List
+            Engine.EngineSettings.PlayerList = saveList;
+            Engine.StartBattle(false);   // Clear the Engine
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void TurnEngine_SelectCharacterToAttack_InValid_Dead_List_Should_Fail()
+        {
+            // Arrange
+
+            // remember the list
+            var saveList = Engine.EngineSettings.PlayerList;
+
+            Engine.EngineSettings.PlayerList = new List<PlayerInfoModel>();
+
+            var data = new PlayerInfoModel(new CharacterModel());
+            data.Alive = false;
+            Engine.EngineSettings.PlayerList.Add(data);
+
+            // Act
+            var result = Engine.Round.Turn.SelectCharacterToAttack();
+
+            // Reset
+
+            // Restore the List
+            Engine.EngineSettings.PlayerList = saveList;
+            Engine.StartBattle(false);   // Clear the Engine
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void TurnEngine_SelectCharacterToAttack_InValid_Dead_Monster_List_Should_Fail()
+        {
+            // Arrange
+
+            // remember the list
+            var saveList = Engine.EngineSettings.PlayerList;
+
+            Engine.EngineSettings.PlayerList = new List<PlayerInfoModel>();
+
+            var data = new PlayerInfoModel(new CharacterModel());
+            data.Alive = false;
+            data.PlayerType = PlayerTypeEnum.Monster;
+            Engine.EngineSettings.PlayerList.Add(data);
+
+            // Act
+            var result = Engine.Round.Turn.SelectCharacterToAttack();
+
+            // Reset
+
+            // Restore the List
+            Engine.EngineSettings.PlayerList = saveList;
+            Engine.StartBattle(false);   // Clear the Engine
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void TurnEngine_SelectCharacterToAttack_InValid_Alive_Monster_List_Should_Fail()
+        {
+            // Arrange
+
+            // remember the list
+            var saveList = Engine.EngineSettings.PlayerList;
+
+            Engine.EngineSettings.PlayerList = new List<PlayerInfoModel>();
+
+            var data = new PlayerInfoModel(new CharacterModel());
+            data.Alive = true;
+            data.PlayerType = PlayerTypeEnum.Monster;
+            Engine.EngineSettings.PlayerList.Add(data);
+
+            // Act
+            var result = Engine.Round.Turn.SelectCharacterToAttack();
+
+            // Reset
+
+            // Restore the List
+            Engine.EngineSettings.PlayerList = saveList;
+            Engine.StartBattle(false);   // Clear the Engine
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void TurnEngine_SelectCharacterToAttack_Valid_List_Should_Pass()
+        {
+            // Arrange
+
+            // remember the list
+            var saveList = Engine.EngineSettings.PlayerList;
+
+            Engine.EngineSettings.PlayerList = new List<PlayerInfoModel>();
+
+            var data = new PlayerInfoModel(new CharacterModel());
+            Engine.EngineSettings.PlayerList.Add(data);
+
+            // Act
+            var result = Engine.Round.Turn.SelectCharacterToAttack();
+
+            // Reset
+
+            // Restore the List
+            Engine.EngineSettings.PlayerList = saveList;
+            Engine.StartBattle(false);   // Clear the Engine
+
+            // Assert
+            Assert.AreNotEqual(null, result);
+        }
+        #endregion SelectCharacterToAttack
     }
 }
