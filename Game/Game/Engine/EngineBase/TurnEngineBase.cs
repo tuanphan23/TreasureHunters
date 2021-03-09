@@ -351,7 +351,7 @@ namespace Game.Engine.EngineBase
 
             var Defender = EngineSettings.PlayerList
                 .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-                .OrderBy(m => m.Level).FirstOrDefault();
+                .OrderBy(m => m.CurrentHealth).FirstOrDefault();
 
             return Defender;
         }
