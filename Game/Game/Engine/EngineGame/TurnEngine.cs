@@ -221,12 +221,12 @@ namespace Game.Engine.EngineGame
             {
                 var item = ItemIndexViewModel.Instance.GetItem(id);
                 //if the item has an ability and if its not healing
-                if (item.itemAbility.AttackType == DamageTypeEnum.Heal)
+                if (item != null && item.itemAbility.AttackType == DamageTypeEnum.Heal)
                 {
                     count++;
                 }
             }
-            var randomItem = items[DiceHelper.RollDice(1, count) - 1];
+            var randomItem = items[DiceHelper.RollDice(1, count - 1)];
             var myReturn = ItemIndexViewModel.Instance.GetItem(randomItem).itemAbility;
             return myReturn;
         }
@@ -244,7 +244,7 @@ namespace Game.Engine.EngineGame
             foreach(string id in items)
             {
                 var item = ItemIndexViewModel.Instance.GetItem(id);
-                if (item.itemAbility.AttackType == DamageTypeEnum.Heal)
+                if (item != null && item.itemAbility.AttackType == DamageTypeEnum.Heal)
                 {
                     AbilityToUse = item.itemAbility;
                     return true;
