@@ -48,12 +48,56 @@ namespace Game.Engine.EngineGame
         public override bool TakeTurn(PlayerInfoModel Attacker)
         {
             // INFO: Teams, work out your turn logic
-            var myReturn =  base.TakeTurn(Attacker);
+            // Choose Action.  Such as Move, Attack etc.
+
+            // INFO: Teams, if you have other actions they would go here.
+
+            bool result = false;
+
+            // If the action is not set, then try to set it or use Attact
+            if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+            {
+                // Set the action if one is not set
+                EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
+
+                // When in doubt, attack...
+                if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                {
+                    EngineSettings.CurrentAction = ActionEnum.Attack;
+                }
+            }
+
+            switch (EngineSettings.CurrentAction)
+            {
+                //case ActionEnum.Unknown:
+                //    // Action already happened
+                //    break;
+
+                case ActionEnum.Attack:
+                    result = Attack(Attacker);
+                    break;
+
+                case ActionEnum.Ability:
+                    result = UseAbility(Attacker);
+                    break;
+
+                case ActionEnum.Move:
+                    result = MoveAsTurn(Attacker);
+                    break;
+            }
+
+            EngineSettings.BattleScore.TurnCount++;
+
+            // Save the Previous Action off
+            EngineSettings.PreviousAction = EngineSettings.CurrentAction;
+
+            // Reset the Action to unknown for next time
+            EngineSettings.CurrentAction = ActionEnum.Unknown;
 
             //character takes status effect damage at the end of their turn
             Attacker.TriggerStatusEffect();
 
-            return myReturn;
+            return result;
         }
 
         /// <summary>
