@@ -100,7 +100,7 @@ namespace UnitTests.ViewModels
             // Act
             result.DatabaseCharacterList = new ObservableCollection<CharacterModel>();
             result.PartyCharacterList = new ObservableCollection<CharacterModel>();
-
+            result.UnusedCharacterList = new ObservableCollection<CharacterModel>();
 
             // Reset
 
@@ -108,6 +108,8 @@ namespace UnitTests.ViewModels
             Assert.AreEqual(0, result.DatabaseCharacterList.Count());
             //Assert.AreEqual(0, 1);
             Assert.AreEqual(0, result.PartyCharacterList.Count());
+            //Assert.AreEqual
+            Assert.AreEqual(0, result.UnusedCharacterList.Count());
         }
     }
 }
