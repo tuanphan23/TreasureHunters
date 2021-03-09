@@ -1340,5 +1340,18 @@ namespace UnitTests.Models
 
             Assert.AreEqual(health, Result);
         }
+
+        [Test]
+        public void BasePlayerModel_TriggerStatusEffect_Valid_Fire_Should_Pass()
+        {
+
+            var data = new BasePlayerModel<CharacterModel>();
+            data.currentStatusEffect = DamageTypeEnum.Electric;
+
+            var Result = data.TriggerStatusEffect();
+            var health = data.MaxHealth * .1;
+
+            Assert.AreEqual(health, Result);
+        }
     }
 }
