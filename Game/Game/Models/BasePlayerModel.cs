@@ -690,7 +690,7 @@ namespace Game.Models
         /// Calculates the damage done to the player and status effect
         /// </summary>
         /// <param name="dmg"></param>
-        /// <returns></returns>
+        /// <returns>damage done to the player</returns>
         public int CalculateDamage(DamageInfo dmg) {
             int damageDone = dmg.DamageAmount;
 
@@ -700,6 +700,15 @@ namespace Game.Models
                 currentStatusEffect = dmg.element;
             }
             return damageDone;
+        }
+
+        /// <summary>
+        /// triggers the status affect currently afflicted on the player.
+        /// </summary>
+        /// <returns>the damage done by the status effect</returns>
+        public int TriggerStatusEffect()
+        {
+            return 0;
         }
 
 
