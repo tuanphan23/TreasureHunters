@@ -363,7 +363,9 @@ namespace Game.GameRules
             result.LevelUpToValue(result.Level);
 
             // Set ExperienceRemaining so Monsters can both use this method
-            result.ExperienceRemaining = LevelTableHelper.LevelDetailsList[result.Level + 1].Experience;
+            var temp = result.Level;
+            if (result.Level != LevelTableHelper.MaxLevel) { temp = result.Level + 1; }
+            result.ExperienceRemaining = LevelTableHelper.LevelDetailsList[temp].Experience;
 
             // Enter Battle at full health
             result.CurrentHealth = result.MaxHealth;
