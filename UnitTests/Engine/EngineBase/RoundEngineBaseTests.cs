@@ -1193,6 +1193,20 @@ namespace UnitTests.Engine.EngineBase
         }
 
         [Test]
+        public void RoundEngine_SwapCharacterItem_Base_InValid_Character_Null_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Unknown, new ItemModel());
+
+            // Reset
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
         public void RoundEngine_SwapCharacterItem_Base_InValid_Item_Null_Should_Return_Null()
         {
             // Arrange
