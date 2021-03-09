@@ -1072,5 +1072,19 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(2, CharacterPlayer.Level);
         }
         #endregion TurnAsAttack
+
+        [Test]
+        public void TurnEngine_DetermineCriticalMissProblem_InValid_Null_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.DetermineCriticalMissProblem(null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
     }
 }
