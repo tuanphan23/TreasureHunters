@@ -708,7 +708,21 @@ namespace Game.Models
         /// <returns>the damage done by the status effect</returns>
         public int TriggerStatusEffect()
         {
-            return 0;
+            int damage = 0;
+            switch (currentStatusEffect) {
+                case DamageTypeEnum.Electric:
+                    damage = (int)(MaxHealth * .05);
+                    break;
+                case DamageTypeEnum.Fire:
+                    damage = (int)(MaxHealth * .1);
+                    break;
+                case DamageTypeEnum.Poison:
+                    damage = (int)(MaxHealth * .15);
+                    break;
+            }
+            CurrentHealth = CurrentHealth - damage;
+
+            return damage;
         }
 
 
