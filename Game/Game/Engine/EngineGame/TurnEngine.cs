@@ -246,7 +246,15 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel AttackChoice(PlayerInfoModel data)
         {
-            return base.AttackChoice(data);
+            switch (data.PlayerType)
+            {
+                case PlayerTypeEnum.Monster:
+                    return SelectCharacterToAttack();
+
+                case PlayerTypeEnum.Character:
+                default:
+                    return SelectMonsterToAttack();
+            }
         }
 
         /// <summary>
