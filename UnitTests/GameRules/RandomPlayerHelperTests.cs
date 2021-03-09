@@ -378,5 +378,23 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
         }
+
+        [Test]
+        public async Task RandomPlayerHelper_GetRandomBossMonster_Valid_Items_True_Should_Return_New_Monster()
+        {
+            // Arrange
+            MonsterIndexViewModel.Instance.Dataset.Clear();
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "1" });
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "2" });
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "3" });
+
+            // Act
+            var result = RandomPlayerHelper.GetRandomBossMonster(1, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
+        }
     }
 }
