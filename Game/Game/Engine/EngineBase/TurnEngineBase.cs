@@ -676,7 +676,7 @@ namespace Game.Engine.EngineBase
 
                 if (EngineSettings.BattleSettingsModel.AllowCriticalMiss)
                 {
-                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 1 to completly miss ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 1 to miss ";
                     EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.CriticalMiss;
                 }
 
@@ -691,7 +691,7 @@ namespace Game.Engine.EngineBase
 
                 if (EngineSettings.BattleSettingsModel.AllowCriticalHit)
                 {
-                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 20 for lucky hit ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 20 for hit ";
                     EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.CriticalHit;
                 }
                 return EngineSettings.BattleMessagesModel.HitStatus;
