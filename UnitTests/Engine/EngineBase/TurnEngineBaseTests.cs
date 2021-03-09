@@ -1483,6 +1483,40 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(false, result);
         }
 
+
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_InValid_Roll_1_No_Ability_Should_Return_False()
+        {
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+
+            CharacterPlayer.AbilityTracker.Clear();
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+
         [Test]
         public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
         {
