@@ -142,7 +142,7 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            // Select first in the list
+            // Select the character with the lowest max health to bully first
 
             var Defender = EngineSettings.PlayerList
                 .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
@@ -167,7 +167,7 @@ namespace Game.Engine.EngineGame
             }
 
             // Select first one to hit in the list for now...
-            // Attack the Weakness (lowest HP) MonsterModel first 
+            // Attack the newest (lowest Level) MonsterModel first 
 
             var Defender = EngineSettings.PlayerList
                 .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
