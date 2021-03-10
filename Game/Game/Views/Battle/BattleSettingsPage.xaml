@@ -157,6 +157,27 @@
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"
                     Style="{StaticResource DeleteButtonStyle}"/>
 
+            <Label Text ="Control Hackathon Settings" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"/>
+
+            <StackLayout
+                HorizontalOptions="CenterAndExpand" 
+                Padding="10"
+                VerticalOptions="Center">
+
+                <Label
+                    Text="Reflect Damage"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+
+                <Switch
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    x:Name="ReflectDamageSwitch"
+                    Toggled="ReflectDamage_Toggled"
+                    />
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

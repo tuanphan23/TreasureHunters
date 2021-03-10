@@ -216,5 +216,15 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems = false;
         }
 
+        /// <summary>
+        /// Toggle reflection of damage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ReflectDamage_Toggled(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
