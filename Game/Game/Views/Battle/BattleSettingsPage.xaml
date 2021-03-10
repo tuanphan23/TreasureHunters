@@ -138,6 +138,20 @@
                     x:Name="ForceAbilitiesSwitch"
                     Toggled="ForceAbilities_Toggled"
                     />
+
+                <Label
+                    Text="Time Warp"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+
+                <Switch
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    x:Name="TimeWarpSwitch"
+                    Toggled="TimeWarp_Toggled"
+                    />
+
             </StackLayout>
 
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"
