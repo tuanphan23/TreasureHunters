@@ -38,5 +38,8 @@ namespace Game.Models
 
         // Are abilities required to be used if possible
         public bool ForceAbilities = false;
+
+        // Can damage be reflected?
+        public bool DamageReflect = false;
     }
 }
