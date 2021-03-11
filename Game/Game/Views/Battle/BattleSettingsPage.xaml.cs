@@ -237,5 +237,16 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.DamageReflect = false;
         }
 
+        public void TimeWarp_Toggled(object sender, EventArgs e)
+        {
+            // Flip the settings
+            if (TimeWarpSwitch.IsToggled == true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.TimeWarp = true;
+                return;
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+        }
     }
 }
