@@ -212,6 +212,10 @@ namespace Game.Engine.EngineBase
         /// <returns></returns>
         public virtual bool ChooseToUseAbility(PlayerInfoModel Attacker)
         {
+            if (EngineSettings.BattleSettingsModel.AllowAbilities == false)
+            {
+                return false;
+            }
             // See if healing is needed.
             EngineSettings.CurrentActionAbility = Attacker.SelectHealingAbility();
             if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
@@ -222,7 +226,7 @@ namespace Game.Engine.EngineBase
 
             // If not needed, then role dice to see if other ability should be used
             // <30% chance
-            if (DiceHelper.RollDice(1, 10) < 3)
+            if (DiceHelper.RollDice(1, 10) < 3 || EngineSettings.BattleSettingsModel.ForceAbilities)
             {
                 EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
 
@@ -506,6 +510,7 @@ namespace Game.Engine.EngineBase
         public virtual int ApplyReflectDamage(PlayerInfoModel Target)
         {
             //deals between 0 and 50% damage in increments of 10%, rounds up to prevent player from avoiding damage
+            //var damageTaken = 1000000;
             var damageTaken = (int)Math.Ceiling(EngineSettings.BattleMessagesModel.DamageAmount * (DiceHelper.RollDice(1, 6) - 1) * .1);
             //var damageTaken = (int)(EngineSettings.BattleMessagesModel.DamageAmount);
             Target.TakeDamage(damageTaken);

@@ -16,7 +16,7 @@ namespace Scenario
         public void Setup()
         {
             // Choose which engine to run
-            EngineViewModel.SetBattleEngineToKoenig();
+            EngineViewModel.SetBattleEngineToGame();
 
             // Put seed data into the system for all tests
             EngineViewModel.Engine.Round.ClearLists();
@@ -244,5 +244,82 @@ namespace Scenario
 
 
         #endregion Scenario16
+
+        #region Scenario 25
+        [Test]
+        public async Task HackathonScenario_Scenario_25_ToggleActive_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      25
+            *      
+            * Description: 
+            *      Sets damage such that it can be reflected back towards a player
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Changes to RoundEngineBase.cs - added ApplyReflectDamage method and changed TurnAsAttack()
+            *      Changes to add toggle to the BattleSettingsPage.xaml and the corresponding function call
+            *      Added fields in BattleSettingsModel for toggling reflect and the chance of reflecting
+            * 
+            * Test Algrorithm:
+            *      Create Character named Mike with 1 health so that mike will die upon being damaged by anything
+            *      Toggle Reflect damage on
+            *      Set Reflect Chance to 100%
+            *      Set Monsters to always miss
+            *      Set Characters to always hit
+            *      Set Ability Use to false
+            *  
+            *      Startup Battle
+            *      Run Auto Battle
+            *      
+            *      Auto Battle should end with Mike Dying, since the monsters always miss and can't use abilities
+            *      The only thing that could have damaged mike was himself!
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *  
+            */
+
+            //Arrange
+
+            // Set Character Conditions
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Level = 1,
+                                Name = "Mike",
+                            });
+
+            //add mike as the only character
+            EngineViewModel.AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+
+            // Auto Battle will add the monsters
+
+            // Set Toggles
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Hit;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Miss;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.ForceAbilities = false;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowAbilities = false;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.DamageReflect = true;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.ReflectChance = 100;
+            //set the party size to 1 so that only mike is fighting
+            EngineViewModel.AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            //Act
+            var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
+
+            //Reset
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+
+            //Assert
+            //check that it succeeded
+            Assert.AreEqual(true, result);
+            //check that Mike died
+            Assert.AreEqual(CharacterPlayerMike.CurrentHealth, 0);
+        }
+        #endregion
     }
 }
