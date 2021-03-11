@@ -42,6 +42,9 @@ namespace Game.Models
         // Can damage be reflected?
         public bool DamageReflect = false;
 
+        // Chance of a regular attack being reflected
+        public int ReflectChance = 10;
+
         //Is attack order reversed for speed
         public bool TimeWarp = false;
     }
