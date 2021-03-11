@@ -72,6 +72,7 @@ namespace Game.Views
 
             #region Hackathon
             ReflectDamageSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.DamageReflect;
+            TimeWarpSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.TimeWarp;
             #endregion
         }
 
