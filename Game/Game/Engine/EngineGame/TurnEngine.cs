@@ -525,6 +525,14 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
+        /// Apply the Reflect Damage to the Target
+        /// </summary>
+        public override int ApplyReflectDamage(PlayerInfoModel Target)
+        {
+            return base.ApplyReflectDamage(Target);
+        }
+
+        /// <summary>
         /// Calculate the Attack, return if it hit or missed.
         /// </summary>
         public override HitStatusEnum CalculateAttackStatus(PlayerInfoModel Attacker, PlayerInfoModel Target)

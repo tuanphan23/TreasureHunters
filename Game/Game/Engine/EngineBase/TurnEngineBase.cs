@@ -415,6 +415,12 @@ namespace Game.Engine.EngineBase
                     // Apply the Damage
                     ApplyDamage(Target);
 
+                    // % chance to reflect damage
+                    if(EngineSettings.BattleSettingsModel.DamageReflect && DiceHelper.RollDice(1, 10) == 1)
+                    {
+                        ApplyReflectDamage(Attacker);
+                    }
+
                     EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
 
                     // Check if Dead and Remove
@@ -489,6 +495,18 @@ namespace Game.Engine.EngineBase
             EngineSettings.BattleMessagesModel.CurrentHealth = Target.GetCurrentHealthTotal;
 
             return EngineSettings.BattleMessagesModel.DamageAmount;
+        }
+
+        /// <summary>
+        /// Apply the reflect Damage to the Target
+        /// </summary>
+        /// <param name="Target"></param>
+        public virtual int ApplyReflectDamage(PlayerInfoModel Target)
+        {
+            //deals between 0 and 50% damage in increments of 10% 
+            var damageTaken = (int)(EngineSettings.BattleMessagesModel.DamageAmount * (DiceHelper.RollDice(1, 6) - 1) * .1);
+            Target.TakeDamage(damageTaken);
+            return damageTaken;
         }
 
         /// <summary>
