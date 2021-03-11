@@ -510,9 +510,7 @@ namespace Game.Engine.EngineBase
         public virtual int ApplyReflectDamage(PlayerInfoModel Target)
         {
             //deals between 0 and 50% damage in increments of 10%, rounds up to prevent player from avoiding damage
-            //var damageTaken = 1000000;
             var damageTaken = (int)Math.Ceiling(EngineSettings.BattleMessagesModel.DamageAmount * (DiceHelper.RollDice(1, 6) - 1) * .1);
-            //var damageTaken = (int)(EngineSettings.BattleMessagesModel.DamageAmount);
             Target.TakeDamage(damageTaken);
             return damageTaken;
         }
