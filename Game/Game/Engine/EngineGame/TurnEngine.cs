@@ -191,7 +191,7 @@ namespace Game.Engine.EngineGame
                 EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
                 AbilityToUse = SelectAbilityToUse(Attacker);
 
-                if (AbilityToUse != null && EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+                if (AbilityToUse != null)
                 {
                     // Ability can , switch to unknown to exit
                     EngineSettings.CurrentAction = ActionEnum.Ability;
@@ -199,7 +199,7 @@ namespace Game.Engine.EngineGame
                 }
 
                 // No ability available
-                return true;
+                return false;
             }
 
             // Don't try
@@ -249,7 +249,7 @@ namespace Game.Engine.EngineGame
             foreach(string id in items)
             {
                 var item = ItemIndexViewModel.Instance.GetItem(id);
-                if (item != null && item.itemAbility.AttackType == DamageTypeEnum.Heal)
+                if (item != null && item.itemAbility != null && item.itemAbility.AttackType == DamageTypeEnum.Heal)
                 {
                     AbilityToUse = item.itemAbility;
                     return true;

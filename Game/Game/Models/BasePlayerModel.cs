@@ -626,6 +626,11 @@ namespace Game.Models
                 CauseDeath();
             }
 
+            if(CurrentHealth >= MaxHealth)
+            {
+                CurrentHealth = MaxHealth;
+            }
+
             return true;
         }
 
