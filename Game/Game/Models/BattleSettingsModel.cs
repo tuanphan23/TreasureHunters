@@ -41,5 +41,8 @@ namespace Game.Models
 
         // Can damage be reflected?
         public bool DamageReflect = false;
+
+        //Is attack order reversed for speed
+        public bool TimeWarp = false;
     }
 }
