@@ -176,10 +176,10 @@ namespace Scenario
             *      Set speed to -1 so he is really slow
             *      Set Doug Speed to 10 so hes fast
             *    
-            *      Mike should be first on the list at end of round
+            *      Mike should be first on the list at end of a round
             *  
             *      Startup Battle
-            *      Run Auto Battle
+            *      Run round
             *      
             *      Check lsit
             * 
@@ -187,9 +187,7 @@ namespace Scenario
             *      Default condition is sufficient
             * 
             * Validation:
-            *      Verify Battle Returned True
-            *      Verify Mike is first player in the list
-            *      Verify Round Count is 1
+            *      Verify Mike is first player in the list at the end of a round
             *  
             */
 
@@ -198,12 +196,15 @@ namespace Scenario
             // Set Character Conditions
 
             EngineViewModel.EngineGame.EngineSettings.BattleSettingsModel.TimeWarp = true;
+            EngineViewModel.EngineGame.EngineSettings.MaxRoundCount = 1;
+            EngineViewModel.EngineGame.EngineSettings.MaxNumberPartyCharacters = 0;
+            EngineViewModel.EngineGame.EngineSettings.MaxNumberPartyMonsters = 1;
 
             var CharacterPlayerMike = new PlayerInfoModel(
                             new CharacterModel
                             {
                                 Speed = -1, // Will go first...
-                                Level = 1,
+                                Level = 15,
                                 CurrentHealth = 1,
                                 ExperienceTotal = 1,
                                 ExperienceRemaining = 1,
@@ -222,13 +223,14 @@ namespace Scenario
                             });
 
             EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerDoug);
 
             // Set Monster Conditions
 
             // Auto Battle will add the monsters
 
             // Monsters always hit so round ends
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+            //EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
 
             //Act
             var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
@@ -237,9 +239,7 @@ namespace Scenario
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
 
             //Assert
-            Assert.AreEqual(true, result);
             Assert.AreEqual(CharacterPlayerMike, EngineViewModel.Engine.EngineSettings.PlayerList[0]);
-            Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
 
 
