@@ -69,6 +69,10 @@ namespace Game.Views
             AllowAbilitiesSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowAbilities;
             ForceAbilitiesSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ForceAbilities;
             #endregion
+
+            #region Hackathon
+            ReflectDamageSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.DamageReflect;
+            #endregion
         }
 
         /// <summary>
@@ -223,7 +227,14 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ReflectDamage_Toggled(object sender, EventArgs e)
         {
+            // Flip the settings
+            if (ReflectDamageSwitch.IsToggled == true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.DamageReflect = true;
+                return;
+            }
 
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.DamageReflect = false;
         }
 
     }
