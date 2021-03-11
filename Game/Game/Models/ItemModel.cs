@@ -20,7 +20,7 @@ namespace Game.Models
     public class ItemModel : BaseModel<ItemModel>
     {
         //Ability struct to contain the ability assiciated with this item.
-        public struct Ability
+        public class Ability
         {
             //Number of targets hit by the ability, NumTargets should always be >= 0
             public int NumTargets;
