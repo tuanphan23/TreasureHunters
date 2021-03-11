@@ -174,9 +174,9 @@ namespace Scenario
         #region Scenario16
 
         [Test]
-        public async Task HackathonScenario_Scenario_16_ToggleActive_Should_Pass()
+        public void HackathonScenario_Scenario_16_ToggleActive_Should_Pass()
         {
-            /* 
+                    /* 
             * Scenario Number:  
             *      16
             *      
@@ -213,17 +213,16 @@ namespace Scenario
 
             // Set Character Conditions
 
-            EngineViewModel.EngineGame.EngineSettings.BattleSettingsModel.TimeWarp = true;
-            
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.TimeWarp = true;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+
 
             var CharacterPlayerMike = new PlayerInfoModel(
                             new CharacterModel
                             {
-                                Speed = -1, // Will go first...
-                                Level = 15,
-                                CurrentHealth = 1,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
+                                Speed = -10, // Will go first...
                                 Name = "Mike",
                             });
 
@@ -231,31 +230,32 @@ namespace Scenario
                             new CharacterModel
                             {
                                 Speed = 10, // Will go last...
-                                Level = 1,
-                                CurrentHealth = 1,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
                                 Name = "Doug",
                             });
 
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerDoug);
+            var MonsterBleh = new PlayerInfoModel(
+                           new MonsterModel
+                           {
+                               Speed = 11, // Will go last...
+                               Name = "Barry",
+                           });
 
-            // Set Monster Conditions
-
-            // Auto Battle will add the monsters
-
-            // Monsters always mis so auto ends
-            //EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Miss;
-
+            
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(CharacterPlayerDoug);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(MonsterBleh);
+      
             //Act
-            EngineViewModel.Engine.StartBattle(false);
+            
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+            var ret = BattleEngineViewModel.Instance.Engine.Round.OrderPlayerListByTurnOrder();
 
             //Reset
-            //EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+          
 
             //Assert
-            Assert.AreEqual(CharacterPlayerMike, EngineViewModel.Engine.EngineSettings.PlayerList[0]);
+            Assert.AreEqual(CharacterPlayerMike.Guid,ret[0].Guid);
+
         }
 
 
