@@ -1,8 +1,12 @@
-﻿using NUnit.Framework;
-
+﻿using Game;
+using NUnit.Framework;
+using Game.Views;
 using Game.Models;
 using System.Threading.Tasks;
 using Game.ViewModels;
+using Xamarin.Forms.Mocks;
+using Xamarin.Forms;
+using Game.Helpers;
 
 namespace Scenario
 {
@@ -11,10 +15,24 @@ namespace Scenario
     {
         #region TestSetup
         readonly BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
+        App app;
+        BattlePage page;
 
         [SetUp]
         public void Setup()
         {
+            // Initilize Xamarin Forms
+            MockForms.Init();
+
+            //This is your App.xaml and App.xaml.cs, which can have resources, etc.
+            app = new App();
+            Application.Current = app;
+
+            // For now, set the engine to the Koenig Engine, change when ready 
+            BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
+
+            page = new BattlePage();
+
             // Choose which engine to run
             EngineViewModel.SetBattleEngineToGame();
 
@@ -277,7 +295,7 @@ namespace Scenario
             *      Default condition is sufficient
             * 
             * Validation:
-            *  
+            *      
             */
 
             //Arrange
@@ -318,6 +336,55 @@ namespace Scenario
             //check that Mike died
             Assert.AreEqual(CharacterPlayerMike.CurrentHealth, 0);
         }
-        #endregion
+        #endregion Scenario25
+
+        #region Scenario 12
+        [Test]
+        public void HackathonScenario_Scenario_12_AutoButton_Clicked_Default_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      12
+            *      
+            * Description: 
+            *      Sets damage such that it can be reflected back towards a player
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Changes to AutoBattleEngineBase.cs - added RunAutoBattleWhileBattling()
+            *      Changes to add auto buton to the BattlePage.xaml and the corresponding function call
+            * 
+            * Test Algrorithm:
+            *      add one character to character list
+            *      add one monster to monster list
+
+            *  
+            *      Startup Battle
+            *      Click Auto Button
+            *      
+            *      Battle is auto played until game over
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *       
+            */
+            // Arrange
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+
+            // Act
+            page.AutoButton_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+        #endregion Scenario12
     }
 }
