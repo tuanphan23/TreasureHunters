@@ -663,9 +663,22 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void AutoButton_Clicked(object sender, EventArgs e)
+        public async void AutoButton_Clicked(object sender, EventArgs e)
         {
-            NextAttackExample();
+             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Auto;
+
+             BattleMessages.Text = string.Format("Auto Battle is running");
+
+             await BattleEngineViewModel.Instance.AutoBattleEngine.RunAutoBattleWhileBattling();
+
+             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+             // Wrap up
+             BattleEngineViewModel.Instance.Engine.EndBattle();
+
+             Debug.WriteLine("Game Over");
+
+             GameOver();
         }
 
         /// <summary>
@@ -981,6 +994,15 @@ namespace Game.Views
                     AutoButton.IsVisible = true;
                     break;
 
+                case BattleStateEnum.Auto:
+                    GameUIDisplay.IsVisible = true;
+                    BattlePlayerInfomationBox.IsVisible = true;
+                    MessageDisplayBox.IsVisible = true;
+                    AttackButton.IsVisible = false;
+                    StopButton.IsVisible = false;
+                    RoundInfoButton.IsVisible = false;
+                    AutoButton.IsVisible = true;
+                    break;
                 // Based on the State disable buttons
                 case BattleStateEnum.Unknown:
                 default:

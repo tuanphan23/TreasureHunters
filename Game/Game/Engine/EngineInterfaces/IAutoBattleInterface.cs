@@ -17,6 +17,12 @@ namespace Game.Engine.EngineInterfaces
         Task<bool> RunAutoBattle();
 
         /// <summary>
+        /// Start the auto battle
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> RunAutoBattleWhileBattling();
+
+        /// <summary>
         /// Check if there's no end to the game
         /// </summary>
         /// <returns></returns>

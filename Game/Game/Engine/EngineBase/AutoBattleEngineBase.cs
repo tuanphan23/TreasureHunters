@@ -92,6 +92,55 @@ namespace Game.Engine.EngineBase
         }
 
         /// <summary>
+        /// Run Auto Battle
+        /// </summary>
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+        public virtual async Task<bool> RunAutoBattleWhileBattling()
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+        {
+            RoundEnum RoundCondition;
+
+            Debug.WriteLine("Auto Battle Starting");
+
+            // Auto Battle, does all the steps that a human would do.
+
+            // Start Battle in AutoBattle mode
+            Battle.StartBattle(true);
+
+            // Fight Loop. Continue until Game is Over...
+            do
+            {
+                // Check for excessive duration.
+                if (DetectInfinateLoop())
+                {
+                    Debug.WriteLine("Aborting, More than Max Rounds");
+                    Battle.EndBattle();
+                    return false;
+                }
+
+                Debug.WriteLine("Next Turn");
+
+                // Do the turn...
+                // If the round is over start a new one...
+                RoundCondition = Battle.Round.RoundNextTurn();
+
+                if (RoundCondition == RoundEnum.NewRound)
+                {
+                    Battle.Round.NewRound();
+                    Debug.WriteLine("New Round");
+                }
+
+            } while (RoundCondition != RoundEnum.GameOver);
+
+            Debug.WriteLine("Game Over");
+
+            // Wrap up
+            Battle.EndBattle();
+
+            return true;
+        }
+
+        /// <summary>
         /// Check if the Engine is not ending
         /// 
         /// Too many Rounds

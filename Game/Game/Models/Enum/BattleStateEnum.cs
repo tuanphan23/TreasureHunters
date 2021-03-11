@@ -23,5 +23,8 @@ namespace Game.Models
 
         // Game Over
         GameOver = 5,
+
+        // Auto
+        Auto = 6,
     }
 }
