@@ -191,7 +191,7 @@
                                         FontSize="Medium"
                                         />
                         
-                        <Stepper Value="{Binding ReflectChance, Mode = TwoWay}"
+                        <Stepper Value="0"
                                          Minimum="0"
                                          Maximum="100"
                                          Increment="10"

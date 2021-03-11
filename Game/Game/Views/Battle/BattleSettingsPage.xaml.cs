@@ -21,18 +21,12 @@ namespace Game.Views
         // Empty Constructor for UTs
        // public BattleSettingsPage(bool UnitTest) { }
 
-        public int ReflectChance = 30;
-
         /// <summary>
         /// Constructor
         /// </summary>
         public BattleSettingsPage()
         {
             InitializeComponent();
-
-            ReflectChance = 0;
-
-            BindingContext = this;
 
             #region BattleMode
             // Load the values for the Diffculty into the Picker
@@ -262,7 +256,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ReflectChance_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ChanceText.Text = ReflectChance + "%";
+            ChanceText.Text = String.Format("{0}", e.NewValue) + "%";
         }
     }
 }
