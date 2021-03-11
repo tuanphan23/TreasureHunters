@@ -176,6 +176,19 @@
                     x:Name="ReflectDamageSwitch"
                     Toggled="ReflectDamage_Toggled"
                     />
+
+                <Label
+                    Text="Reflect Damage Chance"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+
+                <Stepper Value="{Binding ReflectChance, Mode = TwoWay}"
+                                         Minimum="0"
+                                         Maximum="100"
+                                         Increment="10"
+                                         ValueChanged="ReflectChance_OnStepperValueChanged"
+                                         />
             </StackLayout>
 
         </StackLayout>

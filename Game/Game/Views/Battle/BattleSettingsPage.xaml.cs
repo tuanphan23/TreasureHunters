@@ -21,12 +21,16 @@ namespace Game.Views
         // Empty Constructor for UTs
        // public BattleSettingsPage(bool UnitTest) { }
 
+        public int ReflectChance = 0;
+
         /// <summary>
         /// Constructor
         /// </summary>
         public BattleSettingsPage()
         {
             InitializeComponent();
+
+            ReflectChance = 0;
 
             #region BattleMode
             // Load the values for the Diffculty into the Picker
@@ -247,6 +251,16 @@ namespace Game.Views
             }
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+        }
+
+        /// <summary>
+        /// sets the chance of reflection to the stepper value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ReflectChance_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
         }
     }
 }
