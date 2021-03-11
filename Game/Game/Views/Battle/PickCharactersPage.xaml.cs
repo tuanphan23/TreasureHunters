@@ -43,9 +43,10 @@ namespace Game.Views
 
             // Clear the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
+            BattleEngineViewModel.Instance.UnusedCharacterList.Clear();
 
             //populate the UnusedCharacterList
-            foreach(var character in BattleEngineViewModel.Instance.DatabaseCharacterList)
+            foreach (var character in BattleEngineViewModel.Instance.DatabaseCharacterList)
             {
                 BattleEngineViewModel.Instance.UnusedCharacterList.Add(character);
             }
