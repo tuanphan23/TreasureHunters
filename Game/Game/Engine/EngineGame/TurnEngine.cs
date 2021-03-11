@@ -191,12 +191,12 @@ namespace Game.Engine.EngineGame
                 EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
                 AbilityToUse = SelectAbilityToUse(Attacker);
 
-                /*if (AbilityToUse != null && EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+                if (AbilityToUse != null && EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
                 {
                     // Ability can , switch to unknown to exit
                     EngineSettings.CurrentAction = ActionEnum.Ability;
                     return true;
-                }*/
+                }
 
                 // No ability available
                 return true;
@@ -221,7 +221,7 @@ namespace Game.Engine.EngineGame
             {
                 var item = ItemIndexViewModel.Instance.GetItem(id);
                 //if the item has an ability and if its not healing
-                if (item != null && item.itemAbility.AttackType != DamageTypeEnum.Heal)
+                if (item != null && item.itemAbility != null && item.itemAbility.AttackType != DamageTypeEnum.Heal)
                 {
                     abilities.Add(item.itemAbility);
                 }
