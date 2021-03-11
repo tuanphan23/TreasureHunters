@@ -5,6 +5,7 @@
 
     <ContentPage.Content>
 
+        <ScrollView>
         <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
             <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Battle Settings" HorizontalTextAlignment="Center"/>
@@ -27,17 +28,17 @@
 
             <Label Text ="Control Hit Actions" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"/>
 
-            <StackLayout
+                <StackLayout
                 HorizontalOptions="CenterAndExpand" 
                 Padding="10"
                 VerticalOptions="Center">
 
-                <Label
+                    <Label
                     Text="Monster Hit Control" 
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"/>
-                
-                <Picker 
+
+                    <Picker 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"
                     FontSize="Micro"
@@ -45,13 +46,13 @@
                     SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                     SelectedIndexChanged="MonsterHitPicker_Changed"/>
 
-                
-                <Label 
+
+                    <Label 
                     Text="Character Hit Control"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"/>
 
-                <Picker 
+                    <Picker 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"
                     FontSize="Micro"
@@ -59,105 +60,102 @@
                     SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                     SelectedIndexChanged="CharacterHitPicker_Changed"/>
 
-                <Label
+                    <Label
                     Text="Players"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LargeLabelStyle}"
                     />
 
-                <Label 
+                    <Label 
                     Text="Allow Monster Items" 
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"/>
 
-                <Switch 
+                    <Switch 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"
                     x:Name="AllowMonsterItemsSwitch"
                     Toggled="AllowMonsterItems_Toggled"/>
 
-                <Label
+                    <Label
                     Text="Monsters"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LargeLabelStyle}"
                     />
 
-                <Label
+                    <Label
                     Text="Immune Monsters"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"
                     />
 
-                <Switch
+                    <Switch
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="ImmuneMonstersSwitch"
                     Toggled="ImmuneMonsters_Toggled"
                     />
 
-                <Label
+                    <Label
                     Text="Immune Players"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"/>
 
-                <Switch
+                    <Switch
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="ImmunePlayersSwitch"
                     Toggled="ImmunePlayers_Toggled"
                     />
 
-                <Label
+                    <Label
                     Text="Abilities"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LargeLabelStyle}"
                     />
 
-                <Label
+                    <Label
                     Text="AllowAbilities"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"
                     />
 
-                <Switch
+                    <Switch
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="AllowAbilitiesSwitch"
                     Toggled="AllowAbilities_Toggled"
                     />
 
-                <Label
+                    <Label
                     Text="ForceAbilities"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"
                     />
 
-                <Switch
+                    <Switch
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="ForceAbilitiesSwitch"
                     Toggled="ForceAbilities_Toggled"
                     />
 
-                <Label
+                    <Label
                     Text="Time Warp"
                     HorizontalOptions="Center"
                     Style="{DynamicResource LabelStyle}"
                     />
 
-                <Switch
+                    <Switch
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     x:Name="TimeWarpSwitch"
                     Toggled="TimeWarp_Toggled"
                     />
 
-            </StackLayout>
+                </StackLayout>
 
-            <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"
-                    Style="{StaticResource DeleteButtonStyle}"/>
-
-            <Label Text ="Control Hackathon Settings" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"/>
+                <Label Text ="Control Hackathon Settings" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"/>
 
             <StackLayout
                 HorizontalOptions="CenterAndExpand" 
@@ -191,6 +189,10 @@
                                          />
             </StackLayout>
 
-        </StackLayout>
+
+                <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"
+                    Style="{StaticResource DeleteButtonStyle}"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
