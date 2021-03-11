@@ -416,7 +416,7 @@ namespace Game.Engine.EngineBase
                     ApplyDamage(Target);
 
                     // % chance to reflect damage
-                    if(EngineSettings.BattleSettingsModel.DamageReflect && DiceHelper.RollDice(1, 10) == 1)
+                    if(EngineSettings.BattleSettingsModel.DamageReflect && DiceHelper.RollDice(1, 100) <= EngineSettings.BattleSettingsModel.ReflectChance)
                     {
                         ApplyReflectDamage(Attacker);
                     }
@@ -505,6 +505,7 @@ namespace Game.Engine.EngineBase
         {
             //deals between 0 and 50% damage in increments of 10% 
             var damageTaken = (int)(EngineSettings.BattleMessagesModel.DamageAmount * (DiceHelper.RollDice(1, 6) - 1) * .1);
+            //var damageTaken = (int)(EngineSettings.BattleMessagesModel.DamageAmount);
             Target.TakeDamage(damageTaken);
             return damageTaken;
         }
