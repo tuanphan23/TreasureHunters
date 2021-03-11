@@ -196,9 +196,7 @@ namespace Scenario
             // Set Character Conditions
 
             EngineViewModel.EngineGame.EngineSettings.BattleSettingsModel.TimeWarp = true;
-            EngineViewModel.EngineGame.EngineSettings.MaxRoundCount = 1;
-            EngineViewModel.EngineGame.EngineSettings.MaxNumberPartyCharacters = 0;
-            EngineViewModel.EngineGame.EngineSettings.MaxNumberPartyMonsters = 1;
+            
 
             var CharacterPlayerMike = new PlayerInfoModel(
                             new CharacterModel
@@ -229,14 +227,14 @@ namespace Scenario
 
             // Auto Battle will add the monsters
 
-            // Monsters always hit so round ends
-            //EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+            // Monsters always mis so auto ends
+            //EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Miss;
 
             //Act
-            var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
+            EngineViewModel.Engine.StartBattle(false);
 
             //Reset
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+            //EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
 
             //Assert
             Assert.AreEqual(CharacterPlayerMike, EngineViewModel.Engine.EngineSettings.PlayerList[0]);
