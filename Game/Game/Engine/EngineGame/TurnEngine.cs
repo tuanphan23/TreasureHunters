@@ -191,12 +191,12 @@ namespace Game.Engine.EngineGame
                 EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
                 AbilityToUse = SelectAbilityToUse(Attacker);
 
-                if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+                /*if (AbilityToUse != null && EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
                 {
                     // Ability can , switch to unknown to exit
                     EngineSettings.CurrentAction = ActionEnum.Ability;
                     return true;
-                }
+                }*/
 
                 // No ability available
                 return true;
@@ -216,18 +216,23 @@ namespace Game.Engine.EngineGame
         public Ability SelectAbilityToUse(PlayerInfoModel Attacker)
         {
             List<string> items = Attacker.GetAllItems();
-            int count = 0;
+            List<Ability> abilities = new List<Ability>();
             foreach (string id in items)
             {
                 var item = ItemIndexViewModel.Instance.GetItem(id);
                 //if the item has an ability and if its not healing
-                if (item != null && item.itemAbility.AttackType == DamageTypeEnum.Heal)
+                if (item != null && item.itemAbility.AttackType != DamageTypeEnum.Heal)
                 {
-                    count++;
+                    abilities.Add(item.itemAbility);
                 }
             }
-            var randomItem = items[DiceHelper.RollDice(1, count - 1)];
-            var myReturn = ItemIndexViewModel.Instance.GetItem(randomItem).itemAbility;
+            //if not valid abilities return null
+            if(abilities.Count == 0)
+            {
+                return default(Ability);
+            }
+            //pick a random ability to return
+            var myReturn = abilities[DiceHelper.RollDice(1, abilities.Count - 1)];
             return myReturn;
         }
 

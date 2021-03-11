@@ -192,6 +192,7 @@
                                         />
                         
                         <Stepper Value="0"
+                                 x:Name="ReflectChanceStepper"
                                          Minimum="0"
                                          Maximum="100"
                                          Increment="10"

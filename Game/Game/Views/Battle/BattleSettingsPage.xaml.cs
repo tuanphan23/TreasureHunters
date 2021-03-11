@@ -72,6 +72,7 @@ namespace Game.Views
 
             #region Hackathon
             ReflectDamageSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.DamageReflect;
+            ReflectChanceStepper.Value = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ReflectChance;
             TimeWarpSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.TimeWarp;
             #endregion
         }
@@ -258,6 +259,7 @@ namespace Game.Views
         public void ReflectChance_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             ChanceText.Text = String.Format("{0}", e.NewValue) + "%";
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ReflectChance = (int)e.NewValue;
         }
     }
 }
