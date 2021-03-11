@@ -659,6 +659,16 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Attack Action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void AutoButton_Clicked(object sender, EventArgs e)
+        {
+            NextAttackExample();
+        }
+
+        /// <summary>
         /// Settings Page
         /// </summary>
         /// <param name="sender"></param>
@@ -953,7 +963,7 @@ namespace Game.Views
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
                     RoundInfoButton.IsVisible = false;
-                    DroppedItemsButton.IsVisible = false;
+                    AutoButton.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
 
                     // Show the Game Over Display
@@ -968,7 +978,7 @@ namespace Game.Views
                     AttackButton.IsVisible = true;
                     StopButton.IsVisible = true;
                     RoundInfoButton.IsVisible = true;
-                    DroppedItemsButton.IsVisible = true;
+                    AutoButton.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons

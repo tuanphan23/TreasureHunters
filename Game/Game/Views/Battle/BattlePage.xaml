@@ -86,7 +86,7 @@
                     <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
                         <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False"/>
-                        <Button x:Name="DroppedItemsButton" Clicked="DroppedItemsButton_Clicked" Text="Dropped Items" IsVisible="False"/>
+                        <Button x:Name="AutoButton" Clicked="AutoButton_Clicked" Text="Attack" IsVisible="False"/>
                         <Button x:Name="RoundInfoButton" Clicked="RoundInfoButton_Clicked" Text="Round Info" IsVisible="False"/>
                         <Button x:Name="StopButton" Clicked="StopButton_Clicked" Text="Stop" IsVisible="False"/>                        
                         <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
