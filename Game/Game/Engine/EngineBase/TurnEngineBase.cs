@@ -8,6 +8,7 @@ using Game.ViewModels;
 using Game.GameRules;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineInterfaces;
+using System;
 
 namespace Game.Engine.EngineBase
 {
@@ -425,6 +426,7 @@ namespace Game.Engine.EngineBase
 
                     // Check if Dead and Remove
                     RemoveIfDead(Target);
+                    RemoveIfDead(Attacker);
 
                     // If it is a character apply the experience earned
                     CalculateExperience(Attacker, Target);
@@ -503,8 +505,8 @@ namespace Game.Engine.EngineBase
         /// <param name="Target"></param>
         public virtual int ApplyReflectDamage(PlayerInfoModel Target)
         {
-            //deals between 0 and 50% damage in increments of 10% 
-            var damageTaken = (int)(EngineSettings.BattleMessagesModel.DamageAmount * (DiceHelper.RollDice(1, 6) - 1) * .1);
+            //deals between 0 and 50% damage in increments of 10%, rounds up to prevent player from avoiding damage
+            var damageTaken = (int)Math.Ceiling(EngineSettings.BattleMessagesModel.DamageAmount * (DiceHelper.RollDice(1, 6) - 1) * .1);
             //var damageTaken = (int)(EngineSettings.BattleMessagesModel.DamageAmount);
             Target.TakeDamage(damageTaken);
             return damageTaken;
