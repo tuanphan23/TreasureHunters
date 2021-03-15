@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
-
+using Game.Helpers;
 using Game;
 using Game.Views;
 using Game.Models;
@@ -1120,6 +1120,51 @@ namespace UnitTests.Views
             //Assert
             //if it got here it happened
             Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void AutoBattlePage_AutoButton_Clicked_IsValid_Any_Input_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            page.AutoButton_Clicked(null, null);
+
+            //Reset
+
+            //Assert
+            //if it got here it happened
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void AutoBattlePage_AttackButton_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(3);
+
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(3);
+
+            var data = new CharacterModel { Level = 1, MaxHealth = 10 };
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+
+            // Act
+            page.AutoButton_Clicked(null, null);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
         }
     }
 }
