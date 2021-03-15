@@ -678,7 +678,12 @@ namespace Game.Views
 
              Debug.WriteLine("Game Over");
 
-             GameOver();
+            // Add the result to score
+            var data = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore;
+            data.Name = "Auto Battle @ " + DateTime.Now.ToString("G");
+            await ScoreIndexViewModel.Instance.CreateAsync(data);
+
+            ShowBattleMode();
         }
 
         /// <summary>
