@@ -97,7 +97,7 @@ namespace Game.Engine.EngineGame
             }
 
             // last monster of each round will be boss monster with a higher level
-            int bossLevel = (TargetLevel + 2 <= 20) ? TargetLevel + 2 : 20;
+            int bossLevel = (TargetLevel + 1 < 20) ? TargetLevel + 1 : TargetLevel;
 
             var bossMonsterData = RandomPlayerHelper.GetRandomBossMonster(bossLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 

@@ -279,7 +279,16 @@ namespace Game.Models
         #region Speed
         [Ignore]
         // Return the Speed value
-        public int GetSpeedLevelBonus => LevelTableHelper.LevelDetailsList[Level].Speed;
+        public int GetSpeedLevelBonus {
+            get
+            {
+                int len = LevelTableHelper.LevelDetailsList.Count;
+                if (Level >= len)
+                    Level = len - 1;
+                return LevelTableHelper.LevelDetailsList[Level].Speed;
+            }
+            
+        }
 
         [Ignore]
         // Return the Speed with Item Bonus

@@ -188,6 +188,9 @@ namespace Game.Models
             Guid = System.Guid.NewGuid().ToString();
 
             // Set amount to give to be 1 below max for that level.
+            int len = LevelTableHelper.LevelDetailsList.Count;
+            if (Level >= len)
+                Level = len - 2;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
             // Adding abilities for monsters, why not, they work hard for a living
