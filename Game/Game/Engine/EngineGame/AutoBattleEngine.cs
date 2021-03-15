@@ -110,10 +110,16 @@ namespace Game.Engine.EngineGame
         /// Start the automatic battle
         /// </summary>
         /// <returns></returns>
-        public override Task<bool> RunAutoBattle()
+        public override async Task<bool> RunAutoBattle()
         {
-            return base.RunAutoBattle();
-            //throw new System.NotImplementedException();
+            var BattleResult = await base.RunAutoBattle();
+
+            // Add the result to score
+            var data = Battle.EngineSettings.BattleScore;
+            data.Name = "Auto Battle @ " + DateTime.Now.ToString("G");
+            var Score = await ScoreIndexViewModel.Instance.CreateAsync(data);
+
+            return (BattleResult && Score);
         }
     }
 }
