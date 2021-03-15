@@ -22,8 +22,8 @@
                 Dark
                 -->
 
-            <Color x:Key="PageBackgroundColor">white</Color>
-            <Color x:Key="ViewBackgroundColor">brown</Color>
+            <Color x:Key="PageBackgroundColor">#ffdc73</Color>
+            <Color x:Key="ViewBackgroundColor">#ffbf00</Color>
             <Color x:Key="NavigationBarColor">orange</Color>
 
             <Color x:Key="PrimaryBackgroundColor">brown</Color>
