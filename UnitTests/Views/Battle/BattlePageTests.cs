@@ -1020,6 +1020,8 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got Here
         }
 
+        #region DragAndDrop
+
         [Test]
         public void BattlePage_DragOverTarget_IsValid_Any_Input_Should_Pass()
         {
@@ -1077,6 +1079,36 @@ namespace UnitTests.Views
             Assert.IsTrue(result);
         }
         */
+
+        [Test]
+        public void BattlePage_DropCompleted_Valid_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.DropCompleted(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_DragOverTarget_Valid_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.DragOverTarget(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+        #endregion DragAndDrop
+
         [Test]
         public void BattlePage_RoundInfoButton_Clicked_IsValid_Any_Input_Should_Pass()
         {
