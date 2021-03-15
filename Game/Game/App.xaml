@@ -22,14 +22,14 @@
                 Dark
                 -->
 
-            <Color x:Key="PageBackgroundColor">#ffdc73</Color>
-            <Color x:Key="ViewBackgroundColor">#ffbf00</Color>
-            <Color x:Key="NavigationBarColor">orange</Color>
+            <Color x:Key="PageBackgroundColor">#F9DFBB</Color>
+            <Color x:Key="ViewBackgroundColor">#F9DFBB</Color>
+            <Color x:Key="NavigationBarColor">#9E7D53</Color>
 
             <Color x:Key="PrimaryBackgroundColor">brown</Color>
             <Color x:Key="SecondaryBackgroundColor">gray</Color>
             <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
-            <Color x:Key="LightBackgroundColor">orange</Color>
+            <Color x:Key="LightBackgroundColor">#9E7D53</Color>
 
             <Color x:Key="PrimaryTextColor">black</Color>
             <Color x:Key="SecondaryTextColor">black</Color>
