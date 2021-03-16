@@ -658,11 +658,26 @@ namespace Game.Views
             NextAttackExample();
         }
 
+        /// <summary>
+        /// Ability action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void AbilityButton_Clicked(object sender, EventArgs e)
         {
             NextAttackAbilityExample();
         }
 
+        /// <summary>
+        /// 
+        /// This code example follows the rule of
+        /// 
+        /// Auto Select Attacker
+        /// Auto Select Defender
+        /// 
+        /// Do the Ability and show the result
+        /// 
+        /// </summary>
         private void NextAttackAbilityExample()
         {
            
