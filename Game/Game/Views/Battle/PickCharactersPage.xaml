@@ -24,7 +24,7 @@
                                 HorizontalScrollBarVisibility="Always"
                                 SelectionMode="Single"
                                 SelectionChanged="OnDatabaseCharacterItemSelected"
-                                HeightRequest="250"
+                                HeightRequest="170"
                                 x:Name="CharactersListView"
                                 >
                                 <CollectionView.ItemsLayout>
@@ -33,7 +33,7 @@
 
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
-                                        <Frame HeightRequest="150" WidthRequest="150" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                        <Frame HeightRequest="170" WidthRequest="140" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
                                             <Grid>
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="125" />
@@ -88,7 +88,7 @@
                                 ItemsSource="{Binding PartyCharacterList}"
                                 HorizontalScrollBarVisibility="Always"
                                 SelectionChanged="OnPartyCharacterItemSelected"
-                                HeightRequest="250"
+                                HeightRequest="170"
                                 SelectionMode="Single"
                                 >
                         <CollectionView.ItemsLayout>
@@ -96,7 +96,7 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame HeightRequest="200" WidthRequest="150" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                <Frame HeightRequest="170" WidthRequest="140" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="125" />
