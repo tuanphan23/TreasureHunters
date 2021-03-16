@@ -110,20 +110,6 @@
     <Content Include="Agent2.png" />
     <Content Include="Agent3.png" />
     <Content Include="Agent4.png" />
-    <Content Include="app icons-01.png" />
-    <Content Include="app icons-02.png" />
-    <Content Include="app icons-03.png" />
-    <Content Include="app icons-04.png" />
-    <Content Include="app icons-05.png" />
-    <Content Include="app icons-06.png" />
-    <Content Include="app icons-07.png" />
-    <Content Include="app icons-08.png" />
-    <Content Include="app icons-09.png" />
-    <Content Include="app icons-10.png" />
-    <Content Include="app icons-11.png" />
-    <Content Include="app icons-12.png" />
-    <Content Include="app icons-13.png" />
-    <Content Include="app icons-14.png" />
     <AndroidResource Include="app_icons14.png" />
     <AndroidResource Include="app_icons01.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
@@ -215,14 +201,6 @@
     <Content Include="map.png" />
     <Content Include="map2.png" />
     <Content Include="mapcell.png" />
-    <Content Include="monster icons-23.png" />
-    <Content Include="monster icons-24.png" />
-    <Content Include="monster icons-25.png" />
-    <Content Include="monster icons-26.png" />
-    <Content Include="monster icons-27.png" />
-    <Content Include="monster icons-28.png" />
-    <Content Include="monster icons-29.png" />
-    <Content Include="monster icons-30.png" />
     <AndroidResource Include="monster_icons23.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
@@ -243,14 +221,6 @@
     <AndroidResource Include="monster_icons28.png" />
     <AndroidResource Include="monster_icons29.png" />
     <AndroidResource Include="monster_icons30.png" />
-    <Content Include="more character icons-34.png" />
-    <Content Include="more character icons-35.png" />
-    <Content Include="more character icons-38.png" />
-    <Content Include="more character icons-39.png" />
-    <Content Include="more character icons-40.png" />
-    <Content Include="more character icons-41.png" />
-    <Content Include="more monster icons-36.png" />
-    <Content Include="more monster icons-37.png" />
     <AndroidResource Include="more_character_icons34.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
