@@ -199,7 +199,7 @@ namespace UnitTests.Engine.EngineBase
             //Reset
 
             //Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
         #endregion RunAutoBattle
 
