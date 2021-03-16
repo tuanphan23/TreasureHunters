@@ -180,4 +180,127 @@
   <ItemGroup>
     <BundleResource Include="Resources\about icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcons16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcons17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcons18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcons19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\diceIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\playIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aboutIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcon15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcon20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcon22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characterIcon2323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsterIcons26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moreCharacterIcons37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcons01.png" />
+  </ItemGroup>
 </Project>
