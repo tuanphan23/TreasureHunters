@@ -207,7 +207,7 @@ namespace Game.GameRules
                     Description = "A former treasure hunter and the father of Benjamin Franklin Gates",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "character icons-15-15.png",
+                    ImageURI = "character icon-23-23.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
