@@ -178,14 +178,26 @@
     <Content Include="book.png" />
     <Content Include="boot.png" />
     <Content Include="cape.png" />
-    <Content Include="character icon-23-23.png" />
-    <Content Include="character icons-15.png" />
-    <Content Include="character icons-16.png" />
-    <Content Include="character icons-17.png" />
-    <Content Include="character icons-18.png" />
-    <Content Include="character icons-19.png" />
-    <Content Include="character icons-20.png" />
-    <Content Include="character icons-22.png" />
+    <AndroidResource Include="character_icon2323.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="character_icons15.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="character_icons16.png" />
+    <AndroidResource Include="character_icons17.png" />
+    <AndroidResource Include="character_icons18.png" />
+    <AndroidResource Include="character_icons19.png" />
+    <AndroidResource Include="character_icons20.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="character_icons22.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="chest.png" />
     <Content Include="dice icon.png" />
     <Content Include="flaregun.png" />
