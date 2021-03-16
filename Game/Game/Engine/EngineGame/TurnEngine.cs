@@ -356,6 +356,10 @@ namespace Game.Engine.EngineGame
         {
             //list of targets to return
             List<PlayerInfoModel> myReturn = new List<PlayerInfoModel>();
+
+            if (AbilityToUse == null)
+                return myReturn;
+
             //list that will containt the list of targets by priority
             List<PlayerInfoModel> sortedList = null;
             //if healing choose the same playerType as a target
