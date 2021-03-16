@@ -680,7 +680,10 @@ namespace Game.Views
         /// </summary>
         private void NextAttackAbilityExample()
         {
-           
+           //code for using an ability will go here
+           //some substantial refactorings will have to happen to make this work
+           //these refactorings are doable, however would not be wise to do 
+           //shortly before submitting this assignment
         }
 
         /// <summary>

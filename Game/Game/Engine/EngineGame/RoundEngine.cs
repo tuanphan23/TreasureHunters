@@ -195,7 +195,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel GetNextPlayerTurn()
         {
-            // Remove the Dead
+            // Remove the Deadf
             RemoveDeadPlayersFromList();
 
             // Get Next Player
