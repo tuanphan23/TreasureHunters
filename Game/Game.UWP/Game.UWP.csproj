@@ -110,41 +110,6 @@
     <Content Include="Agent2.png" />
     <Content Include="Agent3.png" />
     <Content Include="Agent4.png" />
-    <AndroidResource Include="app_icons14.png" />
-    <AndroidResource Include="app_icons01.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="app_icons02.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="app_icons03.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="app_icons04.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="app_icons05.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="app_icons06.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="app_icons07.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="app_icons08.png" />
-    <AndroidResource Include="app_icons09.png" />
-    <AndroidResource Include="app_icons10.png" />
-    <AndroidResource Include="app_icons11.png" />
-    <AndroidResource Include="app_icons12.png" />
-    <AndroidResource Include="app_icons13.png" />
     <Content Include="auto.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-125.png" />
@@ -178,28 +143,7 @@
     <Content Include="book.png" />
     <Content Include="boot.png" />
     <Content Include="cape.png" />
-    <AndroidResource Include="character_icon2323.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="character_icons15.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="character_icons16.png" />
-    <AndroidResource Include="character_icons17.png" />
-    <AndroidResource Include="character_icons18.png" />
-    <AndroidResource Include="character_icons19.png" />
-    <AndroidResource Include="character_icons20.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="character_icons22.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <Content Include="chest.png" />
-    <Content Include="dice icon.png" />
     <Content Include="flaregun.png" />
     <Content Include="glasses.png" />
     <Content Include="icon_add.png" />
@@ -213,50 +157,9 @@
     <Content Include="map.png" />
     <Content Include="map2.png" />
     <Content Include="mapcell.png" />
-    <AndroidResource Include="monster_icons23.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="monster_icons24.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="monster_icons25.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="monster_icons26.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="monster_icons27.png" />
-    <AndroidResource Include="monster_icons28.png" />
-    <AndroidResource Include="monster_icons29.png" />
-    <AndroidResource Include="monster_icons30.png" />
-    <AndroidResource Include="more_character_icons34.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="more_character_icons35.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="more_character_icons38.png" />
-    <AndroidResource Include="more_character_icons39.png" />
-    <AndroidResource Include="more_character_icons40.png" />
-    <AndroidResource Include="more_character_icons41.png" />
-    <AndroidResource Include="more_monster_icons36.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="more_monster_icons37.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <Content Include="OldBen.png" />
     <Content Include="pic.png" />
     <Content Include="pipe.png" />
-    <Content Include="play icon.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

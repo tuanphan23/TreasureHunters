@@ -19,7 +19,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Ocular Device",
                     Description = "A glass to help the wearer see the hidden symbols ",
-                    ImageURI = "app_icons01.png",
+                    ImageURI = "glasses.png",
                     Value = 7,
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Defense,
@@ -28,7 +28,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Ornate Pipe",
                     Description = "A million-dollar pipe ",
-                    ImageURI = "app_icons02.png",
+                    ImageURI = "pipe.png",
                     Value = 6,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
@@ -37,7 +37,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "President’s book",
                     Description = "A book holds all the secrets to the history of the World ",
-                    ImageURI = "app_icons03.png",
+                    ImageURI = "book.png",
                     Value = 9,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.CurrentHealth,
@@ -46,7 +46,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Flaming gun",
                     Description = "A magical gun that can cause enemies to explode with solar energy ",
-                    ImageURI = "app_icons07.png",
+                    ImageURI = "flaregun.png",
                     Value = 7,
                     Range = 10,
                     Location = ItemLocationEnum.PrimaryHand,
@@ -56,7 +56,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Blink boots",
                     Description = "Speedy boots that increase your running speed ",
-                    ImageURI = "app_icons04.png",
+                    ImageURI = "boot.png",
                     Value = 6,
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Speed,
@@ -65,7 +65,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Cape",
                     Description = "A marvelous cape with the ability to reduce the damage of the enemies. ",
-                    ImageURI = "app_icons06.png",
+                    ImageURI = "cape.png",
                     Value = 8,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Defense,
@@ -74,7 +74,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Map",
                     Description = "Map to your next clue, increases confidence making you feel stronger. ",
-                    ImageURI = "app_icons05.png",
+                    ImageURI = "map2.png",
                     Value = 8,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.MaxHealth,
@@ -159,7 +159,7 @@ namespace Game.GameRules
                     Description = "An American treasure hunter and cryptologist, famous for finding the Templar Treasure.",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "character_icons15.png",
+                    ImageURI = "BenPic.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -175,7 +175,7 @@ namespace Game.GameRules
                     Description = "A sarcastic computer expert, resident genius",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "character_icons20.png",
+                    ImageURI = "RileyPic.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -191,7 +191,7 @@ namespace Game.GameRules
                     Description = "An archivist at the National Archives",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "character_icons22.png",
+                    ImageURI = "Abigail.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -207,7 +207,7 @@ namespace Game.GameRules
                     Description = "A former treasure hunter and the father of Benjamin Franklin Gates",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "character_icon2323.png",
+                    ImageURI = "OldBen.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -223,7 +223,7 @@ namespace Game.GameRules
                     Description = "An FBI Special Agent in charge of the theft of the Declaration of Independence",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "more_character_icons34.png",
+                    ImageURI = "Agent1.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -251,31 +251,31 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Mitchell Wilkinson",
                     Description = "An international arms dealer and black-market antiquities dealer ",
-                    ImageURI = "monster_icons23.png",
+                    ImageURI = "Agent1.png",
                 },
 
                 new MonsterModel {
                     Name = "Ian Howe",
                     Description = "A currently imprisoned entrepreneur/treasure hunter who attempted to find the Templar Treasure",
-                    ImageURI = "monster_icons24.png",
+                    ImageURI = "Agent1.png",
                 },
 
                 new MonsterModel {
                     Name = "Shaw",
                     Description = "Ian Howe's right-hand man and best friend",
-                    ImageURI = "monster_icons25.png",
+                    ImageURI = "Agent1.png",
                 },
 
                 new MonsterModel {
                     Name = "Man In Black 1",
                     Description = "FBI Special Agent ",
-                    ImageURI = "monster_icons26.png",
+                    ImageURI = "Agent1.png",
                 },
 
                 new MonsterModel {
                     Name = "Man In Black 2",
                     Description = "FBI Special Agent ",
-                    ImageURI = "more_monster_icons36.png",
+                    ImageURI = "Agent1.png",
                 },
             };
 
