@@ -926,6 +926,7 @@ namespace Game.Views
         /// </summary>
         public void HideUIElements()
         {
+            AbilityButton.IsVisible = false;
             NextRoundButton.IsVisible = false;
             StartBattleButton.IsVisible = false;
             AttackButton.IsVisible = false;
@@ -997,6 +998,7 @@ namespace Game.Views
                     StopButton.IsVisible = true;
                     RoundInfoButton.IsVisible = true;
                     AutoButton.IsVisible = true;
+                    AbilityButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.Auto:
@@ -1007,6 +1009,7 @@ namespace Game.Views
                     StopButton.IsVisible = false;
                     RoundInfoButton.IsVisible = false;
                     AutoButton.IsVisible = true;
+                    AbilityButton.IsVisible = false;
                     break;
                 // Based on the State disable buttons
                 case BattleStateEnum.Unknown:
