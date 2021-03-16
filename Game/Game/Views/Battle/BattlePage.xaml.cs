@@ -658,6 +658,11 @@ namespace Game.Views
             NextAttackExample();
         }
 
+        public void AbilityButton_Clicked(object sender, EventArgs e)
+        {
+            return;
+        }
+
         /// <summary>
         /// Attack Action
         /// </summary>
