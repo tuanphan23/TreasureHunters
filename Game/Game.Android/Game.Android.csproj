@@ -189,127 +189,127 @@
     <AndroidResource Include="Resources\drawable\chest.gif" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-03.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-03.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-04.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-04.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-05.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-05.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-06.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-06.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-07.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-07.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icon-23-23.png" />
+    <AndroidResource Include="Resources\drawable\character_icon-23-23.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icons-15.png" />
+    <AndroidResource Include="Resources\drawable\character_icons-15.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icons-20.png" />
+    <AndroidResource Include="Resources\drawable\character_icons-20.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icons-22.png" />
+    <AndroidResource Include="Resources\drawable\character_icons-22.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-23.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-23.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-24.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-25.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-25.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-26.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-26.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more character icons-34.png" />
+    <AndroidResource Include="Resources\drawable\more_character_icons-34.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more character icons-35.png" />
+    <AndroidResource Include="Resources\drawable\more_character_icons-35.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more monster icons-36.png" />
+    <AndroidResource Include="Resources\drawable\more_monster_icons-36.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more monster icons-37.png" />
+    <AndroidResource Include="Resources\drawable\more_monster_icons-37.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-01.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-01.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-02.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-02.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-09.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-09.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-10.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-10.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-11.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-11.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-12.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-12.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-13.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-13.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-14.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-14.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icons-16.png" />
+    <AndroidResource Include="Resources\drawable\character_icons-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icons-17.png" />
+    <AndroidResource Include="Resources\drawable\character_icons-17.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icons-18.png" />
+    <AndroidResource Include="Resources\drawable\character_icons-18.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character icons-19.png" />
+    <AndroidResource Include="Resources\drawable\character_icons-19.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dice icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-27.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-27.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-28.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-28.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-29.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-29.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster icons-30.png" />
+    <AndroidResource Include="Resources\drawable\monster_icons-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more character icons-38.png" />
+    <AndroidResource Include="Resources\drawable\more_character_icons-38.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more character icons-39.png" />
+    <AndroidResource Include="Resources\drawable\more_character_icons-39.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more character icons-40.png" />
+    <AndroidResource Include="Resources\drawable\more_character_icons-40.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\more character icons-41.png" />
+    <AndroidResource Include="Resources\drawable\more_character_icons-41.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\play icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\about icon.png" />
+    <AndroidResource Include="Resources\drawable\about_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\app icons-08.png" />
+    <AndroidResource Include="Resources\drawable\app_icons-08.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
