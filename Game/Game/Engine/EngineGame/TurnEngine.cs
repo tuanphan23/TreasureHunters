@@ -185,7 +185,7 @@ namespace Game.Engine.EngineGame
             }
 
             // If not needed, then role dice to see if other ability should be used
-            // <30% chance
+            // <30% chance or if player chose to use it 100% chance
             if (!random || DiceHelper.RollDice(1, 10) < 3)
             {
                 EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
@@ -214,6 +214,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
         {
+            //true passed in as random value should be used
             return ChooseToUseAbilityMain(Attacker, true);
         }
 
