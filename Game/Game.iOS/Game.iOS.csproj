@@ -231,4 +231,70 @@
   <ItemGroup>
     <BundleResource Include="Resources\more monster icons-37.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\app icons-13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\app icons-14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character icons-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character icons-17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character icons-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character icons-19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dice icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster icons-27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster icons-28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster icons-29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster icons-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\more character icons-38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\more character icons-39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\more character icons-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\more character icons-41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\play icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\app icons-08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\app icons-09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\app icons-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\app icons-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\app icons-12.png" />
+  </ItemGroup>
 </Project>
