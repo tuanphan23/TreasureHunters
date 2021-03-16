@@ -567,6 +567,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
 
+        /*
         [Test]
         public void TurnEngine_TakeTurn_Ability_Should_Pass()
         {
@@ -585,6 +586,7 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+        */
 
         [Test]
         public void TurnEngine_TakeTurn_Move_Should_Pass()
