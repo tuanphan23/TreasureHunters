@@ -660,7 +660,12 @@ namespace Game.Views
 
         public void AbilityButton_Clicked(object sender, EventArgs e)
         {
-            return;
+            NextAttackAbilityExample();
+        }
+
+        private void NextAttackAbilityExample()
+        {
+           
         }
 
         /// <summary>
