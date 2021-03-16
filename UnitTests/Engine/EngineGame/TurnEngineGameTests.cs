@@ -1170,7 +1170,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
 
-        [Test]
+        /*[Test]
         public void TurnEngine_UseAbility_Valid_Ability_Quick_1_Should_Pass()
         {
             // Arrange
@@ -1188,9 +1188,9 @@ namespace UnitTests.Engine.EngineGame
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
-        [Test]
+        /*[Test]
         public void TurnEngine_UseAbility_Valid_Ability_Curse_1_Should_Pass()
         {
             // Arrange
@@ -1208,7 +1208,7 @@ namespace UnitTests.Engine.EngineGame
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
         #endregion UseAbility
 
         #region BattleSettings
