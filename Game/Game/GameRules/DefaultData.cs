@@ -251,31 +251,31 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Mitchell Wilkinson",
                     Description = "An international arms dealer and black-market antiquities dealer ",
-                    ImageURI = "Agent1.png",
+                    ImageURI = "monster icons-23.png",
                 },
 
                 new MonsterModel {
                     Name = "Ian Howe",
                     Description = "A currently imprisoned entrepreneur/treasure hunter who attempted to find the Templar Treasure",
-                    ImageURI = "Agent2.png",
+                    ImageURI = "monster icons-24.png",
                 },
 
                 new MonsterModel {
                     Name = "Shaw",
                     Description = "Ian Howe's right-hand man and best friend",
-                    ImageURI = "Agent3.png",
+                    ImageURI = "monster icons-25.png",
                 },
 
                 new MonsterModel {
                     Name = "Man In Black 1",
                     Description = "FBI Special Agent ",
-                    ImageURI = "Agent2.png",
+                    ImageURI = "monster icons-26.png",
                 },
 
                 new MonsterModel {
                     Name = "Man In Black 2",
                     Description = "FBI Special Agent ",
-                    ImageURI = "Agent4.png",
+                    ImageURI = "more monster icons-36.png",
                 },
             };
 
