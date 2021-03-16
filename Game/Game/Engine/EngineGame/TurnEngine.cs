@@ -168,13 +168,13 @@ namespace Game.Engine.EngineGame
             return base.MoveAsTurn(Attacker);
         }
 
-        //TODO ability uses
         /// <summary>
-        /// Decide to use an Ability or not
-        /// 
-        /// Set the Ability
+        /// Decides what ability is to be used
         /// </summary>
-        public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
+        /// <param name="Attacker"></param>
+        /// <param name="random">if ability choice chance is random (player controled ability choice should not be ranomd)</param>
+        /// <returns></returns>
+        public bool ChooseToUseAbilityMain(PlayerInfoModel Attacker, bool random)
         {
             // See if healing is needed.
             EngineSettings.CurrentActionAbility = Attacker.SelectHealingAbility();
@@ -186,7 +186,7 @@ namespace Game.Engine.EngineGame
 
             // If not needed, then role dice to see if other ability should be used
             // <30% chance
-            if (DiceHelper.RollDice(1, 10) < 3)
+            if (!random || DiceHelper.RollDice(1, 10) < 3)
             {
                 EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
                 AbilityToUse = SelectAbilityToUse(Attacker);
@@ -204,6 +204,17 @@ namespace Game.Engine.EngineGame
 
             // Don't try
             return false;
+        }
+
+        //TODO ability uses
+        /// <summary>
+        /// Decide to use an Ability or not
+        /// 
+        /// Set the Ability
+        /// </summary>
+        public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
+        {
+            return ChooseToUseAbilityMain(Attacker, true);
         }
 
         //TODO null abilities?
