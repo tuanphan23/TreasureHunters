@@ -16,7 +16,7 @@
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
                     <ImageButton
-                                Source="BenPic.png"
+                                Source="character icons-16.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="CharactersButton_Clicked"/>
 
@@ -29,7 +29,7 @@
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
                     <ImageButton
-                                Source="Agent1.png"
+                                Source="monster icons-27.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="MonstersButton_Clicked"/>
 
