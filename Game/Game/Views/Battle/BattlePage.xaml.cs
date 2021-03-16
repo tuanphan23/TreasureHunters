@@ -693,18 +693,18 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void AutoButton_Clicked(object sender, EventArgs e)
         {
-             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Auto;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Auto;
 
-             BattleMessages.Text = string.Format("Auto Battle is running");
+            BattleMessages.Text = string.Format("Auto Battle is running");
 
-             await BattleEngineViewModel.Instance.AutoBattleEngine.RunAutoBattleWhileBattling();
+            await BattleEngineViewModel.Instance.AutoBattleEngine.RunAutoBattleWhileBattling();
 
-             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
-             // Wrap up
-             BattleEngineViewModel.Instance.Engine.EndBattle();
+            // Wrap up
+            BattleEngineViewModel.Instance.Engine.EndBattle();
 
-             Debug.WriteLine("Game Over");
+            Debug.WriteLine("Game Over");
 
             // Add the result to score
             var data = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore;

@@ -54,7 +54,14 @@
                 </StackLayout>
 
                 <!--The Bottom of the Battle UI  Holds the Player to Player boxes, Buttons, and the Messages-->
-                <StackLayout x:Name="BattleBottomBox" Style="{StaticResource BattleUIBottomBox}">
+                <StackLayout x:Name="BattleBottomBox" Style="{StaticResource BattleUIBottomBox}" HeightRequest="300">
+
+                    <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+
+                        <Button x:Name="AutoButton" Clicked="AutoButton_Clicked" Text="Auto" IsVisible="False"/>
+                        <Button x:Name="RoundInfoButton" Clicked="RoundInfoButton_Clicked" Text="Round Info" IsVisible="False"/>
+
+                    </StackLayout>
 
                     <Frame x:Name="BattlePlayerInfomationBox"
                                 Style="{StaticResource PlayerBattleOuterFrame}"
@@ -86,9 +93,7 @@
                     <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
                         <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False"/>
-                        <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False"/>
-                        <Button x:Name="AutoButton" Clicked="AutoButton_Clicked" Text="Auto" IsVisible="False"/>
-                        <Button x:Name="RoundInfoButton" Clicked="RoundInfoButton_Clicked" Text="Round Info" IsVisible="False"/>
+                        <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Hunt" IsVisible="False"/>
                         <Button x:Name="StopButton" Clicked="StopButton_Clicked" Text="Stop" IsVisible="False"/>                        
                         <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
                         <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start" IsVisible="False" Style="{StaticResource DeleteButtonStyle}"/>
