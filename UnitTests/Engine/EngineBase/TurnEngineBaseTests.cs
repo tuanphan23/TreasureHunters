@@ -1360,7 +1360,7 @@ namespace UnitTests.Engine.EngineBase
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
-        [Test]
+        /*[Test]
         public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
         {
             // Arrange
@@ -1387,7 +1387,7 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
         [Test]
         public void TurnEngine_ChooseToUseAbility_Valid_AlternateAbility_Should_Return_True()
