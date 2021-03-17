@@ -70,6 +70,8 @@ namespace UnitTests.Engine.EngineBase
         public void RoundEngine_OrderPlayerListByTurnOrder_Valid_Speed_Higher_Should_Be_Z()
         {
             // Arrange
+            Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+
             var Monster = new MonsterModel
             {
                 Speed = 20,
@@ -117,6 +119,9 @@ namespace UnitTests.Engine.EngineBase
         public void RoundEngine_OrderPlayerListByTurnOrder_Valid_Level_Higher_Should_Be_Z()
         {
             // Arrange
+
+            Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+
             var Monster = new MonsterModel
             {
                 Speed = 20,
