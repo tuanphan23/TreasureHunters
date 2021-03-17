@@ -85,10 +85,12 @@ namespace UnitTests.Models
         {
             //Arrange
             var data = new ItemModel();
+            var comp = new ItemModel.Ability();
             //Act
+            data.itemAbility = new ItemModel.Ability();
 
             //Assert
-            Assert.AreEqual(null, data.itemAbility);
+            Assert.AreEqual(comp, data.itemAbility);
         }
 
         [Test]
