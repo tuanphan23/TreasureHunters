@@ -69,6 +69,8 @@ namespace UnitTests.Engine.EngineGame
         public void RoundEngine_OrderPlayerListByTurnOrder_Valid_Speed_Higher_Should_Be_Z()
         {
             // Arrange
+            Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+
             var Monster = new MonsterModel
             {
                 Speed = 20,
@@ -116,6 +118,8 @@ namespace UnitTests.Engine.EngineGame
         public void RoundEngine_OrderPlayerListByTurnOrder_Valid_Level_Higher_Should_Be_Z()
         {
             // Arrange
+            Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+
             var Monster = new MonsterModel
             {
                 Speed = 20,
@@ -163,6 +167,7 @@ namespace UnitTests.Engine.EngineGame
         public void RoundEngine_OrderPlayerListByTurnOrder_Valid_Experience_Higher_Should_Be_Z()
         {
             // Arrange
+            Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
 
             var Monster = new MonsterModel
             {
@@ -212,6 +217,8 @@ namespace UnitTests.Engine.EngineGame
         public void RoundEngine_OrderPlayerListByTurnOrder_Valid_ListOrder_Should_Be_1()
         {
             // Arrange
+            Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+
             var Monster = new MonsterModel
             {
                 Speed = 20,
@@ -262,6 +269,8 @@ namespace UnitTests.Engine.EngineGame
 
             // Both need to be character to fall through to the Name Test
             // Arrange
+            Engine.EngineSettings.BattleSettingsModel.TimeWarp = false;
+
             var Character = new CharacterModel
             {
                 Speed = 20,
