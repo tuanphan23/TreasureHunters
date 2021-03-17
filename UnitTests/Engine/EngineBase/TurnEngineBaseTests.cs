@@ -1287,7 +1287,7 @@ namespace UnitTests.Engine.EngineBase
         #endregion BattleSettings
 
         #region DetermineActionChoice
-        [Test]
+        /*[Test]
         public void TurnEngine_DetermineActionChoice_Valid_Monster_Should_Return_CurrentAction()
         {
             // Arrange
@@ -1305,9 +1305,9 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(ActionEnum.Ability, result);
-        }
+        }*/
 
-        [Test]
+        /*[Test]
         public void TurnEngine_DetermineActionChoice_Valid_Character_Should_Return_CurrentAction()
         {
             // Arrange
@@ -1326,7 +1326,7 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(ActionEnum.Ability, result);
-        }
+        }*/
 
         [Test]
         public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
