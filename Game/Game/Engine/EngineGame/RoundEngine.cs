@@ -17,6 +17,9 @@ namespace Game.Engine.EngineGame
         // Hold the BaseEngine
         public new EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
 
+        //set to false for auto battle, set to true when the player gets to decide what their action is
+        public bool playerControlled = false;
+
         public RoundEngine()
         {
             Turn = new TurnEngine();
