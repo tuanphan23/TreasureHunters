@@ -1389,7 +1389,7 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(true, result);
         }
 
-        [Test]
+        /*[Test]
         public void TurnEngine_ChooseToUseAbility_Valid_AlternateAbility_Should_Return_True()
         {
             // Arrange
@@ -1419,7 +1419,7 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
         [Test]
         public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
