@@ -56,10 +56,9 @@ namespace Game.Models
             }
         }
 
-        public int test { get; set; } = 0;
-
+        //the ability associated with the item, is null if the item has no ability
         [Ignore]
-        public Ability itemAbility { get; set; } = new Ability();
+        public Ability itemAbility { get; set; } = null;
 
         // Range of the item, swords are 1, hats/rings are 0, bows are >1
         public int Range { get; set; } = 0;
@@ -136,7 +135,10 @@ namespace Game.Models
             Range = newData.Range;
             Damage = newData.Damage;
 
-            itemAbility.copy(newData.itemAbility);
+            if (itemAbility != null)
+            {
+                itemAbility.copy(newData.itemAbility);
+            }
 
             //Guid = newData.Guid;
             //Count = newData.Count;
