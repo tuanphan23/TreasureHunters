@@ -57,7 +57,8 @@
 
                             <Entry Grid.Row="0" Grid.Column="1"
                             Text="{Binding Data.Name, Mode=TwoWay}" 
-                            Style="{StaticResource EntryStyle}"/>
+                            Style="{StaticResource EntryStyle}"
+                                   x:Name="Name"/>
 
                             <Label Grid.Row="1" Grid.Column="0"
                             Text="Description" 
@@ -79,7 +80,8 @@
 
                                 <Entry 
                                 Text="{Binding Data.ImageURI, Mode=TwoWay}" 
-                                Style="{StaticResource EntryStyle}"/>
+                                Style="{StaticResource EntryStyle}"
+                                    x:Name="Image"/>
 
                             </StackLayout>
 
