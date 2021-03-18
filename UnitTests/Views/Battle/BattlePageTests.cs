@@ -1125,21 +1125,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void AutoBattlePage_StopButton_Clicked_IsValid_Any_Input_Should_Pass()
-        {
-            //Arrange
-
-            //Act
-            page.StopButton_Clicked(null, null);
-
-            //Reset
-
-            //Assert
-            //if it got here it happened
-            Assert.IsTrue(true);
-        }
-
-        [Test]
         public void AutoBattlePage_DroppedItemsButton_Clicked_IsValid_Any_Input_Should_Pass()
         {
             //Arrange
