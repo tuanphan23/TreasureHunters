@@ -8,6 +8,7 @@ using Game.Helpers;
 using Game.ViewModels;
 using Game.Engine.EngineGame;
 using Game.Engine.EngineModels;
+using Game.GameRules;
 
 namespace UnitTests.Engine.EngineGame
 {
@@ -1615,6 +1616,44 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion MoveAsTurn
+
+        [Test]
+        public void TurnEngine_ChooseAbilityTarget_Valid_CharacterAttacker_NonHealingAbility_Should_Pass()
+        {
+            //Arrange
+
+            //create a bunch of potential targets
+            List<PlayerInfoModel> monsters = new List<PlayerInfoModel>();
+            List<PlayerInfoModel> characters = new List<PlayerInfoModel>();
+            for(int i = 0; i < 6; i++)
+            {
+                monsters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5)));
+                characters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomCharacter(5)));
+            }
+
+            Engine.EngineSettings.PlayerList.Clear();
+
+            //add the players to the game
+            foreach (PlayerInfoModel monster in monsters)
+            {
+                Engine.EngineSettings.PlayerList.Add(monster);
+            }
+
+            foreach(PlayerInfoModel character in characters)
+            {
+                Engine.EngineSettings.PlayerList.Add(character);
+            }
+            //set the ability
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ability.NumTargets = 3;
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+
+            //Act
+            List<PlayerInfoModel> targets = ((TurnEngine)Engine.Round.Turn).ChooseAbilityTarget(new PlayerInfoModel(new CharacterModel()));
+
+            //Assert
+            Assert.AreEqual(targets.Count, ability.NumTargets);
+        }
 
     }
 }

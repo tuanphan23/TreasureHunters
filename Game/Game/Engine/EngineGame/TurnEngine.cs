@@ -29,7 +29,7 @@ namespace Game.Engine.EngineGame
     /// </summary>
     public class TurnEngine : TurnEngineBase, ITurnEngineInterface
     {
-        private Ability AbilityToUse;
+        public Ability AbilityToUse;
         #region Algrorithm
         // Attack or Move
         // Roll To Hit
