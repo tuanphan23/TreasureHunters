@@ -19,7 +19,7 @@
 
                     <StackLayout Style="{StaticResource VerticalStack}">
 
-                        <Label Text="Items Found" Style="{StaticResource MessageStyle}"/>
+                        <Label Text="Items Found" Style="{StaticResource MessageStyle}" x:Name="ItemsFoundLabel"/>
                         <StackLayout Style="{StaticResource HorizontalStack}">
                             <Label Text="Found : " Style="{StaticResource LabelStyle}"/>
                             <Label Text="0" x:Name="TotalFound" Style="{StaticResource ValueStyle}"/>

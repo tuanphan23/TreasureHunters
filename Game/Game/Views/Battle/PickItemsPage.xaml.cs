@@ -19,6 +19,11 @@ namespace Game.Views
         public PickItemsPage()
         {
             InitializeComponent();
+
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AmazonDelivery)
+            {
+                ItemsFoundLabel.Text = "Thanks to amazon instant delivery you get: ";
+            }
            
             // Update the Found Number
             TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();

@@ -49,6 +49,6 @@ namespace Game.Models
         public bool TimeWarp = false;
 
         //Use amazon delivery?
-        public bool AmazonDelivery = true;
+        public bool AmazonDelivery = false;
     }
 }
