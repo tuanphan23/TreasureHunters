@@ -1,13 +1,11 @@
-﻿using System.Linq;
-using System.Collections.Generic;
-
-using NUnit.Framework;
-
-using Game.Models;
-using Game.Helpers;
-using Game.ViewModels;
-using Game.Engine.EngineBase;
+﻿using Game.Engine.EngineBase;
 using Game.Engine.EngineModels;
+using Game.Helpers;
+using Game.Models;
+using Game.ViewModels;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UnitTests.Engine.EngineBase
 {
@@ -1360,6 +1358,12 @@ namespace UnitTests.Engine.EngineBase
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
+
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
+        {
+
+        }
         /*[Test]
         public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
         {
@@ -1427,6 +1431,7 @@ namespace UnitTests.Engine.EngineBase
             // Arrange
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            Engine.EngineSettings.BattleSettingsModel.AllowAbilities = true;
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
@@ -1457,6 +1462,7 @@ namespace UnitTests.Engine.EngineBase
             // Arrange
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            Engine.EngineSettings.BattleSettingsModel.AllowAbilities = true;
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
@@ -1490,6 +1496,7 @@ namespace UnitTests.Engine.EngineBase
             // Arrange
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            Engine.EngineSettings.BattleSettingsModel.AllowAbilities = true;
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
@@ -1548,12 +1555,13 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(true, result);
         }*/
 
-        /*[Test]
-        public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_NoAbilities_Should_Return_False()
         {
             // Arrange
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            Engine.EngineSettings.BattleSettingsModel.AllowAbilities = true;
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
@@ -1576,7 +1584,7 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(true, result);
-        }*/
+        }
         #endregion ChooseToUseAbility
 
         #region MoveAsTurn
