@@ -1452,38 +1452,6 @@ namespace UnitTests.Engine.EngineBase
         }
 
         [Test]
-        public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Should_Return_True()
-        {
-            // Arrange
-
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-            CharacterPlayer.CurrentHealth = 1;
-            CharacterPlayer.MaxHealth = 100;
-            // Get the item with heal ability in stock.
-            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.DamageType == DamageTypeEnum.Heal).ToList().OrderByDescending(m => m.Value).FirstOrDefault();
-            CharacterPlayer.OffHand = weapon.Id;
-
-            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
-
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
-
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = false;
-
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
-            // Act
-            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
-
-            // Reset
-            DiceHelper.DisableForcedRolls();
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
-
-
-        [Test]
         public void TurnEngine_ChooseToUseAbility_InValid_Roll_2_No_Ability_Should_Return_False()
         {
             // Arrange
@@ -1548,6 +1516,37 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(false, result);
         }
 
+
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Should_Return_True()
+        {
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            CharacterPlayer.CurrentHealth = 1;
+            CharacterPlayer.MaxHealth = 100;
+            // Get the item with heal ability in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.DamageType == DamageTypeEnum.Heal).ToList().OrderByDescending(m => m.Value).FirstOrDefault();
+            CharacterPlayer.OffHand = weapon.Id;
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
+
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
         /*[Test]
         public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
