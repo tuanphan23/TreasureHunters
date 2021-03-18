@@ -1784,7 +1784,9 @@ namespace UnitTests.Engine.EngineGame
             List<PlayerInfoModel> targets = new List<PlayerInfoModel>();
             for (int i = 0; i < 3; i++)
             {
-                targets.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5)));
+                var monster = new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5));
+                monster.CurrentHealth = 11;
+                targets.Add(monster);
             }
             var attacker = new PlayerInfoModel(new MonsterModel());
             ItemModel.Ability ability = new ItemModel.Ability();
@@ -1797,7 +1799,7 @@ namespace UnitTests.Engine.EngineGame
 
             //Assert
             Assert.AreEqual(result, true);
-            Assert.AreEqual(targets[0].MaxHealth - 10, targets[0].CurrentHealth);
+            Assert.AreEqual(1, targets[0].CurrentHealth);
         }
 
         [Test]
