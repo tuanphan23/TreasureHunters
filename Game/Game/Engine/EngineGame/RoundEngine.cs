@@ -124,14 +124,18 @@ namespace Game.Engine.EngineGame
             //add amazon just in time delivery items
             if (EngineSettings.BattleSettingsModel.AmazonDelivery)
             {
-                //find a missing slot on character and set the deliveredItem to an item of that type
                 foreach (PlayerInfoModel character in EngineSettings.CharacterList)
                 {
-                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum.Head));
+                    //get a new item for every slot of each character
+                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum. Necklass));
+                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum.PrimaryHand));
+                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum.OffHand));
+                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum.RightFinger));
+                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum.LeftFinger));
+                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum.Feet));
                 }
-                //await on POST to get item of that type
-                //add to list
             }
+
             // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
             if (EngineSettings.BattleScore.AutoBattle)
             {
