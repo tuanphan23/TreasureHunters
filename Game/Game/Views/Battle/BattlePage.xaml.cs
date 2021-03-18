@@ -1004,6 +1004,7 @@ namespace Game.Views
                     UpdateMapGrid();
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
+                    AutoButton.IsVisible = false;
                     break;
 
                 case BattleStateEnum.GameOver:
@@ -1027,6 +1028,7 @@ namespace Game.Views
                     RoundInfoButton.IsVisible = true;
                     AutoButton.IsVisible = true;
                     AbilityButton.IsVisible = true;
+                    DroppedItemButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.Auto:
