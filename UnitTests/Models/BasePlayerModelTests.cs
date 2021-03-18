@@ -405,7 +405,7 @@ namespace UnitTests.Models
             var result = data.GetSpeedLevelBonus;
 
             //Assert
-            Assert.AreEqual(result, LevelTableHelper.LevelDetailsList.Count - 1);
+            Assert.AreEqual(data.Level, LevelTableHelper.LevelDetailsList.Count - 1);
         }
 
         [Test]
@@ -716,7 +716,7 @@ namespace UnitTests.Models
             var data = new BasePlayerModel<CharacterModel>();
 
             // Add the first item
-            data.AddItem(ItemLocationEnum.PrimaryHand, (await ItemIndexViewModel.Instance.ReadAsync("head")).Id);
+            data.AddItem(ItemLocationEnum.Head, (await ItemIndexViewModel.Instance.ReadAsync("head")).Id);
             data.AddItem(ItemLocationEnum.Necklass, (await ItemIndexViewModel.Instance.ReadAsync("necklass")).Id);
             data.AddItem(ItemLocationEnum.PrimaryHand, (await ItemIndexViewModel.Instance.ReadAsync("PrimaryHand")).Id);
             data.AddItem(ItemLocationEnum.OffHand, (await ItemIndexViewModel.Instance.ReadAsync("OffHand")).Id);
@@ -732,7 +732,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(7654320, result);
+            Assert.AreEqual(7654321, result);
         }
 
         [Test]

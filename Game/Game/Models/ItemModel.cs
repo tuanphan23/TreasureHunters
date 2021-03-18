@@ -135,8 +135,17 @@ namespace Game.Models
             Range = newData.Range;
             Damage = newData.Damage;
 
-            if (itemAbility != null)
+
+            if (newData.itemAbility == null)
             {
+                itemAbility = null;
+            }
+            else
+            {
+                if (itemAbility == null)
+                {
+                    itemAbility = new Ability();
+                }
                 itemAbility.copy(newData.itemAbility);
             }
 
