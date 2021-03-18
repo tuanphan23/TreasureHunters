@@ -1452,7 +1452,7 @@ namespace UnitTests.Engine.EngineBase
         }
 
         [Test]
-        public void TurnEngine_ChooseToUseAbility_InValid_Roll_2_Should_Return_True()
+        public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Should_Return_True()
         {
             // Arrange
 
