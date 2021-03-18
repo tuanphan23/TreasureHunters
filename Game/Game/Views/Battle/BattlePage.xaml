@@ -71,7 +71,7 @@
                         <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}">
 
                             <StackLayout x:Name="AttackerBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="Start">
-                                <Image x:Name="AttackerImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
+                                <Image x:Name="AttackerImage" Style="{StaticResource ImageBattleMediumStyle}"/>
                                 <Label x:Name="AttackerName" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                                 <Label x:Name="AttackerHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                             </StackLayout>
@@ -84,7 +84,7 @@
                             </StackLayout>
 
                             <StackLayout x:Name="DefenderBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="End">
-                                <Image x:Name="DefenderImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
+                                <Image x:Name="DefenderImage" Style="{StaticResource ImageBattleMediumStyle}"/>
                                 <Label x:Name="DefenderName" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                                 <Label x:Name="DefenderHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                             </StackLayout>
