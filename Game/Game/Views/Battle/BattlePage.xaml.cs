@@ -1031,7 +1031,6 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
-                    StopButton.IsVisible = true;
                     RoundInfoButton.IsVisible = true;
                     AutoButton.IsVisible = true;
                     AbilityButton.IsVisible = true;
@@ -1043,7 +1042,6 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = false;
-                    StopButton.IsVisible = false;
                     RoundInfoButton.IsVisible = false;
                     AutoButton.IsVisible = true;
                     AbilityButton.IsVisible = false;
@@ -1088,32 +1086,6 @@ namespace Game.Views
         {
             ShowBattleMode();
             await Navigation.PushModalAsync(new RoundOverPage(true));
-        }
-
-        /// <summary>
-        /// Show the Game Over Screen
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void StopButton_Clicked(object sender, EventArgs args)
-        {
-            bool answer = await DisplayAlert("Stop Game", "Do you want to stop the battle?", "Yes", "No");
-
-            if(answer)
-            {
-                ShowBattleMode();
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
-
-                // Wrap up
-                BattleEngineViewModel.Instance.Engine.EndBattle();
-
-                // Pause
-                //Task.Delay(WaitTime);
-
-                Debug.WriteLine("Game Over");
-
-                GameOver();
-            }           
         }
 
         /// <summary>
