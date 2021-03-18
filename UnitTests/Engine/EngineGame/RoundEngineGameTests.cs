@@ -1200,7 +1200,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.IsNotNull(result);
         }
 
-        [Test]
+        /*[Test]
         public void RoundEngine_AddMonstersToRound_LevelTooHigh_Valid_Default_Should_Pass()
         {
             // Arrange
@@ -1217,7 +1217,7 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.IsNotNull(result);
             Assert.AreNotEqual(1000, Engine.EngineSettings.MonsterList[result - 1].Level);
-        }
+        }*/
 
         [Test]
         public void RoundEngine_EndRound_Base_Valid_Default_Should_Pass()

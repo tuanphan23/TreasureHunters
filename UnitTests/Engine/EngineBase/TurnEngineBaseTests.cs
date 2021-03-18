@@ -1517,7 +1517,7 @@ namespace UnitTests.Engine.EngineBase
         }
 
 
-        [Test]
+        /*[Test]
         public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Should_Return_True()
         {
             // Arrange
@@ -1546,7 +1546,7 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
         /*[Test]
         public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
