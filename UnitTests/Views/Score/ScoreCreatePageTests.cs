@@ -113,5 +113,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ScoreCreatePage_SaveClicked_Valid_Information_Should_Pass()
+        {
+            // Arrange
+            page.FindByName<Entry>("Name").Text = "Mike";
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
