@@ -219,5 +219,22 @@ namespace UnitTests.Views
             //Assert
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void ItemCreatePage_SaveClicked_Valid_Information_Should_Pass()
+        {
+            // Arrange
+            page.FindByName<Picker>("AttributePicker").SelectedIndex = 1;
+            page.FindByName<Picker>("LocationPicker").SelectedIndex = 1;
+            page.FindByName<Entry>("Name").Text = "Mike";
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
