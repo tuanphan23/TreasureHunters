@@ -1478,35 +1478,62 @@ namespace UnitTests.Engine.EngineGame
         //    Assert.AreEqual(false, result);
         //}
 
-        //[Test]
-        //public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
-        //{
-        //    // Arrange
+        [Test]
+        public async System.Threading.Tasks.Task TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_TrueAsync()
+        {
+            // Arrange
 
-        //    var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ItemModel item = new ItemModel { itemAbility = ability, Id = "test" };
+            await ItemIndexViewModel.Instance.CreateAsync(item);
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel {PrimaryHand = "test"});
 
-        //    // Get the longest range weapon in stock.
-        //    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-        //    CharacterPlayer.PrimaryHand = weapon.Id;
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-        //    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-        //    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-        //    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-        //    Engine.EngineSettings.BattleScore.AutoBattle = true;
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(0);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(2);
-        //    // Act
-        //    var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            await ItemIndexViewModel.Instance.DeleteAsync(item);
 
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+        [Test]
+        public async System.Threading.Tasks.Task TurnEngine_ChooseToUseAbility_PlayerControlled_Ability_Should_Return_TrueAsync()
+        {
+            // Arrange
+
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ItemModel item = new ItemModel { itemAbility = ability, Id = "test" };
+            await ItemIndexViewModel.Instance.CreateAsync(item);
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { PrimaryHand = "test" });
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            await ItemIndexViewModel.Instance.DeleteAsync(item);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
         #endregion ChooseToUseAbility
 
         #region MoveAsTurn
