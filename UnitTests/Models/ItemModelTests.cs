@@ -150,6 +150,28 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModel_UpdateWithAbility_ConstructAbilityWhenNull_Default_Should_Pass()
+        {
+            // Arrange
+            var dataOriginal = new ItemModel();
+            dataOriginal.Value = 1;
+
+            var dataNew = new ItemModel();
+            dataNew.Value = 2;
+            dataNew.itemAbility = new ItemModel.Ability();
+            dataNew.itemAbility.DmgBoost = 20;
+
+            // Act
+            var result = dataOriginal.Update(dataNew);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(2, dataOriginal.Value);
+            Assert.AreEqual(20, dataOriginal.itemAbility.DmgBoost);
+        }
+
+        [Test]
         public void ItemModel_Update_InValid_Null_Should_Fail()
         {
             // Arrange

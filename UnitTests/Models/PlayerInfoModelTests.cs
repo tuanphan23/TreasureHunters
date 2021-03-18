@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 
 using Game.Models;
+using Game.GameRules;
 
 namespace UnitTests.Models
 {
@@ -65,6 +66,21 @@ namespace UnitTests.Models
 
             // Assert
             Assert.IsNotNull(result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_Constrcutor_Monster_LevelTooHigh_Should_Pass()
+        {
+            // Arrange
+            var data = new MonsterModel { Level = 1000 };
+
+            // Act
+            var result = new PlayerInfoModel(data);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(result.Level, LevelTableHelper.LevelDetailsList.Count - 2);
         }
 
         [Test]
