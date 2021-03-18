@@ -922,6 +922,11 @@ namespace Game.Models
             return ItemIndexViewModel.Instance.GetItem(itemString);
         }
 
+        public bool CanUseAbility()
+        {
+            return false;
+        }
+
         // Drop All Items
         // Return a list of items for the pool of items
         public List<ItemModel> DropAllItems()

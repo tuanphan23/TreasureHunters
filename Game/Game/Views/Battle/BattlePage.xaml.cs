@@ -655,7 +655,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-            NextAttackExample();
+            NextAttackExample(ActionEnum.Attack);
         }
 
         /// <summary>
@@ -665,25 +665,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AbilityButton_Clicked(object sender, EventArgs e)
         {
-            NextAttackAbilityExample();
-        }
-
-        /// <summary>
-        /// 
-        /// This code example follows the rule of
-        /// 
-        /// Auto Select Attacker
-        /// Auto Select Defender
-        /// 
-        /// Do the Ability and show the result
-        /// 
-        /// </summary>
-        private void NextAttackAbilityExample()
-        {
-           //code for using an ability will go here
-           //some substantial refactorings will have to happen to make this work
-           //these refactorings are doable, however would not be wise to do 
-           //shortly before submitting this assignment
+            NextAttackExample(ActionEnum.Ability);
         }
 
         /// <summary>
@@ -737,12 +719,37 @@ namespace Game.Views
         /// So the pattern is Click Next, Next, Next until game is over
         /// 
         /// </summary>
-        public void NextAttackExample()
+        public void NextAttackExample(ActionEnum chosenMove)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender();
+
+            //if character is attacking use the move that has been chosen
+            //if monster is attacking set the move to unknown and let game logic decid which move to use
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                //if the player wants to use an ability check to see if they have one
+                if(chosenMove == ActionEnum.Ability)
+                {
+                    //if the player has an ability to use then let them use it
+                    //if they don't have an ability to use then set their move to attack
+                    if(BattleEngineViewModel.Instance.Engine.Round.Turn.ChooseToUseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker))
+                    {
+                        BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = chosenMove;
+                    } else
+                    {
+                        BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
+                    }
+                } else
+                {
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = chosenMove;
+                }
+            } else
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            }
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();

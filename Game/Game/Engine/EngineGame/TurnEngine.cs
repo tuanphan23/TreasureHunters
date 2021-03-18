@@ -57,7 +57,7 @@ namespace Game.Engine.EngineGame
 
             bool result = false;
 
-            // If the action is not set, then try to set it or use Attact
+            // If the action is not set, then try to set it or use Attack
             if (EngineSettings.CurrentAction == ActionEnum.Unknown)
             {
                 // Set the action if one is not set
@@ -214,8 +214,13 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
         {
-            //true passed in as random value should be used
-            return ChooseToUseAbilityMain(Attacker, true);
+            //if auto battle or monster attack have a random chance to use an ability
+            //otherwise guarauntee it because the player wanted it to happen
+            if(EngineSettings.BattleScore.AutoBattle || Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                return ChooseToUseAbilityMain(Attacker, true);
+            }
+            return ChooseToUseAbilityMain(Attacker, false);
         }
 
         //TODO null abilities?
@@ -281,8 +286,7 @@ namespace Game.Engine.EngineGame
             //get the targets
             List<PlayerInfoModel> targets = ChooseAbilityTarget(Attacker);
             //do the turn
-            TurnAsAbility(Attacker, targets);
-            return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
+            return TurnAsAbility(Attacker, targets);
         }
 
 
