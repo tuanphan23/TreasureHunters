@@ -302,6 +302,24 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public async Task BasePlayerModel_GetDamageRollValue_FireDamage_Should_PassAsync()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Level = 1;
+            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Attribute = AttributeEnum.Attack, Value = 0, DamageType = DamageTypeEnum.Fire, Id = "fireItem" });
+            data.PrimaryHand = "fireItem";
+            // Act
+            var result = data.GetDamageRollValue();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result.DamageAmount);
+            Assert.AreEqual(DamageTypeEnum.Fire, result.element);
+        }
+
+        [Test]
         public void BasePlayerModel_TakeDamage_Valid_Should_Pass()
         {
             // Arrange
@@ -374,6 +392,20 @@ namespace UnitTests.Models
 
             // Assert
             Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void BasePlayerModel_GetSpeedLevelBonus_LevelTooHigh_Should_Pass()
+        {
+            //Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Level = 1000;
+
+            //Act
+            var result = data.GetSpeedLevelBonus;
+
+            //Assert
+            Assert.AreEqual(result, LevelTableHelper.LevelDetailsList.Count - 1);
         }
 
         [Test]
