@@ -1653,6 +1653,128 @@ namespace UnitTests.Engine.EngineGame
 
             //Assert
             Assert.AreEqual(targets.Count, ability.NumTargets);
+            Assert.AreEqual(targets[0].PlayerType, PlayerTypeEnum.Monster);
+        }
+
+        [Test]
+        public void TurnEngine_ChooseAbilityTarget_Valid_CharacterAttacker_HealingAbility_Should_Pass()
+        {
+            //Arrange
+
+            //create a bunch of potential targets
+            List<PlayerInfoModel> monsters = new List<PlayerInfoModel>();
+            List<PlayerInfoModel> characters = new List<PlayerInfoModel>();
+            for (int i = 0; i < 6; i++)
+            {
+                monsters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5)));
+                characters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomCharacter(5)));
+            }
+
+            Engine.EngineSettings.PlayerList.Clear();
+
+            //add the players to the game
+            foreach (PlayerInfoModel monster in monsters)
+            {
+                Engine.EngineSettings.PlayerList.Add(monster);
+            }
+
+            foreach (PlayerInfoModel character in characters)
+            {
+                Engine.EngineSettings.PlayerList.Add(character);
+            }
+            //set the ability
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ability.NumTargets = 3;
+            ability.AttackType = DamageTypeEnum.Heal;
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+
+            //Act
+            List<PlayerInfoModel> targets = ((TurnEngine)Engine.Round.Turn).ChooseAbilityTarget(new PlayerInfoModel(new CharacterModel()));
+
+            //Assert
+            Assert.AreEqual(targets.Count, ability.NumTargets);
+            Assert.AreEqual(targets[0].PlayerType, PlayerTypeEnum.Character);
+        }
+
+        [Test]
+        public void TurnEngine_ChooseAbilityTarget_Valid_MonsterAttacker_NonHealingAbility_Should_Pass()
+        {
+            //Arrange
+
+            //create a bunch of potential targets
+            List<PlayerInfoModel> monsters = new List<PlayerInfoModel>();
+            List<PlayerInfoModel> characters = new List<PlayerInfoModel>();
+            for (int i = 0; i < 6; i++)
+            {
+                monsters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5)));
+                characters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomCharacter(5)));
+            }
+
+            Engine.EngineSettings.PlayerList.Clear();
+
+            //add the players to the game
+            foreach (PlayerInfoModel monster in monsters)
+            {
+                Engine.EngineSettings.PlayerList.Add(monster);
+            }
+
+            foreach (PlayerInfoModel character in characters)
+            {
+                Engine.EngineSettings.PlayerList.Add(character);
+            }
+            //set the ability
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ability.NumTargets = 3;
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+
+            //Act
+            List<PlayerInfoModel> targets = ((TurnEngine)Engine.Round.Turn).ChooseAbilityTarget(new PlayerInfoModel(new MonsterModel()));
+
+            //Assert
+            Assert.AreEqual(targets.Count, ability.NumTargets);
+            Assert.AreEqual(targets[0].PlayerType, PlayerTypeEnum.Character);
+        }
+
+        [Test]
+        public void TurnEngine_ChooseAbilityTarget_Valid_MonsterAttacker_HealingAbility_Should_Pass()
+        {
+            //Arrange
+
+            //create a bunch of potential targets
+            List<PlayerInfoModel> monsters = new List<PlayerInfoModel>();
+            List<PlayerInfoModel> characters = new List<PlayerInfoModel>();
+            for (int i = 0; i < 6; i++)
+            {
+                monsters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5)));
+                characters.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomCharacter(5)));
+            }
+
+            Engine.EngineSettings.PlayerList.Clear();
+
+            //add the players to the game
+            foreach (PlayerInfoModel monster in monsters)
+            {
+                Engine.EngineSettings.PlayerList.Add(monster);
+            }
+
+            foreach (PlayerInfoModel character in characters)
+            {
+                Engine.EngineSettings.PlayerList.Add(character);
+            }
+            //set the ability
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ability.NumTargets = 3;
+            ability.AttackType = DamageTypeEnum.Heal;
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+
+            var attacker = new PlayerInfoModel(new MonsterModel());
+
+            //Act
+            List<PlayerInfoModel> targets = ((TurnEngine)Engine.Round.Turn).ChooseAbilityTarget(attacker);
+
+            //Assert
+            Assert.AreEqual(targets.Count, ability.NumTargets);
+            Assert.AreEqual(targets[0].PlayerType, attacker.PlayerType);
         }
 
     }
