@@ -1130,7 +1130,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
 
-        [Test]
+        /*[Test]
         public void TurnEngine_UseAbility_Valid_Ability_Heal_1_Should_Pass()
         {
             // Arrange
@@ -1148,9 +1148,9 @@ namespace UnitTests.Engine.EngineGame
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
-        [Test]
+        /*[Test]
         public void TurnEngine_UseAbility_Valid_Ability_Toughness_1_Should_Pass()
         {
             // Arrange
@@ -1168,7 +1168,7 @@ namespace UnitTests.Engine.EngineGame
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
         /*[Test]
         public void TurnEngine_UseAbility_Valid_Ability_Quick_1_Should_Pass()
