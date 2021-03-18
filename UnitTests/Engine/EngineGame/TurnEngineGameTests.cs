@@ -1131,6 +1131,28 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
 
+        //[Test]
+        //public void TurnEngine_HasHealingAbility_Valid_Should_Pass()
+        //{
+        //    // Arrange
+        //    Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
+
+        //    var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+        //    var item = new ItemModel();
+        //    item.itemAbility = new ItemModel.Ability();
+        //    item.itemAbility.AttackType = DamageTypeEnum.Heal;
+
+        //    characterPlayer.Head = ;
+
+        //    // Act
+        //    var result = ((TurnEngine)Engine.Round.Turn).UseAbility(characterPlayer);
+
+        //    // Reset
+
+        //    // Assert
+        //    Assert.AreEqual(true, result);
+        //}
+
         /*[Test]
         public void TurnEngine_UseAbility_Valid_Ability_Heal_1_Should_Pass()
         {
