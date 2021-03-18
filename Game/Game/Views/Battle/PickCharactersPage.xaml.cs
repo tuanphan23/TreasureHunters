@@ -69,9 +69,11 @@ namespace Game.Views
             }
 
             // Manually deselect Character.
-            CharactersListView.SelectedItem = null;
-            BattleEngineViewModel.Instance.UnusedCharacterList.Remove(data);
-
+            if (CharactersListView != null)
+            {
+                CharactersListView.SelectedItem = null;
+                BattleEngineViewModel.Instance.UnusedCharacterList.Remove(data);
+            }
             //check to see if the user is trying to add the same character twice
             //this issue should never arise, however this is a safety measure
             foreach (var partyMember in BattleEngineViewModel.Instance.PartyCharacterList)
@@ -105,7 +107,8 @@ namespace Game.Views
             }
 
             // Manually deselect Character.
-            PartyListView.SelectedItem = null;
+            if(PartyListView != null)
+                PartyListView.SelectedItem = null;
 
             // Remove the character from the list
             BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
@@ -127,6 +130,8 @@ namespace Game.Views
         public void UpdateNextButtonState()
         {
             // If no characters disable Next button
+            if (BeginBattleButton == null)
+                return;
             BeginBattleButton.IsEnabled = true;
 
             var currentCount = BattleEngineViewModel.Instance.PartyCharacterList.Count();
