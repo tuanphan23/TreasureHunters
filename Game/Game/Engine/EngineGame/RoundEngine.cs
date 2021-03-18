@@ -6,6 +6,8 @@ using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.GameRules;
 using Game.Models;
+using Game.Services;
+using Game.ViewModels;
 
 namespace Game.Engine.EngineGame
 {
@@ -119,6 +121,17 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool EndRound()
         {
+            //add amazon just in time delivery items
+            if (EngineSettings.BattleSettingsModel.AmazonDelivery)
+            {
+                //find a missing slot on character and set the deliveredItem to an item of that type
+                foreach (PlayerInfoModel character in EngineSettings.CharacterList)
+                {
+                    EngineSettings.ItemPool.Add(GetBetterItemAsync(character, ItemLocationEnum.Head));
+                }
+                //await on POST to get item of that type
+                //add to list
+            }
             // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
             if (EngineSettings.BattleScore.AutoBattle)
             {
@@ -129,6 +142,26 @@ namespace Game.Engine.EngineGame
             ClearLists();
 
             return true;
+        }
+
+        public ItemModel GetBetterItemAsync(PlayerInfoModel character, ItemLocationEnum item)
+        {
+            List<ItemModel> dataList;
+            ItemModel oldItem = character.GetItemByLocation(item);
+            if (oldItem == null)
+            {
+                //if character has no item get a low level one
+                dataList = await ItemService.GetItemsFromServerPostAsync(1, 1, AttributeEnum.Unknown, item, 0, false, true);
+            } else
+            {
+                //if they have an item get one better
+                dataList = await ItemService.GetItemsFromServerPostAsync(1, oldItem.Value, oldItem.Attribute, item, 0, false, true);
+            }
+            if(dataList.Count > 0)
+            {
+                return dataList[0];
+            }
+            return new ItemModel();
         }
 
         /// <summary>
