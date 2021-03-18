@@ -388,6 +388,25 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattleSettingsPage_TimeWarp_Toggled_False_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("TimeWarpSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.ReflectDamage_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattleSettingsPage_BattleModePicker_Default_Should_Pass()
         {
             // Arrange
