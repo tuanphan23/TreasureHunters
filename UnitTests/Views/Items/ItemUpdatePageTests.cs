@@ -242,5 +242,37 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void ItemUpdatePage_AttributePicker_SelectedIndex_valid_Should_Pass()
+        {
+            //Arrange
+            var control = (Picker)page.FindByName("AttributePicker");
+
+            // Act
+            control.SelectedIndex = 0;
+            var result = control.SelectedIndex;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void ItemUpdatePage_LocationPicker_SelectedIndex_valid_Should_Pass()
+        {
+            //Arrange
+            var control = (Picker)page.FindByName("LocationPicker");
+
+            // Act
+            control.SelectedIndex = 0;
+            var result = control.SelectedIndex;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
     }
 }
