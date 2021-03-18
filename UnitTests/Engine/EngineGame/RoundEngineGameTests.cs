@@ -1201,6 +1201,25 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
+        public void RoundEngine_AddMonstersToRound_LevelTooHigh_Valid_Default_Should_Pass()
+        {
+            // Arrange
+            var character = new PlayerInfoModel(new CharacterModel());
+            character.Level = 1000;
+            Engine.EngineSettings.CharacterList.Add(character);
+
+
+            // Act
+            var result = Engine.Round.AddMonstersToRound();
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreNotEqual(1000, Engine.EngineSettings.MonsterList[result - 1].Level);
+        }
+
+        [Test]
         public void RoundEngine_EndRound_Base_Valid_Default_Should_Pass()
         {
             // Arrange

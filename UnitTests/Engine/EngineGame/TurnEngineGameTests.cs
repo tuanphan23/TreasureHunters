@@ -568,6 +568,27 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
 
+        [Test]
+        public void TurnEngine_TakeTurn_Ability_Should_Pass()
+        {
+            // Arrange
+            var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+            Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(new MonsterModel()));
+            Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+            EngineSettingsModel.Instance.BattleScore.AutoBattle = false;
+            var ability = new ItemModel.Ability();
+            ability.NumTargets = 1;
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
         /*
         [Test]
         public void TurnEngine_TakeTurn_Ability_Should_Pass()
@@ -2044,6 +2065,23 @@ namespace UnitTests.Engine.EngineGame
             ability.AttackType = DamageTypeEnum.None;
             //Act
             var result = ((TurnEngine)Engine.Round.Turn).TurnAsAbility(attacker, targets);
+
+            //Assert
+            Assert.AreEqual(result, false);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsAbility_InValid_CharacterAttacker_NullTargets()
+        {
+            //Arrange
+            var attacker = new PlayerInfoModel(new MonsterModel());
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+            ability.DmgBoost = 10;
+            ability.DmgMulti = 0;
+            ability.AttackType = DamageTypeEnum.None;
+            //Act
+            var result = ((TurnEngine)Engine.Round.Turn).TurnAsAbility(attacker, null);
 
             //Assert
             Assert.AreEqual(result, false);
