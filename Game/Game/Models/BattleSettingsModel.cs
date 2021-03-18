@@ -47,5 +47,8 @@ namespace Game.Models
 
         //Is attack order reversed for speed
         public bool TimeWarp = false;
+
+        //Use amazon delivery?
+        public bool AmazonDelivery = true;
     }
 }

@@ -200,6 +200,19 @@
                                          />
 
                     </StackLayout>
+
+                    <Label
+                    Text="Amazon Just In Time Delivery"
+                    HorizontalOptions="Center"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+
+                    <Switch
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    x:Name="AmazonDeliverySwitch"
+                    Toggled="AmazonDelivery_Toggled"
+                    />
                 </StackLayout>
 
 

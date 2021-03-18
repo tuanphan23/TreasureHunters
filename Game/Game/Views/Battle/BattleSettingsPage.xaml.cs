@@ -75,6 +75,8 @@ namespace Game.Views
             ReflectChanceStepper.Value = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.ReflectChance;
             TimeWarpSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.TimeWarp;
             #endregion
+
+            AmazonDeliverySwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AmazonDelivery;
         }
 
         /// <summary>
@@ -237,6 +239,17 @@ namespace Game.Views
             }
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.DamageReflect = false;
+        }
+
+        public void AmazonDelivery_Toggled(object sender, EventArgs e)
+        {
+            if(AmazonDeliverySwitch.IsToggled == true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AmazonDelivery = true;
+                return;
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AmazonDelivery = false;
         }
 
         public void TimeWarp_Toggled(object sender, EventArgs e)

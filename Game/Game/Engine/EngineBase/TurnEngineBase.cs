@@ -658,7 +658,18 @@ namespace Game.Engine.EngineBase
 
             // I feel generous, even when characters die, random drops happen :-)
             // If Random drops are enabled, then add some....
-            myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
+            if(EngineSettings.BattleSettingsModel.AmazonDelivery) {
+                //find a missing slot on character
+                foreach(PlayerInfoModel character in EngineSettings.CharacterList)
+                {
+                    
+                }
+                //await on POST to get item of that type
+                //add to list
+            } else {
+                myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
+            }
+
 
             // Add to ScoreModel
             foreach (var ItemModel in myItemList)
