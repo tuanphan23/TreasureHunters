@@ -151,11 +151,11 @@ namespace Game.Engine.EngineGame
             if (oldItem == null)
             {
                 //if character has no item get a low level one
-                dataList = await ItemService.GetItemsFromServerPostAsync(1, 1, AttributeEnum.Unknown, item, 0, false, true);
+                dataList = ItemService.GetItemsFromServerPostAsync(1, 1, AttributeEnum.Unknown, item, 0, false, true).Result;
             } else
             {
                 //if they have an item get one better
-                dataList = await ItemService.GetItemsFromServerPostAsync(1, oldItem.Value, oldItem.Attribute, item, 0, false, true);
+                dataList = ItemService.GetItemsFromServerPostAsync(1, oldItem.Value, oldItem.Attribute, item, 0, false, true).Result;
             }
             if(dataList.Count > 0)
             {
