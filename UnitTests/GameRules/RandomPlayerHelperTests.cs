@@ -396,5 +396,24 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
         }
+
+        [Test]
+        public async Task RandomPlayerHelper_GetRandomBossMonster_InvalidLevel_Items_True_Should_Return_New_Monster()
+        {
+            // Arrange
+            MonsterIndexViewModel.Instance.Dataset.Clear();
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "1" });
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "2" });
+            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "3" });
+
+            // Act
+            var result = RandomPlayerHelper.GetRandomBossMonster(1000, true);
+            var expected = LevelTableHelper.LevelDetailsList[LevelTableHelper.LevelDetailsList.Count - 1].Experience;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(result.ExperienceRemaining, expected);
+        }
     }
 }
