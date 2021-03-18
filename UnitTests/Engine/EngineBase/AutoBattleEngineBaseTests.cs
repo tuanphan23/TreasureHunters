@@ -135,6 +135,25 @@ namespace UnitTests.Engine.EngineBase
         }
 
         [Test]
+        public async Task AutoBattleEngine_RunAutoBattleWhileBattling_InValid_DetectInfiniteLoop_Should_Return_False()
+        {
+            //Arrange
+
+            // Trigger DetectInfinateLoop Loop
+            var oldRoundCountMax = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount;
+            AutoBattleEngine.Battle.EngineSettings.MaxRoundCount = -1;
+
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattleWhileBattling();
+
+            //Reset
+            AutoBattleEngine.Battle.EngineSettings.MaxRoundCount = oldRoundCountMax;
+
+            //Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
         public async Task AutoBattleEngine_RunAutoBattle_InValid_DetectInfinateLoop_Should_Return_False()
         {
             //Arrange
