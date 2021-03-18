@@ -156,17 +156,21 @@ namespace UnitTests.Views
         public void PickCharactersPage_OnPartyCharacterItemSelected_Default_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            var selectedCharacter = new CharacterModel();
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+            CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
 
             // Act
-            //page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            cv.SelectionChanged += (OnPartyCharacterItemSelected);
+            cv.SelectedItem = cm;
 
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
@@ -174,15 +178,20 @@ namespace UnitTests.Views
         public void PickCharactersPage_OnPartyCharacterItemSelected_InValid_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+            List<CharacterModel> selectedCharacter = Game.GameRules.DefaultData.LoadData(new CharacterModel());
 
             // Act
-            //page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            cv.SelectionChanged += (OnDatabaseCharacterItemSelected);
+            cv.SelectedItem = selectedCharacter;
 
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
@@ -190,17 +199,20 @@ namespace UnitTests.Views
         public void PickCharactersPage_OnDatabaseCharacterItemSelected_Default_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            var selectedCharacter = new CharacterModel();
-
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+            List<CharacterModel> selectedCharacter = Game.GameRules.DefaultData.LoadData(new CharacterModel());
 
             // Act
-            //page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            cv.SelectionChanged += (OnDatabaseCharacterItemSelected);
+            cv.SelectedItem = selectedCharacter;
 
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
@@ -208,15 +220,20 @@ namespace UnitTests.Views
         public void PickCharactersPage_OnDatabaseCharacterItemSelected_InValid_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+            CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
 
             // Act
-            //page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+            cv.SelectionChanged += (OnDatabaseCharacterItemSelected);
+            cv.SelectedItem = cm;
 
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
     }
