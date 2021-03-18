@@ -407,6 +407,24 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattleSettingPage_ReflectChance_OnStepperValueChanged_Default_Should_Pass()
+        {
+            // Arrange
+            double oldRange = 0.0;
+            double newRange = 1.0;
+
+            var args = new ValueChangedEventArgs(oldRange, newRange);
+
+            // Act
+            page.ReflectChance_OnStepperValueChanged(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattleSettingsPage_BattleModePicker_Default_Should_Pass()
         {
             // Arrange
