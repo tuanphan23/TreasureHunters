@@ -96,15 +96,18 @@ namespace Game.Engine.EngineGame
                 EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
             }
 
-            // last monster of each round will be boss monster with a higher level
-            int bossLevel = (TargetLevel + 1 < 20) ? TargetLevel + 1 : TargetLevel;
+            if (EngineSettings.CharacterList.Count() >= 1)
+            {
+                // last monster of each round will be boss monster with a higher level
+                int bossLevel = (TargetLevel + 1 < 20) ? TargetLevel + 1 : TargetLevel;
 
-            var bossMonsterData = RandomPlayerHelper.GetRandomBossMonster(bossLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+                var bossMonsterData = RandomPlayerHelper.GetRandomBossMonster(bossLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 
-            // Help identify which Monster it is
-            bossMonsterData.Name += " " + EngineSettings.MonsterList.Count() + 1;
+                // Help identify which Monster it is
+                bossMonsterData.Name += " " + EngineSettings.MonsterList.Count() + 1;
 
-            EngineSettings.MonsterList.Add(new PlayerInfoModel(bossMonsterData));
+                EngineSettings.MonsterList.Add(new PlayerInfoModel(bossMonsterData));
+            }
 
             return EngineSettings.MonsterList.Count();
         }
