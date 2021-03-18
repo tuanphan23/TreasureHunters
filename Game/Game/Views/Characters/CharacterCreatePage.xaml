@@ -50,7 +50,7 @@
                             Text="{Binding Data.Name}"
                             FontSize="20"
                             HorizontalTextAlignment="Center"
-                            />
+                            x:Name="Name"/>
 
                         <Label 
                             Text="Description"
@@ -202,7 +202,8 @@
 
                             <Entry 
                                     Text="{Binding Data.ImageURI}" 
-                                    Style="{StaticResource EntryStyle}"/>
+                                    Style="{StaticResource EntryStyle}"
+                                x:Name="Image"/>
                         </StackLayout>
                         <Button
                             Text="Random"

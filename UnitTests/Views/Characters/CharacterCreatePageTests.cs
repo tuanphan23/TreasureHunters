@@ -88,6 +88,22 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void CharacterCreatePage_Save_Clicked_With_Valid_Info_Should_Pass()
+        {
+            // Arrange
+            page.FindByName<Entry>("Name").Text = "Mike";
+            page.FindByName<Entry>("Image").Text = "Image1.png";
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
         public void CharacterCreatePage_Save_Clicked_Null_Image_Should_Pass()
         {
             // Arrange
