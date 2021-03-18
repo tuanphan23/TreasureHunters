@@ -1194,6 +1194,27 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
 
+        [Test]
+        public async System.Threading.Tasks.Task TurnEngine_HasHealingAbility_IsValid_Should_Return_TrueAsync()
+        {
+            // Arrange
+
+            ItemModel.Ability ability = new ItemModel.Ability { AttackType = DamageTypeEnum.Heal };
+            ItemModel item = new ItemModel { itemAbility = ability, Id = "test" };
+            await ItemIndexViewModel.Instance.CreateAsync(item);
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { PrimaryHand = "test" });
+            // Act
+
+            var result = ((TurnEngine)Engine.Round.Turn).HasHealingAbility(CharacterPlayer);
+
+            // Reset
+            await ItemIndexViewModel.Instance.DeleteAsync(item);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
         //[Test]
         //public void TurnEngine_HasHealingAbility_Valid_Should_Pass()
         //{
@@ -1395,6 +1416,29 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(ActionEnum.Move, result);
         }
 
+        [Test]
+        public async System.Threading.Tasks.Task TurnEngine_DetermineActionChoice_AutoPlayer_UsesAbility_Should_Return_AbilityAsync()
+        {
+            // Arrange
+
+            ItemModel.Ability ability = new ItemModel.Ability { AttackType = DamageTypeEnum.Heal };
+            ItemModel item = new ItemModel { itemAbility = ability, Id = "test" };
+            await ItemIndexViewModel.Instance.CreateAsync(item);
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { PrimaryHand = "test" });
+
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+            // Act
+
+            var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
+
+            // Reset
+            await ItemIndexViewModel.Instance.DeleteAsync(item);
+
+            // Assert
+            Assert.AreEqual(ActionEnum.Ability, result);
+        }
+
         //[Test]
         //public void TurnEngine_DetermineActionChoice_Valid_Character_Should_Return_CurrentAction()
         //{
@@ -1577,6 +1621,32 @@ namespace UnitTests.Engine.EngineGame
             // Arrange
 
             ItemModel.Ability ability = new ItemModel.Ability();
+            ItemModel item = new ItemModel { itemAbility = ability, Id = "test" };
+            await ItemIndexViewModel.Instance.CreateAsync(item);
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { PrimaryHand = "test" });
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            await ItemIndexViewModel.Instance.DeleteAsync(item);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public async System.Threading.Tasks.Task TurnEngine_ChooseToUseAbility_PlayerControlled_HealingAbility_Should_Return_TrueAsync()
+        {
+            // Arrange
+
+            ItemModel.Ability ability = new ItemModel.Ability{ AttackType = DamageTypeEnum.Heal};
             ItemModel item = new ItemModel { itemAbility = ability, Id = "test" };
             await ItemIndexViewModel.Instance.CreateAsync(item);
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel { PrimaryHand = "test" });
