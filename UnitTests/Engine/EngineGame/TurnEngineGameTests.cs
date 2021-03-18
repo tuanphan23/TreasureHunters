@@ -798,6 +798,40 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
+        public void TurnEngine_TurnAsAttack_Invalid_AttackerNull_Monster_Target_Should_Fail()
+        {
+            // Arrange
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(null, MonsterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsAttack_Invalid_AttackerCharacter_TargetNull_Should_Fail()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
         public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Miss_Should_Pass()
         {
             // Arrange
@@ -844,6 +878,35 @@ namespace UnitTests.Engine.EngineGame
 
             // Reset
             DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_CriticalMiss_Should_Pass()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = true;
+
+            // Forece a Miss
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = false;
 
             // Assert
             Assert.AreEqual(true, result);
