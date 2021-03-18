@@ -341,8 +341,8 @@ namespace Game.Engine.EngineGame
                 EngineSettings.BattleMessagesModel.DamageAmount = 0;
                 //if healing adjust the health manually
                 if (AbilityToUse.AttackType == DamageTypeEnum.Heal) {
-                    target.CalculateDamage(damageInf);
-                    target.TakeDamage(damageInf.DamageAmount);
+                    var damage = target.CalculateDamage(damageInf);
+                    target.TakeDamage(damage);
                 } else
                 {
                     //if damage ask the player for how much damage they take and deal it to them

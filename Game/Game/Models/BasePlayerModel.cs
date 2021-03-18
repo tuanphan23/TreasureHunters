@@ -708,6 +708,11 @@ namespace Game.Models
             {
                 currentStatusEffect = dmg.element;
             }
+
+            if (dmg.element == DamageTypeEnum.Heal)
+            {
+                return -damageDone;
+            }
             return damageDone;
         }
 

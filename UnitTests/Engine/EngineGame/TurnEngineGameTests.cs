@@ -1777,5 +1777,93 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(targets[0].PlayerType, attacker.PlayerType);
         }
 
+        [Test]
+        public void TurnEngine_TurnAsAbility_Valid_CharacterAttacker()
+        {
+            //Arrange
+            List<PlayerInfoModel> targets = new List<PlayerInfoModel>();
+            for (int i = 0; i < 3; i++)
+            {
+                targets.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5)));
+            }
+            var attacker = new PlayerInfoModel(new MonsterModel());
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+            ability.DmgBoost = 10;
+            ability.DmgMulti = 0;
+            ability.AttackType = DamageTypeEnum.None;
+            //Act
+            var result = ((TurnEngine)Engine.Round.Turn).TurnAsAbility(attacker, targets);
+
+            //Assert
+            Assert.AreEqual(result, true);
+            Assert.AreEqual(targets[0].MaxHealth - 10, targets[0].CurrentHealth);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsAbility_Valid_CharacterAttacker_HealingAbility()
+        {
+            //Arrange
+            List<PlayerInfoModel> targets = new List<PlayerInfoModel>();
+            for (int i = 0; i < 3; i++)
+            {
+                var character = new PlayerInfoModel(RandomPlayerHelper.GetRandomCharacter(5));
+                character.CurrentHealth = 1;
+                character.MaxHealth = 11;
+                targets.Add(character);
+            }
+            var attacker = new PlayerInfoModel(new MonsterModel());
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+            ability.DmgBoost = 10;
+            ability.DmgMulti = 0;
+            ability.AttackType = DamageTypeEnum.Heal;
+            //Act
+            var result = ((TurnEngine)Engine.Round.Turn).TurnAsAbility(attacker, targets);
+
+            //Assert
+            Assert.AreEqual(result, true);
+            Assert.AreEqual(11, targets[0].CurrentHealth);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsAbility_InValid_Attacker_Null()
+        {
+            //Arrange
+            List<PlayerInfoModel> targets = new List<PlayerInfoModel>();
+            for (int i = 0; i < 3; i++)
+            {
+                targets.Add(new PlayerInfoModel(RandomPlayerHelper.GetRandomMonster(5)));
+            }
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+            ability.DmgBoost = 10;
+            ability.DmgMulti = 0;
+            ability.AttackType = DamageTypeEnum.None;
+            //Act
+            var result = ((TurnEngine)Engine.Round.Turn).TurnAsAbility(null, targets);
+
+            //Assert
+            Assert.AreEqual(result, false);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsAbility_InValid_CharacterAttacker_NoTargets()
+        {
+            //Arrange
+            List<PlayerInfoModel> targets = new List<PlayerInfoModel>();
+            var attacker = new PlayerInfoModel(new MonsterModel());
+            ItemModel.Ability ability = new ItemModel.Ability();
+            ((TurnEngine)Engine.Round.Turn).AbilityToUse = ability;
+            ability.DmgBoost = 10;
+            ability.DmgMulti = 0;
+            ability.AttackType = DamageTypeEnum.None;
+            //Act
+            var result = ((TurnEngine)Engine.Round.Turn).TurnAsAbility(attacker, targets);
+
+            //Assert
+            Assert.AreEqual(result, false);
+        }
+
     }
 }
