@@ -32,7 +32,14 @@ namespace Game.GameRules
                     Value = 6,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
-                    DamageType = DamageTypeEnum.None
+                    DamageType = DamageTypeEnum.None,
+                    itemAbility = new ItemModel.Ability {
+                        NumTargets = 1,
+                        DmgMulti = 0,
+                        DmgBoost = 10,
+                        AttackType = DamageTypeEnum.Heal,
+                        StatusChance = 0,
+                    }
                 },
                 new ItemModel {
                     Name = "President’s book",
